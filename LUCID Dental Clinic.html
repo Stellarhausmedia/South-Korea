@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LUCID Dental Clinic — English-Speaking Dentistry in Gangnam, Seoul</title>
+<meta name="description" content="LUCID Dental Clinic in Gangnam, Seoul — an English-speaking dental clinic welcoming international patients. Signature veneers, whitening, implants and orthodontics. Message us on WhatsApp." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --white:#ffffff;
+    --paper:#f4f8fc;
+    --paper-2:#eaf2fb;
+    --ice-50:#f0f7ff;
+    --ice-100:#dcebfb;
+    --ice-200:#c2ddf6;
+    --ice-300:#9cc6ee;
+    --ice-400:#6fa9e2;
+    --ice-500:#4a8bd4;
+    --ice-600:#2f6bb5;
+    --ink:#0c1f33;
+    --ink-2:#1c3651;
+    --slate:#4a6079;
+    --slate-2:#5b748f;
+    --silver:#d7e2ee;
+    --silver-2:#b8c8da;
+    --glass-stroke:rgba(255,255,255,0.65);
+    --glass-fill:rgba(255,255,255,0.45);
+    --shadow-ice:0 24px 60px -28px rgba(28,72,130,0.45);
+    --shadow-soft:0 12px 40px -24px rgba(20,56,110,0.5);
+    --radius:22px;
+    --radius-sm:14px;
+    --ease:cubic-bezier(.22,1,.36,1);
+    --maxw:1180px;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{
+    margin:0;
+    font-family:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.6;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  h1,h2,h3{ line-height:1.04; margin:0; letter-spacing:-0.02em; font-weight:700; }
+  p{ margin:0; }
+  a{ color:inherit; text-decoration:none; }
+  img,svg{ display:block; }
+  .serif{ font-family:"Fraunces",Georgia,serif; font-weight:400; letter-spacing:-0.01em; }
+  ::selection{ background:var(--ice-200); color:var(--ink); }
+
+  .wrap{ width:min(92%,var(--maxw)); margin-inline:auto; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.6em;
+    font-size:clamp(.66rem,1.4vw,.74rem); font-weight:600;
+    letter-spacing:.32em; text-transform:uppercase; color:var(--ice-600);
+  }
+  .eyebrow::before{
+    content:""; width:26px; height:1px;
+    background:linear-gradient(90deg,transparent,var(--ice-400));
+  }
+  .eyebrow.center::before{ content:none; }
+
+  /* ============ FROST CANVAS (fixed bg) ============ */
+  .frost-bg{
+    position:fixed; inset:0; z-index:-2; overflow:hidden;
+    background:
+      radial-gradient(1200px 700px at 78% -8%, #eaf4ff 0%, rgba(234,244,255,0) 60%),
+      radial-gradient(900px 600px at 8% 12%, #f3f9ff 0%, rgba(243,249,255,0) 55%),
+      linear-gradient(180deg, #fbfdff 0%, #eef5fd 42%, #f6fafe 100%);
+  }
+  .frost-orb{
+    position:absolute; border-radius:50%; filter:blur(60px); opacity:.55;
+    will-change:transform;
+  }
+  .orb-a{ width:46vw; height:46vw; top:-10vw; right:-8vw;
+    background:radial-gradient(circle at 30% 30%, #cfe6ff, rgba(207,230,255,0)); }
+  .orb-b{ width:38vw; height:38vw; bottom:-12vw; left:-10vw;
+    background:radial-gradient(circle at 60% 40%, #e3eeff, rgba(227,238,255,0)); }
+  .grain{
+    position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:.5;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.28'/%3E%3C/svg%3E");
+    mix-blend-mode:soft-light;
+  }
+
+  /* ============ NAV ============ */
+  header.nav{
+    position:fixed; top:0; left:0; right:0; z-index:60;
+    transition:background .4s var(--ease), box-shadow .4s var(--ease), backdrop-filter .4s;
+  }
+  header.nav.scrolled{
+    background:rgba(247,251,255,0.72);
+    backdrop-filter:blur(18px) saturate(140%);
+    -webkit-backdrop-filter:blur(18px) saturate(140%);
+    box-shadow:0 1px 0 rgba(159,198,238,0.4), 0 14px 40px -30px rgba(20,56,110,0.6);
+  }
+  .nav-inner{ display:flex; align-items:center; justify-content:space-between; height:74px; }
+  .brand{ display:flex; align-items:center; gap:.7rem; font-weight:800; letter-spacing:.04em; font-size:1.18rem; }
+  .brand .gem{ width:30px; height:30px; flex:none; }
+  .brand small{ display:block; font-size:.52rem; font-weight:600; letter-spacing:.34em; color:var(--ice-600); margin-top:2px; }
+  .nav-links{ display:flex; align-items:center; gap:2.1rem; }
+  .nav-links a.lnk{
+    font-size:.86rem; font-weight:600; color:var(--ink-2); position:relative; padding:.2em 0;
+  }
+  .nav-links a.lnk::after{
+    content:""; position:absolute; left:0; bottom:-2px; height:1.5px; width:0;
+    background:var(--ice-500); transition:width .35s var(--ease);
+  }
+  .nav-links a.lnk:hover::after,.nav-links a.lnk:focus-visible::after{ width:100%; }
+  .nav-cta{
+    display:inline-flex; align-items:center; gap:.5em;
+    padding:.62em 1.15em; border-radius:100px; font-size:.84rem; font-weight:700;
+    color:#063047; background:linear-gradient(135deg,#dff0ff,#bfe0ff);
+    border:1px solid rgba(255,255,255,.8);
+    box-shadow:0 8px 22px -12px rgba(47,107,181,.7), inset 0 1px 0 rgba(255,255,255,.9);
+    transition:transform .3s var(--ease), box-shadow .3s var(--ease);
+  }
+  .nav-cta:hover{ transform:translateY(-2px); box-shadow:0 14px 30px -12px rgba(47,107,181,.85), inset 0 1px 0 rgba(255,255,255,.9); }
+  .nav-toggle{ display:none; background:none; border:0; cursor:pointer; padding:.4rem; }
+  .nav-toggle span{ display:block; width:24px; height:2px; background:var(--ink); margin:5px 0; border-radius:2px; transition:.3s var(--ease); }
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:.55em;
+    font-weight:700; font-size:.94rem; letter-spacing:.01em; cursor:pointer;
+    padding:.95em 1.7em; border-radius:100px; border:1px solid transparent;
+    transition:transform .35s var(--ease), box-shadow .35s var(--ease), background .35s;
+    position:relative; overflow:hidden; white-space:nowrap;
+  }
+  .btn svg{ width:1.05em; height:1.05em; }
+  .btn-primary{
+    color:#fff;
+    background:linear-gradient(135deg,#4a8bd4 0%,#2f6bb5 55%,#1f5aa8 100%);
+    box-shadow:0 16px 34px -16px rgba(31,90,168,.85), inset 0 1px 0 rgba(255,255,255,.35);
+  }
+  .btn-primary::after{
+    content:""; position:absolute; top:0; left:-120%; width:60%; height:100%;
+    background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);
+    transform:skewX(-18deg); transition:left .7s var(--ease);
+  }
+  .btn-primary:hover{ transform:translateY(-3px); box-shadow:0 22px 44px -16px rgba(31,90,168,.95), inset 0 1px 0 rgba(255,255,255,.4); }
+  .btn-primary:hover::after{ left:130%; }
+  .btn-whats{
+    color:#06351f;
+    background:linear-gradient(135deg,#d4f4e0,#a7e9c4);
+    box-shadow:0 14px 30px -16px rgba(37,150,90,.7), inset 0 1px 0 rgba(255,255,255,.8);
+  }
+  .btn-whats:hover{ transform:translateY(-3px); box-shadow:0 20px 40px -16px rgba(37,150,90,.85), inset 0 1px 0 rgba(255,255,255,.8); }
+  .btn-ghost{
+    color:var(--ink); background:var(--glass-fill);
+    border:1px solid rgba(159,198,238,.6);
+    backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.7);
+  }
+  .btn-ghost:hover{ transform:translateY(-3px); background:rgba(255,255,255,.7); }
+  .btn-soon{ cursor:default; }
+  .btn-soon .soon-tag{
+    font-size:.62rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+    padding:.18em .55em; border-radius:100px; margin-left:.2em;
+    background:rgba(255,255,255,.28); color:rgba(255,255,255,.92);
+  }
+  .btn-soon:hover{ transform:translateY(-3px); }
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative; min-height:100svh; display:flex; align-items:center;
+    padding:120px 0 80px;
+  }
+  .hero-grid{
+    display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(2rem,5vw,5rem);
+    align-items:center; width:100%;
+  }
+  .hero-copy{ position:relative; z-index:3; }
+  .hero h1{
+    font-size:clamp(2.7rem,6.4vw,5.3rem); font-weight:800; letter-spacing:-0.035em;
+    margin:.5rem 0 0; color:var(--ink);
+  }
+  .hero h1 .shine{
+    background:linear-gradient(100deg,#2f6bb5 0%,#6fa9e2 30%,#bfe0ff 50%,#6fa9e2 70%,#2f6bb5 100%);
+    background-size:220% auto;
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    animation:shine 7s linear infinite;
+  }
+  @keyframes shine{ to{ background-position:220% center; } }
+  .hero h1 em{ font-style:normal; }
+  .hero-sub{
+    font-size:clamp(1.02rem,1.7vw,1.22rem); color:var(--slate); max-width:34ch;
+    margin-top:1.5rem; font-weight:400;
+  }
+  .hero-sub b{ color:var(--ink-2); font-weight:600; }
+  .hero-cta{ display:flex; flex-wrap:wrap; gap:.9rem; margin-top:2.2rem; }
+  .hero-langs{
+    display:flex; align-items:center; gap:1.1rem; margin-top:2.4rem; flex-wrap:wrap;
+    font-size:.82rem; color:var(--slate); font-weight:500;
+  }
+  .lang-pills{ display:flex; gap:.5rem; }
+  .lang-pills span{
+    display:inline-flex; align-items:center; justify-content:center;
+    min-width:2.7em; padding:.4em .7em; border-radius:100px;
+    background:var(--glass-fill); border:1px solid rgba(159,198,238,.55);
+    font-weight:700; font-size:.74rem; letter-spacing:.06em; color:var(--ice-600);
+    backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.7);
+  }
+  .rating-chip{
+    display:inline-flex; align-items:center; gap:.5em; margin-top:1.6rem;
+    padding:.5em .95em; border-radius:100px; font-size:.82rem; font-weight:600; color:var(--ink-2);
+    background:rgba(255,255,255,.6); border:1px solid rgba(159,198,238,.5);
+    box-shadow:var(--shadow-soft); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  }
+  .rating-chip .stars{ color:#f0a500; letter-spacing:.05em; }
+
+  /* hero crystal stage */
+  .hero-stage{ position:relative; z-index:2; aspect-ratio:1/1; }
+  .hero-stage svg{ width:100%; height:100%; overflow:visible; }
+  .float-card{
+    position:absolute; z-index:4; padding:.85rem 1.05rem; border-radius:16px;
+    background:rgba(255,255,255,.62); border:1px solid rgba(255,255,255,.85);
+    box-shadow:var(--shadow-ice); backdrop-filter:blur(16px) saturate(140%);
+    -webkit-backdrop-filter:blur(16px) saturate(140%);
+    display:flex; align-items:center; gap:.7rem; will-change:transform;
+  }
+  .float-card .ic{
+    width:34px; height:34px; flex:none; border-radius:10px;
+    display:grid; place-items:center; color:#fff;
+    background:linear-gradient(135deg,#6fa9e2,#2f6bb5);
+    box-shadow:0 6px 14px -6px rgba(47,107,181,.8);
+  }
+  .float-card .ic svg{ width:18px; height:18px; }
+  .float-card .ft{ font-size:.72rem; color:var(--slate); font-weight:500; line-height:1.2; }
+  .float-card .fv{ font-size:.94rem; color:var(--ink); font-weight:700; line-height:1.15; }
+  .fc-1{ top:6%; left:-4%; }
+  .fc-2{ bottom:11%; right:-6%; }
+  .fc-3{ bottom:-2%; left:8%; }
+
+  .scroll-hint{
+    position:absolute; bottom:26px; left:50%; transform:translateX(-50%);
+    display:flex; flex-direction:column; align-items:center; gap:.5rem;
+    font-size:.66rem; letter-spacing:.28em; text-transform:uppercase; color:var(--slate-2); font-weight:600;
+  }
+  .scroll-hint .track{ width:1px; height:42px; background:linear-gradient(var(--ice-400),transparent); position:relative; overflow:hidden; }
+  .scroll-hint .track::after{ content:""; position:absolute; top:-12px; left:0; width:1px; height:12px; background:var(--ice-600); animation:drop 2.4s var(--ease) infinite; }
+  @keyframes drop{ 0%{ top:-12px; } 60%,100%{ top:42px; } }
+
+  /* ============ MARQUEE ============ */
+  .marquee{
+    border-top:1px solid rgba(159,198,238,.4); border-bottom:1px solid rgba(159,198,238,.4);
+    background:rgba(255,255,255,.4); overflow:hidden; padding:1.1rem 0; backdrop-filter:blur(8px);
+  }
+  .marquee-track{ display:flex; gap:3.4rem; width:max-content; animation:marq 30s linear infinite; }
+  .marquee:hover .marquee-track{ animation-play-state:paused; }
+  .marquee-track span{ display:inline-flex; align-items:center; gap:.7rem; font-family:"Fraunces",serif; font-size:clamp(1.05rem,2.2vw,1.5rem); color:var(--ink-2); font-weight:400; white-space:nowrap; }
+  .marquee-track span i{ width:7px; height:7px; transform:rotate(45deg); background:linear-gradient(135deg,#6fa9e2,#bfe0ff); display:inline-block; }
+  @keyframes marq{ to{ transform:translateX(calc(-50% - 1.7rem)); } }
+
+  /* ============ SECTIONS shell ============ */
+  section{ position:relative; padding:clamp(5rem,10vw,8.5rem) 0; }
+  .sec-head{ max-width:720px; margin-bottom:clamp(2.6rem,5vw,4rem); }
+  .sec-head.center{ margin-inline:auto; text-align:center; }
+  .sec-head h2{
+    font-size:clamp(2rem,4.4vw,3.4rem); font-weight:800; letter-spacing:-0.03em; margin-top:1rem; color:var(--ink);
+  }
+  .sec-head p{ font-size:clamp(1rem,1.6vw,1.12rem); color:var(--slate); margin-top:1.1rem; max-width:52ch; }
+  .sec-head.center p{ margin-inline:auto; }
+
+  /* reveal */
+  .reveal{ opacity:0; transform:translateY(34px); transition:opacity .9s var(--ease), transform .9s var(--ease); }
+  .reveal.in{ opacity:1; transform:none; }
+  .reveal.d1{ transition-delay:.08s; } .reveal.d2{ transition-delay:.16s; }
+  .reveal.d3{ transition-delay:.24s; } .reveal.d4{ transition-delay:.32s; }
+
+  /* ============ WELCOME / TRUST ============ */
+  .welcome{ }
+  .welcome-grid{ display:grid; grid-template-columns:1.1fr 1fr; gap:clamp(2.4rem,5vw,5rem); align-items:center; }
+  .welcome-visual{ position:relative; aspect-ratio:1/1.04; }
+  .welcome-visual svg{ width:100%; height:100%; overflow:visible; }
+  .welcome-copy h2{ font-size:clamp(2rem,4.2vw,3.2rem); font-weight:800; letter-spacing:-0.03em; margin-top:1rem; color:var(--ink); }
+  .welcome-copy .lead{ font-size:clamp(1.05rem,1.7vw,1.2rem); color:var(--ink-2); margin-top:1.4rem; line-height:1.65; }
+  .welcome-copy p.body{ color:var(--slate); margin-top:1.1rem; }
+  .trust-list{ list-style:none; padding:0; margin:2rem 0 0; display:grid; gap:1rem; }
+  .trust-list li{ display:flex; gap:.95rem; align-items:flex-start; }
+  .trust-list .tick{
+    width:30px; height:30px; flex:none; border-radius:9px; display:grid; place-items:center; margin-top:1px;
+    background:linear-gradient(135deg,#dff0ff,#bfe0ff); color:#1f5aa8;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.9), 0 6px 14px -8px rgba(47,107,181,.6);
+  }
+  .trust-list .tick svg{ width:16px; height:16px; }
+  .trust-list b{ color:var(--ink); font-weight:700; }
+  .trust-list span.tx{ font-size:.96rem; color:var(--slate); }
+  .trust-list span.tx b{ display:block; margin-bottom:1px; font-size:1rem; }
+
+  /* ============ SERVICES ============ */
+  .svc-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:clamp(1.1rem,2.2vw,1.6rem); }
+  .svc-card{
+    position:relative; padding:2.2rem 2rem 2.1rem; border-radius:var(--radius); overflow:hidden;
+    background:rgba(255,255,255,.55); border:1px solid rgba(255,255,255,.8);
+    box-shadow:var(--shadow-soft); backdrop-filter:blur(14px) saturate(135%); -webkit-backdrop-filter:blur(14px) saturate(135%);
+    transition:transform .5s var(--ease), box-shadow .5s var(--ease), background .5s;
+  }
+  .svc-card::before{
+    content:""; position:absolute; inset:0; border-radius:inherit; padding:1px;
+    background:linear-gradient(140deg,rgba(255,255,255,.95),rgba(159,198,238,.35),transparent 60%);
+    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+    -webkit-mask-composite:xor; mask-composite:exclude; pointer-events:none; opacity:.9;
+  }
+  .svc-card .facet{
+    position:absolute; top:-40px; right:-40px; width:170px; height:170px; opacity:.5;
+    transition:transform .7s var(--ease), opacity .5s; pointer-events:none;
+  }
+  .svc-card:hover{ transform:translateY(-8px); box-shadow:var(--shadow-ice); background:rgba(255,255,255,.72); }
+  .svc-card:hover .facet{ transform:rotate(28deg) scale(1.12); opacity:.75; }
+  .svc-num{ font-family:"Fraunces",serif; font-size:.82rem; color:var(--ice-500); font-weight:500; letter-spacing:.1em; }
+  .svc-ico{
+    width:54px; height:54px; border-radius:15px; margin:1.1rem 0 1.3rem; display:grid; place-items:center; color:#fff;
+    background:linear-gradient(135deg,#6fa9e2,#2f6bb5); box-shadow:0 12px 24px -12px rgba(47,107,181,.9), inset 0 1px 0 rgba(255,255,255,.4);
+  }
+  .svc-ico svg{ width:26px; height:26px; }
+  .svc-card h3{ font-size:1.35rem; font-weight:700; letter-spacing:-0.02em; color:var(--ink); position:relative; }
+  .svc-card .badge{
+    display:inline-block; margin-left:.55em; vertical-align:middle; font-size:.6rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+    color:#1f5aa8; background:linear-gradient(135deg,#e7f3ff,#cfe6ff); padding:.32em .7em; border-radius:100px; border:1px solid rgba(255,255,255,.8);
+  }
+  .svc-card p{ color:var(--slate); margin-top:.8rem; font-size:.97rem; position:relative; }
+  .svc-card ul{ list-style:none; padding:0; margin:1.2rem 0 0; display:flex; flex-wrap:wrap; gap:.5rem; position:relative; }
+  .svc-card ul li{ font-size:.78rem; font-weight:600; color:var(--ink-2); padding:.35em .8em; border-radius:100px; background:rgba(223,240,255,.7); border:1px solid rgba(159,198,238,.45); }
+  .svc-card.feature{ grid-column:span 2; display:grid; grid-template-columns:1.3fr 1fr; gap:2rem; align-items:center; }
+  .svc-card.feature .feat-visual{ position:relative; aspect-ratio:1/.84; }
+  .svc-card.feature .feat-visual svg{ width:100%; height:100%; overflow:visible; }
+
+  /* ============ STORY / WHY ============ */
+  .story{ }
+  .story-grid{ display:grid; grid-template-columns:.85fr 1.15fr; gap:clamp(2.4rem,5vw,5rem); align-items:center; }
+  .story-visual{ position:relative; aspect-ratio:.92/1; }
+  .story-visual svg{ width:100%; height:100%; overflow:visible; }
+  .story-copy h2{ font-size:clamp(2rem,4.2vw,3.2rem); font-weight:800; letter-spacing:-0.03em; margin-top:1rem; color:var(--ink); }
+  .story-copy .q{ font-family:"Fraunces",serif; font-size:clamp(1.3rem,2.4vw,1.7rem); color:var(--ink-2); line-height:1.4; margin-top:1.6rem; font-weight:400; }
+  .story-copy p.body{ color:var(--slate); margin-top:1.3rem; }
+  .stat-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; margin-top:2.4rem; }
+  .stat{ position:relative; }
+  .stat .n{ font-size:clamp(1.9rem,3.6vw,2.6rem); font-weight:800; letter-spacing:-0.03em; color:var(--ice-600); font-family:"Manrope",sans-serif; }
+  .stat .n .serif{ font-family:"Fraunces",serif; font-weight:400; }
+  .stat .l{ font-size:.78rem; color:var(--slate); margin-top:.2rem; font-weight:500; }
+
+  /* ============ LOCATION ============ */
+  .loc-grid{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,4vw,3.5rem); align-items:stretch; }
+  .loc-card{
+    position:relative; padding:clamp(1.8rem,3.5vw,2.8rem); border-radius:var(--radius); overflow:hidden;
+    background:rgba(255,255,255,.6); border:1px solid rgba(255,255,255,.8);
+    box-shadow:var(--shadow-soft); backdrop-filter:blur(14px) saturate(135%); -webkit-backdrop-filter:blur(14px) saturate(135%);
+  }
+  .loc-card h3{ font-size:1.5rem; font-weight:700; letter-spacing:-0.02em; color:var(--ink); }
+  .info-row{ display:flex; gap:1rem; align-items:flex-start; padding:1.15rem 0; border-bottom:1px solid rgba(159,198,238,.32); }
+  .info-row:last-child{ border-bottom:0; padding-bottom:0; }
+  .info-row .ic{ width:42px; height:42px; flex:none; border-radius:12px; display:grid; place-items:center; color:#1f5aa8;
+    background:linear-gradient(135deg,#eaf4ff,#cfe6ff); box-shadow:inset 0 1px 0 rgba(255,255,255,.9); }
+  .info-row .ic svg{ width:20px; height:20px; }
+  .info-row .lab{ font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ice-600); font-weight:700; }
+  .info-row .val{ font-size:1.02rem; color:var(--ink); font-weight:600; margin-top:.15rem; }
+  .info-row .val a:hover{ color:var(--ice-600); }
+  .info-row .sub{ font-size:.86rem; color:var(--slate); margin-top:.15rem; }
+  .hours-mini{ margin-top:.7rem; display:grid; gap:.35rem; }
+  .hours-mini .hr{ display:flex; justify-content:space-between; font-size:.92rem; }
+  .hours-mini .hr .d{ color:var(--slate); }
+  .hours-mini .hr .t{ color:var(--ink); font-weight:600; }
+  .hours-mini .hr.closed .t{ color:#b04848; font-weight:600; }
+  .open-now{ display:inline-flex; align-items:center; gap:.5em; margin-top:1.1rem; font-size:.82rem; font-weight:600; color:#1c7a4a;
+    background:rgba(214,245,228,.7); border:1px solid rgba(120,200,160,.5); padding:.4em .85em; border-radius:100px; }
+  .open-now .dot{ width:8px; height:8px; border-radius:50%; background:#22a35e; box-shadow:0 0 0 0 rgba(34,163,94,.6); animation:pulse 2.2s infinite; }
+  @keyframes pulse{ 70%{ box-shadow:0 0 0 8px rgba(34,163,94,0); } 100%{ box-shadow:0 0 0 0 rgba(34,163,94,0); } }
+
+  /* stylised map */
+  .map-stage{ position:relative; min-height:340px; border-radius:var(--radius); overflow:hidden; display:flex; }
+  .map-stage svg{ width:100%; height:100%; }
+  .map-pin-card{
+    position:absolute; left:50%; top:46%; transform:translate(-50%,-50%);
+    background:rgba(255,255,255,.82); border:1px solid rgba(255,255,255,.9); border-radius:14px;
+    padding:.7rem 1rem; box-shadow:var(--shadow-ice); backdrop-filter:blur(12px); text-align:center; min-width:160px;
+  }
+  .map-pin-card .mt{ font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ice-600); font-weight:700; }
+  .map-pin-card .mn{ font-size:1rem; font-weight:800; color:var(--ink); }
+  .map-pin-card .ms{ font-size:.78rem; color:var(--slate); }
+  .map-pulse{ position:absolute; left:50%; top:46%; width:18px; height:18px; transform:translate(-50%,-50%); }
+  .map-pulse .core{ position:absolute; inset:0; border-radius:50%; background:#2f6bb5; box-shadow:0 0 12px rgba(47,107,181,.9); }
+  .map-pulse .ring{ position:absolute; inset:0; border-radius:50%; border:2px solid #2f6bb5; animation:ring 2.6s var(--ease) infinite; }
+  @keyframes ring{ 0%{ transform:scale(1); opacity:.8; } 100%{ transform:scale(4); opacity:0; } }
+
+  /* ============ CTA ============ */
+  .cta-sec{ padding-bottom:clamp(4rem,8vw,7rem); }
+  .cta-panel{
+    position:relative; border-radius:32px; overflow:hidden; padding:clamp(2.6rem,6vw,5rem) clamp(1.6rem,5vw,4.5rem);
+    background:linear-gradient(140deg,#0c2744 0%,#163a63 45%,#1f5391 100%);
+    box-shadow:0 40px 90px -40px rgba(12,39,68,.9), inset 0 1px 0 rgba(255,255,255,.12);
+    text-align:center; color:#fff;
+  }
+  .cta-panel .cta-crystals{ position:absolute; inset:0; pointer-events:none; opacity:.9; }
+  .cta-panel .cta-crystals svg{ width:100%; height:100%; }
+  .cta-inner{ position:relative; z-index:2; }
+  .cta-panel .eyebrow{ color:#9cc6ee; }
+  .cta-panel .eyebrow.center::before{ content:none; }
+  .cta-panel h2{ font-size:clamp(2.1rem,5vw,3.6rem); font-weight:800; letter-spacing:-0.03em; margin:1.1rem auto 0; max-width:18ch; color:#fff; }
+  .cta-panel h2 .shine{ background:linear-gradient(100deg,#bfe0ff,#fff,#bfe0ff); background-size:200% auto; -webkit-background-clip:text; background-clip:text; color:transparent; animation:shine 6s linear infinite; }
+  .cta-panel p{ color:rgba(220,235,251,.9); max-width:46ch; margin:1.3rem auto 0; font-size:clamp(1rem,1.7vw,1.15rem); }
+  .cta-btns{ display:flex; flex-wrap:wrap; gap:.9rem; justify-content:center; margin-top:2.4rem; }
+  .cta-btns .btn-ghost{ color:#fff; background:rgba(255,255,255,.1); border-color:rgba(255,255,255,.3); }
+  .cta-btns .btn-ghost:hover{ background:rgba(255,255,255,.2); }
+  .cta-mini{ margin-top:1.8rem; font-size:.84rem; color:rgba(195,221,246,.85); }
+  .cta-mini a{ color:#dff0ff; font-weight:600; }
+  .cta-mini a:hover{ text-decoration:underline; }
+
+  /* ============ FOOTER ============ */
+  footer.foot{ padding:clamp(3rem,6vw,5rem) 0 2.4rem; border-top:1px solid rgba(159,198,238,.4); background:rgba(255,255,255,.4); }
+  .foot-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:2.5rem; }
+  .foot-brand .brand{ font-size:1.3rem; }
+  .foot-brand p{ color:var(--slate); margin-top:1.1rem; max-width:34ch; font-size:.94rem; }
+  .foot-col h4{ font-size:.74rem; letter-spacing:.18em; text-transform:uppercase; color:var(--ice-600); font-weight:700; margin:0 0 1.1rem; }
+  .foot-col a, .foot-col p{ display:block; color:var(--slate); font-size:.94rem; margin-bottom:.7rem; }
+  .foot-col a:hover{ color:var(--ice-600); }
+  .foot-bottom{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem; margin-top:3rem; padding-top:1.6rem; border-top:1px solid rgba(159,198,238,.35); }
+  .foot-bottom small{ color:var(--slate-2); font-size:.82rem; }
+  .credit{ display:inline-flex; align-items:center; gap:.5em; font-size:.8rem; color:var(--slate-2); }
+  .credit a{ color:var(--ink-2); font-weight:600; position:relative; }
+  .credit a::after{ content:""; position:absolute; left:0; bottom:-1px; height:1px; width:0; background:var(--ice-500); transition:width .35s var(--ease); }
+  .credit a:hover{ color:var(--ice-600); }
+  .credit a:hover::after{ width:100%; }
+  .credit .spark{ width:13px; height:13px; }
+
+  .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
+  a:focus-visible,button:focus-visible{ outline:2px solid var(--ice-500); outline-offset:3px; border-radius:6px; }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width:980px){
+    .hero-grid{ grid-template-columns:1fr; gap:3rem; }
+    .hero-stage{ max-width:440px; margin-inline:auto; order:-1; }
+    .welcome-grid,.story-grid,.loc-grid{ grid-template-columns:1fr; }
+    .story-visual{ max-width:420px; margin-inline:auto; }
+    .welcome-visual{ max-width:440px; margin-inline:auto; }
+    .svc-card.feature{ grid-template-columns:1fr; }
+    .svc-card.feature .feat-visual{ max-width:360px; margin:0 auto; }
+    .foot-grid{ grid-template-columns:1fr 1fr; }
+    .foot-brand{ grid-column:span 2; }
+  }
+  @media (max-width:720px){
+    .nav-links{
+      position:fixed; inset:0 0 0 auto; width:min(78%,320px); flex-direction:column; align-items:flex-start; justify-content:center;
+      gap:1.6rem; padding:2rem 2.2rem; background:rgba(247,251,255,.95); backdrop-filter:blur(20px);
+      box-shadow:-20px 0 60px -30px rgba(20,56,110,.6); transform:translateX(105%); transition:transform .45s var(--ease); z-index:55;
+    }
+    .nav-links.open{ transform:translateX(0); }
+    .nav-links a.lnk{ font-size:1.1rem; }
+    .nav-toggle{ display:block; z-index:60; }
+    .nav-toggle.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2){ opacity:0; }
+    .nav-toggle.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+    .svc-grid{ grid-template-columns:1fr; }
+    .svc-card.feature{ grid-column:span 1; }
+    .stat-row{ grid-template-columns:1fr 1fr; }
+    .foot-grid{ grid-template-columns:1fr; }
+    .foot-brand{ grid-column:span 1; }
+    .float-card{ padding:.6rem .8rem; }
+    .float-card .ft{ font-size:.66rem; }
+    .float-card .fv{ font-size:.84rem; }
+    .fc-1{ left:-2%; } .fc-2{ right:-2%; }
+  }
+  @media (max-width:420px){
+    .hero h1{ font-size:2.45rem; }
+    .hero-cta .btn{ width:100%; }
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important; }
+    .reveal{ opacity:1 !important; transform:none !important; }
+    .hero h1 .shine,.cta-panel h2 .shine{ animation:none; color:#2f6bb5; -webkit-text-fill-color:#2f6bb5; }
+    .cta-panel h2 .shine{ color:#bfe0ff; -webkit-text-fill-color:#bfe0ff; }
+  }
+</style>
+
+
+<style id="shm-bk-style">
+.shm-bk *{box-sizing:border-box}
+.shm-bk-overlay{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;
+  padding:max(16px,env(safe-area-inset-top)) 16px;background:rgba(10,10,12,.55);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);font-family:var(--bk-sans)}
+.shm-bk-overlay.open{display:flex}
+.shm-bk-card{width:100%;max-width:480px;max-height:92vh;overflow:auto;background:var(--bk-panel);
+  color:var(--bk-ink);border-radius:var(--bk-r);box-shadow:0 30px 80px -20px rgba(0,0,0,.55),0 0 0 1px var(--bk-line);
+  padding:26px 26px 22px;transform:translateY(10px);opacity:0;transition:transform .42s cubic-bezier(.16,1,.3,1),opacity .42s}
+.shm-bk-overlay.open .shm-bk-card{transform:none;opacity:1}
+.shm-bk-eyebrow{font-size:.64rem;letter-spacing:.26em;text-transform:uppercase;color:var(--bk-accent);
+  font-weight:600;display:flex;align-items:center;gap:.6em;margin:0 0 .5rem}
+.shm-bk-eyebrow::before{content:"";width:.42em;height:.42em;border-radius:50%;background:var(--bk-accent)}
+.shm-bk h2.shm-bk-title{font-family:var(--bk-serif);font-weight:500;line-height:1.05;font-size:1.7rem;margin:0 0 .35rem}
+.shm-bk-sub{color:var(--bk-muted);font-size:.92rem;line-height:1.5;margin:0 0 1.15rem}
+.shm-bk-close{position:absolute;top:14px;right:16px;background:none;border:0;color:var(--bk-muted);
+  font-size:1.5rem;line-height:1;cursor:pointer;padding:6px;border-radius:8px}
+.shm-bk-close:hover{color:var(--bk-ink);background:var(--bk-line)}
+.shm-bk-card{position:relative}
+.shm-bk-label{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bk-muted);
+  font-weight:600;margin:1.1rem 0 .55rem}
+.shm-bk-row{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
+.shm-bk-chip{flex:0 0 auto;min-width:62px;text-align:center;padding:.6rem .7rem;border:1px solid var(--bk-line);
+  background:transparent;color:var(--bk-ink);border-radius:calc(var(--bk-r)*.6);cursor:pointer;
+  font:inherit;font-size:.8rem;transition:.18s;line-height:1.25}
+.shm-bk-chip small{display:block;font-size:.62rem;color:var(--bk-muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
+.shm-bk-chip:hover{border-color:var(--bk-accent)}
+.shm-bk-chip[aria-pressed="true"]{background:var(--bk-accent);color:var(--bk-accent-ink);border-color:var(--bk-accent)}
+.shm-bk-chip[aria-pressed="true"] small{color:var(--bk-accent-ink);opacity:.8}
+.shm-bk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(78px,1fr));gap:8px}
+.shm-bk-field{margin-top:.7rem}
+.shm-bk-field input,.shm-bk-field select,.shm-bk-field textarea{width:100%;padding:.7rem .8rem;border:1px solid var(--bk-line);
+  background:var(--bk-panel);color:var(--bk-ink);border-radius:calc(var(--bk-r)*.55);font:inherit;font-size:.9rem}
+.shm-bk-field input:focus,.shm-bk-field select:focus,.shm-bk-field textarea:focus{outline:2px solid var(--bk-accent);outline-offset:1px;border-color:var(--bk-accent)}
+.shm-bk-field input::placeholder,.shm-bk-field textarea::placeholder{color:var(--bk-muted)}
+.shm-bk-cta{width:100%;margin-top:1.25rem;padding:.95rem 1rem;border:0;border-radius:calc(var(--bk-r)*.55);
+  background:var(--bk-ink);color:var(--bk-panel);font:inherit;font-weight:600;letter-spacing:.04em;cursor:pointer;
+  font-size:.92rem;transition:.18s;display:flex;align-items:center;justify-content:center;gap:.5em}
+.shm-bk-cta:hover{filter:brightness(1.12)}
+.shm-bk-cta:disabled{opacity:.4;cursor:not-allowed}
+.shm-bk-ghost{display:block;text-align:center;margin-top:.7rem;padding:.85rem;border:1px solid var(--bk-line);
+  border-radius:calc(var(--bk-r)*.55);color:var(--bk-ink);text-decoration:none;font-size:.88rem;font-weight:600;transition:.18s}
+.shm-bk-ghost:hover{border-color:var(--bk-accent);color:var(--bk-accent)}
+.shm-bk-fine{font-size:.72rem;color:var(--bk-muted);text-align:center;margin:.95rem 0 0;line-height:1.45}
+.shm-bk-hide{display:none}
+.shm-bk-tick{width:54px;height:54px;border-radius:50%;background:var(--bk-accent);color:var(--bk-accent-ink);
+  display:flex;align-items:center;justify-content:center;font-size:1.7rem;margin:0 auto 1rem}
+.shm-bk-conf{text-align:center}
+.shm-bk-conf .shm-bk-title{font-size:1.5rem}
+.shm-bk-fab{position:fixed;left:50%;transform:translateX(-50%);bottom:20px;z-index:9998;
+  display:inline-flex;align-items:center;gap:.5em;padding:.85rem 1.4rem;border:0;border-radius:999px;
+  background:var(--bk-accent);color:var(--bk-accent-ink);font-family:var(--bk-sans);font-weight:600;
+  font-size:.92rem;letter-spacing:.02em;cursor:pointer;box-shadow:0 10px 30px -6px rgba(0,0,0,.42)}
+.shm-bk-fab:hover{transform:translateX(-50%) translateY(-2px);box-shadow:0 16px 40px -8px rgba(0,0,0,.52)}
+@media (max-width:520px){.shm-bk-fab{bottom:14px;font-size:.88rem;padding:.8rem 1.15rem}}
+@media (prefers-reduced-motion:reduce){.shm-bk-card{transition:none}}
+.shm-bk{--bk-accent:#4a8bd4;--bk-accent-ink:#ffffff;--bk-ink:#0c1f33;--bk-panel:#f4f8fc;--bk-muted:rgba(12,31,51,0.6);--bk-line:rgba(12,31,51,0.14);--bk-serif:"Fraunces", Georgia, serif;--bk-sans:"Manrope", system-ui, sans-serif;--bk-r:18px;}
+</style>
+
+</head>
+<body>
+
+<!-- ===== FROST BACKGROUND ===== -->
+<div class="frost-bg" aria-hidden="true">
+  <div class="frost-orb orb-a" data-parallax="0.06"></div>
+  <div class="frost-orb orb-b" data-parallax="0.09"></div>
+</div>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- shared SVG defs (gradients used across crystals) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="ice" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".5" stop-color="#d7ecff"/>
+      <stop offset="1" stop-color="#9cc6ee"/>
+    </linearGradient>
+    <linearGradient id="ice2" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#bfe0ff"/>
+      <stop offset="1" stop-color="#6fa9e2"/>
+    </linearGradient>
+    <linearGradient id="iceDeep" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6fa9e2"/>
+      <stop offset="1" stop-color="#1f5aa8"/>
+    </linearGradient>
+    <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#cdd9e8"/>
+    </linearGradient>
+    <linearGradient id="prism" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eaf4ff"/>
+      <stop offset=".4" stop-color="#c2ddf6"/>
+      <stop offset="1" stop-color="#a9caec"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="42%" r="60%">
+      <stop offset="0" stop-color="#dff0ff" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#dff0ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>
+
+<!-- ===== NAV ===== -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand" aria-label="LUCID Dental Clinic home">
+      <svg class="gem" viewBox="0 0 48 48" aria-hidden="true">
+        <polygon points="24,3 39,16 24,45 9,16" fill="url(#iceDeep)"/>
+        <polygon points="24,3 39,16 24,21 9,16" fill="url(#ice)" opacity=".95"/>
+        <polygon points="24,21 39,16 24,45" fill="url(#ice2)" opacity=".85"/>
+        <polygon points="9,16 24,21 24,45" fill="#3f78bf" opacity=".9"/>
+        <line x1="24" y1="3" x2="24" y2="45" stroke="#fff" stroke-width=".7" opacity=".5"/>
+      </svg>
+      <span>LUCID<small>DENTAL · SEOUL</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a class="lnk" href="#welcome">For Expats</a>
+      <a class="lnk" href="#services">Treatments</a>
+      <a class="lnk" href="#story">Our Studio</a>
+      <a class="lnk" href="#visit">Visit</a>
+      <a class="nav-cta" href="#contact">Book a Visit</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">English-Speaking Dentist · Gangnam</span>
+      <h1>Dentistry,<br/><span class="shine">crystal&nbsp;clear</span><em>.</em></h1>
+      <p class="hero-sub">A modern dental studio in Nonhyeon where international patients are understood, unhurried, and cared for — <b>entirely in English</b>. Same hands behind Seoul's most natural veneers.</p>
+      <div class="hero-cta">
+        <a class="btn btn-whats" href="#" id="waTop">
+          <!-- TODO: replace with real WhatsApp number, e.g. https://wa.me/8210XXXXXXXX -->
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.16c-.24.68-1.42 1.31-1.95 1.35-.5.04-.97.22-3.27-.68-2.77-1.09-4.5-3.93-4.64-4.11-.13-.18-1.1-1.46-1.1-2.79 0-1.33.7-1.98.94-2.25.24-.27.53-.34.7-.34.18 0 .35 0 .5.01.16.01.38-.06.59.45.24.58.81 2 .88 2.14.07.14.12.31.02.49-.09.18-.14.29-.27.45-.14.16-.29.36-.41.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.25.09 1.57.74 1.84.88.27.13.45.2.51.31.07.11.07.63-.17 1.31z"/></svg>
+          Chat on WhatsApp
+        </a>
+        <a class="btn btn-ghost" href="tel:+82262692875">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call +82 2-6269-2875
+        </a>
+      </div>
+      <div class="hero-langs">
+        <span>Care delivered in</span>
+        <div class="lang-pills" aria-label="Languages spoken">
+          <span>EN</span><span>한국어</span><span>日本語</span><span>中文</span>
+        </div>
+      </div>
+      <div class="rating-chip">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <span><b>4.9</b> · 138 Google reviews</span>
+      </div>
+    </div>
+
+    <div class="hero-stage" id="heroStage" aria-hidden="true">
+      <svg viewBox="0 0 480 480" id="heroCrystal">
+        <circle cx="240" cy="220" r="210" fill="url(#glow)"/>
+        <!-- refraction rays -->
+        <g id="rays" opacity=".7">
+          <polygon class="ray" points="240,220 470,150 470,180" fill="url(#prism)" opacity=".35"/>
+          <polygon class="ray" points="240,220 460,300 470,330" fill="url(#ice2)" opacity=".28"/>
+          <polygon class="ray" points="240,220 60,360 40,330" fill="url(#prism)" opacity=".3"/>
+          <polygon class="ray" points="240,220 30,150 50,120" fill="url(#ice)" opacity=".32"/>
+        </g>
+        <!-- orbiting small facets -->
+        <g id="orbit">
+          <g class="sat" data-r="170" data-a="0">
+            <polygon points="0,-16 14,0 0,28 -14,0" fill="url(#ice)" stroke="#fff" stroke-width=".6" opacity=".9"/>
+          </g>
+          <g class="sat" data-r="190" data-a="2.1">
+            <polygon points="0,-12 11,0 0,20 -11,0" fill="url(#ice2)" stroke="#fff" stroke-width=".6" opacity=".85"/>
+          </g>
+          <g class="sat" data-r="155" data-a="4.2">
+            <polygon points="0,-10 9,0 0,16 -9,0" fill="url(#silver)" stroke="#fff" stroke-width=".6" opacity=".9"/>
+          </g>
+        </g>
+        <!-- central crystal -->
+        <g id="bigCrystal" style="transform-origin:240px 220px">
+          <polygon points="240,60 360,160 300,360 180,360 120,160" fill="url(#prism)" opacity=".55"/>
+          <polygon points="240,60 360,160 240,210 120,160" fill="url(#ice)" opacity=".96"/>
+          <polygon points="240,210 360,160 300,360" fill="url(#ice2)" opacity=".82"/>
+          <polygon points="240,210 300,360 180,360" fill="url(#iceDeep)" opacity=".9"/>
+          <polygon points="240,210 180,360 120,160" fill="#4f86c9" opacity=".8"/>
+          <polygon points="240,60 240,210 120,160" fill="#ffffff" opacity=".5"/>
+          <!-- highlight edges -->
+          <polyline points="240,60 240,210" fill="none" stroke="#fff" stroke-width="1.4" opacity=".75"/>
+          <polyline points="120,160 240,210 360,160" fill="none" stroke="#fff" stroke-width="1.2" opacity=".6"/>
+          <polyline points="240,210 300,360 180,360 240,210" fill="none" stroke="#fff" stroke-width=".8" opacity=".4"/>
+          <!-- travelling glint -->
+          <polygon id="glint" points="240,60 360,160 240,210 120,160" fill="#fff" opacity="0"/>
+        </g>
+        <!-- caustic sparkles -->
+        <g id="sparks" fill="#fff">
+          <circle cx="150" cy="110" r="2.4" opacity=".9"/>
+          <circle cx="350" cy="120" r="1.8" opacity=".7"/>
+          <circle cx="330" cy="330" r="2.2" opacity=".8"/>
+          <circle cx="140" cy="320" r="1.6" opacity=".6"/>
+          <circle cx="240" cy="40" r="2.6" opacity=".95"/>
+        </g>
+      </svg>
+
+      <div class="float-card fc-1" data-float="14">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></div>
+        <div><div class="ft">Booking &amp; care in</div><div class="fv">Fluent English</div></div>
+      </div>
+      <div class="float-card fc-2" data-float="-12">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3L22 9l-5 4.7L18.2 21 12 17.3 5.8 21 7 13.7 2 9l7.1-.7z"/></svg></div>
+        <div><div class="ft">Signature</div><div class="fv">Lucinate Veneers</div></div>
+      </div>
+      <div class="float-card fc-3" data-float="9">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/></svg></div>
+        <div><div class="ft">Steps from</div><div class="fv">Nonhyeon Stn</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="track"></div>
+  </div>
+</section>
+
+<!-- ===== MARQUEE ===== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span><i></i> English-speaking team</span>
+    <span><i></i> WhatsApp welcome</span>
+    <span><i></i> Lucinate veneers</span>
+    <span><i></i> Gentle whitening</span>
+    <span><i></i> Implants</span>
+    <span><i></i> Orthodontics</span>
+    <span><i></i> 4.9★ on Google</span>
+    <span><i></i> English-speaking team</span>
+    <span><i></i> WhatsApp welcome</span>
+    <span><i></i> Lucinate veneers</span>
+    <span><i></i> Gentle whitening</span>
+    <span><i></i> Implants</span>
+    <span><i></i> Orthodontics</span>
+    <span><i></i> 4.9★ on Google</span>
+  </div>
+</div>
+
+<!-- ===== WELCOME / ENGLISH TRUST ===== -->
+<section class="welcome" id="welcome">
+  <div class="wrap welcome-grid">
+    <div class="welcome-visual reveal" aria-hidden="true">
+      <svg viewBox="0 0 460 480" id="welcomeCrystal">
+        <circle cx="230" cy="240" r="200" fill="url(#glow)"/>
+        <!-- frosted panel -->
+        <rect x="70" y="80" width="320" height="320" rx="28" fill="#ffffff" opacity=".45"/>
+        <rect x="70" y="80" width="320" height="320" rx="28" fill="none" stroke="#fff" stroke-width="1.4" opacity=".7"/>
+        <!-- layered facets forming a shield-like clarity mark -->
+        <g class="drift" style="transform-origin:230px 240px">
+          <polygon points="230,120 320,200 230,360 140,200" fill="url(#prism)" opacity=".6"/>
+          <polygon points="230,120 320,200 230,250 140,200" fill="url(#ice)" opacity=".95"/>
+          <polygon points="230,250 320,200 230,360" fill="url(#ice2)" opacity=".82"/>
+          <polygon points="230,250 230,360 140,200" fill="url(#iceDeep)" opacity=".88"/>
+          <polyline points="230,120 230,360" fill="none" stroke="#fff" stroke-width="1.2" opacity=".6"/>
+          <polyline points="140,200 230,250 320,200" fill="none" stroke="#fff" stroke-width="1" opacity=".5"/>
+        </g>
+        <!-- chat bubbles: bilingual welcome -->
+        <g class="bub b1">
+          <rect x="96" y="150" width="118" height="40" rx="14" fill="#fff" opacity=".92"/>
+          <text x="112" y="175" font-family="Manrope,sans-serif" font-size="15" font-weight="700" fill="#1f5aa8">Hello! 👋</text>
+        </g>
+        <g class="bub b2">
+          <rect x="250" y="300" width="118" height="40" rx="14" fill="url(#iceDeep)" opacity=".95"/>
+          <text x="266" y="325" font-family="Manrope,sans-serif" font-size="15" font-weight="700" fill="#fff">어서오세요</text>
+        </g>
+        <g id="welcSparks" fill="#fff">
+          <circle cx="120" cy="120" r="2.2" opacity=".8"/>
+          <circle cx="340" cy="140" r="1.8" opacity=".7"/>
+          <circle cx="330" cy="350" r="2.4" opacity=".85"/>
+          <circle cx="110" cy="350" r="1.6" opacity=".6"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="welcome-copy">
+      <span class="eyebrow reveal">A Clinic That Speaks Your Language</span>
+      <h2 class="reveal d1">You'll never feel lost in translation here.</h2>
+      <p class="lead reveal d1">Moving to Seoul is enough to navigate without decoding a dental chart in Korean. At LUCID, your consultation, your treatment plan, and every follow-up happen in clear, confident English.</p>
+      <p class="body reveal d2">Our team treats a truly international community day to day — expats, students and visitors, with care also offered in Japanese and Chinese. You ask the questions you'd ask back home, and you get real answers before anything begins.</p>
+      <ul class="trust-list">
+        <li class="reveal d2">
+          <span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span>
+          <span class="tx"><b>English from hello to follow-up</b>Consults, quotes and aftercare explained plainly — no guesswork, no awkward translation apps.</span>
+        </li>
+        <li class="reveal d3">
+          <span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span>
+          <span class="tx"><b>Message us first on WhatsApp</b>Ask about a treatment, share a photo, or check availability — a quick chat before you ever step in.</span>
+        </li>
+        <li class="reveal d3">
+          <span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+          <span class="tx"><b>A multilingual welcome</b>English, Korean, Japanese and Chinese — a familiar face for Seoul's international community.</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow center reveal">Treatments</span>
+      <h2 class="reveal d1">Crafted care, every facet considered.</h2>
+      <p class="reveal d2">From a brighter everyday smile to fully reimagined teeth — precise, gentle dentistry, with veneers as our signature craft.</p>
+    </div>
+
+    <div class="svc-grid">
+      <!-- feature card: veneers -->
+      <article class="svc-card feature reveal">
+        <div>
+          <span class="svc-num">01 — Signature</span>
+          <div class="svc-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3L22 9l-5 4.7L18.2 21 12 17.3 5.8 21 7 13.7 2 9l7.1-.7z"/></svg></div>
+          <h3>Veneers <span class="badge">Lucinate</span></h3>
+          <p>The artistry the clinic is known for. Our Lucinate veneers are designed tooth by tooth for a finish that catches light like the real thing — natural translucency, balanced proportions, nothing overdone. We shape your smile around your face, not a template.</p>
+          <ul>
+            <li>Smile design preview</li><li>Minimal-prep options</li><li>Natural translucency</li><li>Colour matched</li>
+          </ul>
+        </div>
+        <div class="feat-visual" aria-hidden="true">
+          <svg viewBox="0 0 360 300" id="veneerCrystal">
+            <circle cx="180" cy="150" r="140" fill="url(#glow)"/>
+            <!-- a row of luminous "tooth" facets -->
+            <g class="shimmer">
+              <g transform="translate(70,90)"><polygon points="0,0 40,0 36,70 4,70" rx="6" fill="url(#ice)" stroke="#fff" stroke-width="1" opacity=".96"/><polyline points="20,0 20,70" fill="none" stroke="#bfe0ff" stroke-width=".8" opacity=".7"/></g>
+              <g transform="translate(116,82)"><polygon points="0,0 46,0 42,80 4,80" fill="url(#silver)" stroke="#fff" stroke-width="1" opacity=".98"/><polyline points="23,0 23,80" fill="none" stroke="#bfe0ff" stroke-width=".8" opacity=".7"/></g>
+              <g transform="translate(168,82)"><polygon points="0,0 46,0 42,80 4,80" fill="url(#ice)" stroke="#fff" stroke-width="1" opacity=".98"/><polyline points="23,0 23,80" fill="none" stroke="#bfe0ff" stroke-width=".8" opacity=".7"/></g>
+              <g transform="translate(220,90)"><polygon points="0,0 40,0 36,70 4,70" fill="url(#prism)" stroke="#fff" stroke-width="1" opacity=".96"/><polyline points="20,0 20,70" fill="none" stroke="#bfe0ff" stroke-width=".8" opacity=".7"/></g>
+            </g>
+            <!-- sweeping light bar -->
+            <rect id="veneerSweep" x="40" y="60" width="34" height="190" fill="#fff" opacity="0" transform="skewX(-16)"/>
+            <g fill="#fff">
+              <circle cx="110" cy="70" r="2.2" opacity=".85"/><circle cx="250" cy="80" r="1.8" opacity=".7"/><circle cx="180" cy="210" r="2.4" opacity=".8"/>
+            </g>
+          </svg>
+        </div>
+      </article>
+
+      <!-- whitening -->
+      <article class="svc-card reveal d1">
+        <svg class="facet" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,6 90,40 50,94 10,40" fill="url(#ice)" opacity=".7"/><polygon points="50,6 90,40 50,50 10,40" fill="#fff" opacity=".5"/></svg>
+        <span class="svc-num">02</span>
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></div>
+        <h3>Whitening</h3>
+        <p>Brighter in a way that still looks like you. Gentle, enamel-safe whitening with a shade we agree on together — refreshed in a single visit or guided at home.</p>
+        <ul><li>In-clinic session</li><li>Take-home kits</li><li>Low-sensitivity</li></ul>
+      </article>
+
+      <!-- implants -->
+      <article class="svc-card reveal d2">
+        <svg class="facet" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,6 90,40 50,94 10,40" fill="url(#ice2)" opacity=".7"/><polygon points="50,6 90,40 50,50 10,40" fill="#fff" opacity=".5"/></svg>
+        <span class="svc-num">03</span>
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8 2 6 5 6 9c0 5 1 7 2 11 .4 1.6 2 2 2.6 0 .3-1 .4-3 1.4-3s1.1 2 1.4 3c.6 2 2.2 1.6 2.6 0 1-4 2-6 2-11 0-4-2-7-6-7z"/></svg></div>
+        <h3>Implants</h3>
+        <p>A confident replacement for a missing tooth — planned carefully, placed precisely, and built to feel like it simply belongs. We walk you through every step in plain English.</p>
+        <ul><li>3D planning</li><li>Single &amp; multiple</li><li>Natural-look crowns</li></ul>
+      </article>
+
+      <!-- orthodontics -->
+      <article class="svc-card reveal d3">
+        <svg class="facet" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,6 90,40 50,94 10,40" fill="url(#prism)" opacity=".7"/><polygon points="50,6 90,40 50,50 10,40" fill="#fff" opacity=".5"/></svg>
+        <span class="svc-num">04</span>
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18M3 15h18"/><rect x="6" y="6" width="3" height="3" rx="1"/><rect x="15" y="15" width="3" height="3" rx="1"/></svg></div>
+        <h3>Orthodontics</h3>
+        <p>Straighter, calmer, more balanced — with discreet options that fit an expat schedule. Clear timelines and check-ins so you always know where things stand.</p>
+        <ul><li>Clear aligners</li><li>Discreet braces</li><li>Flexible reviews</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STORY / WHY ===== -->
+<section class="story" id="story">
+  <div class="wrap story-grid">
+    <div class="story-visual reveal" aria-hidden="true">
+      <svg viewBox="0 0 420 460" id="storyCrystal">
+        <circle cx="210" cy="230" r="190" fill="url(#glow)"/>
+        <!-- stacked frosted glass layers -->
+        <g class="layer l3" style="transform-origin:210px 230px"><rect x="60" y="120" width="300" height="220" rx="26" fill="#fff" opacity=".3"/></g>
+        <g class="layer l2" style="transform-origin:210px 230px"><rect x="84" y="100" width="252" height="220" rx="24" fill="#fff" opacity=".4"/></g>
+        <!-- prism in front -->
+        <g class="layer l1" style="transform-origin:210px 230px">
+          <polygon points="210,110 300,180 270,330 150,330 120,180" fill="url(#prism)" opacity=".6"/>
+          <polygon points="210,110 300,180 210,225 120,180" fill="url(#ice)" opacity=".96"/>
+          <polygon points="210,225 300,180 270,330" fill="url(#ice2)" opacity=".82"/>
+          <polygon points="210,225 270,330 150,330" fill="url(#iceDeep)" opacity=".88"/>
+          <polygon points="210,225 150,330 120,180" fill="#4f86c9" opacity=".8"/>
+          <polyline points="210,110 210,225" fill="none" stroke="#fff" stroke-width="1.2" opacity=".65"/>
+          <polyline points="120,180 210,225 300,180" fill="none" stroke="#fff" stroke-width="1" opacity=".55"/>
+        </g>
+        <g fill="#fff">
+          <circle cx="130" cy="130" r="2.4" opacity=".85"/><circle cx="300" cy="150" r="1.8" opacity=".7"/>
+          <circle cx="290" cy="330" r="2.2" opacity=".8"/><circle cx="120" cy="330" r="1.6" opacity=".6"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="story-copy">
+      <span class="eyebrow reveal">Our Studio</span>
+      <h2 class="reveal d1">Quiet precision, in the heart of Gangnam.</h2>
+      <p class="q reveal d1">"Clarity isn't only how we work — it's how it should feel to be a patient far from home."</p>
+      <p class="body reveal d2">LUCID is a mid-size clinic in Nonhyeon built around calm, unhurried care. No conveyor belt, no pressure — just a focused team that takes the time to understand what you want and explain how we'll get there. Veneers are where our craft shows most, but the same exacting standard runs through everything from a routine clean to a full smile design.</p>
+      <p class="body reveal d2">For international patients, that care extends beyond the chair: clear communication, honest planning, and a welcome that doesn't depend on speaking Korean.</p>
+      <div class="stat-row">
+        <div class="stat reveal d2"><div class="n">4.9<span class="serif">★</span></div><div class="l">138 Google reviews</div></div>
+        <div class="stat reveal d3"><div class="n">4<span class="serif">+</span></div><div class="l">Languages welcomed</div></div>
+        <div class="stat reveal d3"><div class="n">Mon–Sat</div><div class="l">Open six days a week</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LOCATION & HOURS ===== -->
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow center reveal">Visit Us</span>
+      <h2 class="reveal d1">Easy to find. Easy to reach.</h2>
+      <p class="reveal d2">In the Gangnam / Nonhyeon district — a short walk from the subway, open six days a week, and one message away on WhatsApp.</p>
+    </div>
+
+    <div class="loc-grid">
+      <div class="loc-card reveal">
+        <h3>Hours &amp; contact</h3>
+        <div class="info-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <div>
+            <div class="lab">Opening hours</div>
+            <div class="hours-mini">
+              <div class="hr"><span class="d">Monday — Saturday</span><span class="t">10:00 – 18:00</span></div>
+              <div class="hr closed"><span class="d">Sunday</span><span class="t">Closed</span></div>
+            </div>
+            <span class="open-now" id="openNow"><span class="dot"></span><span id="openTxt">Open now</span></span>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div>
+            <div class="lab">Call the clinic</div>
+            <div class="val"><a href="tel:+82262692875">+82 2-6269-2875</a></div>
+            <div class="sub">English-speaking reception</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.16c-.24.68-1.42 1.31-1.95 1.35-.5.04-.97.22-3.27-.68-2.77-1.09-4.5-3.93-4.64-4.11-.13-.18-1.1-1.46-1.1-2.79 0-1.33.7-1.98.94-2.25.24-.27.53-.34.7-.34.18 0 .35 0 .5.01.16.01.38-.06.59.45.24.58.81 2 .88 2.14.07.14.12.31.02.49-.09.18-.14.29-.27.45-.14.16-.29.36-.41.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.25.09 1.57.74 1.84.88.27.13.45.2.51.31.07.11.07.63-.17 1.31z"/></svg></div>
+          <div>
+            <div class="lab">Message on WhatsApp</div>
+            <div class="val"><a href="#" id="waMid"><!-- TODO: replace with real wa.me link -->Quickest English reply</a></div>
+            <div class="sub">Questions, photos &amp; availability</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/></svg></div>
+          <div>
+            <div class="lab">Neighbourhood</div>
+            <div class="val">Gangnam · Nonhyeon, Seoul</div>
+            <div class="sub">Steps from Nonhyeon Station</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="loc-card reveal d1" style="padding:0;">
+        <div class="map-stage" aria-hidden="true">
+          <svg viewBox="0 0 520 400" preserveAspectRatio="xMidYMid slice">
+            <rect width="520" height="400" fill="#eef5fd"/>
+            <!-- faceted river of streets -->
+            <g stroke="#cfe0f2" stroke-width="14" fill="none" stroke-linecap="round">
+              <path d="M-20,120 L560,90"/>
+              <path d="M-20,250 L560,270"/>
+              <path d="M120,-20 L90,420"/>
+              <path d="M330,-20 L360,420"/>
+            </g>
+            <g stroke="#dceaf8" stroke-width="6" fill="none" stroke-linecap="round">
+              <path d="M-20,60 L560,40"/>
+              <path d="M-20,330 L560,350"/>
+              <path d="M220,-20 L210,420"/>
+              <path d="M440,-20 L460,420"/>
+            </g>
+            <!-- soft blocks -->
+            <g fill="#e3eefb">
+              <rect x="140" y="100" width="160" height="130" rx="10"/>
+              <rect x="380" y="110" width="110" height="120" rx="10"/>
+              <rect x="150" y="290" width="180" height="80" rx="10"/>
+            </g>
+            <!-- frosted clinic block -->
+            <rect x="210" y="150" width="120" height="120" rx="14" fill="#ffffff" opacity=".7"/>
+            <polygon points="270,170 300,195 270,250 240,195" fill="url(#iceDeep)" opacity=".25"/>
+          </svg>
+          <div class="map-pulse"><div class="ring"></div><div class="core"></div></div>
+          <div class="map-pin-card">
+            <div class="mt">You'll find us at</div>
+            <div class="mn">LUCID Dental</div>
+            <div class="ms">Nonhyeon, Gangnam-gu</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA / CONTACT ===== -->
+<section class="cta-sec" id="contact">
+  <div class="wrap">
+    <div class="cta-panel reveal">
+      <div class="cta-crystals" aria-hidden="true">
+        <svg viewBox="0 0 1100 460" preserveAspectRatio="xMidYMid slice">
+          <g opacity=".5">
+            <polygon class="cfacet" points="120,40 200,110 140,260 60,150" fill="url(#ice2)" opacity=".25"/>
+            <polygon class="cfacet" points="940,60 1030,150 980,300 880,200" fill="url(#prism)" opacity=".2"/>
+            <polygon class="cfacet" points="560,-20 640,60 560,210 480,60" fill="url(#ice)" opacity=".14"/>
+          </g>
+          <g fill="#bfe0ff">
+            <circle cx="200" cy="90" r="2.4" opacity=".7"/><circle cx="880" cy="120" r="2" opacity=".6"/>
+            <circle cx="540" cy="300" r="2.6" opacity=".7"/><circle cx="320" cy="360" r="1.8" opacity=".5"/>
+            <circle cx="760" cy="340" r="2.2" opacity=".6"/>
+          </g>
+        </svg>
+      </div>
+      <div class="cta-inner">
+        <span class="eyebrow center">Ready When You Are</span>
+        <h2>Your clearest smile<br/>starts with a <span class="shine">hello</span>.</h2>
+        <p>Tell us what's on your mind — a check-up, a brighter smile, or veneers you've been considering. We'll reply in English and find a time that works for you.</p>
+        <div class="cta-btns">
+          <a class="btn btn-whats" href="#" id="waBottom">
+            <!-- TODO: replace with real WhatsApp number -->
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.16c-.24.68-1.42 1.31-1.95 1.35-.5.04-.97.22-3.27-.68-2.77-1.09-4.5-3.93-4.64-4.11-.13-.18-1.1-1.46-1.1-2.79 0-1.33.7-1.98.94-2.25.24-.27.53-.34.7-.34.18 0 .35 0 .5.01.16.01.38-.06.59.45.24.58.81 2 .88 2.14.07.14.12.31.02.49-.09.18-.14.29-.27.45-.14.16-.29.36-.41.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.25.09 1.57.74 1.84.88.27.13.45.2.51.31.07.11.07.63-.17 1.31z"/></svg>
+            Chat on WhatsApp
+          </a>
+          <a class="btn btn-primary" href="tel:+82262692875">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call the clinic
+          </a>
+          <button class="btn btn-ghost btn-soon" id="bookBtn" type="button" aria-disabled="true" title="Online booking is coming soon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            Book Online <span class="soon-tag">Soon</span>
+          </button>
+        </div>
+        <p class="cta-mini" id="bookHint">Online booking is arriving shortly — for now, WhatsApp or a quick call is the fastest way to reserve your visit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="brand">
+          <svg class="gem" viewBox="0 0 48 48" aria-hidden="true">
+            <polygon points="24,3 39,16 24,45 9,16" fill="url(#iceDeep)"/>
+            <polygon points="24,3 39,16 24,21 9,16" fill="url(#ice)" opacity=".95"/>
+            <polygon points="24,21 39,16 24,45" fill="url(#ice2)" opacity=".85"/>
+            <polygon points="9,16 24,21 24,45" fill="#3f78bf" opacity=".9"/>
+          </svg>
+          <span>LUCID<small>DENTAL · SEOUL</small></span>
+        </a>
+        <p>An English-speaking dental studio in Gangnam, Seoul — welcoming international patients with calm, considered care and signature veneers.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Visit</h4>
+        <p>Gangnam · Nonhyeon, Seoul</p>
+        <p>Mon – Sat · 10:00 – 18:00</p>
+        <p>Sunday · Closed</p>
+        <a href="tel:+82262692875">+82 2-6269-2875</a>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="#welcome">For Expats</a>
+        <a href="#services">Treatments</a>
+        <a href="#story">Our Studio</a>
+        <a href="#contact">Book a Visit</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <small>© <span id="yr">2026</span> LUCID Dental Clinic · 루시드치과의원 · Seoul, Korea</small>
+      <span class="credit">
+        <svg class="spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2l1.6 6.4L20 10l-6.4 1.6L12 18l-1.6-6.4L4 10l6.4-1.6z"/></svg>
+        Designed by <a href="https://stellarhausmedia.com" target="_blank" rel="noopener">Stellar Haus Media</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- year ---- */
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  /* ---- nav scroll state ---- */
+  var nav = document.getElementById('nav');
+  var onScroll = function(){
+    if(window.scrollY > 24) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* ---- mobile menu ---- */
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  var closeMenu = function(){ links.classList.remove('open'); toggle.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); };
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true':'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeMenu(); });
+
+  /* ---- reveal on scroll ---- */
+  var revs = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    revs.forEach(function(el){ io.observe(el); });
+  } else {
+    revs.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* ---- open-now logic (Seoul hours Mon–Sat 10–18) ---- */
+  (function(){
+    var chip = document.getElementById('openNow');
+    var txt = document.getElementById('openTxt');
+    if(!chip) return;
+    try{
+      var now = new Date();
+      var seoul = new Date(now.toLocaleString('en-US',{timeZone:'Asia/Seoul'}));
+      var day = seoul.getDay(); // 0 Sun
+      var h = seoul.getHours();
+      var open = (day >= 1 && day <= 6) && (h >= 10 && h < 18);
+      if(open){
+        txt.textContent = 'Open now · until 18:00';
+      } else {
+        chip.style.background = 'rgba(245,228,228,.7)';
+        chip.style.borderColor = 'rgba(210,150,150,.5)';
+        chip.querySelector('.dot').style.background = '#c25b5b';
+        chip.querySelector('.dot').style.boxShadow = 'none';
+        txt.textContent = (day===0) ? 'Closed Sunday · back Monday 10:00' : 'Closed now · opens 10:00';
+        txt.style.color = '#9c4343';
+      }
+    }catch(e){}
+  })();
+
+  /* ---- Book Online demo "coming soon" ---- */
+  var bookBtn = document.getElementById('bookBtn');
+  var bookHint = document.getElementById('bookHint');
+  if(bookBtn){
+    bookBtn.addEventListener('click', function(){
+      var orig = bookHint.textContent;
+      bookHint.textContent = 'Online booking isn’t live just yet — tap WhatsApp or call and we’ll book you in right away.';
+      bookHint.style.color = '#dff0ff';
+      bookBtn.animate(
+        [{transform:'translateY(-3px)'},{transform:'translateY(-3px) scale(1.03)'},{transform:'translateY(-3px)'}],
+        {duration:420, easing:'cubic-bezier(.22,1,.36,1)'}
+      );
+      clearTimeout(bookBtn._t);
+      bookBtn._t = setTimeout(function(){ bookHint.textContent = orig; bookHint.style.color=''; }, 5200);
+    });
+  }
+
+  if(reduce) return; /* skip continuous motion below */
+
+  /* ---- background + float parallax (rAF throttled) ---- */
+  var parX = document.querySelectorAll('[data-parallax]');
+  var floats = document.querySelectorAll('[data-float]');
+  var sy = window.scrollY, ticking = false;
+  var applyParallax = function(){
+    parX.forEach(function(el){
+      var sp = parseFloat(el.getAttribute('data-parallax'));
+      el.style.transform = 'translate3d(0,'+(sy*sp)+'px,0)';
+    });
+    floats.forEach(function(el){
+      var sp = parseFloat(el.getAttribute('data-float'));
+      var r = el.getBoundingClientRect();
+      var center = window.innerHeight/2;
+      var d = (r.top + r.height/2 - center)/center;
+      el.style.transform = 'translate3d(0,'+(d*sp)+'px,0)';
+    });
+    ticking = false;
+  };
+  window.addEventListener('scroll', function(){
+    sy = window.scrollY;
+    if(!ticking){ requestAnimationFrame(applyParallax); ticking = true; }
+  }, {passive:true});
+  applyParallax();
+
+  /* ---- HERO crystal: slow rotation, orbiting satellites, refraction glint ---- */
+  var big = document.getElementById('bigCrystal');
+  var glint = document.getElementById('glint');
+  var sats = document.querySelectorAll('#orbit .sat');
+  var rays = document.getElementById('rays');
+  var sparks = document.querySelectorAll('#sparks circle, #welcSparks circle');
+  var t0 = performance.now();
+
+  function frame(now){
+    var t = (now - t0)/1000;
+
+    /* gentle 3D-ish tilt of the central crystal */
+    if(big){
+      var tilt = Math.sin(t*0.5)*4;
+      var bob = Math.sin(t*0.7)*5;
+      big.style.transform = 'translateY('+bob+'px) rotate('+tilt*0.18+'deg)';
+    }
+
+    /* satellites orbit the crystal */
+    sats.forEach(function(s){
+      var r = parseFloat(s.getAttribute('data-r'));
+      var a0 = parseFloat(s.getAttribute('data-a'));
+      var a = a0 + t*0.42;
+      var x = 240 + Math.cos(a)*r;
+      var y = 220 + Math.sin(a)*r*0.62;
+      var spin = (a*42)%360;
+      s.setAttribute('transform','translate('+x.toFixed(1)+','+y.toFixed(1)+') rotate('+spin.toFixed(1)+')');
+    });
+
+    /* refraction rays slowly breathe */
+    if(rays){ rays.style.opacity = (0.45 + Math.sin(t*0.8)*0.22).toFixed(3); }
+
+    /* travelling light glint across the top facet */
+    if(glint){
+      var cyc = (t*0.5) % 1;        /* every 2s */
+      var g = cyc < 0.34 ? Math.sin(cyc/0.34*Math.PI) : 0;
+      glint.setAttribute('opacity', (g*0.85).toFixed(3));
+    }
+
+    /* caustic sparkle twinkle */
+    sparks.forEach(function(c,i){
+      var tw = 0.45 + Math.abs(Math.sin(t*1.6 + i*1.3))*0.55;
+      c.setAttribute('opacity', tw.toFixed(2));
+    });
+
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+
+  /* ---- veneer sweep: light bar wipes across teeth on view, looping while visible ---- */
+  var veneerSweep = document.getElementById('veneerSweep');
+  var veneerSVG = document.getElementById('veneerCrystal');
+  if(veneerSweep && veneerSVG && 'IntersectionObserver' in window){
+    var sweeping = false, raf2;
+    var runSweep = function(ts, start){
+      var p = (ts - start)/1500;
+      if(p >= 1){
+        veneerSweep.setAttribute('opacity','0');
+        sweeping = false; return;
+      }
+      var x = 40 + p*300;
+      var o = Math.sin(p*Math.PI)*0.7;
+      veneerSweep.setAttribute('x', x.toFixed(1));
+      veneerSweep.setAttribute('opacity', o.toFixed(3));
+      raf2 = requestAnimationFrame(function(n){ runSweep(n, start); });
+    };
+    var vio = new IntersectionObserver(function(ents){
+      ents.forEach(function(e){
+        if(e.isIntersecting && !sweeping){
+          sweeping = true;
+          requestAnimationFrame(function(n){ runSweep(n, n); });
+          /* repeat periodically while in view */
+          veneerSVG._iv = setInterval(function(){
+            if(!sweeping){ sweeping = true; requestAnimationFrame(function(n){ runSweep(n,n); }); }
+          }, 4200);
+        } else if(!e.isIntersecting){
+          clearInterval(veneerSVG._iv);
+        }
+      });
+    }, {threshold:0.4});
+    vio.observe(veneerSVG);
+  }
+
+})();
+</script>
+
+
+<!-- ============================================================
+  SHM BOOKING WIDGET  (demo / front-end only)
+  Captures a booking request and hands off to the clinic's real
+  channel (phone / LINE). To go LIVE to patients, replace the body
+  of submitBooking() below with your GoHighLevel calendar embed or
+  a POST to your GHL/Calendly endpoint.  -- Stellar Haus Media
+============================================================ -->
+<div class="shm-bk">
+<div class="shm-bk-overlay" id="shmbk" role="dialog" aria-modal="true" aria-labelledby="shmbk-title" aria-hidden="true">
+  <div class="shm-bk-card" role="document">
+    <button class="shm-bk-close" type="button" aria-label="Close booking" data-bk-close>&times;</button>
+
+    <div id="shmbk-step">
+      <p class="shm-bk-eyebrow">English-speaking care</p>
+      <h2 class="shm-bk-title" id="shmbk-title">Book your visit</h2>
+      <p class="shm-bk-sub">Pick a day and time that suits you — our front desk replies in English.</p>
+
+      <p class="shm-bk-label">Choose a day</p>
+      <div class="shm-bk-row" id="shmbk-days"></div>
+
+      <div id="shmbk-times-wrap" class="shm-bk-hide">
+        <p class="shm-bk-label">Choose a time</p>
+        <div class="shm-bk-grid" id="shmbk-times"></div>
+      </div>
+
+      <div id="shmbk-form" class="shm-bk-hide">
+        <div class="shm-bk-field"><input id="shmbk-name" type="text" placeholder="Your name" autocomplete="name"></div>
+        <div class="shm-bk-field"><input id="shmbk-phone" type="tel" placeholder="Phone number" autocomplete="tel"></div>
+        <div class="shm-bk-field"><input id="shmbk-email" type="email" placeholder="Email (optional)" autocomplete="email"></div>
+        <div class="shm-bk-field">
+          <select id="shmbk-reason">
+            <option value="">What brings you in?</option>
+            <option>Check-up &amp; cleaning</option>
+            <option>Implant or veneer consultation</option>
+            <option>Teeth whitening</option>
+            <option>Tooth pain / emergency</option>
+            <option>Something else</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="shm-bk-cta" id="shmbk-submit" type="button" disabled>Confirm booking</button>
+      <p class="shm-bk-fine">No payment now. We’ll confirm your appointment by text.</p>
+    </div>
+
+    <div id="shmbk-done" class="shm-bk-conf shm-bk-hide">
+      <div class="shm-bk-tick" aria-hidden="true">✓</div>
+      <h2 class="shm-bk-title">You’re all set<span id="shmbk-name-out"></span>.</h2>
+      <p class="shm-bk-sub" id="shmbk-summary"></p>
+      <a class="shm-bk-cta" id="shmbk-call" href="#" style="text-decoration:none">Call now to confirm</a>
+      <a class="shm-bk-ghost shm-bk-hide" id="shmbk-chan" href="#" target="_blank" rel="noopener"></a>
+      <p class="shm-bk-fine">We’ll reach out shortly to lock in your time.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+/* SHM booking widget — demo. See submitBooking() TODO to wire GoHighLevel/Calendly. */
+(function(){
+  var ov=document.getElementById('shmbk'); if(!ov) return;
+  var TEL="tel:+82262692875", CHAN="https://pf.kakao.com/_nxnSxkxj", CHANLABEL="Message us on KakaoTalk";
+  var state={day:null,time:null};
+  var daysEl=document.getElementById('shmbk-days'),
+      timesWrap=document.getElementById('shmbk-times-wrap'),
+      timesEl=document.getElementById('shmbk-times'),
+      formEl=document.getElementById('shmbk-form'),
+      submit=document.getElementById('shmbk-submit'),
+      lastTrigger=null;
+  var TIMES=["09:30","10:30","11:30","14:00","15:00","16:00","17:30"];
+  var DOW=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
+      MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+  function buildDays(){
+    daysEl.innerHTML=""; var d=new Date(), made=0;
+    while(made<8){ d.setDate(d.getDate()+1);
+      if(d.getDay()===0) continue;            // skip Sundays
+      var b=document.createElement('button'); b.type="button"; b.className="shm-bk-chip";
+      b.setAttribute('aria-pressed','false');
+      b.innerHTML="<small>"+DOW[d.getDay()]+"</small>"+d.getDate()+" "+MON[d.getMonth()];
+      b.dataset.label=DOW[d.getDay()]+", "+d.getDate()+" "+MON[d.getMonth()];
+      b.addEventListener('click',function(){ select(daysEl,this); state.day=this.dataset.label;
+        timesWrap.classList.remove('shm-bk-hide'); refresh(); });
+      daysEl.appendChild(b); made++;
+    }
+  }
+  function buildTimes(){
+    timesEl.innerHTML="";
+    TIMES.forEach(function(t){ var b=document.createElement('button'); b.type="button"; b.className="shm-bk-chip";
+      b.textContent=t; b.setAttribute('aria-pressed','false');
+      b.addEventListener('click',function(){ select(timesEl,this); state.time=t;
+        formEl.classList.remove('shm-bk-hide'); refresh(); });
+      timesEl.appendChild(b); });
+  }
+  function select(group,el){ Array.prototype.forEach.call(group.children,function(c){c.setAttribute('aria-pressed','false');});
+    el.setAttribute('aria-pressed','true'); }
+  function refresh(){ var n=document.getElementById('shmbk-name').value.trim(),
+        p=document.getElementById('shmbk-phone').value.trim();
+    submit.disabled=!(state.day&&state.time&&n&&p); }
+
+  /* ---- TODO (go live): replace this with your GoHighLevel calendar write / Calendly,
+     or POST {name,phone,email,reason,day,time} to your GHL inbound webhook. ---- */
+  function submitBooking(data){
+    console.warn("[SHM booking] DEMO submit — not sent anywhere. Wire submitBooking() to GoHighLevel before launch.", data);
+  }
+
+  function done(){
+    var name=document.getElementById('shmbk-name').value.trim();
+    submitBooking({name:name, phone:document.getElementById('shmbk-phone').value.trim(),
+      email:document.getElementById('shmbk-email').value.trim(),
+      reason:document.getElementById('shmbk-reason').value, day:state.day, time:state.time});
+    document.getElementById('shmbk-step').classList.add('shm-bk-hide');
+    var d=document.getElementById('shmbk-done'); d.classList.remove('shm-bk-hide');
+    document.getElementById('shmbk-name-out').textContent=name?(", "+name.split(" ")[0]):"";
+    document.getElementById('shmbk-summary').textContent="Requested: "+state.day+" at "+state.time+". We’ll confirm shortly.";
+    var call=document.getElementById('shmbk-call'); call.href=TEL;
+    if(CHAN){ var l=document.getElementById('shmbk-chan'); l.href=CHAN; l.textContent=CHANLABEL; l.classList.remove('shm-bk-hide'); }
+  }
+
+  function open(t){ lastTrigger=t||null; ov.classList.add('open'); ov.setAttribute('aria-hidden','false');
+    document.documentElement.style.overflow='hidden';
+    var f=ov.querySelector('.shm-bk-chip'); if(f) f.focus(); }
+  function close(){ ov.classList.remove('open'); ov.setAttribute('aria-hidden','true');
+    document.documentElement.style.overflow=''; if(lastTrigger&&lastTrigger.focus) lastTrigger.focus(); }
+
+  buildDays(); buildTimes();
+  ['shmbk-name','shmbk-phone'].forEach(function(id){document.getElementById(id).addEventListener('input',refresh);});
+  submit.addEventListener('click',done);
+  ov.addEventListener('click',function(e){ if(e.target===ov) close(); });
+  ov.querySelector('[data-bk-close]').addEventListener('click',close);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&ov.classList.contains('open')) close(); });
+  // simple focus trap
+  ov.addEventListener('keydown',function(e){ if(e.key!=='Tab')return;
+    var f=ov.querySelectorAll('button,a[href],input,select,textarea'); if(!f.length)return;
+    var first=f[0],last=f[f.length-1];
+    if(e.shiftKey&&document.activeElement===first){last.focus();e.preventDefault();}
+    else if(!e.shiftKey&&document.activeElement===last){first.focus();e.preventDefault();}
+  });
+
+  // ---- bind triggers: explicit hooks + any element whose label starts with "Book" ----
+  function isBookLabel(el){
+    var t=(el.textContent||"").replace(/[^a-z0-9 ]/gi," ").replace(/\s+/g," ").trim().toLowerCase();
+    if(!t || t.length>40) return false;                 // skip long paragraphs that merely contain "book"
+    return /\bbook/.test(t) || /\breserve\b/.test(t);   // \bbook matches "book"/"booking"/"book online soon"; NOT "facebook"
+  }
+  var sel='.js-book,.book-demo,[data-shm-book],a[href="#book"],a[href="#booking"]';
+  var bound=new Set();
+  function bind(el){ if(bound.has(el)||el.closest('.shm-bk'))return; bound.add(el);
+    el.removeAttribute('aria-disabled'); el.removeAttribute('disabled'); el.style.pointerEvents='auto';
+    // the booking now works, so drop any "coming soon / launching" badge inside the button
+    el.querySelectorAll('span,small,sup,em,i,b').forEach(function(s){
+      var st=(s.textContent||"").trim();
+      if(st.length<22 && /coming|soon|launch/i.test(st)) s.remove();
+    });
+    el.addEventListener('click',function(e){ e.preventDefault(); open(el); }); }
+  document.querySelectorAll(sel).forEach(bind);
+  document.querySelectorAll('a,button').forEach(function(el){ if(isBookLabel(el)) bind(el); });
+
+  // if the page has no booking CTA of its own, add a small themed one so booking is always reachable
+  if(bound.size===0){
+    var fab=document.createElement('button');
+    fab.type='button'; fab.className='shm-bk-fab'; fab.setAttribute('aria-label','Book online');
+    fab.innerHTML='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="vertical-align:-2px"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg> Book online';
+    fab.addEventListener('click',function(){ open(fab); });
+    (document.querySelector('.shm-bk')||document.body).appendChild(fab);
+  }
+})();
+</script>
+
+</body>
+</html>

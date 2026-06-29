@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rois Myeongdong Dental — English-Speaking Implant Clinic in Myeongdong, Seoul</title>
+<meta name="description" content="Rois Myeongdong Dental is an established implant clinic in the heart of Myeongdong, Seoul, welcoming international patients in English. Implants and general dentistry, Mon–Sat 10:00–20:00." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..600&family=Spline+Sans:wght@300..700&display=swap" rel="stylesheet" />
+<style>
+  /* ============================================================
+     ROIS MYEONGDONG DENTAL — "Myeongdong Beacon"
+     Palette: deep royal teal/blue · warm gold · welcoming white
+     Type: Bodoni Moda (display) + Spline Sans (humanist body)
+     ============================================================ */
+
+  :root {
+    /* Drenched royal field */
+    --royal-900: oklch(0.205 0.060 235);   /* deepest teal-navy */
+    --royal-800: oklch(0.255 0.072 234);
+    --royal-700: oklch(0.318 0.086 233);
+    --royal-600: oklch(0.392 0.094 232);
+    --royal-500: oklch(0.470 0.098 231);
+    --royal-tint: oklch(0.560 0.072 228);
+
+    /* Warm gold beacon */
+    --gold-300: oklch(0.905 0.075 86);
+    --gold-400: oklch(0.840 0.108 83);
+    --gold-500: oklch(0.795 0.128 80);      /* signature gold */
+    --gold-600: oklch(0.720 0.124 74);
+    --gold-ink: oklch(0.520 0.120 72);      /* AA-safe bronze-gold for labels on light bg (~5.4:1 on porcelain) */
+
+    /* Welcoming whites + inks */
+    --white: oklch(1 0 0);
+    --porcelain: oklch(0.985 0.004 230);    /* faint cool porcelain */
+    --mist: oklch(0.958 0.007 232);
+    --ink: oklch(0.235 0.040 235);          /* deep readable ink */
+    --ink-soft: oklch(0.405 0.038 234);     /* secondary text on light, ~5.3:1 */
+    --line: oklch(0.890 0.012 232);
+
+    /* on-dark text */
+    --on-dark: oklch(0.965 0.010 230);
+    --on-dark-soft: oklch(0.840 0.024 226); /* ~6:1 on royal-900 */
+
+    /* type */
+    --serif: "Bodoni Moda", "Times New Roman", serif;
+    --sans: "Spline Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+    /* rhythm */
+    --shell: min(92vw, 1240px);
+    --gap-section: clamp(5.5rem, 11vw, 10rem);
+
+    /* motion */
+    --e-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --e-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+
+    /* z-scale */
+    --z-base: 1;
+    --z-decor: 2;
+    --z-content: 3;
+    --z-nav: 50;
+    --z-overlay: 80;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  body {
+    margin: 0;
+    background: var(--porcelain);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: clamp(1rem, 0.95rem + 0.25vw, 1.075rem);
+    line-height: 1.62;
+    letter-spacing: 0.002em;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--serif);
+    font-weight: 600;
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  p { text-wrap: pretty; }
+  a { color: inherit; }
+
+  ::selection { background: var(--gold-500); color: var(--royal-900); }
+
+  .shell { width: var(--shell); margin-inline: auto; }
+
+  :focus-visible {
+    outline: 2.5px solid var(--gold-500);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+
+  .skip {
+    position: absolute; left: -999px; top: 0; z-index: var(--z-overlay);
+    background: var(--royal-900); color: var(--on-dark);
+    padding: 0.7rem 1.2rem; border-radius: 0 0 10px 0;
+    font-size: 0.9rem; font-weight: 500;
+  }
+  .skip:focus { left: 0; }
+
+  .eyebrow {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    color: var(--gold-ink);
+  }
+  .eyebrow::before {
+    content: ""; width: 1.7rem; height: 1px;
+    background: currentColor; opacity: 0.7;
+  }
+  .on-dark .eyebrow { color: var(--gold-400); }
+
+  /* ============================ NAV ============================ */
+  .nav {
+    position: fixed; inset: 0 0 auto 0; z-index: var(--z-nav);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: clamp(1rem, 2.2vw, 1.6rem) max(4vw, calc((100vw - 1240px) / 2 + 4vw));
+    transition: background 0.5s var(--e-out), backdrop-filter 0.5s var(--e-out),
+                box-shadow 0.5s var(--e-out), padding 0.4s var(--e-out);
+  }
+  .nav[data-scrolled="true"] {
+    background: color-mix(in oklab, var(--royal-900) 88%, transparent);
+    backdrop-filter: blur(14px) saturate(1.3);
+    -webkit-backdrop-filter: blur(14px) saturate(1.3);
+    box-shadow: 0 1px 0 color-mix(in oklab, var(--gold-500) 22%, transparent),
+                0 18px 40px -28px var(--royal-900);
+    padding-top: clamp(0.7rem, 1.4vw, 1rem);
+    padding-bottom: clamp(0.7rem, 1.4vw, 1rem);
+  }
+
+  .brand {
+    display: inline-flex; align-items: center; gap: 0.7rem;
+    text-decoration: none; color: var(--on-dark);
+  }
+  .brand__mark { width: 34px; height: 34px; flex: none; }
+  .brand__name {
+    font-family: var(--serif); font-weight: 600;
+    font-size: 1.18rem; letter-spacing: 0.01em; line-height: 1;
+  }
+  .brand__sub {
+    display: block; font-family: var(--sans);
+    font-size: 0.62rem; font-weight: 500; letter-spacing: 0.26em;
+    text-transform: uppercase; color: var(--gold-400);
+    margin-top: 0.2rem;
+  }
+
+  .nav__links { display: none; gap: clamp(1.4rem, 2.4vw, 2.4rem); align-items: center; }
+  .nav__links a {
+    text-decoration: none; color: var(--on-dark-soft);
+    font-size: 0.92rem; font-weight: 500; letter-spacing: 0.01em;
+    position: relative; padding: 0.3rem 0;
+    transition: color 0.3s var(--e-out);
+  }
+  .nav__links a::after {
+    content: ""; position: absolute; left: 0; bottom: -2px;
+    height: 1.5px; width: 100%; background: var(--gold-500);
+    transform: scaleX(0); transform-origin: right; opacity: 0;
+    transition: transform 0.4s var(--e-out), opacity 0.4s var(--e-out);
+  }
+  .nav__links a:hover, .nav__links a:focus-visible { color: var(--on-dark); }
+  .nav__links a:hover::after, .nav__links a:focus-visible::after {
+    transform: scaleX(1); transform-origin: left; opacity: 1;
+  }
+
+  .nav__cta {
+    display: none;
+    text-decoration: none; align-items: center; gap: 0.5rem;
+    background: var(--gold-500); color: var(--royal-900);
+    font-weight: 600; font-size: 0.92rem; letter-spacing: 0.01em;
+    padding: 0.66rem 1.25rem; border-radius: 999px;
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--gold-500) 60%, transparent);
+    transition: transform 0.35s var(--e-out), box-shadow 0.5s var(--e-out),
+                background 0.3s var(--e-out);
+  }
+  .nav__cta:hover, .nav__cta:focus-visible {
+    transform: translateY(-2px);
+    background: var(--gold-400);
+    box-shadow: 0 12px 30px -10px color-mix(in oklab, var(--gold-500) 70%, transparent);
+  }
+  .nav__cta svg { width: 15px; height: 15px; }
+
+  @media (min-width: 900px) {
+    .nav__links { display: flex; }
+    .nav__cta { display: inline-flex; }
+  }
+
+  /* ============================ HERO ============================ */
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex; align-items: center;
+    padding: clamp(7rem, 14vh, 11rem) 0 clamp(3rem, 8vh, 6rem);
+    background:
+      radial-gradient(125% 90% at 78% 8%, var(--royal-700) 0%, transparent 55%),
+      radial-gradient(140% 120% at 12% 100%, var(--royal-800) 0%, transparent 60%),
+      linear-gradient(168deg, var(--royal-900) 0%, var(--royal-800) 58%, var(--royal-900) 100%);
+    color: var(--on-dark);
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  /* layered beacon glow that pulses outward */
+  .beacon {
+    position: absolute; z-index: var(--z-base);
+    top: 4%; right: 4%;
+    width: clamp(30rem, 52vw, 56rem); aspect-ratio: 1;
+    pointer-events: none;
+    transform: translate(20%, -18%);
+  }
+  .beacon__ring {
+    position: absolute; inset: 0; margin: auto;
+    border-radius: 50%;
+    border: 1.5px solid color-mix(in oklab, var(--gold-500) 55%, transparent);
+    opacity: 0;
+    animation: beacon-pulse 6.5s var(--e-out-soft) infinite;
+  }
+  .beacon__ring:nth-child(2) { animation-delay: 2.16s; }
+  .beacon__ring:nth-child(3) { animation-delay: 4.33s; }
+  .beacon__core {
+    position: absolute; inset: 0; margin: auto;
+    width: 46%; aspect-ratio: 1; border-radius: 50%;
+    background: radial-gradient(circle, var(--gold-400) 0%, color-mix(in oklab, var(--gold-500) 50%, transparent) 38%, transparent 70%);
+    filter: blur(8px);
+    animation: beacon-breathe 6.5s ease-in-out infinite;
+  }
+  @keyframes beacon-pulse {
+    0%   { transform: scale(0.18); opacity: 0; }
+    12%  { opacity: 0.9; }
+    100% { transform: scale(1.25); opacity: 0; }
+  }
+  @keyframes beacon-breathe {
+    0%, 100% { opacity: 0.55; transform: scale(0.92); }
+    50%      { opacity: 0.95; transform: scale(1.06); }
+  }
+
+  /* drifting starlight specks — Myeongdong night sparkle */
+  .sparkles { position: absolute; inset: 0; z-index: var(--z-base); pointer-events: none; }
+  .sparkles span {
+    position: absolute; width: 3px; height: 3px; border-radius: 50%;
+    background: var(--gold-300);
+    box-shadow: 0 0 6px 1px color-mix(in oklab, var(--gold-400) 70%, transparent);
+    opacity: 0; animation: twinkle 5s ease-in-out infinite;
+  }
+  @keyframes twinkle {
+    0%, 100% { opacity: 0; transform: scale(0.4); }
+    50%      { opacity: 0.9; transform: scale(1); }
+  }
+
+  /* fine grid floor for depth */
+  .hero__grid {
+    position: absolute; inset: auto 0 0 0; height: 42%; z-index: var(--z-base);
+    background-image:
+      linear-gradient(color-mix(in oklab, var(--gold-500) 9%, transparent) 1px, transparent 1px),
+      linear-gradient(90deg, color-mix(in oklab, var(--gold-500) 9%, transparent) 1px, transparent 1px);
+    background-size: 64px 64px;
+    -webkit-mask-image: linear-gradient(to top, black, transparent);
+    mask-image: linear-gradient(to top, black, transparent);
+    transform: perspective(620px) rotateX(64deg) scale(2);
+    transform-origin: bottom; opacity: 0.6;
+  }
+
+  .hero__inner { position: relative; z-index: var(--z-content); width: var(--shell); margin-inline: auto; }
+  .hero__crown { width: clamp(58px, 8vw, 92px); height: auto; margin-bottom: clamp(1.4rem, 3vw, 2.2rem); display: block; }
+
+  .hero h1 {
+    font-size: clamp(2.9rem, 1.6rem + 6vw, 6rem);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 0.98;
+    max-width: 16ch;
+  }
+  .hero h1 em {
+    font-style: italic; font-weight: 500;
+    color: var(--gold-400);
+  }
+  .hero__lead {
+    margin: clamp(1.6rem, 3vw, 2.2rem) 0 0;
+    max-width: 52ch;
+    font-size: clamp(1.05rem, 1rem + 0.4vw, 1.28rem);
+    line-height: 1.62;
+    color: var(--on-dark-soft);
+    font-weight: 300;
+  }
+
+  .hero__actions {
+    display: flex; flex-wrap: wrap; gap: 0.9rem;
+    margin-top: clamp(2rem, 4vw, 2.8rem);
+  }
+
+  /* meta strip under hero */
+  .hero__meta {
+    display: flex; flex-wrap: wrap; gap: clamp(1.2rem, 4vw, 3rem);
+    margin-top: clamp(2.6rem, 5vw, 3.6rem);
+    padding-top: clamp(1.6rem, 3vw, 2.2rem);
+    border-top: 1px solid color-mix(in oklab, var(--gold-500) 24%, transparent);
+  }
+  .hero__meta div { display: flex; flex-direction: column; gap: 0.2rem; }
+  .hero__meta dt {
+    font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--gold-400); font-weight: 600;
+  }
+  .hero__meta dd {
+    margin: 0; font-family: var(--serif); font-size: 1.18rem; font-weight: 500;
+    color: var(--on-dark); letter-spacing: 0;
+  }
+  .hero__meta dd small { font-family: var(--sans); font-size: 0.82rem; color: var(--on-dark-soft); font-weight: 400; }
+
+  /* ============================ BUTTONS ============================ */
+  .btn {
+    --bg: var(--gold-500); --fg: var(--royal-900);
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    font-family: var(--sans); font-weight: 600; font-size: 1rem;
+    letter-spacing: 0.005em; text-decoration: none; cursor: pointer;
+    padding: 0.92rem 1.6rem; border-radius: 999px; border: none;
+    background: var(--bg); color: var(--fg);
+    position: relative; isolation: isolate; overflow: hidden;
+    transition: transform 0.4s var(--e-out), box-shadow 0.5s var(--e-out);
+  }
+  .btn::before {
+    content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit;
+    background: linear-gradient(110deg, transparent 0%, color-mix(in oklab, var(--white) 55%, transparent) 50%, transparent 100%);
+    transform: translateX(-120%); transition: transform 0.7s var(--e-out);
+  }
+  .btn:hover, .btn:focus-visible { transform: translateY(-3px); }
+  .btn:hover::before, .btn:focus-visible::before { transform: translateX(120%); }
+  .btn svg { width: 18px; height: 18px; flex: none; }
+
+  .btn--gold {
+    box-shadow: 0 14px 34px -16px color-mix(in oklab, var(--gold-500) 85%, transparent);
+  }
+  .btn--gold:hover, .btn--gold:focus-visible {
+    box-shadow: 0 20px 46px -16px color-mix(in oklab, var(--gold-500) 90%, transparent);
+  }
+  .btn--ghost {
+    background: transparent; color: var(--on-dark);
+    box-shadow: inset 0 0 0 1.5px color-mix(in oklab, var(--on-dark) 45%, transparent);
+  }
+  .btn--ghost::before { background: linear-gradient(110deg, transparent, color-mix(in oklab, var(--gold-500) 22%, transparent), transparent); }
+  .btn--ghost:hover, .btn--ghost:focus-visible {
+    box-shadow: inset 0 0 0 1.5px var(--gold-500);
+  }
+  .btn--ink { background: var(--royal-800); color: var(--on-dark); }
+  .btn--ink:hover { box-shadow: 0 16px 36px -18px var(--royal-900); }
+
+  /* channel buttons (kakao / naver / phone) */
+  .channels { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+  .chan {
+    display: inline-flex; align-items: center; gap: 0.62rem;
+    text-decoration: none; font-weight: 600; font-size: 0.96rem;
+    padding: 0.78rem 1.25rem; border-radius: 14px;
+    transition: transform 0.35s var(--e-out), box-shadow 0.4s var(--e-out), filter 0.3s var(--e-out);
+    box-shadow: 0 10px 26px -16px rgba(0,0,0,0.55);
+  }
+  .chan:hover, .chan:focus-visible { transform: translateY(-3px); filter: brightness(1.04); }
+  .chan svg { width: 20px; height: 20px; flex: none; }
+  .chan__lab { display: flex; flex-direction: column; line-height: 1.1; }
+  .chan__lab small { font-weight: 500; font-size: 0.72rem; opacity: 0.78; }
+  .chan--kakao { background: #FEE500; color: #191600; }
+  .chan--naver { background: #03C75A; color: #ffffff; }
+  .chan--phone { background: var(--royal-700); color: var(--on-dark); box-shadow: inset 0 0 0 1.5px color-mix(in oklab, var(--gold-500) 40%, transparent), 0 10px 26px -18px rgba(0,0,0,0.6); }
+
+  /* ============================ SECTION SCAFFOLD ============================ */
+  section { position: relative; }
+  .pad { padding-block: var(--gap-section); }
+
+  .lede h2 {
+    font-size: clamp(2.1rem, 1.3rem + 3.4vw, 3.7rem);
+    letter-spacing: -0.022em;
+    max-width: 18ch;
+  }
+  .lede p { max-width: 56ch; color: var(--ink-soft); font-size: clamp(1.02rem, 1rem + 0.3vw, 1.18rem); margin-top: 1.3rem; }
+
+  /* ============================ WELCOME / TRUST ============================ */
+  .welcome { background: var(--white); }
+  .welcome__grid {
+    display: grid; gap: clamp(2.5rem, 5vw, 4.5rem);
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+  @media (min-width: 960px) {
+    .welcome__grid { grid-template-columns: 0.95fr 1.05fr; }
+  }
+
+  .welcome__aside { position: relative; }
+  .welcome__card {
+    position: relative;
+    border-radius: 26px;
+    padding: clamp(1.8rem, 3vw, 2.6rem);
+    background: linear-gradient(165deg, var(--royal-800), var(--royal-900));
+    color: var(--on-dark);
+    overflow: hidden; isolation: isolate;
+    box-shadow: 0 40px 80px -50px var(--royal-900);
+  }
+  .welcome__card::before {
+    content: ""; position: absolute; inset: 0; z-index: -1;
+    background: radial-gradient(120% 80% at 80% 0%, color-mix(in oklab, var(--gold-500) 30%, transparent), transparent 60%);
+  }
+  .welcome__badge {
+    display: inline-flex; align-items: center; gap: 0.55rem;
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em;
+    background: color-mix(in oklab, var(--gold-500) 18%, transparent);
+    color: var(--gold-300);
+    border: 1px solid color-mix(in oklab, var(--gold-500) 40%, transparent);
+    padding: 0.4rem 0.85rem; border-radius: 999px;
+  }
+  .welcome__badge svg { width: 15px; height: 15px; }
+  .welcome__quote {
+    font-family: var(--serif); font-style: italic; font-weight: 500;
+    font-size: clamp(1.4rem, 1.1rem + 1.4vw, 1.95rem); line-height: 1.28;
+    letter-spacing: -0.01em; margin: 1.4rem 0 0;
+  }
+  .welcome__quote span { color: var(--gold-400); }
+  .welcome__sig { margin-top: 1.6rem; display: flex; align-items: center; gap: 0.8rem; }
+  .welcome__sig svg { width: 38px; height: 38px; }
+  .welcome__sig div { font-size: 0.9rem; line-height: 1.35; }
+  .welcome__sig strong { display: block; font-family: var(--serif); font-size: 1.05rem; }
+  .welcome__sig small { color: var(--on-dark-soft); }
+
+  .trust-list { list-style: none; margin: 2rem 0 0; padding: 0; display: grid; gap: 1.5rem; }
+  .trust-list li {
+    display: grid; grid-template-columns: auto 1fr; gap: 1.1rem; align-items: start;
+  }
+  .trust-list .ico {
+    width: 46px; height: 46px; flex: none; border-radius: 13px;
+    display: grid; place-items: center;
+    background: var(--mist);
+    box-shadow: inset 0 0 0 1px var(--line);
+    color: var(--royal-600);
+  }
+  .trust-list .ico svg { width: 23px; height: 23px; }
+  .trust-list h3 { font-family: var(--sans); font-weight: 600; font-size: 1.12rem; letter-spacing: -0.005em; color: var(--ink); }
+  .trust-list p { margin: 0.35rem 0 0; color: var(--ink-soft); font-size: 0.98rem; line-height: 1.55; }
+
+  /* ============================ SERVICES ============================ */
+  .services { background: var(--porcelain); }
+  .services__head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 1.5rem; margin-bottom: clamp(2.5rem, 5vw, 3.8rem); }
+
+  .svc-grid { display: grid; gap: clamp(1.1rem, 2vw, 1.5rem); grid-template-columns: 1fr; }
+  @media (min-width: 720px) { .svc-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1040px) { .svc-grid { grid-template-columns: 1.4fr 1fr 1fr; grid-auto-rows: 1fr; } }
+
+  .svc {
+    position: relative; isolation: isolate;
+    border-radius: 22px; padding: clamp(1.5rem, 2.6vw, 2.2rem);
+    background: var(--white);
+    box-shadow: inset 0 0 0 1px var(--line);
+    overflow: hidden;
+    transition: transform 0.5s var(--e-out), box-shadow 0.5s var(--e-out);
+  }
+  .svc::after {
+    content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit;
+    background: radial-gradient(120% 100% at 100% 0%, color-mix(in oklab, var(--gold-500) 14%, transparent), transparent 55%);
+    opacity: 0; transition: opacity 0.5s var(--e-out);
+  }
+  .svc:hover {
+    transform: translateY(-6px);
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--gold-500) 40%, transparent), 0 30px 60px -34px var(--royal-700);
+  }
+  .svc:hover::after { opacity: 1; }
+  .svc__no { font-family: var(--serif); font-size: 0.95rem; color: var(--gold-ink); font-weight: 600; letter-spacing: 0.04em; }
+  .svc__ico { width: 52px; height: 52px; margin: 0.6rem 0 1.1rem; color: var(--royal-600); }
+  .svc h3 { font-size: clamp(1.45rem, 1.2rem + 1vw, 1.9rem); letter-spacing: -0.015em; }
+  .svc p { color: var(--ink-soft); margin: 0.7rem 0 0; font-size: 0.98rem; line-height: 1.58; }
+  .svc__tag { display: inline-block; margin-top: 1.2rem; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.04em; color: var(--royal-600); padding: 0.32rem 0.75rem; border-radius: 999px; background: var(--mist); }
+
+  .svc--lead { background: linear-gradient(168deg, var(--royal-800), var(--royal-900)); color: var(--on-dark); box-shadow: 0 40px 80px -50px var(--royal-900); }
+  .svc--lead .svc__no { color: var(--gold-400); }
+  .svc--lead .svc__ico { color: var(--gold-400); }
+  .svc--lead p { color: var(--on-dark-soft); }
+  .svc--lead .svc__tag { color: var(--gold-300); background: color-mix(in oklab, var(--gold-500) 16%, transparent); }
+  .svc--lead:hover { box-shadow: 0 40px 80px -44px var(--royal-900), inset 0 0 0 1px color-mix(in oklab, var(--gold-500) 45%, transparent); }
+  .svc--lead::after { background: radial-gradient(120% 100% at 0% 100%, color-mix(in oklab, var(--gold-500) 24%, transparent), transparent 55%); }
+  @media (min-width: 1040px) { .svc--lead { grid-row: span 2; } }
+
+  /* ============================ STORY / WHY VISIT ============================ */
+  .story {
+    position: relative; overflow: hidden; isolation: isolate;
+    background:
+      radial-gradient(120% 90% at 85% 12%, var(--royal-700) 0%, transparent 50%),
+      linear-gradient(160deg, var(--royal-900), var(--royal-800));
+    color: var(--on-dark);
+  }
+  .story__glow {
+    position: absolute; z-index: var(--z-base); pointer-events: none;
+    left: -8%; bottom: -12%;
+    width: 38rem; aspect-ratio: 1; border-radius: 50%;
+    background: radial-gradient(circle, color-mix(in oklab, var(--gold-500) 22%, transparent), transparent 64%);
+    filter: blur(20px);
+  }
+  .story__inner { position: relative; z-index: var(--z-content); }
+  .story__grid { display: grid; gap: clamp(2.5rem, 5vw, 4rem); grid-template-columns: 1fr; align-items: center; }
+  @media (min-width: 960px) { .story__grid { grid-template-columns: 1.1fr 0.9fr; } }
+  .story h2 { color: var(--on-dark); }
+  .story h2 em { font-style: italic; color: var(--gold-400); font-weight: 500; }
+  .story p { color: var(--on-dark-soft); max-width: 54ch; font-size: clamp(1.02rem, 1rem + 0.3vw, 1.16rem); }
+  .story p + p { margin-top: 1.1rem; }
+
+  /* crown diagram that "draws in" */
+  .crownwork { display: grid; place-items: center; }
+  .crownwork svg { width: min(100%, 24rem); height: auto; overflow: visible; }
+  .draw { stroke-dasharray: var(--len); stroke-dashoffset: var(--len); }
+  .is-in .draw { animation: draw-in 1.8s var(--e-out) forwards; }
+  .is-in .draw.d2 { animation-delay: 0.25s; }
+  .is-in .draw.d3 { animation-delay: 0.5s; }
+  .is-in .draw.d4 { animation-delay: 0.7s; }
+  @keyframes draw-in { to { stroke-dashoffset: 0; } }
+  .gem-pop { transform: scale(0); transform-origin: center; transform-box: fill-box; }
+  .is-in .gem-pop { animation: gem-pop 0.7s var(--e-out) forwards; }
+  .is-in .gem-pop.g2 { animation-delay: 1.1s; }
+  .is-in .gem-pop.g3 { animation-delay: 1.25s; }
+  .is-in .gem-pop.g4 { animation-delay: 1.4s; }
+  @keyframes gem-pop { 0% { transform: scale(0); } 70% { transform: scale(1.25); } 100% { transform: scale(1); } }
+
+  /* stat row */
+  .story__stats { display: flex; flex-wrap: wrap; gap: clamp(1.4rem, 4vw, 3rem); margin-top: clamp(2.2rem, 4vw, 3rem); padding-top: 1.8rem; border-top: 1px solid color-mix(in oklab, var(--gold-500) 22%, transparent); }
+  .story__stats div { display: flex; flex-direction: column; }
+  .story__stats .big { font-family: var(--serif); font-size: clamp(2rem, 1.5rem + 2vw, 2.9rem); font-weight: 600; color: var(--gold-400); line-height: 1; letter-spacing: -0.02em; }
+  .story__stats .lab { margin-top: 0.5rem; font-size: 0.86rem; color: var(--on-dark-soft); letter-spacing: 0.02em; }
+
+  /* ============================ LOCATION & HOURS ============================ */
+  .visit { background: var(--white); }
+  .visit__grid { display: grid; gap: clamp(2rem, 4vw, 3.2rem); grid-template-columns: 1fr; }
+  @media (min-width: 960px) { .visit__grid { grid-template-columns: 1.05fr 0.95fr; align-items: stretch; } }
+
+  /* stylized district map (pure SVG) */
+  .mapframe {
+    position: relative; border-radius: 24px; overflow: hidden;
+    background: linear-gradient(165deg, var(--royal-800), var(--royal-900));
+    box-shadow: 0 40px 80px -52px var(--royal-900);
+    min-height: 22rem;
+    isolation: isolate;
+  }
+  .mapframe svg { display: block; width: 100%; height: 100%; }
+  .map-pin-glow { transform-origin: center; transform-box: fill-box; animation: pin-pulse 3.4s ease-in-out infinite; }
+  @keyframes pin-pulse { 0%,100% { opacity: 0.25; transform: scale(0.8);} 50% { opacity: 0.7; transform: scale(1.5);} }
+  .map-tag {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, calc(-50% - 3.4rem));
+    background: var(--white); color: var(--ink);
+    padding: 0.5rem 0.9rem; border-radius: 12px; font-size: 0.82rem; font-weight: 600;
+    box-shadow: 0 16px 30px -16px var(--royal-900); white-space: nowrap;
+    display: flex; align-items: center; gap: 0.4rem;
+  }
+  .map-tag::after { content: ""; position: absolute; left: 50%; bottom: -6px; transform: translateX(-50%) rotate(45deg); width: 12px; height: 12px; background: var(--white); }
+  .map-tag svg { width: 14px; height: 14px; color: var(--gold-600); }
+
+  .visit__panel { display: flex; flex-direction: column; gap: 1.5rem; }
+  .infocard {
+    border-radius: 20px; padding: clamp(1.4rem, 2.4vw, 2rem);
+    background: var(--porcelain); box-shadow: inset 0 0 0 1px var(--line);
+  }
+  .infocard h3 { font-family: var(--sans); font-weight: 600; font-size: 1.05rem; letter-spacing: 0.02em; display: flex; align-items: center; gap: 0.6rem; color: var(--ink); }
+  .infocard h3 svg { width: 20px; height: 20px; color: var(--royal-600); }
+
+  .hours { list-style: none; margin: 1.1rem 0 0; padding: 0; }
+  .hours li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.6rem 0; border-bottom: 1px dashed var(--line); font-size: 0.97rem; }
+  .hours li:last-child { border-bottom: none; }
+  .hours .day { color: var(--ink-soft); font-weight: 500; }
+  .hours .time { font-family: var(--serif); font-weight: 500; color: var(--ink); }
+  .hours .time.closed { color: var(--gold-ink); font-style: italic; }
+  .hours li.now { background: color-mix(in oklab, var(--gold-500) 12%, transparent); margin-inline: -0.8rem; padding-inline: 0.8rem; border-radius: 10px; border-bottom-color: transparent; }
+  .hours li.now .day { color: var(--ink); font-weight: 600; }
+
+  .addr { margin: 1.1rem 0 0; font-style: normal; color: var(--ink-soft); line-height: 1.6; }
+  .addr strong { color: var(--ink); font-weight: 600; display: block; font-size: 1.05rem; font-family: var(--serif); }
+  .addr .ko { font-size: 0.88rem; opacity: 0.8; }
+  .addr a { color: var(--royal-600); font-weight: 600; text-decoration: none; border-bottom: 1.5px solid color-mix(in oklab, var(--royal-600) 35%, transparent); transition: border-color 0.3s; }
+  .addr a:hover { border-color: var(--gold-500); }
+
+  /* ============================ CTA ============================ */
+  .cta {
+    position: relative; overflow: hidden; isolation: isolate;
+    background: radial-gradient(120% 130% at 50% -10%, var(--royal-700), var(--royal-900) 60%);
+    color: var(--on-dark);
+    text-align: center;
+  }
+  .cta__beacon {
+    position: absolute; left: 50%; top: 0; z-index: var(--z-base);
+    width: 60rem; aspect-ratio: 1; transform: translate(-50%, -55%);
+    pointer-events: none;
+  }
+  .cta__beacon .r {
+    position: absolute; inset: 0; margin: auto; border-radius: 50%;
+    border: 1px solid color-mix(in oklab, var(--gold-500) 40%, transparent);
+    opacity: 0; animation: beacon-pulse 7s var(--e-out-soft) infinite;
+  }
+  .cta__beacon .r:nth-child(2) { animation-delay: 2.33s; }
+  .cta__beacon .r:nth-child(3) { animation-delay: 4.66s; }
+  .cta__inner { position: relative; z-index: var(--z-content); }
+  .cta h2 { font-size: clamp(2.4rem, 1.4rem + 4.4vw, 4.6rem); letter-spacing: -0.024em; max-width: 16ch; margin-inline: auto; }
+  .cta h2 em { font-style: italic; color: var(--gold-400); font-weight: 500; }
+  .cta p { color: var(--on-dark-soft); max-width: 50ch; margin: 1.4rem auto 0; font-size: clamp(1.05rem, 1rem + 0.4vw, 1.2rem); }
+  .cta__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.9rem; margin-top: clamp(2.2rem, 4vw, 3rem); }
+  .cta__channels { margin-top: 1.6rem; display: flex; justify-content: center; }
+
+  /* booking demo "coming soon" */
+  .btn--soon { position: relative; cursor: default; background: color-mix(in oklab, var(--gold-500) 92%, white); }
+  .btn--soon:hover { transform: translateY(-3px); }
+  .soon-badge {
+    position: absolute; top: -10px; right: -8px;
+    font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    background: var(--royal-900); color: var(--gold-400);
+    padding: 0.18rem 0.5rem; border-radius: 999px;
+    box-shadow: 0 4px 12px -4px rgba(0,0,0,0.5);
+  }
+  .booking-note {
+    display: block; margin-top: 0.9rem; font-size: 0.82rem; color: var(--on-dark-soft);
+    min-height: 1.2em; transition: opacity 0.3s;
+  }
+
+  /* ============================ FOOTER ============================ */
+  .foot {
+    background: var(--royal-900); color: var(--on-dark-soft);
+    padding-block: clamp(3.5rem, 6vw, 5rem) 2rem;
+  }
+  .foot__top { display: grid; gap: 2.5rem; grid-template-columns: 1fr; }
+  @media (min-width: 760px) { .foot__top { grid-template-columns: 1.5fr 1fr 1fr; } }
+  .foot__brand .brand { color: var(--on-dark); }
+  .foot__brand p { margin: 1.1rem 0 0; max-width: 34ch; font-size: 0.95rem; color: var(--on-dark-soft); }
+  .foot h4 { font-family: var(--sans); font-weight: 600; font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-400); margin-bottom: 1.1rem; }
+  .foot ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.7rem; }
+  .foot a { color: var(--on-dark-soft); text-decoration: none; font-size: 0.95rem; transition: color 0.3s; }
+  .foot a:hover { color: var(--gold-400); }
+  .foot__bar {
+    margin-top: clamp(2.5rem, 5vw, 3.5rem); padding-top: 1.6rem;
+    border-top: 1px solid color-mix(in oklab, var(--gold-500) 18%, transparent);
+    display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center;
+    font-size: 0.85rem;
+  }
+  .foot__bar p { margin: 0; color: color-mix(in oklab, var(--on-dark-soft) 80%, transparent); }
+  .credit { display: inline-flex; align-items: center; gap: 0.45rem; text-decoration: none; color: color-mix(in oklab, var(--on-dark-soft) 85%, transparent); font-size: 0.84rem; transition: color 0.3s; }
+  .credit:hover { color: var(--gold-400); }
+  .credit svg { width: 14px; height: 14px; opacity: 0.85; }
+
+  /* ============================ REVEAL SYSTEM ============================ */
+  .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.9s var(--e-out), transform 0.9s var(--e-out); }
+  .reveal.is-in { opacity: 1; transform: none; }
+  .reveal[data-d="1"] { transition-delay: 0.08s; }
+  .reveal[data-d="2"] { transition-delay: 0.16s; }
+  .reveal[data-d="3"] { transition-delay: 0.24s; }
+  .reveal[data-d="4"] { transition-delay: 0.32s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+    .reveal { opacity: 1; transform: none; }
+    .draw { stroke-dashoffset: 0 !important; }
+    .gem-pop { transform: scale(1) !important; }
+    .beacon, .sparkles, .cta__beacon, .story__glow, .map-pin-glow { opacity: 0.5; }
+  }
+</style>
+
+
+<style id="shm-bk-style">
+.shm-bk *{box-sizing:border-box}
+.shm-bk-overlay{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;
+  padding:max(16px,env(safe-area-inset-top)) 16px;background:rgba(10,10,12,.55);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);font-family:var(--bk-sans)}
+.shm-bk-overlay.open{display:flex}
+.shm-bk-card{width:100%;max-width:480px;max-height:92vh;overflow:auto;background:var(--bk-panel);
+  color:var(--bk-ink);border-radius:var(--bk-r);box-shadow:0 30px 80px -20px rgba(0,0,0,.55),0 0 0 1px var(--bk-line);
+  padding:26px 26px 22px;transform:translateY(10px);opacity:0;transition:transform .42s cubic-bezier(.16,1,.3,1),opacity .42s}
+.shm-bk-overlay.open .shm-bk-card{transform:none;opacity:1}
+.shm-bk-eyebrow{font-size:.64rem;letter-spacing:.26em;text-transform:uppercase;color:var(--bk-accent);
+  font-weight:600;display:flex;align-items:center;gap:.6em;margin:0 0 .5rem}
+.shm-bk-eyebrow::before{content:"";width:.42em;height:.42em;border-radius:50%;background:var(--bk-accent)}
+.shm-bk h2.shm-bk-title{font-family:var(--bk-serif);font-weight:500;line-height:1.05;font-size:1.7rem;margin:0 0 .35rem}
+.shm-bk-sub{color:var(--bk-muted);font-size:.92rem;line-height:1.5;margin:0 0 1.15rem}
+.shm-bk-close{position:absolute;top:14px;right:16px;background:none;border:0;color:var(--bk-muted);
+  font-size:1.5rem;line-height:1;cursor:pointer;padding:6px;border-radius:8px}
+.shm-bk-close:hover{color:var(--bk-ink);background:var(--bk-line)}
+.shm-bk-card{position:relative}
+.shm-bk-label{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bk-muted);
+  font-weight:600;margin:1.1rem 0 .55rem}
+.shm-bk-row{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
+.shm-bk-chip{flex:0 0 auto;min-width:62px;text-align:center;padding:.6rem .7rem;border:1px solid var(--bk-line);
+  background:transparent;color:var(--bk-ink);border-radius:calc(var(--bk-r)*.6);cursor:pointer;
+  font:inherit;font-size:.8rem;transition:.18s;line-height:1.25}
+.shm-bk-chip small{display:block;font-size:.62rem;color:var(--bk-muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
+.shm-bk-chip:hover{border-color:var(--bk-accent)}
+.shm-bk-chip[aria-pressed="true"]{background:var(--bk-accent);color:var(--bk-accent-ink);border-color:var(--bk-accent)}
+.shm-bk-chip[aria-pressed="true"] small{color:var(--bk-accent-ink);opacity:.8}
+.shm-bk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(78px,1fr));gap:8px}
+.shm-bk-field{margin-top:.7rem}
+.shm-bk-field input,.shm-bk-field select,.shm-bk-field textarea{width:100%;padding:.7rem .8rem;border:1px solid var(--bk-line);
+  background:var(--bk-panel);color:var(--bk-ink);border-radius:calc(var(--bk-r)*.55);font:inherit;font-size:.9rem}
+.shm-bk-field input:focus,.shm-bk-field select:focus,.shm-bk-field textarea:focus{outline:2px solid var(--bk-accent);outline-offset:1px;border-color:var(--bk-accent)}
+.shm-bk-field input::placeholder,.shm-bk-field textarea::placeholder{color:var(--bk-muted)}
+.shm-bk-cta{width:100%;margin-top:1.25rem;padding:.95rem 1rem;border:0;border-radius:calc(var(--bk-r)*.55);
+  background:var(--bk-ink);color:var(--bk-panel);font:inherit;font-weight:600;letter-spacing:.04em;cursor:pointer;
+  font-size:.92rem;transition:.18s;display:flex;align-items:center;justify-content:center;gap:.5em}
+.shm-bk-cta:hover{filter:brightness(1.12)}
+.shm-bk-cta:disabled{opacity:.4;cursor:not-allowed}
+.shm-bk-ghost{display:block;text-align:center;margin-top:.7rem;padding:.85rem;border:1px solid var(--bk-line);
+  border-radius:calc(var(--bk-r)*.55);color:var(--bk-ink);text-decoration:none;font-size:.88rem;font-weight:600;transition:.18s}
+.shm-bk-ghost:hover{border-color:var(--bk-accent);color:var(--bk-accent)}
+.shm-bk-fine{font-size:.72rem;color:var(--bk-muted);text-align:center;margin:.95rem 0 0;line-height:1.45}
+.shm-bk-hide{display:none}
+.shm-bk-tick{width:54px;height:54px;border-radius:50%;background:var(--bk-accent);color:var(--bk-accent-ink);
+  display:flex;align-items:center;justify-content:center;font-size:1.7rem;margin:0 auto 1rem}
+.shm-bk-conf{text-align:center}
+.shm-bk-conf .shm-bk-title{font-size:1.5rem}
+.shm-bk-fab{position:fixed;left:50%;transform:translateX(-50%);bottom:20px;z-index:9998;
+  display:inline-flex;align-items:center;gap:.5em;padding:.85rem 1.4rem;border:0;border-radius:999px;
+  background:var(--bk-accent);color:var(--bk-accent-ink);font-family:var(--bk-sans);font-weight:600;
+  font-size:.92rem;letter-spacing:.02em;cursor:pointer;box-shadow:0 10px 30px -6px rgba(0,0,0,.42)}
+.shm-bk-fab:hover{transform:translateX(-50%) translateY(-2px);box-shadow:0 16px 40px -8px rgba(0,0,0,.52)}
+@media (max-width:520px){.shm-bk-fab{bottom:14px;font-size:.88rem;padding:.8rem 1.15rem}}
+@media (prefers-reduced-motion:reduce){.shm-bk-card{transition:none}}
+.shm-bk{--bk-accent:#998b07;--bk-accent-ink:#ffffff;--bk-ink:#0d0d0f;--bk-panel:#f7f5f0;--bk-muted:rgba(13,13,15,0.6);--bk-line:rgba(13,13,15,0.14);--bk-serif:"Bodoni Moda", "Times New Roman", serif;--bk-sans:"Spline Sans", system-ui, -apple-system, "Segoe UI", sans-serif;--bk-r:18px;}
+</style>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ================= NAV ================= -->
+<header class="nav on-dark" id="nav" data-scrolled="false">
+  <a class="brand" href="#top" aria-label="Rois Myeongdong Dental — home">
+    <svg class="brand__mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <circle cx="20" cy="20" r="19" stroke="var(--gold-500)" stroke-width="1.2" opacity="0.55"/>
+      <path d="M11 25 L13 14 L17 19 L20 12 L23 19 L27 14 L29 25 Z" fill="none" stroke="var(--gold-400)" stroke-width="1.6" stroke-linejoin="round"/>
+      <circle cx="20" cy="12" r="1.7" fill="var(--gold-400)"/>
+      <circle cx="13" cy="14" r="1.4" fill="var(--gold-400)"/>
+      <circle cx="27" cy="14" r="1.4" fill="var(--gold-400)"/>
+      <line x1="11" y1="28" x2="29" y2="28" stroke="var(--gold-500)" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <span>
+      <span class="brand__name">Rois</span>
+      <span class="brand__sub">Myeongdong Dental</span>
+    </span>
+  </a>
+
+  <nav class="nav__links" aria-label="Primary">
+    <a href="#welcome">English Welcome</a>
+    <a href="#services">Treatments</a>
+    <a href="#story">Why Rois</a>
+    <a href="#visit">Visit Us</a>
+  </nav>
+
+  <a class="nav__cta" href="tel:+8227770020">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.5 4h3l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4.5 6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+    02-777-0020
+  </a>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- ================= HERO ================= -->
+<section class="hero" aria-labelledby="hero-title">
+  <!-- beacon: rings of gold light pulse outward from a breathing core -->
+  <div class="beacon" aria-hidden="true">
+    <div class="beacon__ring"></div>
+    <div class="beacon__ring"></div>
+    <div class="beacon__ring"></div>
+    <div class="beacon__core"></div>
+  </div>
+  <div class="sparkles" aria-hidden="true" id="sparkles"></div>
+  <div class="hero__grid" aria-hidden="true"></div>
+
+  <div class="hero__inner">
+    <!-- refined crown motif -->
+    <svg class="hero__crown" viewBox="0 0 120 80" fill="none" aria-hidden="true">
+      <path d="M16 60 L22 24 L42 44 L60 16 L78 44 L98 24 L104 60 Z" stroke="var(--gold-400)" stroke-width="2" stroke-linejoin="round" fill="none"/>
+      <circle cx="60" cy="16" r="4" fill="var(--gold-400)"/>
+      <circle cx="22" cy="24" r="3.2" fill="var(--gold-400)"/>
+      <circle cx="98" cy="24" r="3.2" fill="var(--gold-400)"/>
+      <line x1="16" y1="66" x2="104" y2="66" stroke="var(--gold-500)" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="42" cy="44" r="2" fill="var(--gold-300)" opacity="0.8"/>
+      <circle cx="78" cy="44" r="2" fill="var(--gold-300)" opacity="0.8"/>
+    </svg>
+
+    <p class="eyebrow" style="margin-bottom:1.4rem;">Myeongdong · Jung-gu · Seoul</p>
+    <h1 id="hero-title">A dental home in the heart of Myeongdong — <em>where the world is welcome.</em></h1>
+    <p class="hero__lead">
+      An established implant clinic on Toegye-ro, steps from the streets you already walk.
+      Our team treats international patients in English — so a visit to Seoul's most famous
+      district can include the unhurried, expert care your smile deserves.
+    </p>
+
+    <div class="hero__actions">
+      <a class="btn btn--gold" href="tel:+8227770020">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.5 4h3l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4.5 6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        Call 02-777-0020
+      </a>
+      <a class="btn btn--ghost" href="#welcome">
+        How we help in English
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <dl class="hero__meta">
+      <div>
+        <dt>Google Rating</dt>
+        <dd>4.9 ★ <small>· 14 reviews</small></dd>
+      </div>
+      <div>
+        <dt>Open</dt>
+        <dd>Mon–Sat <small>10:00 – 20:00</small></dd>
+      </div>
+      <div>
+        <dt>Focus</dt>
+        <dd>Implants <small>· General dentistry</small></dd>
+      </div>
+      <div>
+        <dt>Language</dt>
+        <dd>English <small>· spoken &amp; welcomed</small></dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- ================= WELCOME / ENGLISH TRUST ================= -->
+<section class="welcome pad" id="welcome" aria-labelledby="welcome-title">
+  <div class="shell">
+    <div class="welcome__grid">
+      <div class="welcome__aside reveal">
+        <div class="welcome__card">
+          <span class="welcome__badge">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15.5 0 18M12 3c-2.5 2.5-2.5 15.5 0 18" stroke="currentColor" stroke-width="1.4"/></svg>
+            International patients welcome
+          </span>
+          <p class="welcome__quote">
+            “You don't need to translate a single thing. Tell us what's bothering you — <span>in English</span> — and we'll take it from there.”
+          </p>
+          <div class="welcome__sig">
+            <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+              <circle cx="20" cy="20" r="19" stroke="var(--gold-500)" stroke-width="1.2" opacity="0.6"/>
+              <path d="M13 24 L15 16 L20 20 L25 16 L27 24 Z" stroke="var(--gold-400)" stroke-width="1.4" fill="none" stroke-linejoin="round"/>
+            </svg>
+            <div>
+              <strong>The Rois Myeongdong team</strong>
+              <small>Implant &amp; general dentistry</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="welcome__main">
+        <p class="eyebrow reveal">Care without a language barrier</p>
+        <h2 id="welcome-title" class="reveal" data-d="1" style="font-size:clamp(2.1rem,1.3rem + 3.4vw,3.6rem);letter-spacing:-0.022em;max-width:18ch;margin-top:0.8rem;">
+          Dentistry in Seoul, explained clearly in your language.
+        </h2>
+        <p class="reveal" data-d="1" style="max-width:54ch;color:var(--ink-soft);margin-top:1.2rem;">
+          Treatment is daunting enough without a dictionary. At Rois Myeongdong, English-speaking
+          patients are met with patience and plain answers — from the first hello at the desk to the
+          plan we lay out for your care.
+        </p>
+
+        <ul class="trust-list">
+          <li class="reveal" data-d="1">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h16v11H7l-3 3V5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 9h6M9 12h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+            <div>
+              <h3>English at every step</h3>
+              <p>From your questions at reception to the consultation itself, we communicate in English so you always understand what's happening and why.</p>
+            </div>
+          </li>
+          <li class="reveal" data-d="2">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l2.3 4.7 5.2.8-3.8 3.6.9 5.1L12 15.8 7.4 17.3l.9-5.1L4.5 8.5l5.2-.8L12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+            <div>
+              <h3>Trusted by visitors &amp; locals</h3>
+              <p>A 4.9-star Google rating reflects the calm, careful experience patients describe — the kind of reassurance that matters far from home.</p>
+            </div>
+          </li>
+          <li class="reveal" data-d="3">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="11" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg></span>
+            <div>
+              <h3>Impossible to miss in Myeongdong</h3>
+              <p>Right on Toegye-ro in Jung-gu, our clinic sits among the streets travellers already explore — easy to reach by foot or subway.</p>
+            </div>
+          </li>
+          <li class="reveal" data-d="4">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3.2 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div>
+              <h3>Hours that fit a trip</h3>
+              <p>Open six days a week, 10am to 8pm — early enough before sightseeing, late enough after. Sundays are reserved for rest.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="services pad" id="services" aria-labelledby="services-title">
+  <div class="shell">
+    <div class="services__head">
+      <div>
+        <p class="eyebrow reveal">What we do best</p>
+        <h2 id="services-title" class="reveal" data-d="1" style="font-size:clamp(2.1rem,1.3rem + 3.4vw,3.7rem);letter-spacing:-0.022em;max-width:16ch;margin-top:0.8rem;">
+          Implants at our core, complete care all around.
+        </h2>
+      </div>
+      <p class="reveal" data-d="2" style="max-width:34ch;color:var(--ink-soft);">
+        An established implant practice with the everyday dentistry to keep your whole smile healthy while you're in Korea.
+      </p>
+    </div>
+
+    <div class="svc-grid">
+      <article class="svc svc--lead reveal" data-d="1">
+        <span class="svc__no">01</span>
+        <svg class="svc__ico" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <path d="M24 6c-5 0-9 3.5-9 9 0 3 1 5 1 9 0 4-1 11 2 11 2.5 0 1.5-7 6-7s3.5 7 6 7c3 0 2-7 2-11 0-4 1-6 1-9 0-5.5-4-9-9-9Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+          <path d="M24 17v18" stroke="currentColor" stroke-width="1.4" stroke-dasharray="2 3" stroke-linecap="round"/>
+          <circle cx="24" cy="14" r="2" fill="currentColor"/>
+        </svg>
+        <h3>Dental Implants</h3>
+        <p>
+          A missing tooth shouldn't define your trip — or your years after it. As an established implant
+          clinic, we restore the way you bite, speak and smile with implants planned around your jaw and
+          your goals, every stage explained in English so you're never in the dark.
+        </p>
+        <span class="svc__tag">Our specialty</span>
+      </article>
+
+      <article class="svc reveal" data-d="2">
+        <span class="svc__no">02</span>
+        <svg class="svc__ico" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <path d="M24 8c-6 0-11 4-11 11 0 4 1.5 6.5 1.5 11 0 4.5-.5 9 2.5 9 3 0 2-8 7-8s4 8 7 8c3 0 2.5-4.5 2.5-9 0-4.5 1.5-7 1.5-11 0-7-5-11-11-11Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+          <path d="M18 16c2-2 4-2 6-2s4 0 6 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <h3>General Dentistry</h3>
+        <p>
+          Cleanings, fillings, check-ups and the small fixes that flare up at the worst times. Walk in with
+          a concern, leave with it handled — gently and thoroughly.
+        </p>
+        <span class="svc__tag">Everyday care</span>
+      </article>
+
+      <article class="svc reveal" data-d="3">
+        <span class="svc__no">03</span>
+        <svg class="svc__ico" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <rect x="11" y="9" width="26" height="30" rx="4" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M17 17h14M17 23h14M17 29h9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <h3>Honest Consultation</h3>
+        <p>
+          Before anything begins, we talk it through: what you need, what your options are, and what each one
+          involves — clearly, with no pressure to decide on the spot.
+        </p>
+        <span class="svc__tag">Always first</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STORY / WHY ROIS ================= -->
+<section class="story pad on-dark" id="story" aria-labelledby="story-title">
+  <div class="story__glow" aria-hidden="true"></div>
+  <div class="shell story__inner">
+    <div class="story__grid">
+      <div>
+        <p class="eyebrow reveal">The name &amp; the place</p>
+        <h2 id="story-title" class="reveal" data-d="1" style="font-size:clamp(2.1rem,1.3rem + 3.4vw,3.7rem);letter-spacing:-0.022em;max-width:17ch;margin-top:0.8rem;">
+          <em>Rois</em> means kings — and you'll be treated like one.
+        </h2>
+        <div class="reveal" data-d="2">
+          <p>
+            In French, <em style="font-style:italic;color:var(--gold-400);">rois</em> means kings. It's a high bar to
+            set, and one our team takes to heart: care that feels considered, unhurried and genuinely yours.
+          </p>
+          <p>
+            We're part of a respected dental group, which means established methods and dependable standards —
+            delivered with the personal attention of a neighbourhood clinic. And our neighbourhood happens to be
+            Myeongdong: the bright, buzzing heart of Seoul that visitors from around the world pass through every day.
+          </p>
+          <p>
+            For an expat settling in or a traveller passing through, that's a rare combination — serious dentistry,
+            a familiar language, and a location you can find without a second thought.
+          </p>
+        </div>
+
+        <div class="story__stats reveal" data-d="3">
+          <div>
+            <span class="big">4.9★</span>
+            <span class="lab">Google rating · 14 reviews</span>
+          </div>
+          <div>
+            <span class="big">6 days</span>
+            <span class="lab">Open Monday to Saturday</span>
+          </div>
+          <div>
+            <span class="big">EN</span>
+            <span class="lab">Spoken with every patient</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="crownwork reveal" data-d="2" id="crownwork">
+        <!-- refined crown that draws itself in, gems pop afterward -->
+        <svg viewBox="0 0 320 280" fill="none" aria-hidden="true" role="img">
+          <title>An illustrated royal crown</title>
+          <circle cx="160" cy="150" r="118" stroke="color-mix(in oklab, var(--gold-500) 26%, transparent)" stroke-width="1" class="draw" style="--len:742;"/>
+          <path class="draw d2" style="--len:560;" d="M52 196 L70 86 L122 142 L160 56 L198 142 L250 86 L268 196 Z"
+                stroke="var(--gold-400)" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+          <line class="draw d3" style="--len:216;" x1="52" y1="214" x2="268" y2="214" stroke="var(--gold-500)" stroke-width="5" stroke-linecap="round"/>
+          <path class="draw d3" style="--len:216;" d="M62 196 Q160 178 258 196" stroke="color-mix(in oklab, var(--gold-400) 70%, transparent)" stroke-width="1.4" fill="none"/>
+          <g>
+            <circle class="gem-pop" cx="160" cy="56" r="9" fill="var(--gold-400)"/>
+            <circle class="gem-pop g2" cx="70" cy="86" r="7" fill="var(--gold-400)"/>
+            <circle class="gem-pop g2" cx="250" cy="86" r="7" fill="var(--gold-400)"/>
+            <circle class="gem-pop g3" cx="122" cy="142" r="5.5" fill="var(--gold-300)"/>
+            <circle class="gem-pop g3" cx="198" cy="142" r="5.5" fill="var(--gold-300)"/>
+            <rect class="gem-pop g4" x="150" y="226" width="20" height="20" rx="4" transform="rotate(45 160 236)" fill="color-mix(in oklab, var(--gold-500) 80%, white)"/>
+          </g>
+          <g opacity="0.85">
+            <path class="gem-pop g4" d="M160 18 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3 Z" fill="var(--gold-300)"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VISIT / LOCATION & HOURS ================= -->
+<section class="visit pad" id="visit" aria-labelledby="visit-title">
+  <div class="shell">
+    <div class="lede" style="margin-bottom:clamp(2.5rem,5vw,3.8rem);">
+      <p class="eyebrow reveal">Find us &amp; visit</p>
+      <h2 id="visit-title" class="reveal" data-d="1" style="margin-top:0.8rem;">Right where Seoul comes together.</h2>
+      <p class="reveal" data-d="2">In Jung-gu on Toegye-ro, surrounded by the shops, food and lights of Myeongdong — a short walk from the subway and easy to fold into any day in the city.</p>
+    </div>
+
+    <div class="visit__grid">
+      <div class="mapframe reveal" data-d="1" role="img" aria-label="Stylised map of Myeongdong, Jung-gu, showing the clinic's location on Toegye-ro near Myeongdong Station and Namsan.">
+        <svg viewBox="0 0 600 460" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs>
+            <radialGradient id="mglow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="var(--gold-500)" stop-opacity="0.55"/>
+              <stop offset="100%" stop-color="var(--gold-500)" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <!-- subtle block grid -->
+          <g stroke="color-mix(in oklab, var(--gold-500) 12%, transparent)" stroke-width="1">
+            <path d="M0 90 H600 M0 170 H600 M0 250 H600 M0 330 H600 M0 410 H600"/>
+            <path d="M90 0 V460 M180 0 V460 M270 0 V460 M360 0 V460 M450 0 V460 M540 0 V460"/>
+          </g>
+          <!-- main avenue: Toegye-ro -->
+          <path d="M-20 300 Q300 270 620 320" stroke="color-mix(in oklab, var(--gold-400) 38%, transparent)" stroke-width="9" fill="none" stroke-linecap="round"/>
+          <text x="70" y="290" fill="color-mix(in oklab, var(--on-dark) 78%, transparent)" font-family="Spline Sans, sans-serif" font-size="14" font-weight="600" letter-spacing="1">TOEGYE-RO</text>
+          <!-- crossing street -->
+          <path d="M300 -20 Q330 200 300 480" stroke="color-mix(in oklab, var(--on-dark) 16%, transparent)" stroke-width="5" fill="none"/>
+          <!-- Namsan hint -->
+          <path d="M380 70 L430 30 L480 70 Z" fill="none" stroke="color-mix(in oklab, var(--gold-400) 30%, transparent)" stroke-width="1.6" stroke-linejoin="round"/>
+          <text x="372" y="92" fill="color-mix(in oklab, var(--on-dark) 55%, transparent)" font-family="Spline Sans, sans-serif" font-size="11" letter-spacing="0.5">Namsan</text>
+          <!-- station marker -->
+          <circle cx="150" cy="312" r="6" fill="none" stroke="color-mix(in oklab, var(--on-dark) 45%, transparent)" stroke-width="2"/>
+          <text x="120" y="338" fill="color-mix(in oklab, var(--on-dark) 55%, transparent)" font-family="Spline Sans, sans-serif" font-size="11">Myeongdong Stn.</text>
+          <!-- THE PIN -->
+          <circle class="map-pin-glow" cx="300" cy="288" r="34" fill="url(#mglow)"/>
+          <path d="M300 256 c-13 0 -22 10 -22 22 c0 16 22 34 22 34 s22 -18 22 -34 c0 -12 -9 -22 -22 -22 Z" fill="var(--gold-400)" stroke="var(--royal-900)" stroke-width="1.5"/>
+          <path d="M294 282 l5 5 9 -10" stroke="var(--royal-900)" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="map-tag">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="11" r="2.2" stroke="currentColor" stroke-width="1.7"/></svg>
+          Rois Myeongdong Dental
+        </div>
+      </div>
+
+      <div class="visit__panel">
+        <div class="infocard reveal" data-d="2">
+          <h3><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="11" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg> Where to find us</h3>
+          <address class="addr">
+            <strong>Rois Myeongdong Dental</strong>
+            108 Toegye-ro, Jung-gu, Seoul
+            <span class="ko">로이스명동치과의원 · 서울 중구 퇴계로 108</span>
+            <a href="tel:+8227770020" style="display:inline-block;margin-top:0.6rem;">Call 02-777-0020</a>
+          </address>
+        </div>
+
+        <div class="infocard reveal" data-d="3">
+          <h3><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3.2 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Opening hours</h3>
+          <ul class="hours" id="hours">
+            <li data-day="1"><span class="day">Monday</span><span class="time">10:00 – 20:00</span></li>
+            <li data-day="2"><span class="day">Tuesday</span><span class="time">10:00 – 20:00</span></li>
+            <li data-day="3"><span class="day">Wednesday</span><span class="time">10:00 – 20:00</span></li>
+            <li data-day="4"><span class="day">Thursday</span><span class="time">10:00 – 20:00</span></li>
+            <li data-day="5"><span class="day">Friday</span><span class="time">10:00 – 20:00</span></li>
+            <li data-day="6"><span class="day">Saturday</span><span class="time">10:00 – 20:00</span></li>
+            <li data-day="0"><span class="day">Sunday</span><span class="time closed">Closed</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="cta pad" id="book" aria-labelledby="cta-title">
+  <div class="cta__beacon" aria-hidden="true">
+    <span class="r"></span><span class="r"></span><span class="r"></span>
+  </div>
+  <div class="shell cta__inner">
+    <p class="eyebrow reveal" style="justify-content:center;">Ready when you are</p>
+    <h2 id="cta-title" class="reveal" data-d="1">Let's get your smile <em>cared for</em> in Seoul.</h2>
+    <p class="reveal" data-d="2">
+      Call us in English, reach out on KakaoTalk or Naver, or simply stop by while you're in Myeongdong.
+      Whatever brought you to Korea, your teeth are in good hands here.
+    </p>
+
+    <div class="cta__actions reveal" data-d="2">
+      <a class="btn btn--gold" href="tel:+8227770020">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.5 4h3l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4.5 6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        Call 02-777-0020
+      </a>
+      <button class="btn btn--soon" id="bookBtn" type="button" aria-describedby="bookingNote">
+        <span class="soon-badge">Soon</span>
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.7"/><path d="M4 9h16M8 3v4M16 3v4M9 14l2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Book Online
+      </button>
+    </div>
+    <span class="booking-note reveal" id="bookingNote" data-d="2">Online booking is arriving shortly — for now, a quick call is the fastest way to reserve your visit.</span>
+
+    <div class="cta__channels reveal" data-d="3">
+      <div class="channels">
+        <!-- KakaoTalk channel — replace href with the clinic's official KakaoTalk channel link (e.g. http://pf.kakao.com/_xxxxx) -->
+        <a class="chan chan--kakao" href="#" aria-label="Chat with us on KakaoTalk">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4c-4.7 0-8.5 3-8.5 6.7 0 2.4 1.6 4.5 4 5.7-.2.7-.7 2.4-.8 2.8 0 .2.1.4.4.2.3-.2 2.6-1.8 3.6-2.5.4 0 .9.1 1.3.1 4.7 0 8.5-3 8.5-6.7S16.7 4 12 4Z" fill="currentColor"/></svg>
+          <span class="chan__lab">KakaoTalk<small>Message us</small></span>
+        </a>
+        <!-- Naver place / booking — replace href with the clinic's official Naver Place or booking URL -->
+        <a class="chan chan--naver" href="#" aria-label="Find us on Naver">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 5h4.2l5.1 7.4V5H19v14h-4.2L9.7 11.6V19H5V5Z" fill="currentColor"/></svg>
+          <span class="chan__lab">Naver<small>Find &amp; review</small></span>
+        </a>
+        <a class="chan chan--phone" href="tel:+8227770020" aria-label="Call the clinic at 02-777-0020">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.5 4h3l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4.5 6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+          <span class="chan__lab">Phone<small>02-777-0020</small></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="foot">
+  <div class="shell">
+    <div class="foot__top">
+      <div class="foot__brand">
+        <a class="brand" href="#top" aria-label="Rois Myeongdong Dental — home">
+          <svg class="brand__mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <circle cx="20" cy="20" r="19" stroke="var(--gold-500)" stroke-width="1.2" opacity="0.55"/>
+            <path d="M11 25 L13 14 L17 19 L20 12 L23 19 L27 14 L29 25 Z" fill="none" stroke="var(--gold-400)" stroke-width="1.6" stroke-linejoin="round"/>
+            <circle cx="20" cy="12" r="1.7" fill="var(--gold-400)"/>
+            <circle cx="13" cy="14" r="1.4" fill="var(--gold-400)"/>
+            <circle cx="27" cy="14" r="1.4" fill="var(--gold-400)"/>
+            <line x1="11" y1="28" x2="29" y2="28" stroke="var(--gold-500)" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          <span>
+            <span class="brand__name">Rois</span>
+            <span class="brand__sub">Myeongdong Dental</span>
+          </span>
+        </a>
+        <p>An established implant clinic in the heart of Myeongdong, Seoul — welcoming international patients in English, six days a week.</p>
+      </div>
+
+      <div>
+        <h4>Visit</h4>
+        <ul>
+          <li><a href="#welcome">English Welcome</a></li>
+          <li><a href="#services">Treatments</a></li>
+          <li><a href="#story">Why Rois</a></li>
+          <li><a href="#visit">Location &amp; Hours</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Reach us</h4>
+        <ul>
+          <li><a href="tel:+8227770020">02-777-0020</a></li>
+          <!-- KakaoTalk channel link placeholder -->
+          <li><a href="#">KakaoTalk</a></li>
+          <!-- Naver Place link placeholder -->
+          <li><a href="#">Naver Place</a></li>
+          <li><a href="#book">Book a visit</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot__bar">
+      <p>108 Toegye-ro, Jung-gu, Seoul · Mon–Sat 10:00–20:00 · © <span id="yr">2026</span> Rois Myeongdong Dental</p>
+      <a class="credit" href="https://stellarhausmedia.com" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l2.4 6.2L21 11l-6.6 1.8L12 19l-2.4-6.2L3 11l6.6-1.8L12 3Z" fill="currentColor"/></svg>
+        Designed by Stellar Haus Media
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    "use strict";
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    /* ---- year ---- */
+    var yr = document.getElementById("yr");
+    if (yr) yr.textContent = new Date().getFullYear();
+
+    /* ---- nav scrolled state ---- */
+    var nav = document.getElementById("nav");
+    var onScroll = function () {
+      if (nav) nav.setAttribute("data-scrolled", window.scrollY > 40 ? "true" : "false");
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    /* ---- highlight today's hours ---- */
+    try {
+      var today = new Date().getDay(); // 0 = Sun
+      var row = document.querySelector('#hours li[data-day="' + today + '"]');
+      if (row) {
+        row.classList.add("now");
+        var d = row.querySelector(".day");
+        if (d) d.insertAdjacentHTML("beforeend", ' <span style="font-weight:600;color:var(--gold-ink);">· Today</span>');
+      }
+    } catch (e) {}
+
+    /* ---- generate hero sparkles ---- */
+    var sp = document.getElementById("sparkles");
+    if (sp && !reduce) {
+      var n = 16;
+      var html = "";
+      for (var i = 0; i < n; i++) {
+        var x = Math.round(Math.random() * 100);
+        var y = Math.round(Math.random() * 100);
+        var delay = (Math.random() * 5).toFixed(2);
+        var dur = (3.5 + Math.random() * 3).toFixed(2);
+        var s = (0.6 + Math.random() * 1.4).toFixed(2);
+        html += '<span style="left:' + x + '%;top:' + y + '%;animation-delay:' + delay + 's;animation-duration:' + dur + 's;transform:scale(' + s + ');"></span>';
+      }
+      sp.innerHTML = html;
+    }
+
+    /* ---- reveal on scroll (enhances already-visible default) ---- */
+    var revealEls = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
+    var drawEls = Array.prototype.slice.call(document.querySelectorAll("#crownwork, .crownwork"));
+
+    if (reduce || !("IntersectionObserver" in window)) {
+      revealEls.forEach(function (el) { el.classList.add("is-in"); });
+      drawEls.forEach(function (el) { el.classList.add("is-in"); });
+    } else {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            en.target.classList.add("is-in");
+            io.unobserve(en.target);
+          }
+        });
+      }, { rootMargin: "0px 0px -10% 0px", threshold: 0.12 });
+      revealEls.forEach(function (el) { io.observe(el); });
+
+      var ioDraw = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) { en.target.classList.add("is-in"); ioDraw.unobserve(en.target); }
+        });
+      }, { threshold: 0.3 });
+      drawEls.forEach(function (el) { ioDraw.observe(el); });
+    }
+
+    /* ---- booking "coming soon" affordance ---- */
+    var bookBtn = document.getElementById("bookBtn");
+    var note = document.getElementById("bookingNote");
+    if (bookBtn && note) {
+      var base = note.textContent;
+      bookBtn.addEventListener("click", function () {
+        note.textContent = "Thanks for your interest — online booking opens soon. Please call 02-777-0020 to reserve today.";
+        note.style.color = "var(--gold-400)";
+        clearTimeout(bookBtn._t);
+        bookBtn._t = setTimeout(function () {
+          note.textContent = base;
+          note.style.color = "";
+        }, 5000);
+      });
+    }
+
+    /* ---- gentle parallax drift on the hero beacon (transform only) ---- */
+    if (!reduce) {
+      var beacon = document.querySelector(".beacon");
+      var ticking = false;
+      window.addEventListener("scroll", function () {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(function () {
+          var y = window.scrollY;
+          if (beacon && y < window.innerHeight * 1.2) {
+            beacon.style.transform = "translate(20%, calc(-18% + " + (y * 0.08) + "px))";
+          }
+          ticking = false;
+        });
+      }, { passive: true });
+    }
+  })();
+</script>
+
+
+<!-- ============================================================
+  SHM BOOKING WIDGET  (demo / front-end only)
+  Captures a booking request and hands off to the clinic's real
+  channel (phone / LINE). To go LIVE to patients, replace the body
+  of submitBooking() below with your GoHighLevel calendar embed or
+  a POST to your GHL/Calendly endpoint.  -- Stellar Haus Media
+============================================================ -->
+<div class="shm-bk">
+<div class="shm-bk-overlay" id="shmbk" role="dialog" aria-modal="true" aria-labelledby="shmbk-title" aria-hidden="true">
+  <div class="shm-bk-card" role="document">
+    <button class="shm-bk-close" type="button" aria-label="Close booking" data-bk-close>&times;</button>
+
+    <div id="shmbk-step">
+      <p class="shm-bk-eyebrow">English-speaking care</p>
+      <h2 class="shm-bk-title" id="shmbk-title">Book your visit</h2>
+      <p class="shm-bk-sub">Pick a day and time that suits you — our front desk replies in English.</p>
+
+      <p class="shm-bk-label">Choose a day</p>
+      <div class="shm-bk-row" id="shmbk-days"></div>
+
+      <div id="shmbk-times-wrap" class="shm-bk-hide">
+        <p class="shm-bk-label">Choose a time</p>
+        <div class="shm-bk-grid" id="shmbk-times"></div>
+      </div>
+
+      <div id="shmbk-form" class="shm-bk-hide">
+        <div class="shm-bk-field"><input id="shmbk-name" type="text" placeholder="Your name" autocomplete="name"></div>
+        <div class="shm-bk-field"><input id="shmbk-phone" type="tel" placeholder="Phone number" autocomplete="tel"></div>
+        <div class="shm-bk-field"><input id="shmbk-email" type="email" placeholder="Email (optional)" autocomplete="email"></div>
+        <div class="shm-bk-field">
+          <select id="shmbk-reason">
+            <option value="">What brings you in?</option>
+            <option>Check-up &amp; cleaning</option>
+            <option>Implant or veneer consultation</option>
+            <option>Teeth whitening</option>
+            <option>Tooth pain / emergency</option>
+            <option>Something else</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="shm-bk-cta" id="shmbk-submit" type="button" disabled>Confirm booking</button>
+      <p class="shm-bk-fine">No payment now. We’ll confirm your appointment by text.</p>
+    </div>
+
+    <div id="shmbk-done" class="shm-bk-conf shm-bk-hide">
+      <div class="shm-bk-tick" aria-hidden="true">✓</div>
+      <h2 class="shm-bk-title">You’re all set<span id="shmbk-name-out"></span>.</h2>
+      <p class="shm-bk-sub" id="shmbk-summary"></p>
+      <a class="shm-bk-cta" id="shmbk-call" href="#" style="text-decoration:none">Call now to confirm</a>
+      <a class="shm-bk-ghost shm-bk-hide" id="shmbk-chan" href="#" target="_blank" rel="noopener"></a>
+      <p class="shm-bk-fine">We’ll reach out shortly to lock in your time.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+/* SHM booking widget — demo. See submitBooking() TODO to wire GoHighLevel/Calendly. */
+(function(){
+  var ov=document.getElementById('shmbk'); if(!ov) return;
+  var TEL="tel:+8227770020", CHAN="", CHANLABEL="";
+  var state={day:null,time:null};
+  var daysEl=document.getElementById('shmbk-days'),
+      timesWrap=document.getElementById('shmbk-times-wrap'),
+      timesEl=document.getElementById('shmbk-times'),
+      formEl=document.getElementById('shmbk-form'),
+      submit=document.getElementById('shmbk-submit'),
+      lastTrigger=null;
+  var TIMES=["09:30","10:30","11:30","14:00","15:00","16:00","17:30"];
+  var DOW=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
+      MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+  function buildDays(){
+    daysEl.innerHTML=""; var d=new Date(), made=0;
+    while(made<8){ d.setDate(d.getDate()+1);
+      if(d.getDay()===0) continue;            // skip Sundays
+      var b=document.createElement('button'); b.type="button"; b.className="shm-bk-chip";
+      b.setAttribute('aria-pressed','false');
+      b.innerHTML="<small>"+DOW[d.getDay()]+"</small>"+d.getDate()+" "+MON[d.getMonth()];
+      b.dataset.label=DOW[d.getDay()]+", "+d.getDate()+" "+MON[d.getMonth()];
+      b.addEventListener('click',function(){ select(daysEl,this); state.day=this.dataset.label;
+        timesWrap.classList.remove('shm-bk-hide'); refresh(); });
+      daysEl.appendChild(b); made++;
+    }
+  }
+  function buildTimes(){
+    timesEl.innerHTML="";
+    TIMES.forEach(function(t){ var b=document.createElement('button'); b.type="button"; b.className="shm-bk-chip";
+      b.textContent=t; b.setAttribute('aria-pressed','false');
+      b.addEventListener('click',function(){ select(timesEl,this); state.time=t;
+        formEl.classList.remove('shm-bk-hide'); refresh(); });
+      timesEl.appendChild(b); });
+  }
+  function select(group,el){ Array.prototype.forEach.call(group.children,function(c){c.setAttribute('aria-pressed','false');});
+    el.setAttribute('aria-pressed','true'); }
+  function refresh(){ var n=document.getElementById('shmbk-name').value.trim(),
+        p=document.getElementById('shmbk-phone').value.trim();
+    submit.disabled=!(state.day&&state.time&&n&&p); }
+
+  /* ---- TODO (go live): replace this with your GoHighLevel calendar write / Calendly,
+     or POST {name,phone,email,reason,day,time} to your GHL inbound webhook. ---- */
+  function submitBooking(data){
+    console.warn("[SHM booking] DEMO submit — not sent anywhere. Wire submitBooking() to GoHighLevel before launch.", data);
+  }
+
+  function done(){
+    var name=document.getElementById('shmbk-name').value.trim();
+    submitBooking({name:name, phone:document.getElementById('shmbk-phone').value.trim(),
+      email:document.getElementById('shmbk-email').value.trim(),
+      reason:document.getElementById('shmbk-reason').value, day:state.day, time:state.time});
+    document.getElementById('shmbk-step').classList.add('shm-bk-hide');
+    var d=document.getElementById('shmbk-done'); d.classList.remove('shm-bk-hide');
+    document.getElementById('shmbk-name-out').textContent=name?(", "+name.split(" ")[0]):"";
+    document.getElementById('shmbk-summary').textContent="Requested: "+state.day+" at "+state.time+". We’ll confirm shortly.";
+    var call=document.getElementById('shmbk-call'); call.href=TEL;
+    if(CHAN){ var l=document.getElementById('shmbk-chan'); l.href=CHAN; l.textContent=CHANLABEL; l.classList.remove('shm-bk-hide'); }
+  }
+
+  function open(t){ lastTrigger=t||null; ov.classList.add('open'); ov.setAttribute('aria-hidden','false');
+    document.documentElement.style.overflow='hidden';
+    var f=ov.querySelector('.shm-bk-chip'); if(f) f.focus(); }
+  function close(){ ov.classList.remove('open'); ov.setAttribute('aria-hidden','true');
+    document.documentElement.style.overflow=''; if(lastTrigger&&lastTrigger.focus) lastTrigger.focus(); }
+
+  buildDays(); buildTimes();
+  ['shmbk-name','shmbk-phone'].forEach(function(id){document.getElementById(id).addEventListener('input',refresh);});
+  submit.addEventListener('click',done);
+  ov.addEventListener('click',function(e){ if(e.target===ov) close(); });
+  ov.querySelector('[data-bk-close]').addEventListener('click',close);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&ov.classList.contains('open')) close(); });
+  // simple focus trap
+  ov.addEventListener('keydown',function(e){ if(e.key!=='Tab')return;
+    var f=ov.querySelectorAll('button,a[href],input,select,textarea'); if(!f.length)return;
+    var first=f[0],last=f[f.length-1];
+    if(e.shiftKey&&document.activeElement===first){last.focus();e.preventDefault();}
+    else if(!e.shiftKey&&document.activeElement===last){first.focus();e.preventDefault();}
+  });
+
+  // ---- bind triggers: explicit hooks + any element whose label starts with "Book" ----
+  function isBookLabel(el){
+    var t=(el.textContent||"").replace(/[^a-z0-9 ]/gi," ").replace(/\s+/g," ").trim().toLowerCase();
+    if(!t || t.length>40) return false;                 // skip long paragraphs that merely contain "book"
+    return /\bbook/.test(t) || /\breserve\b/.test(t);   // \bbook matches "book"/"booking"/"book online soon"; NOT "facebook"
+  }
+  var sel='.js-book,.book-demo,[data-shm-book],a[href="#book"],a[href="#booking"]';
+  var bound=new Set();
+  function bind(el){ if(bound.has(el)||el.closest('.shm-bk'))return; bound.add(el);
+    el.removeAttribute('aria-disabled'); el.removeAttribute('disabled'); el.style.pointerEvents='auto';
+    // the booking now works, so drop any "coming soon / launching" badge inside the button
+    el.querySelectorAll('span,small,sup,em,i,b').forEach(function(s){
+      var st=(s.textContent||"").trim();
+      if(st.length<22 && /coming|soon|launch/i.test(st)) s.remove();
+    });
+    el.addEventListener('click',function(e){ e.preventDefault(); open(el); }); }
+  document.querySelectorAll(sel).forEach(bind);
+  document.querySelectorAll('a,button').forEach(function(el){ if(isBookLabel(el)) bind(el); });
+
+  // if the page has no booking CTA of its own, add a small themed one so booking is always reachable
+  if(bound.size===0){
+    var fab=document.createElement('button');
+    fab.type='button'; fab.className='shm-bk-fab'; fab.setAttribute('aria-label','Book online');
+    fab.innerHTML='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="vertical-align:-2px"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg> Book online';
+    fab.addEventListener('click',function(){ open(fab); });
+    (document.querySelector('.shm-bk')||document.body).appendChild(fab);
+  }
+})();
+</script>
+
+</body>
+</html>

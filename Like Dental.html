@@ -1,0 +1,1649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Like Dental · English-Speaking Dentist by Sinchon, Seoul</title>
+<meta name="description" content="Like Dental (라이크치과) in Sinchon, Seoul — an officially registered foreign-patient clinic. English-friendly implants, orthodontics & general dentistry. 5.0★ from 720 reviews." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Gowun+Dodum&display=swap" rel="stylesheet" />
+
+<style>
+  /* ============================================================
+     LIKE DENTAL — "Friendly Sinchon Trust"
+     Palette: warm coral / clean white / soft sky-blue / cream
+     Type: Quicksand (display) + Nunito (body) + Gowun Dodum (KO)
+     ============================================================ */
+
+  :root{
+    --coral:#FF6F61;
+    --coral-deep:#F0533F;
+    --coral-soft:#FFA99E;
+    --coral-wash:#FFF1EE;
+    --sky:#7CC6FA;
+    --sky-deep:#3FA6EE;
+    --sky-wash:#EEF7FF;
+    --cream:#FFF9F4;
+    --paper:#FFFFFF;
+    --ink:#2A2733;
+    --ink-soft:#5C5766;
+    --ink-faint:#928C9C;
+    --mint:#9FE3C8;
+    --butter:#FFD98A;
+
+    --radius:24px;
+    --radius-lg:36px;
+    --radius-pill:999px;
+
+    --shadow-soft:0 18px 40px -22px rgba(240,83,63,.34);
+    --shadow-lift:0 30px 60px -30px rgba(42,39,51,.28);
+    --shadow-card:0 22px 48px -28px rgba(63,166,238,.30);
+
+    --ease-spring:cubic-bezier(.34,1.56,.64,1);
+    --ease-out:cubic-bezier(.22,.61,.36,1);
+
+    --maxw:1180px;
+    --font-d:"Quicksand", system-ui, sans-serif;
+    --font-b:"Nunito", system-ui, sans-serif;
+    --font-k:"Gowun Dodum", "Nunito", sans-serif;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+
+  body{
+    margin:0;
+    font-family:var(--font-b);
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.65;
+    font-size:clamp(16px,1.05vw,17.5px);
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  ::selection{background:var(--coral);color:#fff;}
+
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  ul{margin:0;padding:0;list-style:none;}
+
+  h1,h2,h3,h4{font-family:var(--font-d);font-weight:700;line-height:1.05;margin:0;letter-spacing:-.01em;}
+
+  .wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(20px,5vw,48px);}
+
+  .eyebrow{
+    font-family:var(--font-d);
+    font-weight:700;
+    font-size:.78rem;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--coral-deep);
+    display:inline-flex;align-items:center;gap:.55em;
+  }
+  .eyebrow::before{
+    content:"";width:26px;height:2.5px;border-radius:2px;
+    background:linear-gradient(90deg,var(--coral),var(--coral-soft));
+  }
+  .eyebrow.sky{color:var(--sky-deep);}
+  .eyebrow.sky::before{background:linear-gradient(90deg,var(--sky-deep),var(--sky));}
+
+  .heart{display:inline-block;vertical-align:middle;}
+
+  /* ---- buttons ---- */
+  .btn{
+    --bg:var(--coral);--fg:#fff;
+    font-family:var(--font-d);font-weight:700;
+    font-size:1rem;letter-spacing:.01em;
+    display:inline-flex;align-items:center;gap:.6em;
+    padding:.92em 1.55em;border-radius:var(--radius-pill);
+    background:var(--bg);color:var(--fg);
+    border:none;cursor:pointer;
+    position:relative;isolation:isolate;
+    transition:transform .35s var(--ease-spring), box-shadow .35s var(--ease-out), filter .3s var(--ease-out);
+    box-shadow:var(--shadow-soft);
+    -webkit-tap-highlight-color:transparent;
+  }
+  .btn:hover{transform:translateY(-3px) scale(1.025);box-shadow:0 26px 46px -22px rgba(240,83,63,.5);}
+  .btn:active{transform:translateY(-1px) scale(.99);}
+  .btn:focus-visible{outline:3px solid var(--sky-deep);outline-offset:3px;}
+  .btn .ico{display:inline-flex;transition:transform .35s var(--ease-spring);}
+  .btn:hover .ico{transform:scale(1.18) rotate(-6deg);}
+
+  .btn.kakao{--bg:#FEE500;--fg:#191600;box-shadow:0 18px 40px -22px rgba(254,229,0,.6);}
+  .btn.kakao:hover{box-shadow:0 26px 46px -22px rgba(254,229,0,.7);}
+  .btn.naver{--bg:#03C75A;--fg:#fff;box-shadow:0 18px 40px -22px rgba(3,199,90,.55);}
+  .btn.naver:hover{box-shadow:0 26px 46px -22px rgba(3,199,90,.6);}
+  .btn.ghost{--bg:transparent;--fg:var(--ink);box-shadow:none;border:2px solid rgba(42,39,51,.14);}
+  .btn.ghost:hover{border-color:var(--coral);color:var(--coral-deep);box-shadow:0 18px 36px -24px rgba(240,83,63,.4);}
+  .btn.sky{--bg:var(--sky-deep);--fg:#fff;box-shadow:0 18px 40px -22px rgba(63,166,238,.5);}
+  .btn.small{font-size:.92rem;padding:.7em 1.2em;}
+
+  /* booking demo (non-functional) */
+  .btn.book{position:relative;overflow:visible;}
+  .btn.book .soon{
+    position:absolute;top:-12px;right:-10px;
+    font-family:var(--font-d);font-weight:700;font-size:.6rem;letter-spacing:.06em;
+    background:var(--ink);color:#fff;padding:.28em .6em;border-radius:var(--radius-pill);
+    box-shadow:0 8px 18px -8px rgba(42,39,51,.6);
+    text-transform:uppercase;white-space:nowrap;
+  }
+  .btn.book{cursor:default;}
+  .book-toast{
+    position:fixed;left:50%;bottom:34px;transform:translate(-50%,140%);
+    background:var(--ink);color:#fff;font-family:var(--font-d);font-weight:600;
+    padding:.85em 1.3em;border-radius:var(--radius-pill);
+    box-shadow:var(--shadow-lift);z-index:200;
+    display:inline-flex;align-items:center;gap:.6em;font-size:.95rem;
+    transition:transform .5s var(--ease-spring);pointer-events:none;
+    max-width:90vw;
+  }
+  .book-toast.show{transform:translate(-50%,0);}
+
+  /* ===========================================================
+     HEADER / NAV
+     =========================================================== */
+  header.nav{
+    position:fixed;top:0;left:0;right:0;z-index:120;
+    transition:background .4s var(--ease-out), box-shadow .4s var(--ease-out), padding .4s var(--ease-out);
+    padding:18px 0;
+  }
+  header.nav.scrolled{
+    background:rgba(255,249,244,.82);
+    backdrop-filter:blur(14px) saturate(1.2);
+    -webkit-backdrop-filter:blur(14px) saturate(1.2);
+    box-shadow:0 10px 30px -24px rgba(42,39,51,.4);
+    padding:11px 0;
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+  .brand{display:inline-flex;align-items:center;gap:.6em;font-family:var(--font-d);font-weight:700;font-size:1.28rem;color:var(--ink);letter-spacing:-.02em;}
+  .brand .mark{
+    width:38px;height:38px;border-radius:13px;
+    background:linear-gradient(135deg,var(--coral),var(--coral-deep));
+    display:grid;place-items:center;color:#fff;
+    box-shadow:0 10px 22px -10px rgba(240,83,63,.7);
+    transition:transform .5s var(--ease-spring);
+  }
+  .brand:hover .mark{transform:rotate(-10deg) scale(1.07);}
+  .brand .ko{font-family:var(--font-k);font-size:.8rem;color:var(--ink-faint);font-weight:400;margin-left:.1em;}
+
+  .nav-links{display:flex;align-items:center;gap:.4rem;}
+  .nav-links a.lnk{
+    font-family:var(--font-d);font-weight:600;font-size:.95rem;color:var(--ink-soft);
+    padding:.5em .85em;border-radius:var(--radius-pill);position:relative;
+    transition:color .25s, background .25s;
+  }
+  .nav-links a.lnk:hover{color:var(--coral-deep);background:var(--coral-wash);}
+  .nav-cta{margin-left:.4rem;}
+
+  .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:.4em;color:var(--ink);}
+
+  @media(max-width:900px){
+    .nav-links{
+      position:fixed;inset:0 0 0 auto;width:min(82vw,340px);
+      flex-direction:column;align-items:stretch;justify-content:flex-start;gap:.3rem;
+      background:var(--paper);padding:96px 24px 32px;
+      box-shadow:-30px 0 60px -30px rgba(42,39,51,.4);
+      transform:translateX(110%);transition:transform .5s var(--ease-spring);
+    }
+    .nav-links.open{transform:translateX(0);}
+    .nav-links a.lnk{font-size:1.15rem;padding:.7em 1em;}
+    .nav-cta{margin:.5rem 0 0;}
+    .nav-cta .btn{width:100%;justify-content:center;}
+    .nav-toggle{display:inline-flex;z-index:130;}
+    .nav-scrim{position:fixed;inset:0;background:rgba(42,39,51,.35);opacity:0;pointer-events:none;transition:opacity .4s;z-index:110;}
+    .nav-scrim.show{opacity:1;pointer-events:auto;}
+  }
+
+  /* ===========================================================
+     HERO
+     =========================================================== */
+  .hero{
+    position:relative;
+    padding:clamp(120px,17vh,180px) 0 clamp(60px,9vh,110px);
+    overflow:hidden;
+    background:
+      radial-gradient(120% 90% at 88% -10%, rgba(124,198,250,.30), transparent 55%),
+      radial-gradient(100% 80% at -5% 8%, rgba(255,169,158,.32), transparent 52%),
+      var(--cream);
+  }
+  /* decorative blobs */
+  .blob{position:absolute;border-radius:50%;filter:blur(2px);pointer-events:none;opacity:.9;}
+  .blob.b1{width:340px;height:340px;top:-60px;right:-40px;
+    background:radial-gradient(circle at 35% 30%, var(--sky), rgba(124,198,250,0) 70%);
+    animation:float1 13s var(--ease-out) infinite;}
+  .blob.b2{width:280px;height:280px;bottom:-80px;left:-60px;
+    background:radial-gradient(circle at 60% 40%, var(--coral-soft), rgba(255,169,158,0) 70%);
+    animation:float2 16s var(--ease-out) infinite;}
+  @keyframes float1{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-26px,30px) scale(1.07);}}
+  @keyframes float2{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(24px,-22px) scale(1.05);}}
+
+  .hero-grid{
+    position:relative;z-index:2;
+    display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(28px,4vw,64px);
+    align-items:center;
+  }
+
+  /* greeting / welcome moment */
+  .greet{
+    display:inline-flex;align-items:center;gap:.5em;
+    background:var(--paper);border-radius:var(--radius-pill);
+    padding:.5em .95em .5em .55em;margin-bottom:1.4rem;
+    box-shadow:var(--shadow-soft);
+    border:1px solid rgba(255,169,158,.4);
+  }
+  .greet .wave{
+    width:30px;height:30px;border-radius:50%;
+    background:linear-gradient(135deg,var(--butter),#FFC04D);
+    display:grid;place-items:center;font-size:.95rem;
+    animation:wave 2.6s var(--ease-out) infinite;transform-origin:70% 75%;
+  }
+  @keyframes wave{0%,60%,100%{transform:rotate(0);}10%{transform:rotate(16deg);}20%{transform:rotate(-10deg);}30%{transform:rotate(16deg);}40%{transform:rotate(-6deg);}50%{transform:rotate(10deg);}}
+  .greet .swap{
+    font-family:var(--font-d);font-weight:700;font-size:.96rem;color:var(--ink);
+    position:relative;display:inline-grid;
+  }
+  .greet .swap .layer{grid-area:1/1;transition:opacity .55s var(--ease-out), transform .55s var(--ease-spring);}
+  .greet .swap .ko{font-family:var(--font-k);}
+  .greet .swap[data-state="en"] .ko{opacity:0;transform:translateY(-40%);}
+  .greet .swap[data-state="en"] .en{opacity:1;transform:translateY(0);}
+  .greet .swap[data-state="ko"] .en{opacity:0;transform:translateY(40%);}
+  .greet .swap[data-state="ko"] .ko{opacity:1;transform:translateY(0);}
+  .greet .swap .en{opacity:0;transform:translateY(40%);}
+
+  .hero h1{
+    font-size:clamp(2.7rem,6.4vw,5rem);
+    letter-spacing:-.025em;line-height:.98;
+    color:var(--ink);
+    margin-bottom:1.1rem;
+  }
+  .hero h1 .accent{
+    color:var(--coral-deep);position:relative;white-space:nowrap;
+  }
+  .hero h1 .accent .underline{
+    position:absolute;left:0;right:0;bottom:-.06em;height:.34em;z-index:-1;
+  }
+  .hero h1 .accent .underline path{
+    stroke:var(--coral-soft);stroke-width:9;fill:none;stroke-linecap:round;
+    stroke-dasharray:480;stroke-dashoffset:480;
+  }
+  .reveal-on .hero h1 .accent .underline path,
+  .hero.is-in h1 .accent .underline path{animation:draw 1.1s .55s var(--ease-out) forwards;}
+  @keyframes draw{to{stroke-dashoffset:0;}}
+
+  .hero-lead{
+    font-size:clamp(1.05rem,1.5vw,1.22rem);
+    color:var(--ink-soft);max-width:36ch;margin:0 0 1.9rem;
+  }
+  .hero-lead strong{color:var(--ink);font-weight:800;}
+
+  .hero-cta{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;}
+  .hero-meta{
+    margin-top:1.8rem;display:flex;flex-wrap:wrap;gap:1.4rem;align-items:center;
+    color:var(--ink-soft);font-size:.92rem;
+  }
+  .hero-meta .dot{width:6px;height:6px;border-radius:50%;background:var(--coral-soft);display:inline-block;}
+  .stars{display:inline-flex;gap:2px;color:var(--butter);}
+
+  /* hero visual: ID card + animated rings */
+  .hero-visual{position:relative;display:grid;place-items:center;min-height:380px;}
+  .ring-stage{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;}
+  .ring{position:absolute;border-radius:50%;border:2px dashed rgba(124,198,250,.5);}
+  .ring.r1{width:300px;height:300px;animation:spin 26s linear infinite;}
+  .ring.r2{width:400px;height:400px;border-color:rgba(255,169,158,.45);animation:spin 38s linear infinite reverse;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+
+  .orbit{position:absolute;inset:0;animation:spin 22s linear infinite;}
+  .orbit .pin{
+    position:absolute;top:50%;left:50%;
+    width:46px;height:46px;border-radius:14px;background:var(--paper);
+    display:grid;place-items:center;box-shadow:var(--shadow-card);
+    transform-origin:center;font-size:1.2rem;
+  }
+  .orbit .pin span{animation:spin 22s linear infinite reverse;display:grid;place-items:center;}
+
+  .id-card{
+    position:relative;z-index:3;width:min(330px,80vw);
+    background:linear-gradient(165deg,#fff,#FFF6F2);
+    border-radius:var(--radius-lg);
+    padding:26px 24px 22px;
+    box-shadow:var(--shadow-lift);
+    border:1px solid rgba(255,255,255,.9);
+    transform:rotate(-3deg);
+    transition:transform .6s var(--ease-spring);
+  }
+  .hero-visual:hover .id-card{transform:rotate(-1deg) translateY(-6px);}
+  .id-card::before{
+    content:"";position:absolute;inset:0;border-radius:inherit;padding:1.5px;
+    background:linear-gradient(165deg,rgba(255,169,158,.8),rgba(124,198,250,.7));
+    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+    -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;
+  }
+  .id-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;}
+  .id-badge{
+    display:inline-flex;align-items:center;gap:.45em;
+    background:var(--coral-wash);color:var(--coral-deep);
+    font-family:var(--font-d);font-weight:700;font-size:.68rem;letter-spacing:.08em;
+    padding:.45em .75em;border-radius:var(--radius-pill);text-transform:uppercase;
+  }
+  .id-seal{
+    width:54px;height:54px;border-radius:50%;
+    background:conic-gradient(from 200deg,var(--sky),var(--coral-soft),var(--butter),var(--sky));
+    display:grid;place-items:center;
+    box-shadow:inset 0 0 0 4px #fff, 0 8px 18px -10px rgba(63,166,238,.6);
+  }
+  .id-seal .core{width:34px;height:34px;border-radius:50%;background:#fff;display:grid;place-items:center;}
+  .id-photo{
+    height:120px;border-radius:18px;margin-bottom:16px;position:relative;overflow:hidden;
+    background:
+      radial-gradient(120% 140% at 30% 0%, rgba(124,198,250,.5), transparent 60%),
+      linear-gradient(135deg,var(--coral-wash),var(--sky-wash));
+    display:grid;place-items:center;
+  }
+  .id-photo .pulse{
+    width:70px;height:70px;border-radius:50%;
+    background:radial-gradient(circle,var(--coral) 0%,var(--coral-deep) 70%);
+    display:grid;place-items:center;color:#fff;
+    box-shadow:0 12px 28px -10px rgba(240,83,63,.7);
+    animation:beat 2.4s var(--ease-spring) infinite;
+  }
+  @keyframes beat{0%,100%{transform:scale(1);}15%{transform:scale(1.14);}30%{transform:scale(1);}45%{transform:scale(1.08);}}
+  .id-row{display:flex;justify-content:space-between;align-items:baseline;padding:.35em 0;border-bottom:1px dashed rgba(146,140,156,.25);}
+  .id-row:last-child{border-bottom:none;}
+  .id-row .k{font-size:.74rem;color:var(--ink-faint);font-family:var(--font-d);font-weight:600;letter-spacing:.04em;}
+  .id-row .v{font-size:.86rem;color:var(--ink);font-weight:700;font-family:var(--font-d);}
+  .id-row .v.coral{color:var(--coral-deep);}
+
+  .floating-note{
+    position:absolute;z-index:4;background:var(--paper);
+    border-radius:18px;padding:.7em 1em;box-shadow:var(--shadow-card);
+    font-family:var(--font-d);font-weight:700;font-size:.82rem;color:var(--ink);
+    display:inline-flex;align-items:center;gap:.5em;
+  }
+  .floating-note.n1{top:6%;right:-2%;color:var(--sky-deep);animation:bobA 5s var(--ease-out) infinite;}
+  .floating-note.n2{bottom:4%;left:-4%;color:var(--coral-deep);animation:bobB 6s var(--ease-out) infinite;}
+  @keyframes bobA{0%,100%{transform:translateY(0) rotate(3deg);}50%{transform:translateY(-12px) rotate(3deg);}}
+  @keyframes bobB{0%,100%{transform:translateY(0) rotate(-4deg);}50%{transform:translateY(10px) rotate(-4deg);}}
+
+  /* marquee strip */
+  .marquee{
+    position:relative;z-index:2;margin-top:clamp(40px,6vh,72px);
+    border-top:1px solid rgba(255,169,158,.4);border-bottom:1px solid rgba(255,169,158,.4);
+    padding:18px 0;overflow:hidden;
+    -webkit-mask:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);
+    mask:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);
+  }
+  .marquee-track{display:flex;gap:3rem;width:max-content;animation:scroll 30s linear infinite;}
+  .marquee:hover .marquee-track{animation-play-state:paused;}
+  .marquee-track span{
+    font-family:var(--font-d);font-weight:700;font-size:1.05rem;color:var(--ink-soft);
+    display:inline-flex;align-items:center;gap:.7rem;white-space:nowrap;letter-spacing:.01em;
+  }
+  .marquee-track span .hh{color:var(--coral);}
+  @keyframes scroll{to{transform:translateX(-50%);}}
+
+  @media(max-width:880px){
+    .hero-grid{grid-template-columns:1fr;gap:8px;}
+    .hero-visual{order:-1;min-height:330px;margin-bottom:10px;}
+    .id-card{transform:rotate(-2deg);}
+    .ring.r2{width:330px;height:330px;}
+    .ring.r1{width:250px;height:250px;}
+    .hero-lead{max-width:42ch;}
+  }
+
+  /* ===========================================================
+     SECTION shells / reveals
+     =========================================================== */
+  section{position:relative;}
+  .pad{padding:clamp(72px,11vh,128px) 0;}
+  .sec-head{max-width:62ch;margin-bottom:clamp(36px,5vh,60px);}
+  .sec-head h2{font-size:clamp(2rem,4.4vw,3.4rem);margin:.6rem 0 .9rem;letter-spacing:-.02em;}
+  .sec-head p{font-size:clamp(1.02rem,1.35vw,1.16rem);color:var(--ink-soft);margin:0;max-width:54ch;}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease-out), transform .8s var(--ease-spring);}
+  .reveal.in{opacity:1;transform:none;}
+  .reveal.d1{transition-delay:.08s;}
+  .reveal.d2{transition-delay:.16s;}
+  .reveal.d3{transition-delay:.24s;}
+  .reveal.d4{transition-delay:.32s;}
+
+  /* ===========================================================
+     WELCOME / ENGLISH-TRUST BAND
+     =========================================================== */
+  .welcome{
+    background:
+      radial-gradient(90% 120% at 100% 0%, rgba(124,198,250,.16), transparent 60%),
+      linear-gradient(180deg,#fff, #FFFBF8);
+    border-top:1px solid rgba(255,169,158,.22);
+    border-bottom:1px solid rgba(255,169,158,.22);
+  }
+  .welcome-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(32px,5vw,72px);align-items:center;}
+
+  .cert-card{
+    position:relative;background:var(--paper);border-radius:var(--radius-lg);
+    padding:clamp(28px,3.5vw,44px);box-shadow:var(--shadow-lift);
+    overflow:hidden;
+  }
+  .cert-card::after{
+    content:"";position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;
+    background:radial-gradient(circle,var(--sky-wash),transparent 70%);
+  }
+  .cert-ribbon{
+    display:inline-flex;align-items:center;gap:.6em;
+    background:linear-gradient(135deg,var(--sky-deep),var(--sky));color:#fff;
+    font-family:var(--font-d);font-weight:700;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;
+    padding:.55em 1em;border-radius:var(--radius-pill);
+    box-shadow:0 12px 26px -12px rgba(63,166,238,.7);position:relative;z-index:1;
+  }
+  .cert-card h3{font-size:clamp(1.5rem,2.4vw,2.05rem);margin:1.1rem 0 .6rem;position:relative;z-index:1;}
+  .cert-card .ko-line{font-family:var(--font-k);color:var(--ink-faint);font-size:.96rem;margin:0 0 1rem;position:relative;z-index:1;}
+  .cert-card p{color:var(--ink-soft);margin:0;position:relative;z-index:1;}
+  .cert-foot{margin-top:1.4rem;display:flex;align-items:center;gap:.7em;position:relative;z-index:1;}
+  .cert-foot .stamp{
+    width:62px;height:62px;border-radius:50%;flex:none;
+    background:repeating-conic-gradient(var(--coral) 0 12deg, var(--coral-deep) 12deg 24deg);
+    display:grid;place-items:center;color:#fff;
+    box-shadow:inset 0 0 0 4px #fff,0 10px 22px -10px rgba(240,83,63,.6);
+    transform:rotate(-8deg);
+  }
+  .cert-foot .stamp .in{width:42px;height:42px;border-radius:50%;background:var(--coral-deep);display:grid;place-items:center;}
+  .cert-foot small{font-family:var(--font-d);font-weight:600;color:var(--ink);line-height:1.35;font-size:.86rem;}
+  .cert-foot small b{color:var(--coral-deep);}
+
+  .welcome-points{display:grid;gap:1.1rem;}
+  .wp{
+    display:flex;gap:1rem;align-items:flex-start;
+    background:var(--paper);border:1px solid rgba(255,169,158,.28);
+    border-radius:var(--radius);padding:1.15rem 1.3rem;
+    box-shadow:0 14px 34px -28px rgba(63,166,238,.4);
+    transition:transform .4s var(--ease-spring), box-shadow .4s var(--ease-out), border-color .3s;
+  }
+  .wp:hover{transform:translateX(6px);border-color:var(--coral-soft);box-shadow:var(--shadow-card);}
+  .wp .wp-ico{
+    width:48px;height:48px;border-radius:15px;flex:none;display:grid;place-items:center;color:#fff;
+    background:linear-gradient(135deg,var(--coral),var(--coral-deep));
+    box-shadow:0 10px 22px -12px rgba(240,83,63,.7);
+    transition:transform .5s var(--ease-spring);
+  }
+  .wp:nth-child(2) .wp-ico{background:linear-gradient(135deg,var(--sky-deep),var(--sky));box-shadow:0 10px 22px -12px rgba(63,166,238,.6);}
+  .wp:nth-child(3) .wp-ico{background:linear-gradient(135deg,#FFC04D,var(--butter));box-shadow:0 10px 22px -12px rgba(255,192,77,.7);color:#7a5200;}
+  .wp:hover .wp-ico{transform:rotate(-8deg) scale(1.08);}
+  .wp h4{font-size:1.1rem;margin:0 0 .25rem;}
+  .wp p{margin:0;color:var(--ink-soft);font-size:.96rem;}
+
+  @media(max-width:840px){.welcome-grid{grid-template-columns:1fr;}}
+
+  /* ===========================================================
+     STATS / TRUST COUNTER
+     =========================================================== */
+  .stats-band{background:linear-gradient(135deg,var(--coral),var(--coral-deep));color:#fff;position:relative;overflow:hidden;}
+  .stats-band::before,.stats-band::after{content:"";position:absolute;border-radius:50%;pointer-events:none;}
+  .stats-band::before{width:380px;height:380px;top:-160px;left:-80px;background:radial-gradient(circle,rgba(255,255,255,.18),transparent 70%);}
+  .stats-band::after{width:300px;height:300px;bottom:-140px;right:-60px;background:radial-gradient(circle,rgba(124,198,250,.4),transparent 70%);}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,40px);position:relative;z-index:1;text-align:center;}
+  .stat .num{font-family:var(--font-d);font-weight:700;font-size:clamp(2.4rem,5vw,3.6rem);line-height:1;letter-spacing:-.02em;}
+  .stat .num sup{font-size:.5em;vertical-align:super;opacity:.85;}
+  .stat .lab{font-family:var(--font-d);font-weight:600;font-size:.86rem;letter-spacing:.04em;opacity:.92;margin-top:.5em;text-transform:uppercase;}
+  .stat .stars{color:#fff;justify-content:center;margin-bottom:.2em;}
+  .stat-divide{position:relative;}
+  @media(max-width:760px){.stats-grid{grid-template-columns:repeat(2,1fr);gap:34px 20px;}}
+
+  /* ===========================================================
+     SERVICES
+     =========================================================== */
+  .services{background:var(--cream);}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,30px);}
+  .svc{
+    position:relative;background:var(--paper);border-radius:var(--radius-lg);
+    padding:clamp(26px,3vw,38px) clamp(24px,2.6vw,32px);overflow:hidden;
+    box-shadow:0 20px 46px -32px rgba(42,39,51,.3);
+    border:1px solid rgba(255,255,255,.8);
+    transition:transform .5s var(--ease-spring), box-shadow .5s var(--ease-out);
+    isolation:isolate;
+  }
+  .svc::before{
+    content:"";position:absolute;inset:0;z-index:-1;opacity:0;
+    background:linear-gradient(160deg,var(--coral-wash),var(--sky-wash));
+    transition:opacity .5s var(--ease-out);
+  }
+  .svc:hover{transform:translateY(-8px);box-shadow:var(--shadow-lift);}
+  .svc:hover::before{opacity:1;}
+  .svc .glyph{
+    width:66px;height:66px;border-radius:20px;margin-bottom:1.3rem;display:grid;place-items:center;
+    background:linear-gradient(150deg,var(--coral-wash),#fff);color:var(--coral-deep);
+    box-shadow:inset 0 0 0 1.5px rgba(255,169,158,.5);
+    transition:transform .55s var(--ease-spring);
+  }
+  .svc:nth-child(2) .glyph{background:linear-gradient(150deg,var(--sky-wash),#fff);color:var(--sky-deep);box-shadow:inset 0 0 0 1.5px rgba(124,198,250,.5);}
+  .svc:nth-child(3) .glyph{background:linear-gradient(150deg,#FFF6E6,#fff);color:#D99100;box-shadow:inset 0 0 0 1.5px rgba(255,192,77,.5);}
+  .svc:hover .glyph{transform:rotate(-7deg) scale(1.07);}
+  .svc .tag{font-family:var(--font-d);font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);}
+  .svc:nth-child(2) .tag{color:var(--sky-deep);}
+  .svc:nth-child(3) .tag{color:#D99100;}
+  .svc h3{font-size:1.45rem;margin:.5rem 0 .7rem;}
+  .svc p{color:var(--ink-soft);margin:0 0 1.3rem;font-size:.97rem;}
+  .svc ul{display:grid;gap:.55rem;}
+  .svc ul li{display:flex;align-items:center;gap:.6em;font-size:.92rem;color:var(--ink);font-weight:600;}
+  .svc ul li .tick{width:20px;height:20px;border-radius:50%;flex:none;display:grid;place-items:center;background:var(--coral-wash);color:var(--coral-deep);}
+  .svc:nth-child(2) ul li .tick{background:var(--sky-wash);color:var(--sky-deep);}
+  .svc:nth-child(3) ul li .tick{background:#FFF6E6;color:#D99100;}
+  @media(max-width:860px){.svc-grid{grid-template-columns:1fr;max-width:520px;margin-inline:auto;}}
+
+  /* ===========================================================
+     STORY / WHY VISIT  (split with big quote-ish layout)
+     =========================================================== */
+  .story{background:linear-gradient(180deg,#FFFBF8,#fff);}
+  .story-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,80px);align-items:center;}
+  .story-copy h2{font-size:clamp(2rem,4vw,3.2rem);margin:.7rem 0 1.1rem;}
+  .story-copy h2 em{font-style:normal;color:var(--coral-deep);position:relative;}
+  .story-copy p{color:var(--ink-soft);margin:0 0 1.1rem;max-width:48ch;}
+  .story-copy p strong{color:var(--ink);font-weight:800;}
+  .story-list{display:grid;gap:.8rem;margin-top:1.6rem;}
+  .story-list li{display:flex;align-items:flex-start;gap:.75em;font-weight:600;color:var(--ink);}
+  .story-list li .b{width:24px;height:24px;border-radius:8px;flex:none;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,var(--coral),var(--coral-deep));font-size:.8rem;margin-top:1px;}
+
+  .story-visual{position:relative;display:grid;place-items:center;min-height:380px;}
+  .neighborhood{
+    width:min(380px,86vw);aspect-ratio:1/1;position:relative;
+    background:
+      radial-gradient(circle at 70% 25%, rgba(124,198,250,.25), transparent 45%),
+      linear-gradient(160deg,#fff,#FFF6F2);
+    border-radius:42px;box-shadow:var(--shadow-lift);overflow:hidden;
+    border:1px solid rgba(255,255,255,.8);
+  }
+  .nb-svg{position:absolute;inset:0;width:100%;height:100%;}
+  .nb-chip{
+    position:absolute;background:#fff;border-radius:14px;padding:.5em .8em;
+    font-family:var(--font-d);font-weight:700;font-size:.78rem;color:var(--ink);
+    box-shadow:var(--shadow-card);display:inline-flex;align-items:center;gap:.45em;z-index:2;
+  }
+  .nb-chip.c1{top:14%;left:10%;color:var(--sky-deep);animation:bobA 6s var(--ease-out) infinite;}
+  .nb-chip.c2{bottom:16%;right:9%;color:var(--coral-deep);animation:bobB 7s var(--ease-out) infinite;}
+  .nb-pin{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);z-index:3;
+    width:64px;height:64px;border-radius:50% 50% 50% 6px;rotate:-45deg;
+    background:linear-gradient(135deg,var(--coral),var(--coral-deep));
+    box-shadow:0 16px 30px -12px rgba(240,83,63,.7);display:grid;place-items:center;
+    animation:drop 3s var(--ease-spring) infinite;
+  }
+  .nb-pin .dot{width:24px;height:24px;border-radius:50%;background:#fff;rotate:45deg;display:grid;place-items:center;color:var(--coral-deep);}
+  @keyframes drop{0%,100%{transform:translate(-50%,-60%);}50%{transform:translate(-50%,-72%);}}
+  .nb-ripple{position:absolute;top:50%;left:50%;width:64px;height:64px;border-radius:50%;transform:translate(-50%,-40%);border:2px solid var(--coral-soft);opacity:0;animation:ripple 3s var(--ease-out) infinite;}
+  @keyframes ripple{0%{opacity:.7;transform:translate(-50%,-40%) scale(.6);}100%{opacity:0;transform:translate(-50%,-40%) scale(2.6);}}
+  @media(max-width:860px){.story-grid{grid-template-columns:1fr;}.story-visual{order:-1;}}
+
+  /* ===========================================================
+     LOCATION & HOURS
+     =========================================================== */
+  .visit{background:var(--cream);}
+  .visit-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4vw,56px);align-items:stretch;}
+
+  .hours-card{
+    background:var(--paper);border-radius:var(--radius-lg);padding:clamp(26px,3vw,40px);
+    box-shadow:var(--shadow-lift);position:relative;overflow:hidden;
+  }
+  .hours-card::before{content:"";position:absolute;top:-30px;left:-30px;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,var(--coral-wash),transparent 70%);}
+  .hours-card h3{font-size:1.6rem;margin:0 0 .3rem;position:relative;}
+  .hours-card .sub{color:var(--ink-faint);font-family:var(--font-d);font-weight:600;font-size:.86rem;margin:0 0 1.4rem;position:relative;}
+  .open-now{
+    display:inline-flex;align-items:center;gap:.5em;position:relative;
+    background:var(--coral-wash);color:var(--coral-deep);
+    font-family:var(--font-d);font-weight:700;font-size:.82rem;
+    padding:.45em .85em;border-radius:var(--radius-pill);margin-bottom:1.3rem;
+  }
+  .open-now .blip{width:9px;height:9px;border-radius:50%;background:#22B07A;box-shadow:0 0 0 0 rgba(34,176,122,.6);animation:blip 2s infinite;}
+  @keyframes blip{0%{box-shadow:0 0 0 0 rgba(34,176,122,.55);}70%{box-shadow:0 0 0 8px rgba(34,176,122,0);}100%{box-shadow:0 0 0 0 rgba(34,176,122,0);}}
+  .open-now.closed{background:var(--sky-wash);color:var(--sky-deep);}
+  .open-now.closed .blip{background:var(--ink-faint);animation:none;box-shadow:none;}
+
+  .hours-list{position:relative;}
+  .hours-list li{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.78em 0;border-bottom:1px dashed rgba(146,140,156,.22);}
+  .hours-list li:last-child{border-bottom:none;}
+  .hours-list .day{font-family:var(--font-d);font-weight:700;color:var(--ink);font-size:.98rem;}
+  .hours-list .time{font-weight:700;color:var(--ink-soft);font-size:.94rem;font-family:var(--font-d);}
+  .hours-list li.today{background:linear-gradient(90deg,var(--coral-wash),transparent);margin-inline:-.8rem;padding-inline:.8rem;border-radius:12px;}
+  .hours-list li.today .day{color:var(--coral-deep);}
+  .hours-list li.today .time{color:var(--coral-deep);}
+  .hours-list li.off .time{color:var(--ink-faint);}
+  .hours-list .pillnow{font-family:var(--font-d);font-weight:700;font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--coral);padding:.2em .55em;border-radius:var(--radius-pill);margin-left:.5em;}
+
+  .place-card{
+    background:linear-gradient(165deg,var(--sky-deep),#2E8FD8);color:#fff;
+    border-radius:var(--radius-lg);padding:clamp(26px,3vw,40px);
+    box-shadow:var(--shadow-lift);position:relative;overflow:hidden;display:flex;flex-direction:column;
+  }
+  .place-card::after{content:"";position:absolute;bottom:-90px;right:-70px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.16),transparent 70%);}
+  .place-map{
+    position:relative;border-radius:22px;overflow:hidden;height:190px;margin-bottom:1.4rem;
+    background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);
+  }
+  .place-map svg{position:absolute;inset:0;width:100%;height:100%;}
+  .place-map .here{
+    position:absolute;top:50%;left:52%;transform:translate(-50%,-50%);z-index:2;
+    display:grid;place-items:center;
+  }
+  .place-map .here .pp{
+    width:30px;height:30px;border-radius:50% 50% 50% 4px;rotate:-45deg;
+    background:#fff;box-shadow:0 8px 18px -6px rgba(0,0,0,.4);display:grid;place-items:center;
+  }
+  .place-map .here .pp b{rotate:45deg;color:var(--coral-deep);display:grid;place-items:center;font-size:.9rem;}
+  .place-map .here .rr{position:absolute;width:30px;height:30px;border-radius:50%;border:2px solid rgba(255,255,255,.8);animation:ripple 2.6s var(--ease-out) infinite;}
+  .place-card h3{font-size:1.5rem;margin:0 0 .35rem;position:relative;z-index:1;}
+  .place-card .addr{opacity:.95;margin:0 0 .2rem;position:relative;z-index:1;font-size:1rem;}
+  .place-card .addr-ko{font-family:var(--font-k);opacity:.78;font-size:.9rem;margin:0 0 1.1rem;position:relative;z-index:1;}
+  .place-feats{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:auto;position:relative;z-index:1;}
+  .place-feats span{display:inline-flex;align-items:center;gap:.4em;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);border-radius:var(--radius-pill);padding:.4em .8em;font-family:var(--font-d);font-weight:600;font-size:.82rem;}
+  @media(max-width:860px){.visit-grid{grid-template-columns:1fr;}}
+
+  /* ===========================================================
+     CONTACT / CTA
+     =========================================================== */
+  .contact{
+    background:
+      radial-gradient(80% 120% at 10% 0%, rgba(255,169,158,.22), transparent 55%),
+      radial-gradient(80% 120% at 100% 100%, rgba(124,198,250,.22), transparent 55%),
+      #FFFBF8;
+  }
+  .cta-card{
+    position:relative;background:var(--paper);border-radius:var(--radius-lg);
+    padding:clamp(34px,5vw,72px);box-shadow:var(--shadow-lift);overflow:hidden;text-align:center;
+  }
+  .cta-card::before,.cta-card::after{content:"";position:absolute;border-radius:50%;pointer-events:none;}
+  .cta-card::before{width:200px;height:200px;top:-70px;left:-50px;background:radial-gradient(circle,var(--coral-wash),transparent 70%);}
+  .cta-card::after{width:220px;height:220px;bottom:-80px;right:-60px;background:radial-gradient(circle,var(--sky-wash),transparent 70%);}
+  .cta-heart{
+    width:74px;height:74px;margin:0 auto 1.2rem;border-radius:24px;display:grid;place-items:center;
+    background:linear-gradient(135deg,var(--coral),var(--coral-deep));color:#fff;position:relative;z-index:1;
+    box-shadow:0 18px 36px -16px rgba(240,83,63,.7);animation:beat 2.6s var(--ease-spring) infinite;
+  }
+  .cta-card h2{font-size:clamp(2rem,4.4vw,3.3rem);margin:0 0 .7rem;position:relative;z-index:1;}
+  .cta-card h2 .ko{font-family:var(--font-k);font-weight:400;color:var(--ink-soft);display:block;font-size:.42em;margin-top:.4em;letter-spacing:0;}
+  .cta-card p{color:var(--ink-soft);max-width:46ch;margin:0 auto 2rem;position:relative;z-index:1;font-size:1.08rem;}
+  .cta-actions{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center;position:relative;z-index:1;}
+  .cta-phone{
+    display:inline-flex;align-items:center;gap:.6em;margin-top:1.8rem;position:relative;z-index:1;
+    font-family:var(--font-d);font-weight:700;font-size:clamp(1.3rem,2.6vw,1.7rem);color:var(--ink);letter-spacing:.01em;
+    transition:color .3s;
+  }
+  .cta-phone:hover{color:var(--coral-deep);}
+  .cta-phone .ph-ico{width:42px;height:42px;border-radius:14px;background:var(--coral-wash);color:var(--coral-deep);display:grid;place-items:center;transition:transform .5s var(--ease-spring);}
+  .cta-phone:hover .ph-ico{transform:rotate(-12deg) scale(1.08);}
+  .cta-note{margin-top:1rem;font-size:.86rem;color:var(--ink-faint);position:relative;z-index:1;font-family:var(--font-d);font-weight:600;}
+
+  /* ===========================================================
+     FOOTER
+     =========================================================== */
+  footer.site{background:var(--ink);color:#EDE9F2;padding:clamp(54px,8vh,84px) 0 30px;position:relative;overflow:hidden;}
+  footer.site::before{content:"";position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:520px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(255,111,97,.22),transparent 70%);pointer-events:none;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:clamp(28px,4vw,56px);position:relative;z-index:1;}
+  .foot-brand .brand{color:#fff;}
+  .foot-brand .brand .ko{color:rgba(237,233,242,.6);}
+  .foot-brand p{color:rgba(237,233,242,.66);margin:1rem 0 0;max-width:34ch;font-size:.95rem;}
+  .foot-soc{display:flex;gap:.6rem;margin-top:1.3rem;}
+  .foot-soc a{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:rgba(255,255,255,.07);color:#fff;transition:transform .4s var(--ease-spring), background .3s;}
+  .foot-soc a:hover{transform:translateY(-3px);background:var(--coral);}
+  .foot-soc a:focus-visible{outline:3px solid var(--sky);outline-offset:2px;}
+  .foot-col h4{font-size:1rem;color:#fff;margin:0 0 1rem;font-family:var(--font-d);}
+  .foot-col ul{display:grid;gap:.6rem;}
+  .foot-col ul li a,.foot-col ul li span{color:rgba(237,233,242,.66);font-size:.94rem;transition:color .25s;display:inline-flex;align-items:center;gap:.5em;}
+  .foot-col ul li a:hover{color:var(--coral-soft);}
+  .foot-hours{font-family:var(--font-d);font-weight:600;}
+
+  .foot-bottom{
+    margin-top:clamp(40px,6vh,64px);padding-top:24px;border-top:1px solid rgba(255,255,255,.1);
+    display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;position:relative;z-index:1;
+  }
+  .foot-bottom .copy{color:rgba(237,233,242,.5);font-size:.85rem;}
+  .credit{font-size:.82rem;color:rgba(237,233,242,.55);font-family:var(--font-d);font-weight:600;display:inline-flex;align-items:center;gap:.45em;transition:color .3s;}
+  .credit a{color:rgba(237,233,242,.85);border-bottom:1px solid transparent;transition:color .3s, border-color .3s;}
+  .credit a:hover{color:#fff;border-color:var(--coral-soft);}
+  .credit .spark{color:var(--coral-soft);}
+  @media(max-width:760px){.foot-grid{grid-template-columns:1fr;gap:32px;}.foot-bottom{flex-direction:column;align-items:flex-start;}}
+
+  /* ===========================================================
+     MISC / accessibility
+     =========================================================== */
+  .skip{position:absolute;left:-999px;top:0;z-index:300;background:var(--ink);color:#fff;padding:.7em 1.2em;border-radius:0 0 12px 0;font-family:var(--font-d);font-weight:700;}
+  .skip:focus{left:0;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important;}
+    .reveal{opacity:1;transform:none;}
+    .blob,.ring,.orbit{animation:none !important;}
+  }
+</style>
+
+
+<style id="shm-bk-style">
+.shm-bk *{box-sizing:border-box}
+.shm-bk-overlay{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;
+  padding:max(16px,env(safe-area-inset-top)) 16px;background:rgba(10,10,12,.55);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);font-family:var(--bk-sans)}
+.shm-bk-overlay.open{display:flex}
+.shm-bk-card{width:100%;max-width:480px;max-height:92vh;overflow:auto;background:var(--bk-panel);
+  color:var(--bk-ink);border-radius:var(--bk-r);box-shadow:0 30px 80px -20px rgba(0,0,0,.55),0 0 0 1px var(--bk-line);
+  padding:26px 26px 22px;transform:translateY(10px);opacity:0;transition:transform .42s cubic-bezier(.16,1,.3,1),opacity .42s}
+.shm-bk-overlay.open .shm-bk-card{transform:none;opacity:1}
+.shm-bk-eyebrow{font-size:.64rem;letter-spacing:.26em;text-transform:uppercase;color:var(--bk-accent);
+  font-weight:600;display:flex;align-items:center;gap:.6em;margin:0 0 .5rem}
+.shm-bk-eyebrow::before{content:"";width:.42em;height:.42em;border-radius:50%;background:var(--bk-accent)}
+.shm-bk h2.shm-bk-title{font-family:var(--bk-serif);font-weight:500;line-height:1.05;font-size:1.7rem;margin:0 0 .35rem}
+.shm-bk-sub{color:var(--bk-muted);font-size:.92rem;line-height:1.5;margin:0 0 1.15rem}
+.shm-bk-close{position:absolute;top:14px;right:16px;background:none;border:0;color:var(--bk-muted);
+  font-size:1.5rem;line-height:1;cursor:pointer;padding:6px;border-radius:8px}
+.shm-bk-close:hover{color:var(--bk-ink);background:var(--bk-line)}
+.shm-bk-card{position:relative}
+.shm-bk-label{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bk-muted);
+  font-weight:600;margin:1.1rem 0 .55rem}
+.shm-bk-row{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
+.shm-bk-chip{flex:0 0 auto;min-width:62px;text-align:center;padding:.6rem .7rem;border:1px solid var(--bk-line);
+  background:transparent;color:var(--bk-ink);border-radius:calc(var(--bk-r)*.6);cursor:pointer;
+  font:inherit;font-size:.8rem;transition:.18s;line-height:1.25}
+.shm-bk-chip small{display:block;font-size:.62rem;color:var(--bk-muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
+.shm-bk-chip:hover{border-color:var(--bk-accent)}
+.shm-bk-chip[aria-pressed="true"]{background:var(--bk-accent);color:var(--bk-accent-ink);border-color:var(--bk-accent)}
+.shm-bk-chip[aria-pressed="true"] small{color:var(--bk-accent-ink);opacity:.8}
+.shm-bk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(78px,1fr));gap:8px}
+.shm-bk-field{margin-top:.7rem}
+.shm-bk-field input,.shm-bk-field select,.shm-bk-field textarea{width:100%;padding:.7rem .8rem;border:1px solid var(--bk-line);
+  background:var(--bk-panel);color:var(--bk-ink);border-radius:calc(var(--bk-r)*.55);font:inherit;font-size:.9rem}
+.shm-bk-field input:focus,.shm-bk-field select:focus,.shm-bk-field textarea:focus{outline:2px solid var(--bk-accent);outline-offset:1px;border-color:var(--bk-accent)}
+.shm-bk-field input::placeholder,.shm-bk-field textarea::placeholder{color:var(--bk-muted)}
+.shm-bk-cta{width:100%;margin-top:1.25rem;padding:.95rem 1rem;border:0;border-radius:calc(var(--bk-r)*.55);
+  background:var(--bk-ink);color:var(--bk-panel);font:inherit;font-weight:600;letter-spacing:.04em;cursor:pointer;
+  font-size:.92rem;transition:.18s;display:flex;align-items:center;justify-content:center;gap:.5em}
+.shm-bk-cta:hover{filter:brightness(1.12)}
+.shm-bk-cta:disabled{opacity:.4;cursor:not-allowed}
+.shm-bk-ghost{display:block;text-align:center;margin-top:.7rem;padding:.85rem;border:1px solid var(--bk-line);
+  border-radius:calc(var(--bk-r)*.55);color:var(--bk-ink);text-decoration:none;font-size:.88rem;font-weight:600;transition:.18s}
+.shm-bk-ghost:hover{border-color:var(--bk-accent);color:var(--bk-accent)}
+.shm-bk-fine{font-size:.72rem;color:var(--bk-muted);text-align:center;margin:.95rem 0 0;line-height:1.45}
+.shm-bk-hide{display:none}
+.shm-bk-tick{width:54px;height:54px;border-radius:50%;background:var(--bk-accent);color:var(--bk-accent-ink);
+  display:flex;align-items:center;justify-content:center;font-size:1.7rem;margin:0 auto 1rem}
+.shm-bk-conf{text-align:center}
+.shm-bk-conf .shm-bk-title{font-size:1.5rem}
+.shm-bk-fab{position:fixed;left:50%;transform:translateX(-50%);bottom:20px;z-index:9998;
+  display:inline-flex;align-items:center;gap:.5em;padding:.85rem 1.4rem;border:0;border-radius:999px;
+  background:var(--bk-accent);color:var(--bk-accent-ink);font-family:var(--bk-sans);font-weight:600;
+  font-size:.92rem;letter-spacing:.02em;cursor:pointer;box-shadow:0 10px 30px -6px rgba(0,0,0,.42)}
+.shm-bk-fab:hover{transform:translateX(-50%) translateY(-2px);box-shadow:0 16px 40px -8px rgba(0,0,0,.52)}
+@media (max-width:520px){.shm-bk-fab{bottom:14px;font-size:.88rem;padding:.8rem 1.15rem}}
+@media (prefers-reduced-motion:reduce){.shm-bk-card{transition:none}}
+.shm-bk{--bk-accent:#3fa6ee;--bk-accent-ink:#ffffff;--bk-ink:#2a2733;--bk-panel:#ffffff;--bk-muted:rgba(42,39,51,0.6);--bk-line:rgba(42,39,51,0.14);--bk-serif:Georgia, "Times New Roman", serif;--bk-sans:"Quicksand", system-ui, sans-serif;--bk-r:18px;}
+</style>
+
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav" id="siteNav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#main" aria-label="Like Dental — home">
+      <span class="mark" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-10-9.2C.3 8.3 2 4.5 5.6 4.5c2 0 3.3 1.1 4.4 2.6 1.1-1.5 2.4-2.6 4.4-2.6 3.6 0 5.3 3.8 3.6 7.3C19.5 16.4 12 21 12 21z"/></svg>
+      </span>
+      <span>Like Dental <span class="ko">라이크치과</span></span>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a class="lnk" href="#welcome">For Expats</a>
+      <a class="lnk" href="#services">Treatments</a>
+      <a class="lnk" href="#story">Why Like</a>
+      <a class="lnk" href="#visit">Visit</a>
+      <span class="nav-cta">
+        <a class="btn small" href="tel:+82269510011">
+          <span class="ico" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+          </span>
+          02-6951-0011
+        </a>
+      </span>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+<div class="nav-scrim" id="navScrim" aria-hidden="true"></div>
+
+<main id="main">
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="hero" aria-labelledby="heroTitle">
+  <span class="blob b1" aria-hidden="true"></span>
+  <span class="blob b2" aria-hidden="true"></span>
+
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="greet" aria-label="Welcome">
+        <span class="wave" aria-hidden="true">👋</span>
+        <span class="swap" id="greetSwap" data-state="ko" aria-live="polite">
+          <span class="layer ko">안녕하세요</span>
+          <span class="layer en">Welcome to Like Dental</span>
+        </span>
+      </div>
+
+      <h1 id="heroTitle">
+        English-speaking<br>
+        dental care you'll<br>
+        <span class="accent">actually like
+          <svg class="underline" viewBox="0 0 320 24" preserveAspectRatio="none" aria-hidden="true"><path d="M6 16 C70 4, 130 22, 314 8"/></svg>
+        </span>.
+      </h1>
+
+      <p class="hero-lead">
+        A large, trusted clinic by Sinchon's universities — and an
+        <strong>officially registered foreign-patient institution</strong>.
+        Booking, treatment and aftercare, all explained clearly in English.
+      </p>
+
+      <div class="hero-cta">
+        <a class="btn" href="tel:+82269510011">
+          <span class="ico" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+          </span>
+          Call to book
+        </a>
+        <button class="btn book ghost" id="bookBtn1" type="button" aria-label="Book online — coming soon">
+          <span class="soon" aria-hidden="true">Soon</span>
+          <span class="ico" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="17" rx="3"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/><path d="M8.5 14.5l2.2 2.2 4.3-4.6"/></svg>
+          </span>
+          Book online
+        </button>
+      </div>
+
+      <div class="hero-meta">
+        <span style="display:inline-flex;align-items:center;gap:.45em;">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <strong style="color:var(--ink);font-weight:800;">5.0</strong>
+          <span>· 720 Google reviews</span>
+        </span>
+        <span class="dot" aria-hidden="true"></span>
+        <span>Mapo · Sinchon Station</span>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="ring-stage">
+        <span class="ring r1"></span>
+        <span class="ring r2"></span>
+      </div>
+      <div class="orbit">
+        <span class="pin" style="transform:translate(-50%,-50%) translateY(-150px);"><span>🦷</span></span>
+        <span class="pin" style="transform:translate(-50%,-50%) translate(130px,75px);"><span>💬</span></span>
+        <span class="pin" style="transform:translate(-50%,-50%) translate(-130px,75px);"><span>💗</span></span>
+      </div>
+
+      <div class="id-card">
+        <div class="id-top">
+          <span class="id-badge">Certified · 외국인환자</span>
+          <span class="id-seal"><span class="core">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--coral-deep)"><path d="M12 21s-7.5-4.6-10-9.2C.3 8.3 2 4.5 5.6 4.5c2 0 3.3 1.1 4.4 2.6 1.1-1.5 2.4-2.6 4.4-2.6 3.6 0 5.3 3.8 3.6 7.3C19.5 16.4 12 21 12 21z"/></svg>
+          </span></span>
+        </div>
+        <div class="id-photo">
+          <span class="pulse">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-10-9.2C.3 8.3 2 4.5 5.6 4.5c2 0 3.3 1.1 4.4 2.6 1.1-1.5 2.4-2.6 4.4-2.6 3.6 0 5.3 3.8 3.6 7.3C19.5 16.4 12 21 12 21z"/></svg>
+          </span>
+        </div>
+        <div class="id-row"><span class="k">Clinic</span><span class="v">Like Dental</span></div>
+        <div class="id-row"><span class="k">Languages</span><span class="v coral">Korean · English</span></div>
+        <div class="id-row"><span class="k">Near</span><span class="v">Sinchon Station</span></div>
+        <div class="id-row"><span class="k">Trusted by</span><span class="v">720 patients ★</span></div>
+      </div>
+
+      <span class="floating-note n1">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        English welcome
+      </span>
+      <span class="floating-note n2">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-10-9.2C.3 8.3 2 4.5 5.6 4.5c2 0 3.3 1.1 4.4 2.6 1.1-1.5 2.4-2.6 4.4-2.6 3.6 0 5.3 3.8 3.6 7.3C19.5 16.4 12 21 12 21z"/></svg>
+        5.0★ loved
+      </span>
+    </div>
+  </div>
+
+  <!-- marquee strip -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span><span class="hh">♥</span> English-friendly</span>
+      <span><span class="hh">♥</span> Foreign-patient certified</span>
+      <span><span class="hh">♥</span> Implants</span>
+      <span><span class="hh">♥</span> Orthodontics</span>
+      <span><span class="hh">♥</span> Beside Sinchon's universities</span>
+      <span><span class="hh">♥</span> 720 reviews</span>
+      <span><span class="hh">♥</span> English-friendly</span>
+      <span><span class="hh">♥</span> Foreign-patient certified</span>
+      <span><span class="hh">♥</span> Implants</span>
+      <span><span class="hh">♥</span> Orthodontics</span>
+      <span><span class="hh">♥</span> Beside Sinchon's universities</span>
+      <span><span class="hh">♥</span> 720 reviews</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WELCOME / ENGLISH TRUST ===================== -->
+<section class="welcome pad" id="welcome" aria-labelledby="welcomeTitle">
+  <div class="wrap welcome-grid">
+    <div class="cert-card reveal">
+      <span class="cert-ribbon">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9.5"/></svg>
+        Government certified
+      </span>
+      <h3 id="welcomeTitle">An officially registered foreign-patient clinic.</h3>
+      <p class="ko-line">외국인환자 유치의료기관 · Registered to welcome international patients</p>
+      <p>
+        That registration isn't a sticker — it's an official designation that means we're set up,
+        and approved, to care for patients from abroad. For you, it means an unfamiliar dental
+        visit in a new country becomes calm, clear and genuinely welcoming.
+      </p>
+      <div class="cert-foot">
+        <span class="stamp" aria-hidden="true"><span class="in">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M12 21s-7.5-4.6-10-9.2C.3 8.3 2 4.5 5.6 4.5c2 0 3.3 1.1 4.4 2.6 1.1-1.5 2.4-2.6 4.4-2.6 3.6 0 5.3 3.8 3.6 7.3C19.5 16.4 12 21 12 21z"/></svg>
+        </span></span>
+        <small>Backed by <b>720 five-star reviews</b><br>from patients who chose Like Dental.</small>
+      </div>
+    </div>
+
+    <div>
+      <span class="eyebrow sky">New here? You're in good hands</span>
+      <h2 style="font-size:clamp(1.9rem,3.6vw,2.8rem);margin:.7rem 0 1.4rem;">
+        Built for expats, in English.
+      </h2>
+
+      <ul class="welcome-points">
+        <li class="wp reveal d1">
+          <span class="wp-ico" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg>
+          </span>
+          <div>
+            <h4>Care explained in English</h4>
+            <p>From your first hello to your treatment plan and aftercare, the team takes the time to make every step clear — no guessing, no awkward translating apps.</p>
+          </div>
+        </li>
+        <li class="wp reveal d2">
+          <span class="wp-ico" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg>
+          </span>
+          <div>
+            <h4>Steps from Sinchon Station</h4>
+            <p>Right by the universities and the subway, so popping in fits around classes, work or a day exploring the city. Easy to reach, easy to come back to.</p>
+          </div>
+        </li>
+        <li class="wp reveal d3">
+          <span class="wp-ico" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7.5-4.6-10-9.2C.3 8.3 2 4.5 5.6 4.5c2 0 3.3 1.1 4.4 2.6 1.1-1.5 2.4-2.6 4.4-2.6 3.6 0 5.3 3.8 3.6 7.3C19.5 16.4 12 21 12 21z"/></svg>
+          </span>
+          <div>
+            <h4>A clinic people genuinely like</h4>
+            <p>A perfect 5.0★ from 720 reviews. Big enough to handle anything from a check-up to full implant work, gentle enough that nervous patients feel at ease.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STATS BAND ===================== -->
+<section class="stats-band pad" aria-label="Like Dental by the numbers" style="--pad:0;">
+  <div class="wrap stats-grid">
+    <div class="stat reveal">
+      <div class="stars" aria-hidden="true">★★★★★</div>
+      <div class="num" data-count="5.0" data-decimals="1">0.0</div>
+      <div class="lab">Google rating</div>
+    </div>
+    <div class="stat reveal d1 stat-divide">
+      <div class="num" data-count="720" data-suffix="+">0</div>
+      <div class="lab">Patient reviews</div>
+    </div>
+    <div class="stat reveal d2">
+      <div class="num">1<sup>st</sup></div>
+      <div class="lab">Foreign-patient certified</div>
+    </div>
+    <div class="stat reveal d3">
+      <div class="num">2</div>
+      <div class="lab">Languages spoken</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICES ===================== -->
+<section class="services pad" id="services" aria-labelledby="svcTitle">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">What we do</span>
+      <h2 id="svcTitle">Three core treatments,<br>done thoroughly.</h2>
+      <p>A large, well-established practice means real depth in the things that matter most — explained in plain English, with a plan you understand before anything begins.</p>
+    </div>
+
+    <div class="svc-grid">
+      <article class="svc reveal d1">
+        <div class="glyph" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2.5 0 4 1.4 4 4 0 1.8-.7 4-1.2 6.5C14.4 16 14.2 21 12.6 21c-1 0-1-2.4-1.2-3.6C11.2 16 10.8 16 10.6 17.4 10.4 18.6 10.4 21 9.4 21 7.8 21 7.6 16 7.2 13.5 6.7 11 6 8.8 6 7c0-2.6 1.5-4 4-4 .7 0 1.4.2 2 .6.6-.4 1.3-.6 2-.6z"/><path d="M12 3.6v3"/></svg>
+        </div>
+        <span class="tag">Implants</span>
+        <h3>Dental implants</h3>
+        <p>Replacing a missing tooth — or several — with a stable, natural-looking result that lets you eat and smile with confidence again.</p>
+        <ul>
+          <li><span class="tick" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Single &amp; multiple implants</li>
+          <li><span class="tick" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Clear, step-by-step plan</li>
+          <li><span class="tick" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Long-term aftercare</li>
+        </ul>
+      </article>
+
+      <article class="svc reveal d2">
+        <div class="glyph" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8c1.5-2 4-3 7-3s5.5 1 7 3"/><path d="M5 8v3a7 7 0 0 0 14 0V8"/><path d="M8.5 8.5v2M12 8.5v3M15.5 8.5v2"/><path d="M4 8h16"/></svg>
+        </div>
+        <span class="tag">Orthodontics</span>
+        <h3>Orthodontics</h3>
+        <p>Straightening and aligning your teeth for a healthier bite and a smile you'll want to show — with options matched to your lifestyle.</p>
+        <ul>
+          <li><span class="tick" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Braces &amp; alignment</li>
+          <li><span class="tick" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Bite correction</li>
+          <li><span class="tick" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Plans for adults &amp; students</li>
+        </ul>
+      </article>
+
+      <article class="svc reveal d3">
+        <div class="glyph" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2.5 0 4 1.6 4 4.2C16 11 14.6 21 12.6 21c-1.1 0-1.1-3-1.4-4.4C11 15.4 10.8 15.4 10.6 16.6 10.3 18 10.3 21 9.2 21 7.2 21 6 11 6 7.2 6 4.6 7.5 3 10 3c.7 0 1.4.2 2 .6.6-.4 1.3-.6 2-.6z"/><circle cx="17" cy="6.5" r="2.4" fill="currentColor" stroke="none" opacity=".5"/></svg>
+        </div>
+        <span class="tag">General</span>
+        <h3>General dentistry</h3>
+        <p>Everything that keeps your mouth healthy — check-ups, cleanings, fillings and the everyday care that catches small things early.</p>
+        <ul>
+          <li><span class="tick" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Check-ups &amp; cleanings</li>
+          <li><span class="tick" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Fillings &amp; cavity care</li>
+          <li><span class="tick" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Friendly preventive care</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STORY / WHY VISIT ===================== -->
+<section class="story pad" id="story" aria-labelledby="storyTitle">
+  <div class="wrap story-grid">
+    <div class="story-copy reveal">
+      <span class="eyebrow">Why Like Dental</span>
+      <h2 id="storyTitle">A neighbourhood clinic with a <em>big</em> reputation.</h2>
+      <p>
+        We've grown into one of Sinchon's most trusted dental practices for a simple reason:
+        people leave feeling looked after. <strong>720 reviews and a perfect 5.0★</strong> aren't a marketing
+        line — they're patients telling other patients they'd come back.
+      </p>
+      <p>
+        Surrounded by Yonsei, Sogang and Ewha, we've spent years caring for students, professors
+        and the international community around them. That mix is exactly why being
+        <strong>genuinely English-friendly</strong> is part of who we are — not an afterthought.
+      </p>
+
+      <ul class="story-list">
+        <li class="reveal d1"><span class="b" aria-hidden="true">♥</span><span>Youthful, warm team that treats nervous patients gently.</span></li>
+        <li class="reveal d2"><span class="b" aria-hidden="true">♥</span><span>Established &amp; large — the experience to handle complex cases.</span></li>
+        <li class="reveal d3"><span class="b" aria-hidden="true">♥</span><span>Honest, transparent plans so you always know what's next.</span></li>
+      </ul>
+    </div>
+
+    <div class="story-visual reveal d1" aria-hidden="true">
+      <div class="neighborhood">
+        <svg class="nb-svg" viewBox="0 0 380 380" fill="none" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="road" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#7CC6FA" stop-opacity=".35"/>
+              <stop offset="1" stop-color="#FFA99E" stop-opacity=".35"/>
+            </linearGradient>
+          </defs>
+          <path d="M-20 250 Q120 200 200 230 T420 180" stroke="url(#road)" stroke-width="22" stroke-linecap="round"/>
+          <path d="M60 -20 Q90 150 190 200 T300 420" stroke="url(#road)" stroke-width="16" stroke-linecap="round"/>
+          <g stroke="#FFA99E" stroke-opacity=".5" stroke-width="2.5" stroke-dasharray="6 9" stroke-linecap="round">
+            <path d="M-20 250 Q120 200 200 230 T420 180"/>
+          </g>
+          <g fill="#7CC6FA" fill-opacity=".22">
+            <rect x="36" y="60" width="46" height="56" rx="8"/>
+            <rect x="290" y="92" width="54" height="64" rx="8"/>
+            <rect x="250" y="280" width="50" height="58" rx="8"/>
+            <rect x="60" y="290" width="42" height="48" rx="8"/>
+          </g>
+          <g fill="#FFA99E" fill-opacity=".22">
+            <circle cx="120" cy="120" r="20"/>
+            <circle cx="300" cy="250" r="16"/>
+            <circle cx="70" cy="200" r="13"/>
+          </g>
+        </svg>
+        <span class="nb-ripple"></span>
+        <span class="nb-pin"><span class="dot">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-10-9.2C.3 8.3 2 4.5 5.6 4.5c2 0 3.3 1.1 4.4 2.6 1.1-1.5 2.4-2.6 4.4-2.6 3.6 0 5.3 3.8 3.6 7.3C19.5 16.4 12 21 12 21z"/></svg>
+        </span></span>
+        <span class="nb-chip c1">🎓 By the universities</span>
+        <span class="nb-chip c2">🚇 Sinchon Station</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== VISIT / LOCATION & HOURS ===================== -->
+<section class="visit pad" id="visit" aria-labelledby="visitTitle">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow sky">Plan your visit</span>
+      <h2 id="visitTitle">Easy to find,<br>open when you need us.</h2>
+      <p>Drop by during opening hours, or call ahead and we'll have everything ready in English before you arrive.</p>
+    </div>
+
+    <div class="visit-grid">
+      <div class="hours-card reveal d1">
+        <h3>Opening hours</h3>
+        <p class="sub">Korea Standard Time (KST)</p>
+        <span class="open-now" id="openStatus"><span class="blip"></span><span id="openText">Checking hours…</span></span>
+
+        <ul class="hours-list" id="hoursList">
+          <li data-day="1"><span class="day">Monday</span><span class="time">09:30 – 19:00</span></li>
+          <li data-day="2"><span class="day">Tuesday</span><span class="time">09:30 – 19:00</span></li>
+          <li data-day="3"><span class="day">Wednesday</span><span class="time">09:30 – 19:00</span></li>
+          <li data-day="4"><span class="day">Thursday</span><span class="time">09:30 – 19:00</span></li>
+          <li data-day="5"><span class="day">Friday</span><span class="time">09:30 – 19:00</span></li>
+          <li data-day="6"><span class="day">Saturday</span><span class="time">09:30 – 14:00</span></li>
+          <li data-day="0" class="off"><span class="day">Sunday</span><span class="time">Closed</span></li>
+        </ul>
+      </div>
+
+      <div class="place-card reveal d2">
+        <div class="place-map" role="img" aria-label="Map showing Like Dental near Sinchon Station">
+          <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="200" fill="rgba(255,255,255,.04)"/>
+            <g stroke="rgba(255,255,255,.35)" stroke-width="7" stroke-linecap="round" fill="none">
+              <path d="M-10 70 Q120 50 210 90 T420 70"/>
+              <path d="M120 -10 Q150 90 210 100 T260 220"/>
+              <path d="M-10 150 Q140 130 260 160 T420 150"/>
+            </g>
+            <g stroke="rgba(124,198,250,.6)" stroke-width="3" stroke-dasharray="5 8" stroke-linecap="round" fill="none">
+              <path d="M120 -10 Q150 90 210 100 T260 220"/>
+            </g>
+            <g fill="rgba(255,255,255,.1)">
+              <rect x="40" y="20" width="46" height="34" rx="6"/>
+              <rect x="300" y="30" width="60" height="40" rx="6"/>
+              <rect x="60" y="120" width="50" height="46" rx="6"/>
+              <rect x="320" y="120" width="44" height="50" rx="6"/>
+            </g>
+            <circle cx="150" cy="80" r="6" fill="rgba(255,255,255,.55)"/>
+            <text x="150" y="70" fill="rgba(255,255,255,.7)" font-family="Quicksand,sans-serif" font-size="10" font-weight="700" text-anchor="middle">신촌역</text>
+          </svg>
+          <div class="here">
+            <span class="rr"></span>
+            <span class="pp"><b>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-10-9.2C.3 8.3 2 4.5 5.6 4.5c2 0 3.3 1.1 4.4 2.6 1.1-1.5 2.4-2.6 4.4-2.6 3.6 0 5.3 3.8 3.6 7.3C19.5 16.4 12 21 12 21z"/></svg>
+            </b></span>
+          </div>
+        </div>
+
+        <h3>Find Like Dental</h3>
+        <p class="addr">Mapo-gu · Sinchon, Seoul</p>
+        <p class="addr-ko">서울 마포구 · 신촌역 인근 · 라이크치과</p>
+
+        <div class="place-feats">
+          <span>🚇 By Sinchon Station</span>
+          <span>🎓 Beside the universities</span>
+          <span>💬 English spoken</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT / CTA ===================== -->
+<section class="contact pad" id="contact" aria-labelledby="ctaTitle">
+  <div class="wrap">
+    <div class="cta-card reveal">
+      <div class="cta-heart" aria-hidden="true">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-10-9.2C.3 8.3 2 4.5 5.6 4.5c2 0 3.3 1.1 4.4 2.6 1.1-1.5 2.4-2.6 4.4-2.6 3.6 0 5.3 3.8 3.6 7.3C19.5 16.4 12 21 12 21z"/></svg>
+      </div>
+      <h2 id="ctaTitle">
+        Come and say hello.
+        <span class="ko">언제든 편하게 방문하세요</span>
+      </h2>
+      <p>Whether it's an aching tooth or a long-overdue check-up, getting started is easy. Reach out the way that suits you — we'll take care of the rest, in English.</p>
+
+      <div class="cta-actions">
+        <a class="btn kakao" href="#" aria-label="Chat with us on KakaoTalk">
+          <!-- TODO: replace href="#" with the clinic's real KakaoTalk channel link -->
+          <span class="ico" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.5 2 10.8c0 2.8 1.9 5.2 4.7 6.6-.2.7-.8 2.6-.9 3-.1.5.2.5.4.4.2-.1 2.6-1.8 3.6-2.5.7.1 1.4.2 2.2.2 5.5 0 10-3.5 10-7.7S17.5 3 12 3z"/></svg>
+          </span>
+          KakaoTalk
+        </a>
+        <a class="btn naver" href="#" aria-label="Find us on Naver">
+          <!-- TODO: replace href="#" with the clinic's Naver Place / booking link -->
+          <span class="ico" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h5.3l5.1 7.5V4H20v16h-5.3L9.6 12.5V20H4z"/></svg>
+          </span>
+          Naver
+        </a>
+        <button class="btn book sky" id="bookBtn2" type="button" aria-label="Book online — coming soon">
+          <span class="soon" aria-hidden="true">Soon</span>
+          <span class="ico" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="17" rx="3"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/><path d="M8.5 14.5l2.2 2.2 4.3-4.6"/></svg>
+          </span>
+          Book online
+        </button>
+      </div>
+
+      <a class="cta-phone" href="tel:+82269510011">
+        <span class="ph-ico" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+        </span>
+        02-6951-0011
+      </a>
+      <p class="cta-note">Online booking is on its way — for now, a quick call or message is the fastest way to a chair.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#main" aria-label="Like Dental — home">
+          <span class="mark" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-10-9.2C.3 8.3 2 4.5 5.6 4.5c2 0 3.3 1.1 4.4 2.6 1.1-1.5 2.4-2.6 4.4-2.6 3.6 0 5.3 3.8 3.6 7.3C19.5 16.4 12 21 12 21z"/></svg>
+          </span>
+          <span>Like Dental <span class="ko">라이크치과</span></span>
+        </a>
+        <p>A large, trusted clinic by Sinchon's universities — an officially registered foreign-patient institution welcoming international patients in English.</p>
+        <div class="foot-soc">
+          <a href="tel:+82269510011" aria-label="Call Like Dental">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+          </a>
+          <a href="#" aria-label="KakaoTalk channel">
+            <!-- TODO: KakaoTalk link -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.5 2 10.8c0 2.8 1.9 5.2 4.7 6.6-.2.7-.8 2.6-.9 3-.1.5.2.5.4.4.2-.1 2.6-1.8 3.6-2.5.7.1 1.4.2 2.2.2 5.5 0 10-3.5 10-7.7S17.5 3 12 3z"/></svg>
+          </a>
+          <a href="#" aria-label="Naver Place">
+            <!-- TODO: Naver link -->
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h5.3l5.1 7.5V4H20v16h-5.3L9.6 12.5V20H4z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="foot-col">
+        <h4>Visit</h4>
+        <ul>
+          <li><span>Mapo-gu, Seoul</span></li>
+          <li><span>By Sinchon Station (신촌역)</span></li>
+          <li><a href="tel:+82269510011">02-6951-0011</a></li>
+          <li><a href="#welcome">For international patients</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Hours</h4>
+        <ul>
+          <li><span class="foot-hours">Mon – Fri &nbsp;09:30 – 19:00</span></li>
+          <li><span class="foot-hours">Saturday &nbsp;09:30 – 14:00</span></li>
+          <li><span class="foot-hours" style="opacity:.6;">Sunday &nbsp;Closed</span></li>
+          <li><a href="#services">Implants · Ortho · General</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span class="copy">© <span id="yr">2026</span> Like Dental (라이크치과) · Sinchon, Seoul · All rights reserved.</span>
+      <span class="credit"><span class="spark" aria-hidden="true">✦</span> Designed by <a href="https://stellarhausmedia.com" target="_blank" rel="noopener noreferrer">Stellar Haus Media</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="book-toast" id="bookToast" role="status" aria-live="polite">
+  <span aria-hidden="true">📅</span> Online booking is coming soon — please call or message us for now.
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- year ---------- */
+  var yr = document.getElementById("yr");
+  if (yr) yr.textContent = new Date().getFullYear();
+
+  /* ---------- sticky nav ---------- */
+  var nav = document.getElementById("siteNav");
+  function onScroll(){ if(nav) nav.classList.toggle("scrolled", window.scrollY > 24); }
+  onScroll(); window.addEventListener("scroll", onScroll, {passive:true});
+
+  /* ---------- mobile menu ---------- */
+  var toggle = document.getElementById("navToggle"),
+      links  = document.getElementById("navLinks"),
+      scrim  = document.getElementById("navScrim");
+  function setMenu(open){
+    if(!links) return;
+    links.classList.toggle("open", open);
+    if(scrim) scrim.classList.toggle("show", open);
+    if(toggle) toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    document.body.style.overflow = open ? "hidden" : "";
+  }
+  if(toggle) toggle.addEventListener("click", function(){ setMenu(!links.classList.contains("open")); });
+  if(scrim)  scrim.addEventListener("click", function(){ setMenu(false); });
+  if(links)  links.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ setMenu(false); }); });
+  document.addEventListener("keydown", function(e){ if(e.key === "Escape") setMenu(false); });
+
+  /* ---------- hero underline kick ---------- */
+  var hero = document.getElementById("hero");
+  if(hero) requestAnimationFrame(function(){ hero.classList.add("is-in"); });
+
+  /* ---------- welcome greeting swap (안녕 → Welcome) ---------- */
+  var swap = document.getElementById("greetSwap");
+  if(swap && !reduce){
+    var states = ["ko","en"], i = 0;
+    setInterval(function(){
+      i = (i + 1) % states.length;
+      swap.setAttribute("data-state", states[i]);
+    }, 3000);
+  } else if (swap && reduce){
+    swap.setAttribute("data-state","en");
+  }
+
+  /* ---------- scroll reveals ---------- */
+  var revealEls = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
+  if("IntersectionObserver" in window && !reduce){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); }
+      });
+    }, {threshold:0.12, rootMargin:"0px 0px -8% 0px"});
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add("in"); });
+  }
+
+  /* ---------- count-up stats ---------- */
+  function animateCount(el){
+    var target  = parseFloat(el.getAttribute("data-count")) || 0;
+    var dec      = parseInt(el.getAttribute("data-decimals") || "0", 10);
+    var suffix  = el.getAttribute("data-suffix") || "";
+    if(reduce){ el.textContent = target.toFixed(dec) + suffix; return; }
+    var start = null, dur = 1500;
+    function step(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = (target * eased).toFixed(dec) + (p === 1 ? suffix : "");
+      if(p < 1) requestAnimationFrame(step);
+      else el.textContent = target.toFixed(dec) + suffix;
+    }
+    requestAnimationFrame(step);
+  }
+  var counters = Array.prototype.slice.call(document.querySelectorAll("[data-count]"));
+  if("IntersectionObserver" in window){
+    var co = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ animateCount(en.target); co.unobserve(en.target); }
+      });
+    }, {threshold:0.6});
+    counters.forEach(function(el){ co.observe(el); });
+  } else {
+    counters.forEach(animateCount);
+  }
+
+  /* ---------- open-now status (KST) ---------- */
+  (function(){
+    var status = document.getElementById("openStatus"),
+        text   = document.getElementById("openText"),
+        list   = document.getElementById("hoursList");
+    if(!status || !text) return;
+
+    // schedule in minutes from midnight, per weekday (0=Sun … 6=Sat)
+    var sched = {
+      1:[570,1140],2:[570,1140],3:[570,1140],4:[570,1140],5:[570,1140],
+      6:[570,840], 0:null
+    };
+
+    // current time in KST regardless of viewer timezone
+    var nowUTC = new Date();
+    var kst = new Date(nowUTC.getTime() + (nowUTC.getTimezoneOffset() + 540) * 60000);
+    var day = kst.getDay();
+    var mins = kst.getHours() * 60 + kst.getMinutes();
+
+    var today = sched[day];
+    var isOpen = !!(today && mins >= today[0] && mins < today[1]);
+
+    // highlight today's row + add NOW pill
+    if(list){
+      var row = list.querySelector('li[data-day="' + day + '"]');
+      if(row){
+        row.classList.add("today");
+        if(isOpen){
+          var pill = document.createElement("span");
+          pill.className = "pillnow";
+          pill.textContent = "Open now";
+          var dayEl = row.querySelector(".day");
+          if(dayEl) dayEl.appendChild(pill);
+        }
+      }
+    }
+
+    function fmt(m){ var h = Math.floor(m/60), mm = m%60; return (h<10?"0":"")+h+":"+(mm<10?"0":"")+mm; }
+
+    if(isOpen){
+      text.textContent = "Open now · until " + fmt(today[1]);
+    } else {
+      status.classList.add("closed");
+      // find next opening
+      var nextMsg = "Currently closed";
+      for(var add=0; add<=7; add++){
+        var d = (day + add) % 7;
+        var s = sched[d];
+        if(s){
+          if(add === 0 && mins < s[0]){ nextMsg = "Opens today at " + fmt(s[0]); break; }
+          if(add > 0){
+            var names = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+            nextMsg = (add === 1 ? "Opens tomorrow" : "Opens " + names[d]) + " at " + fmt(s[0]);
+            break;
+          }
+        }
+      }
+      text.textContent = nextMsg;
+    }
+  })();
+
+  /* ---------- booking "coming soon" demo state ---------- */
+  var toast = document.getElementById("bookToast"), toastTimer;
+  function showToast(){
+    if(!toast) return;
+    toast.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove("show"); }, 3400);
+  }
+  ["bookBtn1","bookBtn2"].forEach(function(id){
+    var b = document.getElementById(id);
+    if(b) b.addEventListener("click", showToast);
+  });
+
+})();
+</script>
+
+
+<!-- ============================================================
+  SHM BOOKING WIDGET  (demo / front-end only)
+  Captures a booking request and hands off to the clinic's real
+  channel (phone / LINE). To go LIVE to patients, replace the body
+  of submitBooking() below with your GoHighLevel calendar embed or
+  a POST to your GHL/Calendly endpoint.  -- Stellar Haus Media
+============================================================ -->
+<div class="shm-bk">
+<div class="shm-bk-overlay" id="shmbk" role="dialog" aria-modal="true" aria-labelledby="shmbk-title" aria-hidden="true">
+  <div class="shm-bk-card" role="document">
+    <button class="shm-bk-close" type="button" aria-label="Close booking" data-bk-close>&times;</button>
+
+    <div id="shmbk-step">
+      <p class="shm-bk-eyebrow">English-speaking care</p>
+      <h2 class="shm-bk-title" id="shmbk-title">Book your visit</h2>
+      <p class="shm-bk-sub">Pick a day and time that suits you — our front desk replies in English.</p>
+
+      <p class="shm-bk-label">Choose a day</p>
+      <div class="shm-bk-row" id="shmbk-days"></div>
+
+      <div id="shmbk-times-wrap" class="shm-bk-hide">
+        <p class="shm-bk-label">Choose a time</p>
+        <div class="shm-bk-grid" id="shmbk-times"></div>
+      </div>
+
+      <div id="shmbk-form" class="shm-bk-hide">
+        <div class="shm-bk-field"><input id="shmbk-name" type="text" placeholder="Your name" autocomplete="name"></div>
+        <div class="shm-bk-field"><input id="shmbk-phone" type="tel" placeholder="Phone number" autocomplete="tel"></div>
+        <div class="shm-bk-field"><input id="shmbk-email" type="email" placeholder="Email (optional)" autocomplete="email"></div>
+        <div class="shm-bk-field">
+          <select id="shmbk-reason">
+            <option value="">What brings you in?</option>
+            <option>Check-up &amp; cleaning</option>
+            <option>Implant or veneer consultation</option>
+            <option>Teeth whitening</option>
+            <option>Tooth pain / emergency</option>
+            <option>Something else</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="shm-bk-cta" id="shmbk-submit" type="button" disabled>Confirm booking</button>
+      <p class="shm-bk-fine">No payment now. We’ll confirm your appointment by text.</p>
+    </div>
+
+    <div id="shmbk-done" class="shm-bk-conf shm-bk-hide">
+      <div class="shm-bk-tick" aria-hidden="true">✓</div>
+      <h2 class="shm-bk-title">You’re all set<span id="shmbk-name-out"></span>.</h2>
+      <p class="shm-bk-sub" id="shmbk-summary"></p>
+      <a class="shm-bk-cta" id="shmbk-call" href="#" style="text-decoration:none">Call now to confirm</a>
+      <a class="shm-bk-ghost shm-bk-hide" id="shmbk-chan" href="#" target="_blank" rel="noopener"></a>
+      <p class="shm-bk-fine">We’ll reach out shortly to lock in your time.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+/* SHM booking widget — demo. See submitBooking() TODO to wire GoHighLevel/Calendly. */
+(function(){
+  var ov=document.getElementById('shmbk'); if(!ov) return;
+  var TEL="tel:+82269510011", CHAN="https://pf.kakao.com/_FIxfixl", CHANLABEL="Message us on KakaoTalk";
+  var state={day:null,time:null};
+  var daysEl=document.getElementById('shmbk-days'),
+      timesWrap=document.getElementById('shmbk-times-wrap'),
+      timesEl=document.getElementById('shmbk-times'),
+      formEl=document.getElementById('shmbk-form'),
+      submit=document.getElementById('shmbk-submit'),
+      lastTrigger=null;
+  var TIMES=["09:30","10:30","11:30","14:00","15:00","16:00","17:30"];
+  var DOW=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
+      MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+  function buildDays(){
+    daysEl.innerHTML=""; var d=new Date(), made=0;
+    while(made<8){ d.setDate(d.getDate()+1);
+      if(d.getDay()===0) continue;            // skip Sundays
+      var b=document.createElement('button'); b.type="button"; b.className="shm-bk-chip";
+      b.setAttribute('aria-pressed','false');
+      b.innerHTML="<small>"+DOW[d.getDay()]+"</small>"+d.getDate()+" "+MON[d.getMonth()];
+      b.dataset.label=DOW[d.getDay()]+", "+d.getDate()+" "+MON[d.getMonth()];
+      b.addEventListener('click',function(){ select(daysEl,this); state.day=this.dataset.label;
+        timesWrap.classList.remove('shm-bk-hide'); refresh(); });
+      daysEl.appendChild(b); made++;
+    }
+  }
+  function buildTimes(){
+    timesEl.innerHTML="";
+    TIMES.forEach(function(t){ var b=document.createElement('button'); b.type="button"; b.className="shm-bk-chip";
+      b.textContent=t; b.setAttribute('aria-pressed','false');
+      b.addEventListener('click',function(){ select(timesEl,this); state.time=t;
+        formEl.classList.remove('shm-bk-hide'); refresh(); });
+      timesEl.appendChild(b); });
+  }
+  function select(group,el){ Array.prototype.forEach.call(group.children,function(c){c.setAttribute('aria-pressed','false');});
+    el.setAttribute('aria-pressed','true'); }
+  function refresh(){ var n=document.getElementById('shmbk-name').value.trim(),
+        p=document.getElementById('shmbk-phone').value.trim();
+    submit.disabled=!(state.day&&state.time&&n&&p); }
+
+  /* ---- TODO (go live): replace this with your GoHighLevel calendar write / Calendly,
+     or POST {name,phone,email,reason,day,time} to your GHL inbound webhook. ---- */
+  function submitBooking(data){
+    console.warn("[SHM booking] DEMO submit — not sent anywhere. Wire submitBooking() to GoHighLevel before launch.", data);
+  }
+
+  function done(){
+    var name=document.getElementById('shmbk-name').value.trim();
+    submitBooking({name:name, phone:document.getElementById('shmbk-phone').value.trim(),
+      email:document.getElementById('shmbk-email').value.trim(),
+      reason:document.getElementById('shmbk-reason').value, day:state.day, time:state.time});
+    document.getElementById('shmbk-step').classList.add('shm-bk-hide');
+    var d=document.getElementById('shmbk-done'); d.classList.remove('shm-bk-hide');
+    document.getElementById('shmbk-name-out').textContent=name?(", "+name.split(" ")[0]):"";
+    document.getElementById('shmbk-summary').textContent="Requested: "+state.day+" at "+state.time+". We’ll confirm shortly.";
+    var call=document.getElementById('shmbk-call'); call.href=TEL;
+    if(CHAN){ var l=document.getElementById('shmbk-chan'); l.href=CHAN; l.textContent=CHANLABEL; l.classList.remove('shm-bk-hide'); }
+  }
+
+  function open(t){ lastTrigger=t||null; ov.classList.add('open'); ov.setAttribute('aria-hidden','false');
+    document.documentElement.style.overflow='hidden';
+    var f=ov.querySelector('.shm-bk-chip'); if(f) f.focus(); }
+  function close(){ ov.classList.remove('open'); ov.setAttribute('aria-hidden','true');
+    document.documentElement.style.overflow=''; if(lastTrigger&&lastTrigger.focus) lastTrigger.focus(); }
+
+  buildDays(); buildTimes();
+  ['shmbk-name','shmbk-phone'].forEach(function(id){document.getElementById(id).addEventListener('input',refresh);});
+  submit.addEventListener('click',done);
+  ov.addEventListener('click',function(e){ if(e.target===ov) close(); });
+  ov.querySelector('[data-bk-close]').addEventListener('click',close);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&ov.classList.contains('open')) close(); });
+  // simple focus trap
+  ov.addEventListener('keydown',function(e){ if(e.key!=='Tab')return;
+    var f=ov.querySelectorAll('button,a[href],input,select,textarea'); if(!f.length)return;
+    var first=f[0],last=f[f.length-1];
+    if(e.shiftKey&&document.activeElement===first){last.focus();e.preventDefault();}
+    else if(!e.shiftKey&&document.activeElement===last){first.focus();e.preventDefault();}
+  });
+
+  // ---- bind triggers: explicit hooks + any element whose label starts with "Book" ----
+  function isBookLabel(el){
+    var t=(el.textContent||"").replace(/[^a-z0-9 ]/gi," ").replace(/\s+/g," ").trim().toLowerCase();
+    if(!t || t.length>40) return false;                 // skip long paragraphs that merely contain "book"
+    return /\bbook/.test(t) || /\breserve\b/.test(t);   // \bbook matches "book"/"booking"/"book online soon"; NOT "facebook"
+  }
+  var sel='.js-book,.book-demo,[data-shm-book],a[href="#book"],a[href="#booking"]';
+  var bound=new Set();
+  function bind(el){ if(bound.has(el)||el.closest('.shm-bk'))return; bound.add(el);
+    el.removeAttribute('aria-disabled'); el.removeAttribute('disabled'); el.style.pointerEvents='auto';
+    // the booking now works, so drop any "coming soon / launching" badge inside the button
+    el.querySelectorAll('span,small,sup,em,i,b').forEach(function(s){
+      var st=(s.textContent||"").trim();
+      if(st.length<22 && /coming|soon|launch/i.test(st)) s.remove();
+    });
+    el.addEventListener('click',function(e){ e.preventDefault(); open(el); }); }
+  document.querySelectorAll(sel).forEach(bind);
+  document.querySelectorAll('a,button').forEach(function(el){ if(isBookLabel(el)) bind(el); });
+
+  // if the page has no booking CTA of its own, add a small themed one so booking is always reachable
+  if(bound.size===0){
+    var fab=document.createElement('button');
+    fab.type='button'; fab.className='shm-bk-fab'; fab.setAttribute('aria-label','Book online');
+    fab.innerHTML='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="vertical-align:-2px"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg> Book online';
+    fab.addEventListener('click',function(){ open(fab); });
+    (document.querySelector('.shm-bk')||document.body).appendChild(fab);
+  }
+})();
+</script>
+
+</body>
+</html>

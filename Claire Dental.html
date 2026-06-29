@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Claire Dental — English-Speaking Cosmetic Dentistry in Seoul (Seolleung / Gangnam)</title>
+<meta name="description" content="Claire Dental is a 5★ cosmetic-laminate, implant and whitening clinic in Seolleung, Gangnam — minutes from COEX. We welcome international patients with easy English contact via WhatsApp, LINE, KakaoTalk and email." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #2c2622;
+    --ink-soft: #6b6058;
+    --ink-faint: #9a8e84;
+    --paper: #fbf8f5;
+    --paper-warm: #f6eee8;
+    --pearl: #f3ece6;
+    --white: #ffffff;
+    --rose: #c9a18a;
+    --rose-deep: #b3826a;
+    --rose-faint: #e8d4c8;
+    --gold: #cdb18f;
+    --line: rgba(44, 38, 34, 0.10);
+    --line-soft: rgba(44, 38, 34, 0.06);
+    --shadow-soft: 0 24px 60px -28px rgba(120, 86, 64, 0.30);
+    --shadow-card: 0 30px 80px -40px rgba(80, 56, 40, 0.45);
+    --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+    --sans: "Manrope", system-ui, -apple-system, sans-serif;
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --maxw: 1240px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.65;
+    font-weight: 400;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection { background: var(--rose-faint); color: var(--ink); }
+
+  a { color: inherit; text-decoration: none; }
+  img, svg { display: block; max-width: 100%; }
+
+  .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 3.5rem); }
+
+  .eyebrow {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--rose-deep);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--rose);
+    display: inline-block;
+  }
+
+  h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.04; letter-spacing: -0.01em; }
+
+  .display {
+    font-size: clamp(3rem, 9.5vw, 8.2rem);
+    font-weight: 500;
+    letter-spacing: -0.025em;
+  }
+
+  .section-title { font-size: clamp(2.1rem, 5.5vw, 4.2rem); }
+
+  .lede { font-family: var(--serif); font-size: clamp(1.25rem, 2.4vw, 1.85rem); font-weight: 400; font-style: italic; color: var(--ink-soft); line-height: 1.4; }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    --bg: var(--ink);
+    --fg: var(--paper);
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 1.05rem 1.9rem;
+    border-radius: 100px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    background: var(--bg);
+    color: var(--fg);
+    transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease), background 0.4s var(--ease), color 0.4s var(--ease);
+    overflow: hidden;
+    isolation: isolate;
+    white-space: nowrap;
+  }
+  .btn svg { width: 17px; height: 17px; flex-shrink: 0; }
+  .btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(120% 140% at 50% 120%, rgba(255,255,255,0.35), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.5s var(--ease);
+  }
+  .btn:hover { transform: translateY(-3px); box-shadow: 0 22px 40px -18px rgba(80, 56, 40, 0.6); }
+  .btn:hover::after { opacity: 1; }
+  .btn:focus-visible { outline: 2px solid var(--rose-deep); outline-offset: 3px; }
+
+  .btn--ghost { --bg: transparent; --fg: var(--ink); border: 1px solid var(--line); }
+  .btn--ghost:hover { --bg: var(--white); box-shadow: 0 18px 36px -22px rgba(80,56,40,0.4); }
+
+  .btn--rose {
+    --bg: linear-gradient(135deg, #d8b7a3, #b3826a);
+    --fg: #fff;
+  }
+
+  .btn--kakao { --bg: #FEE500; --fg: #191600; }
+  .btn--wa { --bg: #25D366; --fg: #ffffff; }
+
+  .btn--soon { --bg: var(--white); --fg: var(--ink); border: 1px solid var(--line); cursor: default; }
+  .btn--soon:hover { transform: translateY(-3px); }
+  .btn--soon .soon-tag {
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    padding: 0.18rem 0.5rem;
+    border-radius: 100px;
+    background: var(--paper-warm);
+    color: var(--rose-deep);
+    font-weight: 700;
+  }
+
+  /* ---------- Nav ---------- */
+  header.nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    transition: background 0.5s var(--ease), box-shadow 0.5s var(--ease), padding 0.5s var(--ease);
+    padding: 1.5rem 0;
+  }
+  header.nav.scrolled {
+    background: rgba(251, 248, 245, 0.82);
+    backdrop-filter: blur(18px) saturate(1.2);
+    -webkit-backdrop-filter: blur(18px) saturate(1.2);
+    box-shadow: 0 1px 0 var(--line-soft);
+    padding: 0.9rem 0;
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+  .brand { display: inline-flex; align-items: center; gap: 0.7rem; }
+  .brand .mark { width: 38px; height: 38px; flex-shrink: 0; }
+  .brand .name { font-family: var(--serif); font-size: 1.5rem; font-weight: 600; letter-spacing: 0.01em; line-height: 1; }
+  .brand .name small { display: block; font-family: var(--sans); font-size: 0.58rem; letter-spacing: 0.34em; text-transform: uppercase; color: var(--ink-faint); font-weight: 600; margin-top: 3px; }
+
+  nav.links { display: flex; align-items: center; gap: 2.2rem; }
+  nav.links a.lnk {
+    font-size: 0.82rem; font-weight: 500; letter-spacing: 0.02em; color: var(--ink-soft);
+    position: relative; padding: 0.25rem 0; transition: color 0.3s var(--ease);
+  }
+  nav.links a.lnk::after {
+    content:""; position:absolute; left:0; bottom:-2px; height:1px; width:100%;
+    background: var(--rose-deep); transform: scaleX(0); transform-origin: right; transition: transform 0.4s var(--ease);
+  }
+  nav.links a.lnk:hover { color: var(--ink); }
+  nav.links a.lnk:hover::after { transform: scaleX(1); transform-origin: left; }
+
+  .nav-cta { display: flex; align-items: center; gap: 0.8rem; }
+  .nav-cta .btn { padding: 0.75rem 1.3rem; font-size: 0.72rem; }
+
+  .menu-toggle { display: none; background: none; border: none; cursor: pointer; width: 44px; height: 44px; flex-direction: column; align-items: center; justify-content: center; gap: 5px; }
+  .menu-toggle span { display: block; width: 24px; height: 2px; background: var(--ink); transition: transform 0.4s var(--ease), opacity 0.3s; }
+  .menu-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .menu-toggle.open span:nth-child(2) { opacity: 0; }
+  .menu-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    position: fixed; inset: 0; z-index: 99;
+    background: var(--paper);
+    transform: translateY(-100%);
+    transition: transform 0.6s var(--ease);
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 2rem clamp(1.5rem, 8vw, 4rem);
+    gap: 0.3rem;
+  }
+  .mobile-menu.open { transform: translateY(0); }
+  .mobile-menu a { font-family: var(--serif); font-size: clamp(2rem, 9vw, 3.2rem); font-weight: 500; color: var(--ink); padding: 0.4rem 0; border-bottom: 1px solid var(--line-soft); }
+  .mobile-menu .mob-ctas { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 2rem; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    padding: clamp(8rem, 16vh, 11rem) 0 clamp(3rem, 8vh, 5rem);
+    overflow: hidden;
+  }
+  .hero-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; background: linear-gradient(180deg, #fdfbf9 0%, #f7efe9 55%, #f2e6dd 100%); }
+  /* soft bloom orbs */
+  .bloom { position: absolute; border-radius: 50%; filter: blur(60px); opacity: 0; will-change: transform, opacity; }
+  .bloom.b1 { width: 60vw; height: 60vw; max-width: 720px; max-height: 720px; top: -12%; right: -8%; background: radial-gradient(circle at 40% 40%, rgba(255,255,255,0.95), rgba(232,212,200,0.55) 50%, transparent 72%); animation: bloomIn 2.4s var(--ease) 0.3s forwards, drift1 22s ease-in-out 2.6s infinite alternate; }
+  .bloom.b2 { width: 50vw; height: 50vw; max-width: 560px; max-height: 560px; bottom: -16%; left: -10%; background: radial-gradient(circle at 50% 50%, rgba(255,243,236,0.9), rgba(205,177,143,0.4) 55%, transparent 75%); animation: bloomIn 2.6s var(--ease) 0.6s forwards, drift2 26s ease-in-out 3s infinite alternate; }
+  .bloom.b3 { width: 34vw; height: 34vw; max-width: 380px; max-height: 380px; top: 38%; left: 42%; background: radial-gradient(circle, rgba(255,255,255,0.85), transparent 70%); animation: bloomIn 2.2s var(--ease) 1s forwards; }
+
+  @keyframes bloomIn { from { opacity: 0; transform: scale(0.85); } to { opacity: 1; transform: scale(1); } }
+  @keyframes drift1 { to { transform: translate(-40px, 30px) scale(1.06); } }
+  @keyframes drift2 { to { transform: translate(35px, -25px) scale(1.05); } }
+
+  /* sheen sweep across hero */
+  .sheen {
+    position: absolute; inset: 0; z-index: 2; pointer-events: none;
+    background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.65) 47%, rgba(255,255,255,0.85) 50%, rgba(255,255,255,0.5) 53%, transparent 70%);
+    transform: translateX(-120%) skewX(-12deg);
+    mix-blend-mode: soft-light;
+    animation: sheenSweep 3.4s var(--ease) 0.8s forwards;
+  }
+  @keyframes sheenSweep { 0% { transform: translateX(-120%) skewX(-12deg); } 100% { transform: translateX(160%) skewX(-12deg); } }
+
+  /* faint grid texture */
+  .hero-grid { position: absolute; inset: 0; z-index: 1; opacity: 0.5;
+    background-image: linear-gradient(rgba(180,130,106,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(180,130,106,0.05) 1px, transparent 1px);
+    background-size: 64px 64px; mask-image: radial-gradient(circle at 60% 45%, #000 20%, transparent 78%);
+    -webkit-mask-image: radial-gradient(circle at 60% 45%, #000 20%, transparent 78%);
+  }
+
+  .hero-inner { position: relative; z-index: 5; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; width: 100%; }
+
+  .hero-copy { max-width: 720px; }
+  .hero .eyebrow { margin-bottom: 1.6rem; }
+  .hero h1 { margin-bottom: 1.5rem; }
+  .hero h1 .line { display: block; overflow: hidden; }
+  .hero h1 .line span { display: block; transform: translateY(110%); }
+  .hero h1 em { font-style: italic; color: var(--rose-deep); }
+  .hero h1 .accent { position: relative; }
+
+  .hero-sub { font-size: clamp(1rem, 1.5vw, 1.2rem); color: var(--ink-soft); max-width: 33rem; margin-bottom: 2.4rem; font-weight: 400; }
+  .hero-sub strong { color: var(--ink); font-weight: 600; }
+
+  .hero-ctas { display: flex; flex-wrap: wrap; gap: 0.9rem; align-items: center; }
+
+  .hero-meta { display: flex; flex-wrap: wrap; gap: 1.5rem 2.4rem; margin-top: 2.8rem; padding-top: 2rem; border-top: 1px solid var(--line); }
+  .meta-item .num { font-family: var(--serif); font-size: 2.1rem; font-weight: 600; color: var(--ink); line-height: 1; display: flex; align-items: baseline; gap: 0.25rem; }
+  .meta-item .num .star { font-size: 1.3rem; color: var(--rose-deep); }
+  .meta-item .lbl { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-top: 0.4rem; font-weight: 600; }
+
+  /* Hero visual: porcelain smile arc card */
+  .hero-visual { position: relative; display: flex; justify-content: center; }
+  .porcelain-card {
+    position: relative; width: 100%; max-width: 420px; aspect-ratio: 0.82;
+    border-radius: 220px 220px 32px 32px;
+    background: linear-gradient(160deg, #ffffff 0%, #f8efe9 60%, #f0e1d8 100%);
+    box-shadow: var(--shadow-card), inset 0 2px 1px rgba(255,255,255,0.9);
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.7);
+  }
+  .porcelain-card .pc-glow {
+    position: absolute; width: 70%; height: 70%; top: 8%; left: 15%;
+    background: radial-gradient(circle, rgba(255,255,255,0.95), transparent 65%);
+    filter: blur(20px);
+  }
+  .porcelain-card .pc-sheen {
+    position: absolute; inset: 0;
+    background: linear-gradient(120deg, transparent 40%, rgba(255,255,255,0.7) 50%, transparent 60%);
+    transform: translateX(-100%);
+    animation: pcSheen 6s ease-in-out 4s infinite;
+  }
+  @keyframes pcSheen { 0%,17% { transform: translateX(-110%);} 40%,100% { transform: translateX(150%);} }
+
+  .pc-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+  .pc-badge {
+    position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%);
+    background: rgba(255,255,255,0.82); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.9);
+    border-radius: 100px; padding: 0.65rem 1.2rem;
+    display: flex; align-items: center; gap: 0.6rem;
+    box-shadow: 0 16px 30px -18px rgba(120,86,64,0.5);
+    white-space: nowrap;
+  }
+  .pc-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #34c759; box-shadow: 0 0 0 4px rgba(52,199,89,0.18); }
+  .pc-badge span { font-size: 0.74rem; font-weight: 600; letter-spacing: 0.02em; color: var(--ink); }
+
+  .floaty {
+    position: absolute; background: var(--white);
+    border-radius: 18px; padding: 0.85rem 1.05rem;
+    box-shadow: var(--shadow-card); display: flex; align-items: center; gap: 0.65rem;
+    border: 1px solid var(--line-soft);
+  }
+  .floaty .ico { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--paper-warm); color: var(--rose-deep); flex-shrink: 0; }
+  .floaty .ico svg { width: 18px; height: 18px; }
+  .floaty .ft { font-size: 0.78rem; font-weight: 600; line-height: 1.2; }
+  .floaty .fs { font-size: 0.66rem; color: var(--ink-faint); font-weight: 500; }
+  .floaty.f1 { top: 6%; right: -6%; animation: floatA 7s ease-in-out infinite; }
+  .floaty.f2 { bottom: 18%; left: -10%; animation: floatB 8s ease-in-out 0.5s infinite; }
+  @keyframes floatA { 0%,100% { transform: translateY(0);} 50% { transform: translateY(-12px);} }
+  @keyframes floatB { 0%,100% { transform: translateY(0);} 50% { transform: translateY(10px);} }
+
+  /* scroll cue */
+  .scroll-cue { position: absolute; bottom: 1.8rem; left: 50%; transform: translateX(-50%); z-index: 6; display: flex; flex-direction: column; align-items: center; gap: 0.6rem; color: var(--ink-faint); }
+  .scroll-cue .line { width: 1px; height: 42px; background: linear-gradient(var(--rose-deep), transparent); position: relative; overflow: hidden; }
+  .scroll-cue .line::after { content:""; position:absolute; top:-50%; left:0; width:100%; height:50%; background: var(--rose-deep); animation: cueRun 2s ease-in-out infinite; }
+  @keyframes cueRun { 0% { top:-50%;} 100% { top:100%;} }
+  .scroll-cue span { font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; writing-mode: vertical-rl; }
+
+  /* ---------- Marquee ---------- */
+  .marquee-wrap { background: var(--ink); color: var(--paper); padding: 1.1rem 0; overflow: hidden; }
+  .marquee { display: flex; gap: 3rem; white-space: nowrap; animation: marq 32s linear infinite; width: max-content; }
+  .marquee span { font-family: var(--serif); font-size: 1.35rem; font-style: italic; display: inline-flex; align-items: center; gap: 3rem; color: rgba(251,248,245,0.85); }
+  .marquee span::after { content: "✦"; color: var(--rose); font-style: normal; font-size: 0.8rem; }
+  @keyframes marq { from { transform: translateX(0);} to { transform: translateX(-50%);} }
+
+  /* ---------- Reveal animation utility ---------- */
+  .reveal { opacity: 0; transform: translateY(34px); transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
+  .reveal.in { opacity: 1; transform: none; }
+  .reveal.d1 { transition-delay: 0.08s; }
+  .reveal.d2 { transition-delay: 0.16s; }
+  .reveal.d3 { transition-delay: 0.24s; }
+  .reveal.d4 { transition-delay: 0.32s; }
+
+  /* ---------- Section base ---------- */
+  section { position: relative; }
+  .pad { padding: clamp(5rem, 12vh, 9rem) 0; }
+  .head-block { max-width: 60rem; margin-bottom: clamp(3rem, 7vh, 5rem); }
+  .head-block .eyebrow { margin-bottom: 1.4rem; }
+  .head-block p.intro { font-size: clamp(1rem, 1.4vw, 1.18rem); color: var(--ink-soft); margin-top: 1.5rem; max-width: 44rem; }
+
+  /* ---------- Welcome / English trust ---------- */
+  .welcome { background: var(--white); }
+  .welcome-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2.5rem, 6vw, 6rem); align-items: center; }
+  .welcome-text h2 { margin-bottom: 1.6rem; }
+  .welcome-text .lede { margin-bottom: 1.8rem; }
+  .welcome-text p { color: var(--ink-soft); margin-bottom: 1.2rem; }
+
+  .chip-row { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 2rem; }
+  .chip { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.55rem 1rem; border-radius: 100px; background: var(--paper-warm); font-size: 0.8rem; font-weight: 600; color: var(--ink); border: 1px solid var(--line-soft); }
+  .chip svg { width: 15px; height: 15px; color: var(--rose-deep); }
+
+  /* contact lanes panel */
+  .lanes {
+    background: linear-gradient(165deg, #fdfaf7, #f6ece6);
+    border: 1px solid var(--line-soft);
+    border-radius: 28px;
+    padding: clamp(1.6rem, 3vw, 2.4rem);
+    box-shadow: var(--shadow-soft);
+    position: relative;
+    overflow: hidden;
+  }
+  .lanes::before { content:""; position:absolute; top:-40%; right:-20%; width:60%; height:80%; background: radial-gradient(circle, rgba(255,255,255,0.8), transparent 70%); }
+  .lanes h3 { font-family: var(--sans); font-size: 0.74rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rose-deep); margin-bottom: 1.4rem; position: relative; }
+  .lane {
+    display: flex; align-items: center; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--line-soft);
+    position: relative; transition: transform 0.4s var(--ease);
+  }
+  .lane:last-child { border-bottom: none; }
+  .lane:hover { transform: translateX(6px); }
+  .lane .li { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; background: var(--white); box-shadow: 0 8px 20px -12px rgba(120,86,64,0.5); flex-shrink: 0; }
+  .lane .li svg { width: 22px; height: 22px; }
+  .lane .lt { flex: 1; min-width: 0; }
+  .lane .lt b { display: block; font-size: 0.95rem; font-weight: 600; color: var(--ink); }
+  .lane .lt small { font-size: 0.78rem; color: var(--ink-faint); }
+  .lane .arrow { color: var(--ink-faint); transition: transform 0.4s var(--ease), color 0.4s; }
+  .lane:hover .arrow { transform: translateX(4px); color: var(--rose-deep); }
+
+  /* ---------- Services ---------- */
+  .services { background: var(--paper); }
+  .svc-list { display: grid; gap: 0; border-top: 1px solid var(--line); }
+  .svc {
+    display: grid; grid-template-columns: auto 1fr auto; gap: clamp(1rem, 4vw, 3rem); align-items: center;
+    padding: clamp(1.8rem, 4vw, 3rem) 0; border-bottom: 1px solid var(--line);
+    position: relative; transition: padding 0.5s var(--ease);
+  }
+  .svc::before { content:""; position:absolute; inset: 0 -2rem; background: var(--white); border-radius: 24px; opacity: 0; transform: scale(0.97); transition: opacity 0.5s var(--ease), transform 0.5s var(--ease); z-index: 0; box-shadow: var(--shadow-soft); }
+  .svc:hover::before { opacity: 1; transform: scale(1); }
+  .svc > * { position: relative; z-index: 1; }
+  .svc:hover { padding-left: clamp(0.5rem, 2vw, 2rem); padding-right: clamp(0.5rem, 2vw, 2rem); }
+  .svc .num { font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2.4rem); color: var(--rose); font-weight: 500; font-style: italic; }
+  .svc-mid h3 { font-size: clamp(1.6rem, 3.6vw, 2.6rem); margin-bottom: 0.5rem; transition: color 0.4s; }
+  .svc:hover .svc-mid h3 { color: var(--rose-deep); }
+  .svc-mid p { color: var(--ink-soft); max-width: 38rem; font-size: 0.95rem; }
+  .svc-mid .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.9rem; }
+  .svc-mid .tags span { font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-faint); padding: 0.3rem 0.7rem; border: 1px solid var(--line); border-radius: 100px; font-weight: 600; }
+  .svc-art { width: 88px; height: 88px; flex-shrink: 0; }
+  .svc-art svg { width: 100%; height: 100%; }
+
+  /* ---------- Story / Why visit ---------- */
+  .story { background: var(--ink); color: var(--paper); overflow: hidden; position: relative; }
+  .story .ambient { position: absolute; width: 50vw; height: 50vw; max-width: 600px; max-height: 600px; border-radius: 50%; filter: blur(80px); pointer-events: none; }
+  .story .ambient.a1 { background: radial-gradient(circle, rgba(205,177,143,0.28), transparent 70%); top: -10%; left: -10%; }
+  .story .ambient.a2 { background: radial-gradient(circle, rgba(179,130,106,0.25), transparent 70%); bottom: -15%; right: -8%; }
+  .story .eyebrow { color: var(--gold); }
+  .story .eyebrow::before { background: var(--gold); }
+  .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2.5rem, 6vw, 5rem); align-items: center; position: relative; z-index: 2; }
+  .story h2 { font-size: clamp(2.2rem, 5vw, 4rem); margin-bottom: 1.6rem; }
+  .story h2 em { font-style: italic; color: var(--gold); }
+  .story p { color: rgba(251,248,245,0.72); margin-bottom: 1.3rem; font-size: 1.02rem; }
+  .story p strong { color: var(--paper); font-weight: 600; }
+  .story p em { color: var(--gold); font-style: italic; }
+
+  .stat-stack { display: grid; gap: 1px; background: rgba(251,248,245,0.12); border: 1px solid rgba(251,248,245,0.12); border-radius: 22px; overflow: hidden; }
+  .stat-cell { background: rgba(40,34,30,0.5); backdrop-filter: blur(4px); padding: clamp(1.6rem, 3vw, 2.4rem); transition: background 0.5s var(--ease); }
+  .stat-cell:hover { background: rgba(60,50,42,0.7); }
+  .stat-cell .sv { font-family: var(--serif); font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 600; line-height: 1; display: flex; align-items: baseline; gap: 0.3rem; }
+  .stat-cell .sv .u { font-size: 1.4rem; color: var(--gold); }
+  .stat-cell .sl { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(251,248,245,0.55); margin-top: 0.7rem; font-weight: 600; }
+  .stat-grid-2 { display: grid; grid-template-columns: 1fr 1fr; }
+
+  /* ---------- Reviews strip ---------- */
+  .reviews { background: var(--white); }
+  .rev-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .rev-card { background: var(--paper); border: 1px solid var(--line-soft); border-radius: 22px; padding: clamp(1.6rem, 3vw, 2.2rem); display: flex; flex-direction: column; gap: 1rem; transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease); position: relative; overflow: hidden; }
+  .rev-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-card); }
+  .rev-card .stars { color: var(--rose-deep); letter-spacing: 0.15em; font-size: 0.95rem; }
+  .rev-card .quote { font-family: var(--serif); font-size: 1.22rem; line-height: 1.45; color: var(--ink); font-style: italic; }
+  .rev-card .who { display: flex; align-items: center; gap: 0.7rem; margin-top: auto; }
+  .rev-card .av { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--rose-faint), var(--rose)); display: grid; place-items: center; font-family: var(--serif); font-weight: 600; color: #fff; font-size: 1.05rem; }
+  .rev-card .who b { font-size: 0.85rem; font-weight: 600; display: block; }
+  .rev-card .who small { font-size: 0.72rem; color: var(--ink-faint); }
+
+  /* ---------- Location ---------- */
+  .location { background: var(--paper-warm); }
+  .loc-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(2.5rem, 5vw, 4rem); align-items: stretch; }
+  .loc-info h2 { margin-bottom: 1.6rem; }
+  .loc-info .lede { margin-bottom: 2rem; }
+  .info-rows { display: grid; gap: 1.3rem; margin-top: 2rem; }
+  .info-row { display: flex; gap: 1.1rem; align-items: flex-start; padding-bottom: 1.3rem; border-bottom: 1px solid var(--line); }
+  .info-row:last-child { border-bottom: none; }
+  .info-row .ir-ico { width: 42px; height: 42px; border-radius: 12px; background: var(--white); display: grid; place-items: center; color: var(--rose-deep); flex-shrink: 0; box-shadow: 0 8px 18px -12px rgba(120,86,64,0.5); }
+  .info-row .ir-ico svg { width: 20px; height: 20px; }
+  .info-row .ir-t { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-faint); font-weight: 700; margin-bottom: 0.25rem; }
+  .info-row .ir-v { font-size: 1.02rem; color: var(--ink); font-weight: 500; }
+  .info-row .ir-v a:hover { color: var(--rose-deep); }
+
+  .hours-table { margin-top: 0.4rem; }
+  .hours-table .hr { display: flex; justify-content: space-between; padding: 0.3rem 0; font-size: 0.92rem; }
+  .hours-table .hr .d { color: var(--ink-soft); }
+  .hours-table .hr .t { font-weight: 600; }
+  .hours-table .hr.closed .t { color: var(--rose-deep); }
+  .hours-table .hr.today { font-weight: 700; }
+  .hours-table .hr.today .d::after { content: " — Open now"; font-size: 0.72rem; font-weight: 600; color: #2a9d4e; letter-spacing: 0.03em; text-transform: none; }
+
+  /* stylised map */
+  .loc-map { position: relative; border-radius: 28px; overflow: hidden; min-height: 420px; box-shadow: var(--shadow-card); border: 1px solid var(--line-soft); background: linear-gradient(160deg, #f4ede7, #eadfd6); }
+  .loc-map svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .map-pin {
+    position: absolute; top: 44%; left: 52%; transform: translate(-50%, -100%);
+    display: flex; flex-direction: column; align-items: center; z-index: 3;
+  }
+  .map-pin .pin-card { background: var(--white); border-radius: 14px; padding: 0.7rem 1rem; box-shadow: 0 18px 36px -18px rgba(80,56,40,0.6); display: flex; align-items: center; gap: 0.6rem; white-space: nowrap; margin-bottom: 6px; }
+  .map-pin .pin-card .mark { width: 26px; height: 26px; }
+  .map-pin .pin-card b { font-size: 0.82rem; font-weight: 600; }
+  .map-pin .pin-card small { display: block; font-size: 0.66rem; color: var(--ink-faint); }
+  .map-pin .pin-dot { position: relative; width: 16px; height: 16px; border-radius: 50%; background: var(--rose-deep); border: 3px solid #fff; box-shadow: 0 0 0 6px rgba(179,130,106,0.25); }
+  .map-pin .pin-dot::after { content:""; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width: 10px; height: 10px; border-radius: 50%; background: var(--rose-deep); animation: pinPulse 2.4s ease-out infinite; }
+  @keyframes pinPulse { 0% { transform: translate(-50%,-50%) scale(1); opacity: 0.6;} 100% { transform: translate(-50%,-50%) scale(5); opacity: 0;} }
+  .map-tag { position: absolute; font-size: 0.66rem; font-weight: 600; color: var(--ink-faint); letter-spacing: 0.04em; background: rgba(255,255,255,0.7); padding: 0.25rem 0.6rem; border-radius: 100px; z-index: 2; }
+
+  /* ---------- CTA / Booking ---------- */
+  .cta { background: var(--ink); color: var(--paper); position: relative; overflow: hidden; }
+  .cta .glow { position: absolute; width: 70vw; height: 70vw; max-width: 800px; max-height: 800px; border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%,-50%); background: radial-gradient(circle, rgba(205,177,143,0.22), transparent 65%); pointer-events: none; }
+  .cta-inner { position: relative; z-index: 2; text-align: center; max-width: 56rem; margin: 0 auto; }
+  .cta .eyebrow { color: var(--gold); justify-content: center; }
+  .cta .eyebrow::before { background: var(--gold); }
+  .cta h2 { font-size: clamp(2.4rem, 7vw, 5.6rem); margin: 1.6rem 0 1.4rem; }
+  .cta h2 em { font-style: italic; color: var(--gold); }
+  .cta p.sub { color: rgba(251,248,245,0.72); font-size: clamp(1rem, 1.6vw, 1.2rem); max-width: 40rem; margin: 0 auto 2.6rem; }
+  .cta-buttons { display: flex; flex-wrap: wrap; gap: 0.9rem; justify-content: center; }
+  .cta .channels { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem; margin-top: 2.4rem; }
+  .cta .channels .ch {
+    display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.7rem 1.2rem; border-radius: 100px;
+    border: 1px solid rgba(251,248,245,0.16); font-size: 0.82rem; font-weight: 500; color: rgba(251,248,245,0.85);
+    transition: background 0.4s var(--ease), border-color 0.4s, transform 0.4s var(--ease), color 0.4s;
+  }
+  .cta .channels .ch svg { width: 17px; height: 17px; }
+  .cta .channels .ch:hover { background: rgba(251,248,245,0.08); border-color: rgba(251,248,245,0.4); transform: translateY(-2px); color: #fff; }
+
+  /* ---------- Footer ---------- */
+  footer { background: var(--paper); padding: clamp(3.5rem, 7vh, 5rem) 0 2.5rem; border-top: 1px solid var(--line); }
+  .foot-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2.5rem; margin-bottom: 3rem; }
+  .foot-brand .brand { margin-bottom: 1.2rem; }
+  .foot-brand p { color: var(--ink-soft); font-size: 0.92rem; max-width: 24rem; }
+  .foot-col h4 { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-faint); font-weight: 700; margin-bottom: 1.1rem; }
+  .foot-col a, .foot-col p { display: block; color: var(--ink-soft); font-size: 0.9rem; padding: 0.3rem 0; transition: color 0.3s; }
+  .foot-col a:hover { color: var(--rose-deep); }
+  .foot-social { display: flex; gap: 0.6rem; margin-top: 0.6rem; }
+  .foot-social a { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; color: var(--ink-soft); transition: background 0.4s var(--ease), color 0.4s var(--ease), border-color 0.4s var(--ease), transform 0.4s var(--ease); }
+  .foot-social a svg { width: 18px; height: 18px; }
+  .foot-social a:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); transform: translateY(-3px); }
+
+  .foot-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; padding-top: 2rem; border-top: 1px solid var(--line); }
+  .foot-bottom .legal { font-size: 0.8rem; color: var(--ink-faint); }
+  .foot-bottom .credit { font-size: 0.78rem; color: var(--ink-faint); }
+  .foot-bottom .credit a { color: var(--ink-soft); font-weight: 600; border-bottom: 1px solid var(--line); transition: color 0.3s, border-color 0.3s; }
+  .foot-bottom .credit a:hover { color: var(--rose-deep); border-color: var(--rose); }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1024px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .welcome-grid, .story-grid, .loc-grid { grid-template-columns: 1fr; }
+    .story .stat-stack { margin-top: 1rem; }
+  }
+  @media (max-width: 860px) {
+    nav.links, .nav-cta .btn { display: none; }
+    .menu-toggle { display: flex; }
+    .rev-grid { grid-template-columns: 1fr; }
+    .svc { grid-template-columns: auto 1fr; }
+    .svc-art { display: none; }
+    .foot-top { grid-template-columns: 1fr; gap: 2rem; }
+    .stat-grid-2 { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 560px) {
+    .hero-meta { gap: 1.2rem 1.6rem; }
+    .meta-item .num { font-size: 1.7rem; }
+    .btn { padding: 0.95rem 1.5rem; font-size: 0.78rem; }
+    .svc { grid-template-columns: 1fr; gap: 0.6rem; }
+    .svc .num { font-size: 1.3rem; }
+    .cta .channels .ch { font-size: 0.76rem; padding: 0.6rem 1rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+    .reveal { opacity: 1 !important; transform: none !important; }
+    .bloom, .sheen, .pc-sheen { opacity: 1 !important; }
+    .hero h1 .line span { transform: none !important; }
+  }
+</style>
+
+
+<style id="shm-bk-style">
+.shm-bk *{box-sizing:border-box}
+.shm-bk-overlay{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;
+  padding:max(16px,env(safe-area-inset-top)) 16px;background:rgba(10,10,12,.55);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);font-family:var(--bk-sans)}
+.shm-bk-overlay.open{display:flex}
+.shm-bk-card{width:100%;max-width:480px;max-height:92vh;overflow:auto;background:var(--bk-panel);
+  color:var(--bk-ink);border-radius:var(--bk-r);box-shadow:0 30px 80px -20px rgba(0,0,0,.55),0 0 0 1px var(--bk-line);
+  padding:26px 26px 22px;transform:translateY(10px);opacity:0;transition:transform .42s cubic-bezier(.16,1,.3,1),opacity .42s}
+.shm-bk-overlay.open .shm-bk-card{transform:none;opacity:1}
+.shm-bk-eyebrow{font-size:.64rem;letter-spacing:.26em;text-transform:uppercase;color:var(--bk-accent);
+  font-weight:600;display:flex;align-items:center;gap:.6em;margin:0 0 .5rem}
+.shm-bk-eyebrow::before{content:"";width:.42em;height:.42em;border-radius:50%;background:var(--bk-accent)}
+.shm-bk h2.shm-bk-title{font-family:var(--bk-serif);font-weight:500;line-height:1.05;font-size:1.7rem;margin:0 0 .35rem}
+.shm-bk-sub{color:var(--bk-muted);font-size:.92rem;line-height:1.5;margin:0 0 1.15rem}
+.shm-bk-close{position:absolute;top:14px;right:16px;background:none;border:0;color:var(--bk-muted);
+  font-size:1.5rem;line-height:1;cursor:pointer;padding:6px;border-radius:8px}
+.shm-bk-close:hover{color:var(--bk-ink);background:var(--bk-line)}
+.shm-bk-card{position:relative}
+.shm-bk-label{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bk-muted);
+  font-weight:600;margin:1.1rem 0 .55rem}
+.shm-bk-row{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
+.shm-bk-chip{flex:0 0 auto;min-width:62px;text-align:center;padding:.6rem .7rem;border:1px solid var(--bk-line);
+  background:transparent;color:var(--bk-ink);border-radius:calc(var(--bk-r)*.6);cursor:pointer;
+  font:inherit;font-size:.8rem;transition:.18s;line-height:1.25}
+.shm-bk-chip small{display:block;font-size:.62rem;color:var(--bk-muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
+.shm-bk-chip:hover{border-color:var(--bk-accent)}
+.shm-bk-chip[aria-pressed="true"]{background:var(--bk-accent);color:var(--bk-accent-ink);border-color:var(--bk-accent)}
+.shm-bk-chip[aria-pressed="true"] small{color:var(--bk-accent-ink);opacity:.8}
+.shm-bk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(78px,1fr));gap:8px}
+.shm-bk-field{margin-top:.7rem}
+.shm-bk-field input,.shm-bk-field select,.shm-bk-field textarea{width:100%;padding:.7rem .8rem;border:1px solid var(--bk-line);
+  background:var(--bk-panel);color:var(--bk-ink);border-radius:calc(var(--bk-r)*.55);font:inherit;font-size:.9rem}
+.shm-bk-field input:focus,.shm-bk-field select:focus,.shm-bk-field textarea:focus{outline:2px solid var(--bk-accent);outline-offset:1px;border-color:var(--bk-accent)}
+.shm-bk-field input::placeholder,.shm-bk-field textarea::placeholder{color:var(--bk-muted)}
+.shm-bk-cta{width:100%;margin-top:1.25rem;padding:.95rem 1rem;border:0;border-radius:calc(var(--bk-r)*.55);
+  background:var(--bk-ink);color:var(--bk-panel);font:inherit;font-weight:600;letter-spacing:.04em;cursor:pointer;
+  font-size:.92rem;transition:.18s;display:flex;align-items:center;justify-content:center;gap:.5em}
+.shm-bk-cta:hover{filter:brightness(1.12)}
+.shm-bk-cta:disabled{opacity:.4;cursor:not-allowed}
+.shm-bk-ghost{display:block;text-align:center;margin-top:.7rem;padding:.85rem;border:1px solid var(--bk-line);
+  border-radius:calc(var(--bk-r)*.55);color:var(--bk-ink);text-decoration:none;font-size:.88rem;font-weight:600;transition:.18s}
+.shm-bk-ghost:hover{border-color:var(--bk-accent);color:var(--bk-accent)}
+.shm-bk-fine{font-size:.72rem;color:var(--bk-muted);text-align:center;margin:.95rem 0 0;line-height:1.45}
+.shm-bk-hide{display:none}
+.shm-bk-tick{width:54px;height:54px;border-radius:50%;background:var(--bk-accent);color:var(--bk-accent-ink);
+  display:flex;align-items:center;justify-content:center;font-size:1.7rem;margin:0 auto 1rem}
+.shm-bk-conf{text-align:center}
+.shm-bk-conf .shm-bk-title{font-size:1.5rem}
+.shm-bk-fab{position:fixed;left:50%;transform:translateX(-50%);bottom:20px;z-index:9998;
+  display:inline-flex;align-items:center;gap:.5em;padding:.85rem 1.4rem;border:0;border-radius:999px;
+  background:var(--bk-accent);color:var(--bk-accent-ink);font-family:var(--bk-sans);font-weight:600;
+  font-size:.92rem;letter-spacing:.02em;cursor:pointer;box-shadow:0 10px 30px -6px rgba(0,0,0,.42)}
+.shm-bk-fab:hover{transform:translateX(-50%) translateY(-2px);box-shadow:0 16px 40px -8px rgba(0,0,0,.52)}
+@media (max-width:520px){.shm-bk-fab{bottom:14px;font-size:.88rem;padding:.8rem 1.15rem}}
+@media (prefers-reduced-motion:reduce){.shm-bk-card{transition:none}}
+.shm-bk{--bk-accent:#b3826a;--bk-accent-ink:#ffffff;--bk-ink:#2c2622;--bk-panel:#fbf8f5;--bk-muted:rgba(44,38,34,0.6);--bk-line:rgba(44,38,34,0.14);--bk-serif:"Cormorant Garamond", Georgia, "Times New Roman", serif;--bk-sans:"Manrope", system-ui, -apple-system, sans-serif;--bk-r:18px;}
+</style>
+
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand" aria-label="Claire Dental home">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="markG" x1="0" y1="0" x2="40" y2="40">
+            <stop offset="0" stop-color="#d8b7a3"/><stop offset="1" stop-color="#b3826a"/>
+          </linearGradient>
+        </defs>
+        <path d="M20 4C13 4 8 8 8 15c0 5 2 9 4 14 1.4 3.6 2.4 7 4 7s2-3 4-3 2 3 4 3 2.6-3.4 4-7c2-5 4-9 4-14 0-7-5-11-12-11Z" fill="url(#markG)"/>
+        <path d="M20 4C13 4 8 8 8 15c0 5 2 9 4 14" stroke="#fff" stroke-opacity="0.5" stroke-width="1.2" fill="none"/>
+        <circle cx="26" cy="13" r="2.4" fill="#fff" fill-opacity="0.85"/>
+      </svg>
+      <span class="name">Claire<small>Dental · Seoul</small></span>
+    </a>
+
+    <nav class="links" aria-label="Primary">
+      <a href="#welcome" class="lnk">English Care</a>
+      <a href="#services" class="lnk">Treatments</a>
+      <a href="#story" class="lnk">Our Clinic</a>
+      <a href="#location" class="lnk">Visit</a>
+    </nav>
+
+    <div class="nav-cta">
+      <a href="tel:+82255552879" class="btn btn--ghost">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.24 1Z"/></svg>
+        Call
+      </a>
+      <a href="#book" class="btn btn--rose">Book a Visit</a>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+  <a href="#welcome">English Care</a>
+  <a href="#services">Treatments</a>
+  <a href="#story">Our Clinic</a>
+  <a href="#location">Visit</a>
+  <div class="mob-ctas">
+    <a href="tel:+82255552879" class="btn btn--ghost">Call +82 2-555-2879</a>
+    <a href="#book" class="btn btn--rose">Book a Visit</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<main id="top">
+<section class="hero" id="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-grid"></div>
+    <div class="bloom b1"></div>
+    <div class="bloom b2"></div>
+    <div class="bloom b3"></div>
+    <div class="sheen"></div>
+  </div>
+
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <span class="eyebrow">Seolleung · Gangnam, Seoul</span>
+      <h1 class="display" id="heroTitle">
+        <span class="line"><span>Your brightest</span></span>
+        <span class="line"><span><em>smile</em>, in clear</span></span>
+        <span class="line"><span>English.</span></span>
+      </h1>
+      <p class="hero-sub">
+        <strong>Claire Dental</strong> is a cosmetic-laminate, implant &amp; whitening clinic minutes from COEX — where international patients are genuinely welcome. Message us in English, book with ease, and let our team look after the rest.
+      </p>
+      <div class="hero-ctas">
+        <a href="#book" class="btn btn--rose">
+          Book a Visit
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#welcome" class="btn btn--ghost">How we help expats</a>
+      </div>
+
+      <div class="hero-meta">
+        <div class="meta-item">
+          <span class="num">5.0<span class="star">★</span></span>
+          <span class="lbl">Google · 123 reviews</span>
+        </div>
+        <div class="meta-item">
+          <span class="num">~10<span class="star" style="font-size:1rem;">min</span></span>
+          <span class="lbl">from the COEX hub</span>
+        </div>
+        <div class="meta-item">
+          <span class="num">10<span class="star" style="font-size:1rem;">yrs</span></span>
+          <span class="lbl">caring for smiles</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="floaty f1">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.4 8.4 0 0 1-12 7.6L3 21l1.9-6A8.5 8.5 0 1 1 21 11.5Z"/></svg></div>
+        <div><div class="ft">English chat</div><div class="fs">WhatsApp · LINE</div></div>
+      </div>
+      <div class="porcelain-card">
+        <div class="pc-glow"></div>
+        <svg class="pc-svg" viewBox="0 0 420 512" fill="none" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs>
+            <linearGradient id="toothG" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f3e4da"/>
+            </linearGradient>
+            <radialGradient id="sparkG" cx="0.5" cy="0.4" r="0.5">
+              <stop offset="0" stop-color="#fff" stop-opacity="0.9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <!-- big stylised tooth -->
+          <path d="M210 120c-46 0-78 26-78 70 0 34 14 60 26 92 11 29 18 56 30 56s14-22 22-22 12 22 22 22 16-26 28-56c12-32 26-58 26-92 0-44-30-70-76-70Z" fill="url(#toothG)" stroke="#e7d2c5" stroke-width="2"/>
+          <path d="M210 120c-46 0-78 26-78 70 0 34 14 60 26 92" stroke="#fff" stroke-width="3" stroke-opacity="0.8" fill="none"/>
+          <ellipse cx="250" cy="175" rx="22" ry="30" fill="url(#sparkG)"/>
+          <!-- sparkles -->
+          <g fill="#cdb18f">
+            <path d="M150 200l4 12 12 4-12 4-4 12-4-12-12-4 12-4 4-12Z"/>
+            <path d="M285 240l3 9 9 3-9 3-3 9-3-9-9-3 9-3 3-9Z" opacity="0.8"/>
+          </g>
+        </svg>
+        <div class="pc-sheen"></div>
+        <div class="pc-badge"><span class="dot"></span><span>International patients welcome</span></div>
+      </div>
+      <div class="floaty f2">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <div><div class="ft">5.0★ rated</div><div class="fs">123 reviews</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="line"></div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee">
+    <span>Cosmetic Laminates</span><span>Dental Implants</span><span>Professional Whitening</span><span>English-Speaking Team</span><span>Minutes from COEX</span>
+    <span>Cosmetic Laminates</span><span>Dental Implants</span><span>Professional Whitening</span><span>English-Speaking Team</span><span>Minutes from COEX</span>
+  </div>
+</div>
+
+<!-- ============ WELCOME / ENGLISH TRUST ============ -->
+<section class="welcome pad" id="welcome">
+  <div class="wrap welcome-grid">
+    <div class="welcome-text">
+      <span class="eyebrow reveal">For international patients</span>
+      <h2 class="section-title reveal d1">Dental care that speaks your language.</h2>
+      <p class="lede reveal d2">Far from home, choosing a dentist shouldn't feel like a leap of faith.</p>
+      <p class="reveal d2">At Claire Dental, English-speaking care isn't an afterthought — it's how we welcome you. From your very first message to your final polish, our team guides you through every option clearly, so you always understand exactly what's happening and why.</p>
+      <p class="reveal d3">Reach us the way that's easiest for you. Send a WhatsApp or LINE message, drop us an email, or call ahead — and we'll answer in plain English, help you plan your visit, and make the whole experience feel effortless.</p>
+      <div class="chip-row reveal d4">
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>English consultations</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Easy chat booking</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Clear treatment plans</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Expat-friendly location</span>
+      </div>
+    </div>
+
+    <aside class="lanes reveal d2" aria-label="Ways to reach us in English">
+      <h3>Reach us in English</h3>
+      <!-- WhatsApp placeholder: replace href="#" with the clinic's wa.me link, e.g. https://wa.me/8210XXXXXXXX -->
+      <a class="lane" href="#" aria-label="Message us on WhatsApp">
+        <span class="li"><svg viewBox="0 0 24 24" fill="#25D366"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.78 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.16c-.24.68-1.42 1.32-1.96 1.36-.5.05-.97.24-3.27-.68-2.75-1.08-4.5-3.91-4.64-4.09-.13-.18-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.27.24-.27.53-.34.71-.34l.51.01c.16 0 .38-.06.59.45.24.58.81 2 .88 2.14.07.14.12.31.02.49-.09.18-.14.29-.27.45-.14.16-.29.36-.41.48-.14.14-.28.29-.12.57.16.27.71 1.17 1.53 1.9 1.05.93 1.94 1.22 2.21 1.36.27.14.43.12.59-.07.16-.18.68-.79.86-1.06.18-.27.36-.23.61-.14.25.09 1.6.76 1.88.9.27.14.45.2.52.32.07.11.07.66-.17 1.31Z"/></svg></span>
+        <span class="lt"><b>WhatsApp</b><small>Quickest reply, in English</small></span>
+        <span class="arrow"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <!-- LINE / KakaoTalk placeholder: replace href="#" with the clinic's official Kakao channel link -->
+      <a class="lane" href="#" aria-label="Message us on KakaoTalk or LINE">
+        <span class="li"><svg viewBox="0 0 24 24" fill="#191600"><path d="M12 3C6.5 3 2 6.58 2 11c0 2.82 1.86 5.3 4.66 6.73-.2.72-.74 2.68-.85 3.1-.13.52.19.51.4.37.17-.11 2.66-1.8 3.74-2.54.66.09 1.35.14 2.05.14 5.5 0 10-3.58 10-8C22 6.58 17.5 3 12 3Z"/></svg></span>
+        <span class="lt"><b>KakaoTalk / LINE</b><small>Chat the way locals do</small></span>
+        <span class="arrow"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="lane" href="mailto:clairedentalkr@gmail.com" aria-label="Email Claire Dental">
+        <span class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#b3826a" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+        <span class="lt"><b>Email</b><small>clairedentalkr@gmail.com</small></span>
+        <span class="arrow"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="lane" href="tel:+82255552879" aria-label="Call Claire Dental">
+        <span class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#b3826a" stroke-width="1.8"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.24 1Z"/></svg></span>
+        <span class="lt"><b>Call us</b><small>+82 2-555-2879</small></span>
+        <span class="arrow"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services pad" id="services">
+  <div class="wrap">
+    <div class="head-block">
+      <span class="eyebrow reveal">What we do best</span>
+      <h2 class="section-title reveal d1">Treatments, refined.</h2>
+      <p class="intro reveal d2">A focused menu, delivered with precision and an eye for natural-looking results. Whatever brings you in, you'll leave knowing exactly what was done — and why it suits you.</p>
+    </div>
+
+    <div class="svc-list">
+      <article class="svc reveal">
+        <span class="num">01</span>
+        <div class="svc-mid">
+          <h3>Cosmetic Laminates</h3>
+          <p>Our specialty. Ultra-thin porcelain veneers, hand-shaped to brighten, align and reshape your smile while keeping it unmistakably yours. Subtle, durable, and luminous.</p>
+          <div class="tags"><span>Veneers</span><span>Smile design</span><span>Natural finish</span></div>
+        </div>
+        <div class="svc-art">
+          <svg viewBox="0 0 88 88" fill="none" aria-hidden="true"><rect x="1" y="1" width="86" height="86" rx="20" fill="#faf2ec" stroke="#ead9cd"/><path d="M44 24c-12 0-20 7-20 18 0 9 4 16 8 24 3 6 5 10 7 10s3-5 5-5 3 5 5 5 4-4 7-10c4-8 8-15 8-24 0-11-8-18-20-18Z" fill="#fff" stroke="#cdb18f" stroke-width="1.6"/><path d="M52 34l2 6 6 2-6 2-2 6-2-6-6-2 6-2 2-6Z" fill="#cdb18f"/></svg>
+        </div>
+      </article>
+
+      <article class="svc reveal">
+        <span class="num">02</span>
+        <div class="svc-mid">
+          <h3>Dental Implants</h3>
+          <p>A confident, lasting answer to missing teeth. Planned carefully and placed with care, our implants restore both the look and the everyday function of a complete, comfortable smile.</p>
+          <div class="tags"><span>Single &amp; multiple</span><span>Lasting</span><span>Function restored</span></div>
+        </div>
+        <div class="svc-art">
+          <svg viewBox="0 0 88 88" fill="none" aria-hidden="true"><rect x="1" y="1" width="86" height="86" rx="20" fill="#faf2ec" stroke="#ead9cd"/><path d="M44 22c-6 0-11 4-11 11 0 5 3 9 5 14h12c2-5 5-9 5-14 0-7-5-11-11-11Z" fill="#fff" stroke="#cdb18f" stroke-width="1.6"/><rect x="40" y="48" width="8" height="6" rx="2" fill="#cdb18f"/><path d="M42 56l2 12 2-12" stroke="#b3826a" stroke-width="3" stroke-linecap="round"/></svg>
+        </div>
+      </article>
+
+      <article class="svc reveal">
+        <span class="num">03</span>
+        <div class="svc-mid">
+          <h3>Professional Whitening</h3>
+          <p>A brighter smile, the gentle way. Our in-clinic whitening lifts years of everyday stains in a single relaxed visit — even, fresh, and tailored to the shade that looks right for you.</p>
+          <div class="tags"><span>In-clinic</span><span>Gentle</span><span>Even results</span></div>
+        </div>
+        <div class="svc-art">
+          <svg viewBox="0 0 88 88" fill="none" aria-hidden="true"><rect x="1" y="1" width="86" height="86" rx="20" fill="#faf2ec" stroke="#ead9cd"/><circle cx="44" cy="44" r="14" fill="#fff" stroke="#cdb18f" stroke-width="1.6"/><g stroke="#b3826a" stroke-width="2.4" stroke-linecap="round"><path d="M44 18v8M44 62v8M18 44h8M62 44h8M26 26l5 5M57 57l5 5M62 26l-5 5M31 57l-5 5"/></g></svg>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY / WHY VISIT ============ -->
+<section class="story pad" id="story">
+  <span class="ambient a1" aria-hidden="true"></span>
+  <span class="ambient a2" aria-hidden="true"></span>
+  <div class="wrap story-grid">
+    <div class="story-text">
+      <span class="eyebrow reveal">Why patients choose Claire</span>
+      <h2 class="reveal d1">A small clinic with a <em>big-city</em> standard of care.</h2>
+      <p class="reveal d2">For nearly <strong>ten years</strong>, Claire Dental has quietly built a reputation in Seolleung for the kind of work people notice — and the kind of care they remember. Our name means <em>light</em>, and that's exactly what we set out to give every patient: a clearer, brighter smile.</p>
+      <p class="reveal d2">Being a small, doctor-led practice of <strong>three to five dentists</strong> means you're never just a number. You see familiar faces, your treatment is unhurried, and the same hands that plan your care are the ones that carry it out — start to finish.</p>
+      <p class="reveal d3">And with a perfect <strong>5.0-star rating across 123 Google reviews</strong>, our patients say it best. We'd love for you to be the next smile we brighten.</p>
+    </div>
+
+    <div class="stat-stack reveal d2">
+      <div class="stat-cell">
+        <div class="sv">5.0<span class="u">★</span></div>
+        <div class="sl">Google rating · 123 reviews</div>
+      </div>
+      <div class="stat-grid-2">
+        <div class="stat-cell">
+          <div class="sv">~10<span class="u">yrs</span></div>
+          <div class="sl">Trusted in Seolleung</div>
+        </div>
+        <div class="stat-cell">
+          <div class="sv">3–5</div>
+          <div class="sl">Doctor-led team</div>
+        </div>
+      </div>
+      <div class="stat-cell">
+        <div class="sv">~10<span class="u">min</span></div>
+        <div class="sl">From the COEX expat hub</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+
+<!-- ============ LOCATION ============ -->
+<section class="location pad" id="location">
+  <div class="wrap loc-grid">
+    <div class="loc-info">
+      <span class="eyebrow reveal">Find us</span>
+      <h2 class="section-title reveal d1">Right in the heart of Gangnam.</h2>
+      <p class="lede reveal d2">Seolleung, Seoul — just about ten minutes from COEX.</p>
+      <div class="info-rows reveal d3">
+        <div class="info-row">
+          <span class="ir-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.3-7-11a7 7 0 1 1 14 0c0 4.7-7 11-7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
+          <div><div class="ir-t">Area</div><div class="ir-v">Seolleung (선릉) · Gangnam-gu, Seoul</div></div>
+        </div>
+        <div class="info-row">
+          <span class="ir-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.24 1Z"/></svg></span>
+          <div><div class="ir-t">Phone</div><div class="ir-v"><a href="tel:+82255552879">+82 2-555-2879</a></div></div>
+        </div>
+        <div class="info-row">
+          <span class="ir-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <div style="flex:1;">
+            <div class="ir-t">Opening hours</div>
+            <div class="hours-table" id="hoursTable">
+              <div class="hr" data-day="1"><span class="d">Monday</span><span class="t">10:00 – 19:00</span></div>
+              <div class="hr" data-day="2"><span class="d">Tuesday</span><span class="t">10:00 – 19:00</span></div>
+              <div class="hr" data-day="3"><span class="d">Wednesday</span><span class="t">10:00 – 19:00</span></div>
+              <div class="hr" data-day="4"><span class="d">Thursday</span><span class="t">10:00 – 19:00</span></div>
+              <div class="hr" data-day="5"><span class="d">Friday</span><span class="t">10:00 – 19:00</span></div>
+              <div class="hr" data-day="6"><span class="d">Saturday</span><span class="t">10:00 – 19:00</span></div>
+              <div class="hr closed" data-day="0"><span class="d">Sunday</span><span class="t">Closed</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="loc-map reveal d2" role="img" aria-label="Stylised map showing Claire Dental in the Seolleung area of Gangnam, Seoul, near COEX">
+      <svg viewBox="0 0 600 460" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="mapBg" x1="0" y1="0" x2="600" y2="460">
+            <stop offset="0" stop-color="#f6efe9"/><stop offset="1" stop-color="#ecdfd5"/>
+          </linearGradient>
+        </defs>
+        <rect width="600" height="460" fill="url(#mapBg)"/>
+        <!-- river -->
+        <path d="M-20 90 C 120 60, 220 130, 360 100 S 600 80, 640 120 L 640 160 C 500 140, 360 170, 220 175 S 60 150, -20 175 Z" fill="#dcc9bb" opacity="0.65"/>
+        <!-- roads -->
+        <g stroke="#fff" stroke-width="10" opacity="0.85" stroke-linecap="round">
+          <path d="M60 250 H 560"/><path d="M300 30 V 440"/><path d="M120 400 L 480 60"/>
+        </g>
+        <g stroke="#e7d6c8" stroke-width="3" opacity="0.9">
+          <path d="M60 320 H 560"/><path d="M180 30 V 440"/><path d="M430 30 V 440"/>
+        </g>
+        <!-- blocks -->
+        <g fill="#fff" opacity="0.5">
+          <rect x="200" y="270" width="80" height="40" rx="6"/><rect x="330" y="270" width="70" height="40" rx="6"/>
+          <rect x="200" y="330" width="80" height="60" rx="6"/><rect x="330" y="330" width="70" height="60" rx="6"/>
+          <rect x="80" y="120" width="70" height="50" rx="6"/>
+        </g>
+      </svg>
+      <span class="map-tag" style="top:18%; left:8%;">Seolleung Stn.</span>
+      <span class="map-tag" style="bottom:14%; right:10%;">COEX · ~10 min</span>
+      <span class="map-tag" style="top:8%; right:14%;">Han River</span>
+      <div class="map-pin">
+        <div class="pin-card">
+          <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <path d="M20 4C13 4 8 8 8 15c0 5 2 9 4 14 1.4 3.6 2.4 7 4 7s2-3 4-3 2 3 4 3 2.6-3.4 4-7c2-5 4-9 4-14 0-7-5-11-12-11Z" fill="#b3826a"/>
+          </svg>
+          <div><b>Claire Dental</b><small>Seolleung, Gangnam</small></div>
+        </div>
+        <span class="pin-dot"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA / BOOKING ============ -->
+<section class="cta pad" id="book">
+  <span class="glow" aria-hidden="true"></span>
+  <div class="wrap cta-inner">
+    <span class="eyebrow reveal">Ready when you are</span>
+    <h2 class="reveal d1">Let's plan your <em>brightest</em> smile.</h2>
+    <p class="sub reveal d2">Tell us what you're hoping for, and we'll take it from there — in clear, friendly English. The first hello is always free.</p>
+
+    <div class="cta-buttons reveal d2">
+      <!-- Book Online: clinic already offers Naver online booking on its Korean site. Kept non-functional ("coming soon") here as a tasteful demo state. -->
+      <button class="btn btn--soon" type="button" id="bookOnlineBtn" aria-disabled="true" title="Online booking is on the way">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
+        Book Online
+        <span class="soon-tag">Soon</span>
+      </button>
+      <!-- WhatsApp placeholder: replace href="#" with the clinic's wa.me link -->
+      <a class="btn btn--wa" href="#" aria-label="Message Claire Dental on WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.78 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.16c-.24.68-1.42 1.32-1.96 1.36-.5.05-.97.24-3.27-.68-2.75-1.08-4.5-3.91-4.64-4.09-.13-.18-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.27.24-.27.53-.34.71-.34l.51.01c.16 0 .38-.06.59.45.24.58.81 2 .88 2.14.07.14.12.31.02.49-.09.18-.14.29-.27.45-.14.16-.29.36-.41.48-.14.14-.28.29-.12.57.16.27.71 1.17 1.53 1.9 1.05.93 1.94 1.22 2.21 1.36.27.14.43.12.59-.07.16-.18.68-.79.86-1.06.18-.27.36-.23.61-.14.25.09 1.6.76 1.88.9.27.14.45.2.52.32.07.11.07.66-.17 1.31Z"/></svg>
+        WhatsApp Us
+      </a>
+      <!-- KakaoTalk placeholder: replace href="#" with the clinic's official Kakao channel link -->
+      <a class="btn btn--kakao" href="#" aria-label="Message Claire Dental on KakaoTalk">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.58 2 11c0 2.82 1.86 5.3 4.66 6.73-.2.72-.74 2.68-.85 3.1-.13.52.19.51.4.37.17-.11 2.66-1.8 3.74-2.54.66.09 1.35.14 2.05.14 5.5 0 10-3.58 10-8C22 6.58 17.5 3 12 3Z"/></svg>
+        KakaoTalk
+      </a>
+    </div>
+
+    <div class="channels reveal d3">
+      <a class="ch" href="tel:+82255552879">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.24 1Z"/></svg>
+        +82 2-555-2879
+      </a>
+      <a class="ch" href="mailto:clairedentalkr@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        clairedentalkr@gmail.com
+      </a>
+      <a class="ch" href="https://instagram.com/korea_clairedentalclinic_kr" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        @korea_clairedentalclinic_kr
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="#top" class="brand" aria-label="Claire Dental home">
+          <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <path d="M20 4C13 4 8 8 8 15c0 5 2 9 4 14 1.4 3.6 2.4 7 4 7s2-3 4-3 2 3 4 3 2.6-3.4 4-7c2-5 4-9 4-14 0-7-5-11-12-11Z" fill="url(#markG)"/>
+            <circle cx="26" cy="13" r="2.4" fill="#fff" fill-opacity="0.85"/>
+          </svg>
+          <span class="name">Claire<small>Dental · Seoul</small></span>
+        </a>
+        <p>A cosmetic-laminate, implant &amp; whitening clinic in Seolleung, Gangnam — warmly welcoming international patients with clear, English-friendly care.</p>
+        <div class="foot-social">
+          <a href="https://instagram.com/korea_clairedentalclinic_kr" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <!-- WhatsApp placeholder: replace href="#" with the clinic's wa.me link -->
+          <a href="#" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.78 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 1.8c2.16 0 4.19.84 5.72 2.37a8.06 8.06 0 0 1 2.37 5.74c0 4.46-3.63 8.09-8.1 8.09a8.1 8.1 0 0 1-4.12-1.13l-.3-.18-3.06.8.82-2.99-.2-.31a8.05 8.05 0 0 1-1.24-4.29c0-4.46 3.63-8.1 8.1-8.1Z"/></svg>
+          </a>
+          <a href="mailto:clairedentalkr@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="#welcome">English Care</a>
+        <a href="#services">Treatments</a>
+        <a href="#story">Our Clinic</a>
+        <a href="#location">Visit Us</a>
+      </div>
+
+      <div class="foot-col">
+        <h4>Visit &amp; Contact</h4>
+        <p>Seolleung (선릉), Gangnam-gu, Seoul</p>
+        <a href="tel:+82255552879">+82 2-555-2879</a>
+        <a href="mailto:clairedentalkr@gmail.com">clairedentalkr@gmail.com</a>
+        <p>Mon–Sat · 10:00–19:00</p>
+        <p>Sunday · Closed</p>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <p class="legal">© <span id="year">2026</span> Claire Dental (클레어치과의원). All rights reserved.</p>
+      <p class="credit">Designed by <a href="https://stellarhausmedia.com" target="_blank" rel="noopener">Stellar Haus Media</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---- Nav scrolled state ---- */
+  var nav = document.getElementById("nav");
+  var onScroll = function () {
+    if (window.scrollY > 24) { nav.classList.add("scrolled"); }
+    else { nav.classList.remove("scrolled"); }
+  };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  /* ---- Mobile menu ---- */
+  var toggle = document.getElementById("menuToggle");
+  var menu = document.getElementById("mobileMenu");
+  var setMenu = function (open) {
+    menu.classList.toggle("open", open);
+    toggle.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    document.body.style.overflow = open ? "hidden" : "";
+  };
+  toggle.addEventListener("click", function () {
+    setMenu(!menu.classList.contains("open"));
+  });
+  Array.prototype.forEach.call(menu.querySelectorAll("a"), function (a) {
+    a.addEventListener("click", function () { setMenu(false); });
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && menu.classList.contains("open")) { setMenu(false); }
+  });
+
+  /* ---- Hero title line reveal on load ---- */
+  window.addEventListener("load", function () {
+    var lines = document.querySelectorAll("#heroTitle .line span");
+    Array.prototype.forEach.call(lines, function (el, i) {
+      el.style.transition = "transform 1s cubic-bezier(0.22,1,0.36,1)";
+      el.style.transitionDelay = (0.35 + i * 0.12) + "s";
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { el.style.transform = "translateY(0)"; });
+      });
+    });
+  });
+
+  /* ---- Scroll reveals via IntersectionObserver ---- */
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var reveals = document.querySelectorAll(".reveal");
+  if (reduce || !("IntersectionObserver" in window)) {
+    Array.prototype.forEach.call(reveals, function (el) { el.classList.add("in"); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+    Array.prototype.forEach.call(reveals, function (el) { io.observe(el); });
+  }
+
+  /* ---- Highlight today's opening hours ---- */
+  try {
+    var today = new Date().getDay(); // 0 = Sun
+    var row = document.querySelector('#hoursTable .hr[data-day="' + today + '"]');
+    if (row && !row.classList.contains("closed")) { row.classList.add("today"); }
+  } catch (e) {}
+
+  /* ---- Book Online "coming soon" tasteful feedback ---- */
+  var bookBtn = document.getElementById("bookOnlineBtn");
+  if (bookBtn) {
+    bookBtn.addEventListener("click", function () {
+      var tag = bookBtn.querySelector(".soon-tag");
+      if (!tag) { return; }
+      var original = tag.textContent;
+      tag.textContent = "Coming soon";
+      bookBtn.style.transition = "transform 0.4s cubic-bezier(0.22,1,0.36,1)";
+      bookBtn.style.transform = "translateY(-3px)";
+      setTimeout(function () {
+        tag.textContent = original;
+        bookBtn.style.transform = "";
+      }, 1800);
+    });
+  }
+
+  /* ---- Footer year ---- */
+  var y = document.getElementById("year");
+  if (y) { y.textContent = String(new Date().getFullYear()); }
+})();
+</script>
+
+
+<!-- ============================================================
+  SHM BOOKING WIDGET  (demo / front-end only)
+  Captures a booking request and hands off to the clinic's real
+  channel (phone / LINE). To go LIVE to patients, replace the body
+  of submitBooking() below with your GoHighLevel calendar embed or
+  a POST to your GHL/Calendly endpoint.  -- Stellar Haus Media
+============================================================ -->
+<div class="shm-bk">
+<div class="shm-bk-overlay" id="shmbk" role="dialog" aria-modal="true" aria-labelledby="shmbk-title" aria-hidden="true">
+  <div class="shm-bk-card" role="document">
+    <button class="shm-bk-close" type="button" aria-label="Close booking" data-bk-close>&times;</button>
+
+    <div id="shmbk-step">
+      <p class="shm-bk-eyebrow">English-speaking care</p>
+      <h2 class="shm-bk-title" id="shmbk-title">Book your visit</h2>
+      <p class="shm-bk-sub">Pick a day and time that suits you — our front desk replies in English.</p>
+
+      <p class="shm-bk-label">Choose a day</p>
+      <div class="shm-bk-row" id="shmbk-days"></div>
+
+      <div id="shmbk-times-wrap" class="shm-bk-hide">
+        <p class="shm-bk-label">Choose a time</p>
+        <div class="shm-bk-grid" id="shmbk-times"></div>
+      </div>
+
+      <div id="shmbk-form" class="shm-bk-hide">
+        <div class="shm-bk-field"><input id="shmbk-name" type="text" placeholder="Your name" autocomplete="name"></div>
+        <div class="shm-bk-field"><input id="shmbk-phone" type="tel" placeholder="Phone number" autocomplete="tel"></div>
+        <div class="shm-bk-field"><input id="shmbk-email" type="email" placeholder="Email (optional)" autocomplete="email"></div>
+        <div class="shm-bk-field">
+          <select id="shmbk-reason">
+            <option value="">What brings you in?</option>
+            <option>Check-up &amp; cleaning</option>
+            <option>Implant or veneer consultation</option>
+            <option>Teeth whitening</option>
+            <option>Tooth pain / emergency</option>
+            <option>Something else</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="shm-bk-cta" id="shmbk-submit" type="button" disabled>Confirm booking</button>
+      <p class="shm-bk-fine">No payment now. We’ll confirm your appointment by text.</p>
+    </div>
+
+    <div id="shmbk-done" class="shm-bk-conf shm-bk-hide">
+      <div class="shm-bk-tick" aria-hidden="true">✓</div>
+      <h2 class="shm-bk-title">You’re all set<span id="shmbk-name-out"></span>.</h2>
+      <p class="shm-bk-sub" id="shmbk-summary"></p>
+      <a class="shm-bk-cta" id="shmbk-call" href="#" style="text-decoration:none">Call now to confirm</a>
+      <a class="shm-bk-ghost shm-bk-hide" id="shmbk-chan" href="#" target="_blank" rel="noopener"></a>
+      <p class="shm-bk-fine">We’ll reach out shortly to lock in your time.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+/* SHM booking widget — demo. See submitBooking() TODO to wire GoHighLevel/Calendly. */
+(function(){
+  var ov=document.getElementById('shmbk'); if(!ov) return;
+  var TEL="tel:+82255552879", CHAN="", CHANLABEL="", CHANS=[["https://wa.me/821055632875", "Message us on WhatsApp"], ["https://pf.kakao.com/_yXxlpn/chat", "Message us on KakaoTalk"], ["https://line.me/R/ti/p/@585rahmh", "Message us on LINE"]];
+  var state={day:null,time:null};
+  var daysEl=document.getElementById('shmbk-days'),
+      timesWrap=document.getElementById('shmbk-times-wrap'),
+      timesEl=document.getElementById('shmbk-times'),
+      formEl=document.getElementById('shmbk-form'),
+      submit=document.getElementById('shmbk-submit'),
+      lastTrigger=null;
+  var TIMES=["09:30","10:30","11:30","14:00","15:00","16:00","17:30"];
+  var DOW=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
+      MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+  function buildDays(){
+    daysEl.innerHTML=""; var d=new Date(), made=0;
+    while(made<8){ d.setDate(d.getDate()+1);
+      if(d.getDay()===0) continue;            // skip Sundays
+      var b=document.createElement('button'); b.type="button"; b.className="shm-bk-chip";
+      b.setAttribute('aria-pressed','false');
+      b.innerHTML="<small>"+DOW[d.getDay()]+"</small>"+d.getDate()+" "+MON[d.getMonth()];
+      b.dataset.label=DOW[d.getDay()]+", "+d.getDate()+" "+MON[d.getMonth()];
+      b.addEventListener('click',function(){ select(daysEl,this); state.day=this.dataset.label;
+        timesWrap.classList.remove('shm-bk-hide'); refresh(); });
+      daysEl.appendChild(b); made++;
+    }
+  }
+  function buildTimes(){
+    timesEl.innerHTML="";
+    TIMES.forEach(function(t){ var b=document.createElement('button'); b.type="button"; b.className="shm-bk-chip";
+      b.textContent=t; b.setAttribute('aria-pressed','false');
+      b.addEventListener('click',function(){ select(timesEl,this); state.time=t;
+        formEl.classList.remove('shm-bk-hide'); refresh(); });
+      timesEl.appendChild(b); });
+  }
+  function select(group,el){ Array.prototype.forEach.call(group.children,function(c){c.setAttribute('aria-pressed','false');});
+    el.setAttribute('aria-pressed','true'); }
+  function refresh(){ var n=document.getElementById('shmbk-name').value.trim(),
+        p=document.getElementById('shmbk-phone').value.trim();
+    submit.disabled=!(state.day&&state.time&&n&&p); }
+
+  /* ---- TODO (go live): replace this with your GoHighLevel calendar write / Calendly,
+     or POST {name,phone,email,reason,day,time} to your GHL inbound webhook. ---- */
+  function submitBooking(data){
+    console.warn("[SHM booking] DEMO submit — not sent anywhere. Wire submitBooking() to GoHighLevel before launch.", data);
+  }
+
+  function done(){
+    var name=document.getElementById('shmbk-name').value.trim();
+    submitBooking({name:name, phone:document.getElementById('shmbk-phone').value.trim(),
+      email:document.getElementById('shmbk-email').value.trim(),
+      reason:document.getElementById('shmbk-reason').value, day:state.day, time:state.time});
+    document.getElementById('shmbk-step').classList.add('shm-bk-hide');
+    var d=document.getElementById('shmbk-done'); d.classList.remove('shm-bk-hide');
+    document.getElementById('shmbk-name-out').textContent=name?(", "+name.split(" ")[0]):"";
+    document.getElementById('shmbk-summary').textContent="Requested: "+state.day+" at "+state.time+". We’ll confirm shortly.";
+    var call=document.getElementById('shmbk-call'); call.href=TEL;
+    if(CHANS&&CHANS.length){var base=document.getElementById('shmbk-chan');var prev=base;CHANS.forEach(function(c,i){var el=(i===0)?base:base.cloneNode(false);if(i>0)el.removeAttribute('id');el.href=c[0];el.textContent=c[1];el.classList.remove('shm-bk-hide');if(i>0)prev.parentNode.insertBefore(el,prev.nextSibling);prev=el;});}
+  }
+
+  function open(t){ lastTrigger=t||null; ov.classList.add('open'); ov.setAttribute('aria-hidden','false');
+    document.documentElement.style.overflow='hidden';
+    var f=ov.querySelector('.shm-bk-chip'); if(f) f.focus(); }
+  function close(){ ov.classList.remove('open'); ov.setAttribute('aria-hidden','true');
+    document.documentElement.style.overflow=''; if(lastTrigger&&lastTrigger.focus) lastTrigger.focus(); }
+
+  buildDays(); buildTimes();
+  ['shmbk-name','shmbk-phone'].forEach(function(id){document.getElementById(id).addEventListener('input',refresh);});
+  submit.addEventListener('click',done);
+  ov.addEventListener('click',function(e){ if(e.target===ov) close(); });
+  ov.querySelector('[data-bk-close]').addEventListener('click',close);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&ov.classList.contains('open')) close(); });
+  // simple focus trap
+  ov.addEventListener('keydown',function(e){ if(e.key!=='Tab')return;
+    var f=ov.querySelectorAll('button,a[href],input,select,textarea'); if(!f.length)return;
+    var first=f[0],last=f[f.length-1];
+    if(e.shiftKey&&document.activeElement===first){last.focus();e.preventDefault();}
+    else if(!e.shiftKey&&document.activeElement===last){first.focus();e.preventDefault();}
+  });
+
+  // ---- bind triggers: explicit hooks + any element whose label starts with "Book" ----
+  function isBookLabel(el){
+    var t=(el.textContent||"").replace(/[^a-z0-9 ]/gi," ").replace(/\s+/g," ").trim().toLowerCase();
+    if(!t || t.length>40) return false;                 // skip long paragraphs that merely contain "book"
+    return /\bbook/.test(t) || /\breserve\b/.test(t);   // \bbook matches "book"/"booking"/"book online soon"; NOT "facebook"
+  }
+  var sel='.js-book,.book-demo,[data-shm-book],a[href="#book"],a[href="#booking"]';
+  var bound=new Set();
+  function bind(el){ if(bound.has(el)||el.closest('.shm-bk'))return; bound.add(el);
+    el.removeAttribute('aria-disabled'); el.removeAttribute('disabled'); el.style.pointerEvents='auto';
+    // the booking now works, so drop any "coming soon / launching" badge inside the button
+    el.querySelectorAll('span,small,sup,em,i,b').forEach(function(s){
+      var st=(s.textContent||"").trim();
+      if(st.length<22 && /coming|soon|launch/i.test(st)) s.remove();
+    });
+    el.addEventListener('click',function(e){ e.preventDefault(); open(el); }); }
+  document.querySelectorAll(sel).forEach(bind);
+  document.querySelectorAll('a,button').forEach(function(el){ if(isBookLabel(el)) bind(el); });
+
+  // if the page has no booking CTA of its own, add a small themed one so booking is always reachable
+  if(bound.size===0){
+    var fab=document.createElement('button');
+    fab.type='button'; fab.className='shm-bk-fab'; fab.setAttribute('aria-label','Book online');
+    fab.innerHTML='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="vertical-align:-2px"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg> Book online';
+    fab.addEventListener('click',function(){ open(fab); });
+    (document.querySelector('.shm-bk')||document.body).appendChild(fab);
+  }
+})();
+</script>
+
+</body>
+</html>

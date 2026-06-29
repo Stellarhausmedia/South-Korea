@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Smile Studios — English-Speaking Cosmetic Dental Studio in Seoul</title>
+<meta name="description" content="A boutique cosmetic dental studio in Gangnam, Seoul. Dr. Young speaks fluent English. Veneers, bonding and whitening, design-led — for the international patient who wants their smile done beautifully." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+/* ============================================================
+   SMILE STUDIOS — Creative Atelier
+   Palette: warm cream / electric blue / ink
+   ============================================================ */
+:root{
+  --cream:#F4EFE6;
+  --cream-deep:#ECE3D4;
+  --paper:#FBF8F2;
+  --ink:#16161A;
+  --ink-soft:#34343C;
+  --ink-mute:#6C6C76;
+  --blue:#2B36FF;        /* electric blue — the commit */
+  --blue-deep:#1B22B8;
+  --blue-soft:#5A63FF;
+  --blue-wash:#E4E6FF;
+  --line:rgba(22,22,26,0.12);
+  --line-soft:rgba(22,22,26,0.08);
+  --white:#ffffff;
+
+  --serif:"Fraunces",Georgia,serif;
+  --sans:"Manrope",system-ui,-apple-system,sans-serif;
+
+  --maxw:1280px;
+  --pad:clamp(1.25rem,5vw,5rem);
+  --ease:cubic-bezier(.22,1,.36,1);
+  --ease-soft:cubic-bezier(.4,0,.2,1);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-weight:400;
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+::selection{background:var(--blue);color:#fff}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:2px}
+
+/* ---------- type scale ---------- */
+.display{
+  font-family:var(--serif);
+  font-weight:400;
+  line-height:0.94;
+  letter-spacing:-0.02em;
+  font-optical-sizing:auto;
+}
+.eyebrow{
+  font-family:var(--sans);
+  font-weight:600;
+  font-size:0.72rem;
+  letter-spacing:0.26em;
+  text-transform:uppercase;
+}
+.italic{font-style:italic}
+
+/* ---------- layout shell ---------- */
+.shell{max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad);width:100%}
+section{position:relative}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.15rem var(--pad);
+  transition:background .5s var(--ease),box-shadow .5s var(--ease),padding .5s var(--ease);
+}
+.nav.scrolled{
+  background:rgba(244,239,230,0.82);
+  backdrop-filter:blur(14px) saturate(1.4);
+  -webkit-backdrop-filter:blur(14px) saturate(1.4);
+  box-shadow:0 1px 0 var(--line-soft);
+  padding-top:0.85rem;padding-bottom:0.85rem;
+}
+.brand{display:flex;align-items:center;gap:0.6rem;font-family:var(--serif);font-weight:500;font-size:1.18rem;letter-spacing:-0.01em}
+.brand .mark{
+  width:30px;height:30px;flex:none;
+  border-radius:50%;
+  background:var(--blue);
+  display:grid;place-items:center;
+  transition:transform .6s var(--ease);
+}
+.brand:hover .mark{transform:rotate(140deg)}
+.brand .mark svg{width:17px;height:17px}
+.brand small{font-family:var(--sans);font-weight:500;font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-mute);display:block;margin-top:-2px}
+.nav-links{display:flex;align-items:center;gap:2.1rem}
+.nav-links a{font-size:0.83rem;font-weight:500;color:var(--ink-soft);position:relative;transition:color .3s}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:1.5px;background:var(--blue);transition:width .35s var(--ease)}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:var(--ink);color:var(--cream);
+  padding:0.62rem 1.15rem;border-radius:100px;
+  font-size:0.8rem;font-weight:600;
+  transition:transform .35s var(--ease),background .35s;
+}
+.nav-cta:hover{background:var(--blue);transform:translateY(-2px)}
+.nav-cta svg{width:14px;height:14px}
+.nav-toggle{display:none}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  min-height:100svh;
+  display:flex;flex-direction:column;justify-content:center;
+  padding-top:7.5rem;padding-bottom:3rem;
+  position:relative;overflow:hidden;
+}
+.hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
+.hero-grid-line{position:absolute;top:0;bottom:0;width:1px;background:var(--line-soft)}
+.hero-inner{position:relative;z-index:3;display:grid;grid-template-columns:1.15fr 0.85fr;gap:2rem;align-items:center}
+
+.hero-tagchip{
+  display:inline-flex;align-items:center;gap:0.55rem;
+  background:var(--white);
+  border:1px solid var(--line);
+  padding:0.5rem 0.95rem 0.5rem 0.55rem;border-radius:100px;
+  font-size:0.76rem;font-weight:600;color:var(--ink-soft);
+  margin-bottom:1.9rem;
+}
+.hero-tagchip .dot{width:8px;height:8px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 4px var(--blue-wash);animation:livePulse 2.4s var(--ease-soft) infinite}
+@keyframes livePulse{0%,100%{box-shadow:0 0 0 4px var(--blue-wash)}50%{box-shadow:0 0 0 7px rgba(228,230,255,0.45)}}
+
+.hero h1{
+  font-size:clamp(3.1rem,9vw,7.6rem);
+  margin-bottom:1.6rem;
+}
+.hero h1 .l{display:block;overflow:hidden}
+.hero h1 .l span{display:block;transform:translateY(110%);transition:transform 1.05s var(--ease)}
+.hero.in h1 .l:nth-child(1) span{transition-delay:.05s}
+.hero.in h1 .l:nth-child(2) span{transition-delay:.16s}
+.hero.in h1 .l:nth-child(3) span{transition-delay:.27s}
+.hero.in h1 .l span{transform:translateY(0)}
+.hero h1 .accent{color:var(--blue);font-style:italic;position:relative}
+.hero h1 .underline-sketch{position:absolute;left:-1%;right:-1%;bottom:-0.04em;width:102%;height:0.34em;overflow:visible}
+.hero h1 .underline-sketch path{stroke:var(--blue);stroke-width:7;fill:none;stroke-linecap:round;stroke-dasharray:560;stroke-dashoffset:560;transition:stroke-dashoffset 1.3s var(--ease) .9s}
+.hero.in h1 .underline-sketch path{stroke-dashoffset:0}
+
+.hero-sub{
+  font-size:clamp(1.02rem,1.5vw,1.22rem);
+  color:var(--ink-soft);max-width:34ch;line-height:1.55;
+  opacity:0;transform:translateY(20px);
+  transition:opacity .9s var(--ease) .55s,transform .9s var(--ease) .55s;
+}
+.hero.in .hero-sub{opacity:1;transform:none}
+.hero-sub b{font-weight:600;color:var(--ink)}
+
+.hero-cta-row{
+  display:flex;flex-wrap:wrap;gap:0.85rem;margin-top:2.3rem;
+  opacity:0;transform:translateY(20px);
+  transition:opacity .9s var(--ease) .7s,transform .9s var(--ease) .7s;
+}
+.hero.in .hero-cta-row{opacity:1;transform:none}
+
+.btn{
+  display:inline-flex;align-items:center;gap:0.65rem;
+  padding:1rem 1.7rem;border-radius:100px;
+  font-size:0.94rem;font-weight:600;letter-spacing:0.01em;
+  transition:transform .4s var(--ease),box-shadow .4s var(--ease),background .4s,color .4s;
+  white-space:nowrap;
+}
+.btn svg{width:18px;height:18px;transition:transform .4s var(--ease)}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 12px 30px -10px rgba(43,54,255,0.6)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 20px 42px -12px rgba(43,54,255,0.75)}
+.btn-primary:hover svg{transform:translateX(4px) rotate(0)}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--cream);transform:translateY(-3px)}
+.btn-ghost:hover svg{transform:scale(1.15)}
+
+/* hero portrait — the smile atelier mark */
+.hero-portrait{position:relative;align-self:center;opacity:0;transform:scale(.9) translateY(20px);transition:opacity 1.1s var(--ease) .4s,transform 1.1s var(--ease) .4s}
+.hero.in .hero-portrait{opacity:1;transform:none}
+.hero-portrait .stage{position:relative;aspect-ratio:1/1.08;width:100%}
+.hero-portrait .ring{position:absolute;inset:0}
+.hero-portrait .ring--spin{animation:spin 36s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.float-tag{
+  position:absolute;background:var(--white);border:1px solid var(--line);
+  border-radius:14px;padding:0.55rem 0.85rem;
+  box-shadow:0 18px 40px -18px rgba(22,22,26,0.4);
+  font-size:0.74rem;font-weight:600;display:flex;align-items:center;gap:0.5rem;
+}
+.float-tag .ico{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;flex:none}
+.float-tag small{display:block;font-weight:500;color:var(--ink-mute);font-size:0.64rem}
+.float-tag.t1{top:6%;left:-6%;animation:floaty 6s var(--ease-soft) infinite}
+.float-tag.t2{bottom:14%;right:-7%;animation:floaty 7s var(--ease-soft) infinite .8s}
+.float-tag.t3{bottom:-3%;left:8%;animation:floaty 6.5s var(--ease-soft) infinite 1.4s}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
+
+.hero-marquee{position:relative;z-index:3;margin-top:3rem;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.marquee-track{display:flex;gap:2.6rem;width:max-content;animation:marquee 28s linear infinite}
+.hero-marquee:hover .marquee-track{animation-play-state:paused}
+@keyframes marquee{to{transform:translateX(-50%)}}
+.marquee-track span{font-family:var(--serif);font-style:italic;font-size:1.35rem;color:var(--ink-mute);display:flex;align-items:center;gap:2.6rem;white-space:nowrap}
+.marquee-track span::after{content:"";width:7px;height:7px;border-radius:50%;background:var(--blue)}
+
+/* ============================================================
+   GENERIC SECTION HEADERS + REVEAL
+   ============================================================ */
+.reveal{opacity:0;transform:translateY(38px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal-d1{transition-delay:.08s}
+.reveal-d2{transition-delay:.16s}
+.reveal-d3{transition-delay:.24s}
+.reveal-d4{transition-delay:.32s}
+
+.sec-head{margin-bottom:clamp(2.5rem,5vw,4rem)}
+.sec-head .eyebrow{color:var(--blue);display:flex;align-items:center;gap:0.7rem;margin-bottom:1.1rem}
+.sec-head .eyebrow::before{content:"";width:34px;height:1.5px;background:var(--blue)}
+.sec-head h2{font-size:clamp(2.2rem,5.2vw,4rem);max-width:18ch}
+.sec-head p.lede{margin-top:1.3rem;font-size:clamp(1rem,1.4vw,1.18rem);color:var(--ink-soft);max-width:46ch}
+
+/* ============================================================
+   WELCOME / ENGLISH-TRUST
+   ============================================================ */
+.welcome{padding:clamp(4.5rem,9vw,8rem) 0;background:var(--paper);border-top:1px solid var(--line-soft)}
+.welcome-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,6vw,6rem);align-items:center}
+.welcome-copy h2{font-size:clamp(2rem,4.4vw,3.4rem);line-height:1.04;margin-bottom:1.5rem}
+.welcome-copy h2 em{color:var(--blue)}
+.welcome-copy p{font-size:1.06rem;color:var(--ink-soft);max-width:42ch;margin-bottom:1.15rem;line-height:1.6}
+.welcome-copy p b{color:var(--ink);font-weight:600}
+.welcome-points{list-style:none;margin-top:1.9rem;display:grid;gap:0.9rem}
+.welcome-points li{display:flex;align-items:flex-start;gap:0.85rem;font-size:0.98rem;color:var(--ink-soft)}
+.welcome-points .tick{width:24px;height:24px;flex:none;border-radius:50%;background:var(--blue-wash);display:grid;place-items:center;margin-top:1px}
+.welcome-points .tick svg{width:13px;height:13px;stroke:var(--blue-deep)}
+.welcome-points b{color:var(--ink);font-weight:600}
+
+/* doctor card */
+.doctor-card{
+  position:relative;background:var(--ink);color:var(--cream);
+  border-radius:28px;padding:clamp(1.75rem,3vw,2.6rem);
+  overflow:hidden;
+  box-shadow:0 40px 80px -40px rgba(22,22,26,0.6);
+}
+.doctor-card .glow{position:absolute;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(43,54,255,0.55),transparent 68%);top:-120px;right:-90px;filter:blur(8px)}
+.doctor-card .glow2{position:absolute;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(90,99,255,0.32),transparent 70%);bottom:-110px;left:-70px}
+.doc-inner{position:relative;z-index:2}
+.doc-avatar{width:84px;height:84px;border-radius:22px;background:linear-gradient(150deg,var(--blue),var(--blue-soft));display:grid;place-items:center;margin-bottom:1.4rem;box-shadow:0 14px 30px -10px rgba(43,54,255,0.7)}
+.doc-avatar svg{width:46px;height:46px}
+.doctor-card .role{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;color:var(--blue-soft);margin-bottom:0.5rem}
+.doctor-card h3{font-family:var(--serif);font-weight:500;font-size:1.85rem;line-height:1.1;margin-bottom:0.9rem}
+.doctor-card .quote{font-family:var(--serif);font-style:italic;font-size:1.22rem;line-height:1.45;color:#fff;margin-bottom:1.5rem}
+.doctor-card .quote .q{color:var(--blue-soft)}
+.doc-langs{display:flex;gap:0.55rem;flex-wrap:wrap}
+.doc-langs span{font-size:0.74rem;font-weight:600;padding:0.4rem 0.85rem;border-radius:100px;border:1px solid rgba(244,239,230,0.22);color:var(--cream)}
+.doc-langs span.hi{background:var(--cream);color:var(--ink);border-color:var(--cream)}
+
+/* trust stat strip */
+.trust-strip{margin-top:clamp(3rem,6vw,5rem);border-top:1px solid var(--line);padding-top:clamp(2.2rem,4vw,3rem);display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.tstat{position:relative}
+.tstat .n{font-family:var(--serif);font-weight:400;font-size:clamp(2.4rem,4.5vw,3.6rem);line-height:1;letter-spacing:-0.02em;color:var(--ink);display:flex;align-items:baseline;gap:0.12em}
+.tstat .n .star{color:var(--blue);font-size:0.62em}
+.tstat .lab{margin-top:0.55rem;font-size:0.82rem;color:var(--ink-mute);font-weight:500;max-width:22ch;line-height:1.4}
+
+/* ============================================================
+   GALLERY — PORTFOLIO OF SMILES
+   ============================================================ */
+.gallery{padding:clamp(4.5rem,9vw,8rem) 0;background:var(--cream);position:relative;overflow:hidden}
+.gallery .sec-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1.5rem}
+.gallery .sec-head .left{max-width:30ch}
+.gallery-note{font-size:0.84rem;color:var(--ink-mute);max-width:24ch;text-align:right;border-left:2px solid var(--blue);padding-left:1rem}
+
+.smile-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(0.9rem,1.6vw,1.4rem);grid-auto-flow:dense}
+.case{
+  position:relative;border-radius:22px;overflow:hidden;
+  background:var(--paper);border:1px solid var(--line-soft);
+  min-height:230px;
+  cursor:pointer;
+  transition:transform .55s var(--ease),box-shadow .55s var(--ease);
+  display:flex;flex-direction:column;justify-content:flex-end;
+}
+.case:hover{transform:translateY(-7px);box-shadow:0 34px 60px -30px rgba(22,22,26,0.4);z-index:5}
+.case .art{position:absolute;inset:0;z-index:1}
+.case .art svg{width:100%;height:100%}
+.case .meta{position:relative;z-index:3;padding:1.15rem 1.25rem;display:flex;justify-content:space-between;align-items:flex-end;gap:1rem}
+.case .meta .label{font-family:var(--serif);font-style:italic;font-size:1.18rem;line-height:1.05;color:var(--ink)}
+.case .meta .label small{display:block;font-family:var(--sans);font-style:normal;font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-mute);margin-top:0.35rem;font-weight:600}
+.case .tagnum{font-family:var(--sans);font-size:0.7rem;font-weight:600;color:var(--ink-mute);border:1px solid var(--line);border-radius:100px;padding:0.25rem 0.6rem;background:var(--white);white-space:nowrap}
+.case .hover-cta{position:absolute;top:1.1rem;right:1.1rem;z-index:4;width:40px;height:40px;border-radius:50%;background:var(--ink);display:grid;place-items:center;opacity:0;transform:scale(.6) rotate(-30deg);transition:opacity .45s var(--ease),transform .45s var(--ease)}
+.case .hover-cta svg{width:17px;height:17px;stroke:var(--cream)}
+.case:hover .hover-cta{opacity:1;transform:scale(1) rotate(0)}
+.case.dark{background:var(--ink)}
+.case.dark .meta .label{color:var(--cream)}
+.case.dark .meta .label small{color:rgba(244,239,230,0.55)}
+.case.dark .tagnum{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.16);color:var(--cream)}
+.case.blue{background:var(--blue)}
+.case.blue .meta .label{color:#fff}
+.case.blue .meta .label small{color:rgba(255,255,255,0.7)}
+.case.blue .tagnum{background:rgba(255,255,255,0.16);border-color:rgba(255,255,255,0.28);color:#fff}
+.case.blue .hover-cta{background:#fff}
+.case.blue .hover-cta svg{stroke:var(--blue)}
+
+/* span helpers */
+.sp3{grid-column:span 3}.sp4{grid-column:span 4}.sp5{grid-column:span 5}.sp6{grid-column:span 6}.sp7{grid-column:span 7}.sp8{grid-column:span 8}
+.tall{min-height:320px}.xtall{min-height:400px}
+
+/* tooth shimmer used in art */
+.shine{transform-box:fill-box;transform-origin:center}
+.case:hover .shine{animation:sparkle 1.1s var(--ease) infinite}
+@keyframes sparkle{0%,100%{opacity:.3;transform:scale(.8)}50%{opacity:1;transform:scale(1.25)}}
+
+/* ============================================================
+   SERVICES
+   ============================================================ */
+.services{padding:clamp(4.5rem,9vw,8rem) 0;background:var(--ink);color:var(--cream);position:relative;overflow:hidden}
+.services .blob{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(43,54,255,0.4),transparent 65%);top:-180px;left:-120px;pointer-events:none}
+.services .sec-head h2{color:var(--cream)}
+.services .sec-head .eyebrow{color:var(--blue-soft)}
+.services .sec-head .eyebrow::before{background:var(--blue-soft)}
+.services .sec-head p.lede{color:rgba(244,239,230,0.7)}
+
+.svc-list{position:relative;z-index:2;border-top:1px solid rgba(244,239,230,0.16)}
+.svc{
+  display:grid;grid-template-columns:auto 1fr auto;gap:clamp(1rem,4vw,3rem);align-items:center;
+  padding:clamp(1.7rem,3.5vw,2.6rem) 0;
+  border-bottom:1px solid rgba(244,239,230,0.16);
+  transition:padding-left .5s var(--ease);
+  position:relative;cursor:default;
+}
+.svc::before{content:"";position:absolute;left:0;top:0;bottom:0;width:0;background:var(--blue);transition:width .5s var(--ease)}
+.svc:hover{padding-left:1.6rem}
+.svc:hover::before{width:4px}
+.svc .num{font-family:var(--serif);font-size:1.05rem;color:var(--blue-soft);font-style:italic;align-self:flex-start;padding-top:0.4rem}
+.svc .body h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.7rem,3.6vw,2.9rem);line-height:1.02;letter-spacing:-0.01em;margin-bottom:0.7rem;transition:color .4s,transform .5s var(--ease)}
+.svc:hover .body h3{color:#fff}
+.svc .body p{color:rgba(244,239,230,0.66);font-size:1rem;max-width:54ch;line-height:1.55}
+.svc .tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.95rem}
+.svc .tags span{font-size:0.72rem;font-weight:600;padding:0.32rem 0.7rem;border-radius:100px;border:1px solid rgba(244,239,230,0.2);color:rgba(244,239,230,0.85)}
+.svc .glyph{width:clamp(56px,8vw,78px);height:clamp(56px,8vw,78px);flex:none;border-radius:20px;border:1px solid rgba(244,239,230,0.2);display:grid;place-items:center;transition:background .45s,transform .55s var(--ease),border-color .45s}
+.svc:hover .glyph{background:var(--blue);border-color:var(--blue);transform:rotate(-8deg) scale(1.06)}
+.svc .glyph svg{width:52%;height:52%;stroke:var(--cream);transition:stroke .4s}
+
+/* ============================================================
+   STORY / WHY VISIT
+   ============================================================ */
+.story{padding:clamp(4.5rem,9vw,8rem) 0;background:var(--paper)}
+.story-grid{display:grid;grid-template-columns:0.95fr 1.05fr;gap:clamp(2.5rem,6vw,6rem);align-items:center}
+.story-visual{position:relative;aspect-ratio:1/1.1}
+.story-copy h2{font-size:clamp(2rem,4.6vw,3.5rem);line-height:1.04;margin-bottom:1.6rem}
+.story-copy h2 em{color:var(--blue)}
+.story-copy p{font-size:1.06rem;color:var(--ink-soft);margin-bottom:1.2rem;max-width:46ch;line-height:1.6}
+.story-copy p b{color:var(--ink);font-weight:600}
+.story-pillars{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2.2rem}
+.pillar{background:var(--cream);border:1px solid var(--line-soft);border-radius:18px;padding:1.3rem 1.4rem;transition:transform .45s var(--ease),border-color .45s}
+.pillar:hover{transform:translateY(-4px);border-color:var(--blue)}
+.pillar .pi{width:38px;height:38px;border-radius:11px;background:var(--blue-wash);display:grid;place-items:center;margin-bottom:0.85rem}
+.pillar .pi svg{width:20px;height:20px;stroke:var(--blue-deep)}
+.pillar h4{font-family:var(--serif);font-weight:500;font-size:1.18rem;margin-bottom:0.35rem;line-height:1.1}
+.pillar p{font-size:0.86rem;color:var(--ink-mute);margin:0;line-height:1.45}
+
+/* ============================================================
+   LOCATION & HOURS
+   ============================================================ */
+.location{padding:clamp(4.5rem,9vw,8rem) 0;background:var(--cream)}
+.loc-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:clamp(2rem,4vw,3rem)}
+.map-card{position:relative;border-radius:28px;overflow:hidden;background:var(--ink);min-height:440px;border:1px solid var(--line-soft)}
+.map-card svg{position:absolute;inset:0;width:100%;height:100%}
+.map-pin{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);z-index:4;display:flex;flex-direction:column;align-items:center}
+.map-pin .pulse{width:64px;height:64px;border-radius:50%;background:rgba(43,54,255,0.25);position:absolute;top:-8px;animation:pinpulse 2.6s var(--ease-soft) infinite}
+@keyframes pinpulse{0%{transform:scale(.5);opacity:.9}100%{transform:scale(2.2);opacity:0}}
+.map-pin .dropper{width:48px;height:48px;border-radius:50% 50% 50% 0;background:var(--blue);transform:rotate(-45deg);display:grid;place-items:center;box-shadow:0 14px 30px -8px rgba(43,54,255,0.8);position:relative;z-index:2}
+.map-pin .dropper svg{position:static;width:22px;height:22px;transform:rotate(45deg)}
+.map-pin .tip{margin-top:1.3rem;background:var(--white);border-radius:100px;padding:0.5rem 1rem;font-size:0.78rem;font-weight:600;color:var(--ink);white-space:nowrap;box-shadow:0 12px 30px -12px rgba(0,0,0,0.4)}
+
+.hours-card{background:var(--ink);color:var(--cream);border-radius:28px;padding:clamp(1.8rem,3vw,2.6rem);display:flex;flex-direction:column}
+.hours-card .eyebrow{color:var(--blue-soft);margin-bottom:1.4rem}
+.hours-row{display:flex;justify-content:space-between;align-items:center;padding:0.95rem 0;border-bottom:1px solid rgba(244,239,230,0.15);font-size:0.96rem}
+.hours-row .day{font-weight:500}
+.hours-row .time{color:rgba(244,239,230,0.78);font-variant-numeric:tabular-nums}
+.hours-row.open .time{color:#fff;font-weight:600}
+.hours-row.closed .time{color:rgba(244,239,230,0.42)}
+.hours-row .pip{display:inline-flex;align-items:center;gap:0.45rem}
+.hours-row .pip i{width:7px;height:7px;border-radius:50%;background:var(--blue-soft);display:inline-block}
+.now-badge{display:inline-flex;align-items:center;gap:0.5rem;align-self:flex-start;margin-bottom:1.4rem;background:rgba(43,54,255,0.18);border:1px solid rgba(90,99,255,0.4);color:var(--cream);padding:0.45rem 0.9rem;border-radius:100px;font-size:0.78rem;font-weight:600}
+.now-badge .live{width:8px;height:8px;border-radius:50%;background:var(--blue-soft);animation:livePulse 2s infinite}
+.addr-block{margin-top:auto;padding-top:1.7rem}
+.addr-block .ln{display:flex;align-items:flex-start;gap:0.7rem;font-size:0.92rem;color:rgba(244,239,230,0.85);margin-bottom:0.75rem}
+.addr-block .ln svg{width:17px;height:17px;flex:none;margin-top:2px;stroke:var(--blue-soft)}
+.addr-block .ln a:hover{color:#fff}
+
+/* ============================================================
+   CONTACT / CTA
+   ============================================================ */
+.contact{padding:clamp(5rem,10vw,9rem) 0;background:var(--blue);color:#fff;position:relative;overflow:hidden}
+.contact .deco{position:absolute;inset:0;pointer-events:none;opacity:0.5}
+.contact .deco svg{position:absolute}
+.contact-inner{position:relative;z-index:3;text-align:center;display:flex;flex-direction:column;align-items:center}
+.contact .eyebrow{color:rgba(255,255,255,0.78);margin-bottom:1.5rem;justify-content:center}
+.contact h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.6rem,7vw,6rem);line-height:0.98;letter-spacing:-0.02em;margin-bottom:1.6rem;max-width:16ch}
+.contact h2 em{font-style:italic;color:var(--cream);position:relative}
+.contact p{font-size:clamp(1.05rem,1.6vw,1.3rem);color:rgba(255,255,255,0.9);max-width:46ch;margin-bottom:2.6rem;line-height:1.5}
+.contact-cta{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center}
+.btn-cream{background:var(--cream);color:var(--ink)}
+.btn-cream:hover{background:#fff;transform:translateY(-3px);box-shadow:0 22px 44px -14px rgba(0,0,0,0.4)}
+.btn-cream:hover svg{transform:scale(1.15)}
+.btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.6)}
+.btn-outline:hover{background:#fff;color:var(--blue);border-color:#fff;transform:translateY(-3px)}
+.contact .phone-big{margin-top:2.6rem;font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,3vw,2.1rem);color:#fff;display:inline-flex;align-items:center;gap:0.7rem;transition:gap .4s var(--ease)}
+.contact .phone-big:hover{gap:1.1rem}
+.contact .phone-big svg{width:0.9em;height:0.9em}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer{background:var(--ink);color:var(--cream);padding:clamp(3.5rem,6vw,5rem) 0 2rem}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.5rem;padding-bottom:3rem;border-bottom:1px solid rgba(244,239,230,0.14)}
+.foot-brand .brand{color:var(--cream);font-size:1.5rem;margin-bottom:1.1rem}
+.foot-brand .brand small{color:rgba(244,239,230,0.5)}
+.foot-brand p{color:rgba(244,239,230,0.6);max-width:34ch;font-size:0.94rem;line-height:1.55}
+.foot-col h5{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(244,239,230,0.45);font-weight:600;margin-bottom:1.15rem}
+.foot-col a,.foot-col p{display:block;color:rgba(244,239,230,0.82);font-size:0.94rem;margin-bottom:0.7rem;transition:color .3s;line-height:1.4}
+.foot-col a:hover{color:var(--blue-soft)}
+.foot-social{display:inline-flex;align-items:center;gap:0.55rem;margin-top:0.4rem;background:rgba(244,239,230,0.07);border:1px solid rgba(244,239,230,0.16);padding:0.6rem 1rem;border-radius:100px;font-weight:600;font-size:0.86rem;transition:background .35s,transform .35s var(--ease)}
+.foot-social:hover{background:var(--blue);transform:translateY(-2px)}
+.foot-social svg{width:17px;height:17px}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-top:2rem;font-size:0.8rem;color:rgba(244,239,230,0.5)}
+.foot-credit{display:inline-flex;align-items:center;gap:0.45rem}
+.foot-credit a{color:rgba(244,239,230,0.72);font-weight:600;transition:color .3s}
+.foot-credit a:hover{color:var(--blue-soft)}
+.foot-credit .sh-dot{width:6px;height:6px;border-radius:50%;background:var(--blue-soft)}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:1080px){
+  .hero-inner{grid-template-columns:1fr;gap:3rem}
+  .hero-portrait{max-width:420px;margin:0 auto;width:100%}
+  .welcome-grid,.story-grid,.loc-grid{grid-template-columns:1fr;gap:3rem}
+  .doctor-card{order:-1}
+  .trust-strip{grid-template-columns:1fr 1fr;gap:2rem 1.5rem}
+  .smile-grid .sp7{grid-column:span 6}.smile-grid .sp5{grid-column:span 6}.smile-grid .sp8{grid-column:span 12}
+}
+@media (max-width:760px){
+  .nav-links{
+    position:fixed;inset:0;background:var(--cream);
+    flex-direction:column;justify-content:center;gap:1.6rem;
+    transform:translateX(100%);transition:transform .55s var(--ease);
+    z-index:90;
+  }
+  .nav-links.open{transform:none}
+  .nav-links a{font-size:1.5rem;font-family:var(--serif)}
+  .nav-links .nav-cta{font-family:var(--sans);font-size:1rem}
+  .nav-toggle{display:flex;flex-direction:column;gap:5px;z-index:95;width:40px;height:40px;align-items:center;justify-content:center}
+  .nav-toggle span{width:24px;height:2px;background:var(--ink);transition:transform .4s var(--ease),opacity .3s}
+  .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-toggle.open span:nth-child(2){opacity:0}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .smile-grid{grid-template-columns:repeat(2,1fr)}
+  .smile-grid .case{grid-column:span 1 !important;min-height:200px}
+  .smile-grid .case.tall,.smile-grid .case.xtall{min-height:240px}
+  .svc{grid-template-columns:auto 1fr;gap:1rem}
+  .svc .glyph{display:none}
+  .story-pillars{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr;gap:2.5rem}
+  .trust-strip{grid-template-columns:1fr 1fr;gap:1.8rem 1.2rem}
+}
+@media (max-width:430px){
+  .float-tag.t1{left:-2%;top:2%}
+  .float-tag.t2{right:-2%}
+  .hero h1{font-size:clamp(2.7rem,13vw,3.4rem)}
+  .trust-strip{grid-template-columns:1fr 1fr}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
+  .hero h1 .l span{transform:none !important}
+  .reveal{opacity:1 !important;transform:none !important}
+  .hero-sub,.hero-cta-row,.hero-portrait{opacity:1 !important;transform:none !important}
+}
+</style>
+
+
+<style id="shm-bk-style">
+.shm-bk *{box-sizing:border-box}
+.shm-bk-overlay{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;
+  padding:max(16px,env(safe-area-inset-top)) 16px;background:rgba(10,10,12,.55);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);font-family:var(--bk-sans)}
+.shm-bk-overlay.open{display:flex}
+.shm-bk-card{width:100%;max-width:480px;max-height:92vh;overflow:auto;background:var(--bk-panel);
+  color:var(--bk-ink);border-radius:var(--bk-r);box-shadow:0 30px 80px -20px rgba(0,0,0,.55),0 0 0 1px var(--bk-line);
+  padding:26px 26px 22px;transform:translateY(10px);opacity:0;transition:transform .42s cubic-bezier(.16,1,.3,1),opacity .42s}
+.shm-bk-overlay.open .shm-bk-card{transform:none;opacity:1}
+.shm-bk-eyebrow{font-size:.64rem;letter-spacing:.26em;text-transform:uppercase;color:var(--bk-accent);
+  font-weight:600;display:flex;align-items:center;gap:.6em;margin:0 0 .5rem}
+.shm-bk-eyebrow::before{content:"";width:.42em;height:.42em;border-radius:50%;background:var(--bk-accent)}
+.shm-bk h2.shm-bk-title{font-family:var(--bk-serif);font-weight:500;line-height:1.05;font-size:1.7rem;margin:0 0 .35rem}
+.shm-bk-sub{color:var(--bk-muted);font-size:.92rem;line-height:1.5;margin:0 0 1.15rem}
+.shm-bk-close{position:absolute;top:14px;right:16px;background:none;border:0;color:var(--bk-muted);
+  font-size:1.5rem;line-height:1;cursor:pointer;padding:6px;border-radius:8px}
+.shm-bk-close:hover{color:var(--bk-ink);background:var(--bk-line)}
+.shm-bk-card{position:relative}
+.shm-bk-label{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bk-muted);
+  font-weight:600;margin:1.1rem 0 .55rem}
+.shm-bk-row{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
+.shm-bk-chip{flex:0 0 auto;min-width:62px;text-align:center;padding:.6rem .7rem;border:1px solid var(--bk-line);
+  background:transparent;color:var(--bk-ink);border-radius:calc(var(--bk-r)*.6);cursor:pointer;
+  font:inherit;font-size:.8rem;transition:.18s;line-height:1.25}
+.shm-bk-chip small{display:block;font-size:.62rem;color:var(--bk-muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
+.shm-bk-chip:hover{border-color:var(--bk-accent)}
+.shm-bk-chip[aria-pressed="true"]{background:var(--bk-accent);color:var(--bk-accent-ink);border-color:var(--bk-accent)}
+.shm-bk-chip[aria-pressed="true"] small{color:var(--bk-accent-ink);opacity:.8}
+.shm-bk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(78px,1fr));gap:8px}
+.shm-bk-field{margin-top:.7rem}
+.shm-bk-field input,.shm-bk-field select,.shm-bk-field textarea{width:100%;padding:.7rem .8rem;border:1px solid var(--bk-line);
+  background:var(--bk-panel);color:var(--bk-ink);border-radius:calc(var(--bk-r)*.55);font:inherit;font-size:.9rem}
+.shm-bk-field input:focus,.shm-bk-field select:focus,.shm-bk-field textarea:focus{outline:2px solid var(--bk-accent);outline-offset:1px;border-color:var(--bk-accent)}
+.shm-bk-field input::placeholder,.shm-bk-field textarea::placeholder{color:var(--bk-muted)}
+.shm-bk-cta{width:100%;margin-top:1.25rem;padding:.95rem 1rem;border:0;border-radius:calc(var(--bk-r)*.55);
+  background:var(--bk-ink);color:var(--bk-panel);font:inherit;font-weight:600;letter-spacing:.04em;cursor:pointer;
+  font-size:.92rem;transition:.18s;display:flex;align-items:center;justify-content:center;gap:.5em}
+.shm-bk-cta:hover{filter:brightness(1.12)}
+.shm-bk-cta:disabled{opacity:.4;cursor:not-allowed}
+.shm-bk-ghost{display:block;text-align:center;margin-top:.7rem;padding:.85rem;border:1px solid var(--bk-line);
+  border-radius:calc(var(--bk-r)*.55);color:var(--bk-ink);text-decoration:none;font-size:.88rem;font-weight:600;transition:.18s}
+.shm-bk-ghost:hover{border-color:var(--bk-accent);color:var(--bk-accent)}
+.shm-bk-fine{font-size:.72rem;color:var(--bk-muted);text-align:center;margin:.95rem 0 0;line-height:1.45}
+.shm-bk-hide{display:none}
+.shm-bk-tick{width:54px;height:54px;border-radius:50%;background:var(--bk-accent);color:var(--bk-accent-ink);
+  display:flex;align-items:center;justify-content:center;font-size:1.7rem;margin:0 auto 1rem}
+.shm-bk-conf{text-align:center}
+.shm-bk-conf .shm-bk-title{font-size:1.5rem}
+.shm-bk-fab{position:fixed;left:50%;transform:translateX(-50%);bottom:20px;z-index:9998;
+  display:inline-flex;align-items:center;gap:.5em;padding:.85rem 1.4rem;border:0;border-radius:999px;
+  background:var(--bk-accent);color:var(--bk-accent-ink);font-family:var(--bk-sans);font-weight:600;
+  font-size:.92rem;letter-spacing:.02em;cursor:pointer;box-shadow:0 10px 30px -6px rgba(0,0,0,.42)}
+.shm-bk-fab:hover{transform:translateX(-50%) translateY(-2px);box-shadow:0 16px 40px -8px rgba(0,0,0,.52)}
+@media (max-width:520px){.shm-bk-fab{bottom:14px;font-size:.88rem;padding:.8rem 1.15rem}}
+@media (prefers-reduced-motion:reduce){.shm-bk-card{transition:none}}
+.shm-bk{--bk-accent:#2b36ff;--bk-accent-ink:#ffffff;--bk-ink:#16161a;--bk-panel:#fbf8f2;--bk-muted:rgba(22,22,26,0.6);--bk-line:rgba(22,22,26,0.14);--bk-serif:"Fraunces",Georgia,serif;--bk-sans:"Manrope",system-ui,-apple-system,sans-serif;--bk-r:18px;}
+</style>
+
+</head>
+<body>
+
+<!-- ============================== NAV ============================== -->
+<nav class="nav" id="nav" aria-label="Primary">
+  <a href="#top" class="brand" aria-label="Smile Studios home">
+    <span class="mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M4 9c0-1 1-2 2.4-1.4C8 8 9.8 9 12 9s4-1 5.6-1.4C19 7 20 8 20 9c0 5-3.6 9-8 9s-8-4-8-9Z" fill="#fff"/><path d="M8.5 12.5c1 1.2 2.2 1.8 3.5 1.8s2.5-.6 3.5-1.8" stroke="#2B36FF" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </span>
+    <span>Smile Studios<small>Cosmetic Atelier · Seoul</small></span>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="#welcome">English Care</a>
+    <a href="#gallery">Smile Gallery</a>
+    <a href="#services">Treatments</a>
+    <a href="#location">Visit</a>
+    <a href="tel:+8225422282" class="nav-cta">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.93.36 1.85.7 2.73a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.35-1.35a2 2 0 0 1 2.11-.45c.88.34 1.8.57 2.73.7A2 2 0 0 1 22 16.92Z"/></svg>
+      Call Us
+    </a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<a id="top"></a>
+
+<!-- ============================== HERO ============================== -->
+<header class="hero" id="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-grid-line" style="left:25%"></div>
+    <div class="hero-grid-line" style="left:50%"></div>
+    <div class="hero-grid-line" style="left:75%"></div>
+  </div>
+  <div class="shell hero-inner">
+    <div class="hero-text">
+      <span class="hero-tagchip"><span class="dot"></span>Fluent English · Boutique cosmetic studio · Gangnam</span>
+      <h1 class="display">
+        <span class="l"><span>Your smile,</span></span>
+        <span class="l"><span>designed in
+          <span class="accent">English.
+            <svg class="underline-sketch" viewBox="0 0 320 22" preserveAspectRatio="none" aria-hidden="true"><path d="M4 14 C 70 6, 150 18, 230 9 S 312 8, 316 12"/></svg>
+          </span></span></span>
+      </h1>
+      <p class="hero-sub">A boutique cosmetic dental studio in Seoul, led by <b>Dr.&nbsp;Young</b>, who speaks fluent English. Veneers, bonding and whitening — your treatment explained clearly, start to finish, with nothing lost in translation.</p>
+      <div class="hero-cta-row">
+        <a href="tel:+8225422282" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.93.36 1.85.7 2.73a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.35-1.35a2 2 0 0 1 2.11-.45c.88.34 1.8.57 2.73.7A2 2 0 0 1 22 16.92Z"/></svg>
+          Call the studio
+        </a>
+        <a href="https://instagram.com/smilestudios_dental" target="_blank" rel="noopener" class="btn btn-ghost">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+          See our work on Instagram
+        </a>
+      </div>
+    </div>
+
+    <!-- hero portrait: smile atelier mark, all SVG -->
+    <div class="hero-portrait" aria-hidden="true">
+      <div class="stage">
+        <!-- rotating dashed ring -->
+        <svg class="ring ring--spin" viewBox="0 0 400 400" fill="none">
+          <circle cx="200" cy="200" r="186" stroke="#2B36FF" stroke-width="1.4" stroke-dasharray="3 11" opacity="0.55"/>
+          <circle cx="200" cy="200" r="150" stroke="#16161A" stroke-width="1" stroke-dasharray="1 9" opacity="0.25"/>
+        </svg>
+        <!-- central composition -->
+        <svg class="ring" viewBox="0 0 400 400" fill="none">
+          <defs>
+            <linearGradient id="blueG" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#5A63FF"/><stop offset="1" stop-color="#2B36FF"/>
+            </linearGradient>
+            <linearGradient id="creamG" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#FBF8F2"/><stop offset="1" stop-color="#ECE3D4"/>
+            </linearGradient>
+          </defs>
+          <!-- big blue circle -->
+          <circle cx="200" cy="200" r="118" fill="url(#blueG)"/>
+          <!-- the smile arc -->
+          <path d="M126 196 C 150 250, 250 250, 274 196" stroke="#FBF8F2" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.55"/>
+          <!-- row of perfect teeth -->
+          <g>
+            <rect x="150" y="170" width="20" height="30" rx="9" fill="url(#creamG)"/>
+            <rect x="174" y="166" width="22" height="34" rx="9" fill="#FBF8F2"/>
+            <rect x="200" y="166" width="22" height="34" rx="9" fill="#FBF8F2"/>
+            <rect x="226" y="170" width="20" height="30" rx="9" fill="url(#creamG)"/>
+          </g>
+          <!-- sparkle -->
+          <g class="shine" style="animation:sparkle 2.2s var(--ease,ease) infinite">
+            <path d="M232 150 l4 9 9 4 -9 4 -4 9 -4 -9 -9 -4 9 -4 z" fill="#FBF8F2"/>
+          </g>
+        </svg>
+        <!-- floating tags -->
+        <div class="float-tag t1"><span class="ico" style="background:var(--blue-wash)"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#1B22B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg></span>Fluent English<small>every visit</small></div>
+        <div class="float-tag t2"><span class="ico" style="background:#FFF1C9"><svg viewBox="0 0 24 24" width="15" height="15" fill="#E8A23A" stroke="none"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.8 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg></span>4.8 rating<small>62 reviews</small></div>
+        <div class="float-tag t3"><span class="ico" style="background:var(--blue);"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>100% Western<small>patient reviews</small></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- scrolling word marquee -->
+  <div class="hero-marquee shell" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Porcelain veneers</span><span>Composite bonding</span><span>Professional whitening</span><span>Smile design</span><span>Aesthetic dentistry</span>
+      <span>Porcelain veneers</span><span>Composite bonding</span><span>Professional whitening</span><span>Smile design</span><span>Aesthetic dentistry</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============================== WELCOME / ENGLISH TRUST ============================== -->
+<section class="welcome" id="welcome">
+  <div class="shell welcome-grid">
+    <div class="welcome-copy reveal">
+      <span class="eyebrow" style="color:var(--blue);display:flex;align-items:center;gap:.7rem;margin-bottom:1.1rem"><span style="width:34px;height:1.5px;background:var(--blue);display:inline-block"></span>English-speaking care</span>
+      <h2 class="display">Booked in Korean.<br>Treated entirely <em>in English.</em></h2>
+      <p>Living in Seoul shouldn't mean compromising on your dentist. At Smile Studios, your consultation, your treatment plan and every appointment happen in <b>clear, fluent English</b> — led personally by Dr.&nbsp;Young.</p>
+      <p>We're a small studio by design. That means you talk directly to the dentist shaping your smile — no rushed visits, no guessing what's being said, no pointing at a chart.</p>
+      <ul class="welcome-points">
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Dr.&nbsp;Young speaks fluent English</b> — your questions answered directly, in your own language.</span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Every one of our 62 reviews</b> comes from Western patients who found their place here.</span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>A clear plan before anything begins</b> — costs, steps and timing, explained up front.</span></li>
+      </ul>
+    </div>
+
+    <div class="doctor-card reveal reveal-d2">
+      <div class="glow" aria-hidden="true"></div>
+      <div class="glow2" aria-hidden="true"></div>
+      <div class="doc-inner">
+        <div class="doc-avatar" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="17" r="9" fill="#FBF8F2"/><path d="M8 42c0-8.8 7.2-15 16-15s16 6.2 16 15" fill="#FBF8F2"/><path d="M19 16.5c1.4 1.6 3 2.4 5 2.4s3.6-.8 5-2.4" stroke="#2B36FF" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <p class="role">Lead Dentist &amp; Founder</p>
+        <h3>Dr. Young</h3>
+        <p class="quote"><span class="q">“</span>I trained to give people a smile that looks like them — only more confident. Talking it through in English is the part patients tell me they were most relieved to find.<span class="q">”</span></p>
+        <div class="doc-langs">
+          <span class="hi">Fluent English</span>
+          <span>한국어</span>
+          <span>Cosmetic focus</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- trust stats -->
+  <div class="shell">
+    <div class="trust-strip">
+      <div class="tstat reveal"><div class="n">4.8<span class="star">★</span></div><div class="lab">Google rating across 62 patient reviews</div></div>
+      <div class="tstat reveal reveal-d1"><div class="n">100<span style="font-family:var(--serif);font-size:.6em">%</span></div><div class="lab">Reviews written by international patients</div></div>
+      <div class="tstat reveal reveal-d2"><div class="n">1:1</div><div class="lab">Seen by the dentist designing your smile</div></div>
+      <div class="tstat reveal reveal-d3"><div class="n">EN</div><div class="lab">Every consult &amp; plan, fully in English</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== GALLERY ============================== -->
+<section class="gallery" id="gallery">
+  <div class="shell">
+    <div class="sec-head reveal">
+      <div class="left">
+        <span class="eyebrow">The smile gallery</span>
+        <h2 class="display">A portfolio of smiles, each one its own.</h2>
+      </div>
+      <p class="lede gallery-note">Studies in shape, shade and proportion — the language we design in. Hover a tile to explore.</p>
+    </div>
+
+    <div class="smile-grid">
+
+      <!-- CASE 1 — large feature -->
+      <article class="case sp7 tall reveal" tabindex="0">
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 600 380" preserveAspectRatio="xMidYMid slice">
+            <rect width="600" height="380" fill="#FBF8F2"/>
+            <circle cx="300" cy="180" r="150" fill="#E4E6FF"/>
+            <!-- arc smile -->
+            <path d="M150 175 C 200 290, 400 290, 450 175" stroke="#2B36FF" stroke-width="3" fill="none" opacity="0.4"/>
+            <g>
+              <rect x="218" y="150" width="32" height="56" rx="13" fill="#fff" stroke="#D9DBFF"/>
+              <rect x="254" y="142" width="36" height="64" rx="14" fill="#fff" stroke="#D9DBFF"/>
+              <rect x="294" y="142" width="36" height="64" rx="14" fill="#fff" stroke="#D9DBFF"/>
+              <rect x="334" y="150" width="32" height="56" rx="13" fill="#fff" stroke="#D9DBFF"/>
+            </g>
+            <path d="M268 168 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3z" fill="#2B36FF" class="shine"/>
+            <text x="300" y="320" text-anchor="middle" font-family="Fraunces,serif" font-style="italic" font-size="34" fill="#16161A" opacity="0.16">No. 01</text>
+          </svg>
+        </div>
+        <div class="hover-cta" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></div>
+        <div class="meta"><div class="label">Porcelain Veneers<small>Full smile makeover</small></div><span class="tagnum">Case 01</span></div>
+      </article>
+
+      <!-- CASE 2 — blue accent -->
+      <article class="case blue sp5 tall reveal reveal-d1" tabindex="0">
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 440 380" preserveAspectRatio="xMidYMid slice">
+            <rect width="440" height="380" fill="#2B36FF"/>
+            <circle cx="220" cy="160" r="118" fill="#5A63FF" opacity="0.55"/>
+            <!-- shade gradient strip -->
+            <g opacity="0.92">
+              <rect x="120" y="120" width="40" height="80" rx="14" fill="#ffffff"/>
+              <rect x="166" y="120" width="40" height="80" rx="14" fill="#F4EFE6"/>
+              <rect x="212" y="120" width="40" height="80" rx="14" fill="#ECE3D4"/>
+              <rect x="258" y="120" width="40" height="80" rx="14" fill="#E0D4BD"/>
+            </g>
+            <text x="220" y="300" text-anchor="middle" font-family="Manrope,sans-serif" font-weight="600" font-size="13" letter-spacing="3" fill="#fff" opacity="0.7">SHADE LADDER</text>
+          </svg>
+        </div>
+        <div class="hover-cta" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></div>
+        <div class="meta"><div class="label">Whitening<small>Natural-bright tone</small></div><span class="tagnum">Case 02</span></div>
+      </article>
+
+      <!-- CASE 3 -->
+      <article class="case sp4 reveal" tabindex="0">
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 360 260" preserveAspectRatio="xMidYMid slice">
+            <rect width="360" height="260" fill="#FBF8F2"/>
+            <circle cx="180" cy="120" r="92" fill="#F4EFE6"/>
+            <!-- single tooth in profile + sculpt lines -->
+            <path d="M180 70 C 210 70, 220 100, 215 135 C 212 165, 195 185, 180 185 C 165 185, 148 165, 145 135 C 140 100, 150 70, 180 70Z" fill="#fff" stroke="#2B36FF" stroke-width="2"/>
+            <path d="M165 110 q15 -8 30 0" stroke="#5A63FF" stroke-width="1.6" fill="none" opacity="0.7"/>
+            <path d="M162 130 q18 -8 36 0" stroke="#5A63FF" stroke-width="1.6" fill="none" opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="hover-cta" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></div>
+        <div class="meta"><div class="label">Composite Bonding<small>Chip &amp; edge repair</small></div><span class="tagnum">Case 03</span></div>
+      </article>
+
+      <!-- CASE 4 — dark -->
+      <article class="case dark sp4 reveal reveal-d1" tabindex="0">
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 360 260" preserveAspectRatio="xMidYMid slice">
+            <rect width="360" height="260" fill="#16161A"/>
+            <!-- golden ratio proportion grid -->
+            <g stroke="#5A63FF" stroke-width="1" opacity="0.5" fill="none">
+              <rect x="110" y="80" width="140" height="100" rx="6"/>
+              <line x1="156" y1="80" x2="156" y2="180"/>
+              <line x1="204" y1="80" x2="204" y2="180"/>
+              <line x1="110" y1="130" x2="250" y2="130"/>
+            </g>
+            <circle cx="180" cy="130" r="6" fill="#2B36FF"/>
+            <text x="180" y="225" text-anchor="middle" font-family="Fraunces,serif" font-style="italic" font-size="20" fill="#F4EFE6" opacity="0.6">proportion</text>
+          </svg>
+        </div>
+        <div class="hover-cta" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></div>
+        <div class="meta"><div class="label">Smile Design<small>Mapped to your face</small></div><span class="tagnum">Case 04</span></div>
+      </article>
+
+      <!-- CASE 5 -->
+      <article class="case sp4 reveal reveal-d2" tabindex="0">
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 360 260" preserveAspectRatio="xMidYMid slice">
+            <rect width="360" height="260" fill="#FBF8F2"/>
+            <circle cx="180" cy="120" r="96" fill="#E4E6FF"/>
+            <!-- before / after split -->
+            <line x1="180" y1="40" x2="180" y2="200" stroke="#2B36FF" stroke-width="2" stroke-dasharray="4 6"/>
+            <g>
+              <rect x="120" y="100" width="22" height="40" rx="8" fill="#E0D4BD"/>
+              <rect x="146" y="100" width="22" height="40" rx="8" fill="#E8DDC8"/>
+            </g>
+            <g>
+              <rect x="194" y="96" width="24" height="46" rx="9" fill="#fff" stroke="#D9DBFF"/>
+              <rect x="222" y="96" width="24" height="46" rx="9" fill="#fff" stroke="#D9DBFF"/>
+            </g>
+            <text x="148" y="172" text-anchor="middle" font-family="Manrope,sans-serif" font-weight="600" font-size="11" letter-spacing="2" fill="#16161A" opacity="0.45">BEFORE</text>
+            <text x="216" y="172" text-anchor="middle" font-family="Manrope,sans-serif" font-weight="600" font-size="11" letter-spacing="2" fill="#2B36FF">AFTER</text>
+          </svg>
+        </div>
+        <div class="hover-cta" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></div>
+        <div class="meta"><div class="label">Edge Reshaping<small>Subtle, even line</small></div><span class="tagnum">Case 05</span></div>
+      </article>
+
+      <!-- CASE 6 — wide bottom feature -->
+      <article class="case sp8 reveal" tabindex="0">
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 680 260" preserveAspectRatio="xMidYMid slice">
+            <rect width="680" height="260" fill="#FBF8F2"/>
+            <circle cx="340" cy="130" r="140" fill="#F4EFE6"/>
+            <!-- full arch of teeth -->
+            <path d="M120 150 C 200 250, 480 250, 560 150" stroke="#2B36FF" stroke-width="2.5" fill="none" opacity="0.35"/>
+            <g fill="#fff" stroke="#D9DBFF">
+              <rect x="250" y="105" width="24" height="44" rx="9"/>
+              <rect x="278" y="100" width="26" height="48" rx="10"/>
+              <rect x="308" y="98" width="28" height="50" rx="11"/>
+              <rect x="340" y="98" width="28" height="50" rx="11"/>
+              <rect x="372" y="100" width="26" height="48" rx="10"/>
+              <rect x="402" y="105" width="24" height="44" rx="9"/>
+            </g>
+            <path d="M324 116 l3 6 6 3 -6 3 -3 6 -3 -6 -6 -3 6 -3z" fill="#2B36FF" class="shine"/>
+            <text x="340" y="215" text-anchor="middle" font-family="Fraunces,serif" font-style="italic" font-size="26" fill="#16161A" opacity="0.18">the full smile</text>
+          </svg>
+        </div>
+        <div class="hover-cta" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></div>
+        <div class="meta"><div class="label">Aesthetic Dentistry<small>The complete, balanced smile</small></div><span class="tagnum">Case 06</span></div>
+      </article>
+
+      <!-- CASE 7 — tall blue narrow -->
+      <article class="case blue sp4 reveal reveal-d1" tabindex="0">
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 360 260" preserveAspectRatio="xMidYMid slice">
+            <rect width="360" height="260" fill="#2B36FF"/>
+            <g stroke="#fff" stroke-width="1.4" opacity="0.4" fill="none">
+              <circle cx="180" cy="120" r="40"/>
+              <circle cx="180" cy="120" r="70"/>
+              <circle cx="180" cy="120" r="100"/>
+            </g>
+            <path d="M180 92 l5 11 11 5 -11 5 -5 11 -5 -11 -11 -5 11 -5z" fill="#fff" class="shine"/>
+            <text x="180" y="225" text-anchor="middle" font-family="Fraunces,serif" font-style="italic" font-size="20" fill="#fff" opacity="0.85">polish</text>
+          </svg>
+        </div>
+        <div class="hover-cta" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></div>
+        <div class="meta"><div class="label">Finishing Polish<small>The glassy final touch</small></div><span class="tagnum">Case 07</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================== SERVICES ============================== -->
+<section class="services" id="services">
+  <div class="blob" aria-hidden="true"></div>
+  <div class="shell">
+    <div class="sec-head reveal">
+      <span class="eyebrow">What we do</span>
+      <h2 class="display">A focused menu, done beautifully.</h2>
+      <p class="lede">We don't try to do everything. We do cosmetic dentistry — and we obsess over the details that make a smile look effortless.</p>
+    </div>
+
+    <div class="svc-list">
+      <article class="svc reveal">
+        <div class="num">01</div>
+        <div class="body">
+          <h3>Porcelain Veneers</h3>
+          <p>Thin, custom-shaped porcelain bonded to the front of your teeth — reshaping colour, length and proportion into one even, natural line. Designed around your face, never a generic template.</p>
+          <div class="tags"><span>Custom shade</span><span>Natural translucency</span><span>Smile makeover</span></div>
+        </div>
+        <div class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8c0-1.5 1.4-2.6 3-1.8 1.4.7 2.6 1.3 4 1.3s2.6-.6 4-1.3c1.6-.8 3 .3 3 1.8 0 5-3.1 9-7 9s-7-4-7-9Z"/><path d="M9.5 12c.8.9 1.6 1.4 2.5 1.4s1.7-.5 2.5-1.4"/></svg></div>
+      </article>
+
+      <article class="svc reveal">
+        <div class="num">02</div>
+        <div class="body">
+          <h3>Composite Bonding</h3>
+          <p>A conservative, same-day option: tooth-coloured composite sculpted by hand to repair chips, close small gaps and refine uneven edges — keeping more of your natural tooth intact.</p>
+          <div class="tags"><span>Minimal prep</span><span>Same-day</span><span>Edge &amp; gap repair</span></div>
+        </div>
+        <div class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 3.5 20.5 9.5 9 21H3v-6L14.5 3.5Z"/><path d="m12 6 6 6"/></svg></div>
+      </article>
+
+      <article class="svc reveal">
+        <div class="num">03</div>
+        <div class="body">
+          <h3>Professional Whitening</h3>
+          <p>A brighter shade that still reads as yours — calibrated to your enamel so the result looks fresh and healthy, never artificial. Carried out and supervised in-studio.</p>
+          <div class="tags"><span>In-studio</span><span>Enamel-safe</span><span>Natural-bright</span></div>
+        </div>
+        <div class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.5 5.5L20 11l-5.5 2.5L12 19l-2.5-5.5L4 11l5.5-2.5L12 3Z"/></svg></div>
+      </article>
+
+      <article class="svc reveal">
+        <div class="num">04</div>
+        <div class="body">
+          <h3>Aesthetic Smile Design</h3>
+          <p>The thinking that ties it together — mapping shape, symmetry and tone to your features before any treatment begins, so the final smile looks designed, balanced and unmistakably you.</p>
+          <div class="tags"><span>Face-mapped</span><span>Proportion &amp; symmetry</span><span>Cosmetic planning</span></div>
+        </div>
+        <div class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="3.2"/></svg></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== STORY / WHY VISIT ============================== -->
+<section class="story" id="story">
+  <div class="shell story-grid">
+    <div class="story-visual reveal" aria-hidden="true">
+      <svg viewBox="0 0 460 500" fill="none" style="width:100%;height:auto">
+        <defs>
+          <linearGradient id="stBlue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5A63FF"/><stop offset="1" stop-color="#2B36FF"/></linearGradient>
+        </defs>
+        <!-- atelier composition: framed smile study -->
+        <rect x="40" y="40" width="380" height="420" rx="26" fill="#F4EFE6"/>
+        <rect x="40" y="40" width="380" height="420" rx="26" stroke="#2B36FF" stroke-width="1.5" opacity="0.25"/>
+        <!-- big circle -->
+        <circle cx="230" cy="210" r="120" fill="url(#stBlue)"/>
+        <!-- smile -->
+        <path d="M150 205 C 185 285, 275 285, 310 205" stroke="#FBF8F2" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6"/>
+        <g>
+          <rect x="178" y="178" width="24" height="44" rx="10" fill="#FBF8F2"/>
+          <rect x="206" y="172" width="26" height="50" rx="11" fill="#fff"/>
+          <rect x="236" y="172" width="26" height="50" rx="11" fill="#fff"/>
+          <rect x="266" y="178" width="24" height="44" rx="10" fill="#FBF8F2"/>
+        </g>
+        <path d="M270 160 l4 9 9 4 -9 4 -4 9 -4 -9 -9 -4 9 -4z" fill="#FBF8F2" class="shine"/>
+        <!-- annotation lines -->
+        <g stroke="#16161A" stroke-width="1" opacity="0.35">
+          <line x1="120" y1="210" x2="80" y2="210"/><circle cx="80" cy="210" r="3" fill="#2B36FF" stroke="none"/>
+          <line x1="340" y1="210" x2="385" y2="210"/><circle cx="385" cy="210" r="3" fill="#2B36FF" stroke="none"/>
+        </g>
+        <!-- caption -->
+        <text x="230" y="410" text-anchor="middle" font-family="Fraunces,serif" font-style="italic" font-size="30" fill="#16161A">study no. 062</text>
+        <text x="230" y="436" text-anchor="middle" font-family="Manrope,sans-serif" font-weight="600" font-size="11" letter-spacing="3" fill="#6C6C76">SMILE STUDIOS · SEOUL</text>
+      </svg>
+    </div>
+
+    <div class="story-copy reveal reveal-d1">
+      <span class="eyebrow" style="color:var(--blue);display:flex;align-items:center;gap:.7rem;margin-bottom:1.1rem"><span style="width:34px;height:1.5px;background:var(--blue);display:inline-block"></span>Why patients choose us</span>
+      <h2 class="display">Not a clinic that does everything. A <em>studio</em> that does this.</h2>
+      <p>Smile Studios was built as a boutique cosmetic atelier in <b>Gangnam's Sinsa–Hakdong</b> quarter — Seoul's design district, and a fitting home for work that's really about proportion, light and detail.</p>
+      <p>Because we keep the studio small and cosmetic-focused, every patient is seen personally by Dr.&nbsp;Young. It's why our reviews read the way they do — and why so many of them come from people who, like you, were looking for a dentist who simply <b>gets it, in English.</b></p>
+
+      <div class="story-pillars">
+        <div class="pillar">
+          <div class="pi" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.8 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg></div>
+          <h4>4.8★ · 62 reviews</h4>
+          <p>Consistently rated, entirely by international patients.</p>
+        </div>
+        <div class="pillar">
+          <div class="pi" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8 11 14l8-9"/><path d="M2 14h7"/><path d="m20 22-5-9-5 9"/><path d="M13 18h4"/></svg></div>
+          <h4>Fluent English</h4>
+          <p>Every conversation, with the dentist herself.</p>
+        </div>
+        <div class="pillar">
+          <div class="pi" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h4>Cosmetic-only focus</h4>
+          <p>One discipline, refined — not a general checklist.</p>
+        </div>
+        <div class="pillar">
+          <div class="pi" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <h4>Heart of Gangnam</h4>
+          <p>In Sinsa–Hakdong, easy to reach across Seoul.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== LOCATION & HOURS ============================== -->
+<section class="location" id="location">
+  <div class="shell">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Find the studio</span>
+      <h2 class="display">In Gangnam. Easy to reach, hard to forget.</h2>
+    </div>
+
+    <div class="loc-grid">
+      <!-- abstract map -->
+      <div class="map-card reveal" role="img" aria-label="Stylised map of the Sinsa–Hakdong area of Gangnam, Seoul, showing the studio location">
+        <svg viewBox="0 0 700 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="700" height="480" fill="#1B1B20"/>
+          <!-- river -->
+          <path d="M-20 110 C 180 150, 320 70, 720 130 L 720 200 C 320 150, 180 230, -20 190 Z" fill="#23243A" opacity="0.9"/>
+          <path d="M-20 130 C 180 168, 320 90, 720 150" stroke="#2B36FF" stroke-width="1.5" fill="none" opacity="0.4"/>
+          <!-- blocks / grid roads -->
+          <g stroke="#33333B" stroke-width="1.4">
+            <line x1="0" y1="270" x2="700" y2="270"/>
+            <line x1="0" y1="330" x2="700" y2="330"/>
+            <line x1="0" y1="390" x2="700" y2="390"/>
+            <line x1="140" y1="230" x2="140" y2="480"/>
+            <line x1="280" y1="230" x2="280" y2="480"/>
+            <line x1="420" y1="230" x2="420" y2="480"/>
+            <line x1="560" y1="230" x2="560" y2="480"/>
+          </g>
+          <!-- diagonal avenue -->
+          <line x1="80" y1="480" x2="600" y2="220" stroke="#2B36FF" stroke-width="3" opacity="0.5"/>
+          <!-- subtle blocks -->
+          <g fill="#202028">
+            <rect x="150" y="280" width="120" height="40" rx="4"/>
+            <rect x="290" y="340" width="120" height="40" rx="4"/>
+            <rect x="430" y="280" width="120" height="40" rx="4"/>
+            <rect x="430" y="400" width="120" height="40" rx="4"/>
+            <rect x="150" y="400" width="120" height="40" rx="4"/>
+          </g>
+          <text x="540" y="150" font-family="Manrope,sans-serif" font-weight="600" font-size="12" letter-spacing="2" fill="#5A63FF" opacity="0.7">HAN RIVER</text>
+          <text x="40" y="445" font-family="Manrope,sans-serif" font-weight="600" font-size="11" letter-spacing="2" fill="#55555E">SINSA · HAKDONG</text>
+        </svg>
+        <div class="map-pin" aria-hidden="true">
+          <div class="pulse"></div>
+          <div class="dropper"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9c0-1.4 1.3-2.4 2.8-1.7 1.3.6 2.4 1.2 3.7 1.2s2.4-.6 3.7-1.2C19.7 6.6 21 7.6 21 9c0 4.5-3 8-8 8s-8-3.5-8-8Z" fill="#2B36FF"/></svg></div>
+          <div class="tip">Smile Studios — you're here</div>
+        </div>
+      </div>
+
+      <!-- hours -->
+      <div class="hours-card reveal reveal-d1">
+        <span class="eyebrow">Opening hours</span>
+        <span class="now-badge" id="nowBadge"><span class="live"></span><span id="nowText">Checking hours…</span></span>
+        <div class="hours-row open" data-day="1 2 3 4 5"><span class="day">Monday – Friday</span><span class="pip"><i></i><span class="time">10:00 – 16:00</span></span></div>
+        <div class="hours-row" data-day="6"><span class="day">Saturday</span><span class="time">By appointment</span></div>
+        <div class="hours-row" data-day="0"><span class="day">Sunday</span><span class="time">By appointment</span></div>
+
+        <div class="addr-block">
+          <div class="ln"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Sinsa–Hakdong, Gangnam-gu<br>Seoul, South Korea</span></div>
+          <div class="ln"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.93.36 1.85.7 2.73a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.35-1.35a2 2 0 0 1 2.11-.45c.88.34 1.8.57 2.73.7A2 2 0 0 1 22 16.92Z"/></svg><a href="tel:+8225422282">+82 2-542-2282</a></div>
+          <div class="ln"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg><a href="https://instagram.com/smilestudios_dental" target="_blank" rel="noopener">@smilestudios_dental</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CONTACT / CTA ============================== -->
+<section class="contact" id="contact">
+  <div class="deco" aria-hidden="true">
+    <svg style="top:8%;left:6%;width:70px;height:70px" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4" opacity="0.5"><path d="m12 3 2.5 5.5L20 11l-5.5 2.5L12 19l-2.5-5.5L4 11l5.5-2.5L12 3Z"/></svg>
+    <svg style="bottom:14%;right:9%;width:90px;height:90px" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.2" opacity="0.4"><circle cx="12" cy="12" r="10"/><path d="M8 13c1.2 1.4 2.5 2 4 2s2.8-.6 4-2"/></svg>
+    <svg style="top:20%;right:18%;width:46px;height:46px" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" opacity="0.45"><path d="m12 3 2.5 5.5L20 11l-5.5 2.5L12 19l-2.5-5.5L4 11l5.5-2.5L12 3Z"/></svg>
+  </div>
+  <div class="shell contact-inner">
+    <span class="eyebrow reveal">Let's design your smile</span>
+    <h2 class="display reveal reveal-d1">Say hello — <em>in English.</em></h2>
+    <p class="reveal reveal-d2">Tell us what you'd love to change. The quickest way to reach us is a call, and our latest work lives on Instagram — come see if we're the right studio for you.</p>
+    <div class="contact-cta reveal reveal-d3">
+      <a href="tel:+8225422282" class="btn btn-cream">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.93.36 1.85.7 2.73a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.35-1.35a2 2 0 0 1 2.11-.45c.88.34 1.8.57 2.73.7A2 2 0 0 1 22 16.92Z"/></svg>
+        Call +82 2-542-2282
+      </a>
+      <a href="https://instagram.com/smilestudios_dental" target="_blank" rel="noopener" class="btn btn-outline">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+        Follow @smilestudios_dental
+      </a>
+    </div>
+    <a href="tel:+8225422282" class="phone-big reveal reveal-d3">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.93.36 1.85.7 2.73a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.35-1.35a2 2 0 0 1 2.11-.45c.88.34 1.8.57 2.73.7A2 2 0 0 1 22 16.92Z"/></svg>
+      +82 2-542-2282
+    </a>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="footer" id="footer">
+  <div class="shell">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="brand" style="color:var(--cream)">
+          <span class="mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 9c0-1 1-2 2.4-1.4C8 8 9.8 9 12 9s4-1 5.6-1.4C19 7 20 8 20 9c0 5-3.6 9-8 9s-8-4-8-9Z" fill="#fff"/><path d="M8.5 12.5c1 1.2 2.2 1.8 3.5 1.8s2.5-.6 3.5-1.8" stroke="#2B36FF" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+          <span>Smile Studios<small>Cosmetic Atelier · Seoul</small></span>
+        </div>
+        <p>A boutique cosmetic dental studio in Gangnam, Seoul — design-led care for international patients, fluent in English.</p>
+        <a href="https://instagram.com/smilestudios_dental" target="_blank" rel="noopener" class="foot-social">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+          @smilestudios_dental
+        </a>
+      </div>
+      <div class="foot-col">
+        <h5>Studio</h5>
+        <a href="#welcome">English-speaking care</a>
+        <a href="#gallery">Smile gallery</a>
+        <a href="#services">Treatments</a>
+        <a href="#story">Why visit</a>
+      </div>
+      <div class="foot-col">
+        <h5>Visit &amp; contact</h5>
+        <p>Sinsa–Hakdong, Gangnam-gu<br>Seoul, South Korea</p>
+        <a href="tel:+8225422282">+82 2-542-2282</a>
+        <p>Mon–Fri 10:00–16:00<br>Weekends by appointment</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr">2026</span> Smile Studios Dental Clinic · 스마일스튜디오치과의원</span>
+      <span class="foot-credit"><span class="sh-dot"></span>Designed by <a href="https://stellarhausmedia.com" target="_blank" rel="noopener">Stellar Haus Media</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- year ---- */
+  var yr = document.getElementById('yr'); if(yr) yr.textContent = new Date().getFullYear();
+
+  /* ---- nav scroll state ---- */
+  var nav = document.getElementById('nav');
+  function onScroll(){ if(window.scrollY > 30) nav.classList.add('scrolled'); else nav.classList.remove('scrolled'); }
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* ---- mobile menu ---- */
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  function closeMenu(){ links.classList.remove('open'); toggle.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true':'false');
+    document.body.style.overflow = open ? 'hidden':'';
+  });
+  Array.prototype.forEach.call(links.querySelectorAll('a'), function(a){ a.addEventListener('click', closeMenu); });
+
+  /* ---- hero entrance ---- */
+  var hero = document.getElementById('hero');
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){ hero.classList.add('in'); }); });
+
+  /* ---- scroll reveals ---- */
+  var reveals = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    reveals.forEach(function(el){ io.observe(el); });
+  } else {
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* ---- live "open now" badge ---- */
+  function updateOpen(){
+    var badge = document.getElementById('nowBadge');
+    var txt = document.getElementById('nowText');
+    if(!badge||!txt) return;
+    // Korea Standard Time (UTC+9), independent of viewer locale
+    var nowU = new Date();
+    var kst = new Date(nowU.getTime() + (nowU.getTimezoneOffset()*60000) + (9*3600000));
+    var day = kst.getDay();            // 0 Sun .. 6 Sat
+    var mins = kst.getHours()*60 + kst.getMinutes();
+    var weekday = (day>=1 && day<=5);
+    var openNow = weekday && mins >= 600 && mins < 960; // 10:00–16:00
+    if(openNow){
+      txt.textContent = 'Open now · until 16:00 KST';
+      badge.style.borderColor = 'rgba(90,99,255,0.55)';
+    } else if(weekday && mins < 600){
+      txt.textContent = 'Opens 10:00 KST today';
+    } else {
+      txt.textContent = 'By appointment today · call us';
+    }
+  }
+  updateOpen();
+  setInterval(updateOpen, 60000);
+
+  /* ---- subtle parallax on hero portrait (pointer, desktop only) ---- */
+  if(!reduce && window.matchMedia('(pointer:fine)').matches){
+    var stage = document.querySelector('.hero-portrait .stage');
+    if(stage){
+      var raf=null, tx=0, ty=0;
+      hero.addEventListener('mousemove', function(ev){
+        var r = hero.getBoundingClientRect();
+        var cx = (ev.clientX - r.left)/r.width - 0.5;
+        var cy = (ev.clientY - r.top)/r.height - 0.5;
+        tx = cx * 16; ty = cy * 16;
+        if(!raf) raf = requestAnimationFrame(function(){
+          stage.style.transform = 'translate('+tx.toFixed(1)+'px,'+ty.toFixed(1)+'px)';
+          raf=null;
+        });
+      });
+      hero.addEventListener('mouseleave', function(){ stage.style.transform=''; });
+    }
+  }
+})();
+</script>
+
+
+<!-- ============================================================
+  SHM BOOKING WIDGET  (demo / front-end only)
+  Captures a booking request and hands off to the clinic's real
+  channel (phone / LINE). To go LIVE to patients, replace the body
+  of submitBooking() below with your GoHighLevel calendar embed or
+  a POST to your GHL/Calendly endpoint.  -- Stellar Haus Media
+============================================================ -->
+<div class="shm-bk">
+<div class="shm-bk-overlay" id="shmbk" role="dialog" aria-modal="true" aria-labelledby="shmbk-title" aria-hidden="true">
+  <div class="shm-bk-card" role="document">
+    <button class="shm-bk-close" type="button" aria-label="Close booking" data-bk-close>&times;</button>
+
+    <div id="shmbk-step">
+      <p class="shm-bk-eyebrow">English-speaking care</p>
+      <h2 class="shm-bk-title" id="shmbk-title">Book your visit</h2>
+      <p class="shm-bk-sub">Pick a day and time that suits you — our front desk replies in English.</p>
+
+      <p class="shm-bk-label">Choose a day</p>
+      <div class="shm-bk-row" id="shmbk-days"></div>
+
+      <div id="shmbk-times-wrap" class="shm-bk-hide">
+        <p class="shm-bk-label">Choose a time</p>
+        <div class="shm-bk-grid" id="shmbk-times"></div>
+      </div>
+
+      <div id="shmbk-form" class="shm-bk-hide">
+        <div class="shm-bk-field"><input id="shmbk-name" type="text" placeholder="Your name" autocomplete="name"></div>
+        <div class="shm-bk-field"><input id="shmbk-phone" type="tel" placeholder="Phone number" autocomplete="tel"></div>
+        <div class="shm-bk-field"><input id="shmbk-email" type="email" placeholder="Email (optional)" autocomplete="email"></div>
+        <div class="shm-bk-field">
+          <select id="shmbk-reason">
+            <option value="">What brings you in?</option>
+            <option>Check-up &amp; cleaning</option>
+            <option>Implant or veneer consultation</option>
+            <option>Teeth whitening</option>
+            <option>Tooth pain / emergency</option>
+            <option>Something else</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="shm-bk-cta" id="shmbk-submit" type="button" disabled>Confirm booking</button>
+      <p class="shm-bk-fine">No payment now. We’ll confirm your appointment by text.</p>
+    </div>
+
+    <div id="shmbk-done" class="shm-bk-conf shm-bk-hide">
+      <div class="shm-bk-tick" aria-hidden="true">✓</div>
+      <h2 class="shm-bk-title">You’re all set<span id="shmbk-name-out"></span>.</h2>
+      <p class="shm-bk-sub" id="shmbk-summary"></p>
+      <a class="shm-bk-cta" id="shmbk-call" href="#" style="text-decoration:none">Call now to confirm</a>
+      <a class="shm-bk-ghost shm-bk-hide" id="shmbk-chan" href="#" target="_blank" rel="noopener"></a>
+      <p class="shm-bk-fine">We’ll reach out shortly to lock in your time.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+/* SHM booking widget — demo. See submitBooking() TODO to wire GoHighLevel/Calendly. */
+(function(){
+  var ov=document.getElementById('shmbk'); if(!ov) return;
+  var TEL="tel:+8225422282", CHAN="", CHANLABEL="";
+  var state={day:null,time:null};
+  var daysEl=document.getElementById('shmbk-days'),
+      timesWrap=document.getElementById('shmbk-times-wrap'),
+      timesEl=document.getElementById('shmbk-times'),
+      formEl=document.getElementById('shmbk-form'),
+      submit=document.getElementById('shmbk-submit'),
+      lastTrigger=null;
+  var TIMES=["09:30","10:30","11:30","14:00","15:00","16:00","17:30"];
+  var DOW=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
+      MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+  function buildDays(){
+    daysEl.innerHTML=""; var d=new Date(), made=0;
+    while(made<8){ d.setDate(d.getDate()+1);
+      if(d.getDay()===0) continue;            // skip Sundays
+      var b=document.createElement('button'); b.type="button"; b.className="shm-bk-chip";
+      b.setAttribute('aria-pressed','false');
+      b.innerHTML="<small>"+DOW[d.getDay()]+"</small>"+d.getDate()+" "+MON[d.getMonth()];
+      b.dataset.label=DOW[d.getDay()]+", "+d.getDate()+" "+MON[d.getMonth()];
+      b.addEventListener('click',function(){ select(daysEl,this); state.day=this.dataset.label;
+        timesWrap.classList.remove('shm-bk-hide'); refresh(); });
+      daysEl.appendChild(b); made++;
+    }
+  }
+  function buildTimes(){
+    timesEl.innerHTML="";
+    TIMES.forEach(function(t){ var b=document.createElement('button'); b.type="button"; b.className="shm-bk-chip";
+      b.textContent=t; b.setAttribute('aria-pressed','false');
+      b.addEventListener('click',function(){ select(timesEl,this); state.time=t;
+        formEl.classList.remove('shm-bk-hide'); refresh(); });
+      timesEl.appendChild(b); });
+  }
+  function select(group,el){ Array.prototype.forEach.call(group.children,function(c){c.setAttribute('aria-pressed','false');});
+    el.setAttribute('aria-pressed','true'); }
+  function refresh(){ var n=document.getElementById('shmbk-name').value.trim(),
+        p=document.getElementById('shmbk-phone').value.trim();
+    submit.disabled=!(state.day&&state.time&&n&&p); }
+
+  /* ---- TODO (go live): replace this with your GoHighLevel calendar write / Calendly,
+     or POST {name,phone,email,reason,day,time} to your GHL inbound webhook. ---- */
+  function submitBooking(data){
+    console.warn("[SHM booking] DEMO submit — not sent anywhere. Wire submitBooking() to GoHighLevel before launch.", data);
+  }
+
+  function done(){
+    var name=document.getElementById('shmbk-name').value.trim();
+    submitBooking({name:name, phone:document.getElementById('shmbk-phone').value.trim(),
+      email:document.getElementById('shmbk-email').value.trim(),
+      reason:document.getElementById('shmbk-reason').value, day:state.day, time:state.time});
+    document.getElementById('shmbk-step').classList.add('shm-bk-hide');
+    var d=document.getElementById('shmbk-done'); d.classList.remove('shm-bk-hide');
+    document.getElementById('shmbk-name-out').textContent=name?(", "+name.split(" ")[0]):"";
+    document.getElementById('shmbk-summary').textContent="Requested: "+state.day+" at "+state.time+". We’ll confirm shortly.";
+    var call=document.getElementById('shmbk-call'); call.href=TEL;
+    if(CHAN){ var l=document.getElementById('shmbk-chan'); l.href=CHAN; l.textContent=CHANLABEL; l.classList.remove('shm-bk-hide'); }
+  }
+
+  function open(t){ lastTrigger=t||null; ov.classList.add('open'); ov.setAttribute('aria-hidden','false');
+    document.documentElement.style.overflow='hidden';
+    var f=ov.querySelector('.shm-bk-chip'); if(f) f.focus(); }
+  function close(){ ov.classList.remove('open'); ov.setAttribute('aria-hidden','true');
+    document.documentElement.style.overflow=''; if(lastTrigger&&lastTrigger.focus) lastTrigger.focus(); }
+
+  buildDays(); buildTimes();
+  ['shmbk-name','shmbk-phone'].forEach(function(id){document.getElementById(id).addEventListener('input',refresh);});
+  submit.addEventListener('click',done);
+  ov.addEventListener('click',function(e){ if(e.target===ov) close(); });
+  ov.querySelector('[data-bk-close]').addEventListener('click',close);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&ov.classList.contains('open')) close(); });
+  // simple focus trap
+  ov.addEventListener('keydown',function(e){ if(e.key!=='Tab')return;
+    var f=ov.querySelectorAll('button,a[href],input,select,textarea'); if(!f.length)return;
+    var first=f[0],last=f[f.length-1];
+    if(e.shiftKey&&document.activeElement===first){last.focus();e.preventDefault();}
+    else if(!e.shiftKey&&document.activeElement===last){first.focus();e.preventDefault();}
+  });
+
+  // ---- bind triggers: explicit hooks + any element whose label starts with "Book" ----
+  function isBookLabel(el){
+    var t=(el.textContent||"").replace(/[^a-z0-9 ]/gi," ").replace(/\s+/g," ").trim().toLowerCase();
+    if(!t || t.length>40) return false;                 // skip long paragraphs that merely contain "book"
+    return /\bbook/.test(t) || /\breserve\b/.test(t);   // \bbook matches "book"/"booking"/"book online soon"; NOT "facebook"
+  }
+  var sel='.js-book,.book-demo,[data-shm-book],a[href="#book"],a[href="#booking"]';
+  var bound=new Set();
+  function bind(el){ if(bound.has(el)||el.closest('.shm-bk'))return; bound.add(el);
+    el.removeAttribute('aria-disabled'); el.removeAttribute('disabled'); el.style.pointerEvents='auto';
+    // the booking now works, so drop any "coming soon / launching" badge inside the button
+    el.querySelectorAll('span,small,sup,em,i,b').forEach(function(s){
+      var st=(s.textContent||"").trim();
+      if(st.length<22 && /coming|soon|launch/i.test(st)) s.remove();
+    });
+    el.addEventListener('click',function(e){ e.preventDefault(); open(el); }); }
+  document.querySelectorAll(sel).forEach(bind);
+  document.querySelectorAll('a,button').forEach(function(el){ if(isBookLabel(el)) bind(el); });
+
+  // if the page has no booking CTA of its own, add a small themed one so booking is always reachable
+  if(bound.size===0){
+    var fab=document.createElement('button');
+    fab.type='button'; fab.className='shm-bk-fab'; fab.setAttribute('aria-label','Book online');
+    fab.innerHTML='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="vertical-align:-2px"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg> Book online';
+    fab.addEventListener('click',function(){ open(fab); });
+    (document.querySelector('.shm-bk')||document.body).appendChild(fab);
+  }
+})();
+</script>
+
+</body>
+</html>
